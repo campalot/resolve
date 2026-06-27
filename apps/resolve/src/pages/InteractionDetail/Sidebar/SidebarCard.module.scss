@@ -1,0 +1,107 @@
+
+@use "./sidebar.tokens" as tokens;
+@use "../../../styles/tokens" as baseTokens;
+
+
+.sidebar-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-smd);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sidebar-gap);
+}
+
+// More prominent Stage Card
+.stage-card {
+  @extend .sidebar-card;
+
+  border-left: 4px solid var(--color-brand-500);
+  gap: var(--space-sm);
+
+  .stage-header {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .stage-title {
+    margin-top: var(--space-sm);
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .stage-description {
+    margin-top: var(--space-xs);
+    color: var(--color-gray-500);
+  }
+
+  .actions {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px solid var(--sidebar-border);
+  }
+
+  .action-row {
+    display: flex;
+    gap: var(--sidebar-row-gap);
+    margin-top: 12px;
+
+  }
+
+  .action-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--sidebar-muted-text);
+    text-transform: uppercase;
+  }
+}
+
+// All other sidebar cards other than Stage card
+.section-card {
+  @extend .sidebar-card;
+
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-gray-500);
+    margin-bottom: var(--space-xs);
+    line-height: 1;
+  }
+
+  .identity-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--color-gray-300);
+    background: var(--color-gray-100);
+    font-size: 13px;
+    color: var(--color-gray-700);
+  }
+
+  .role-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .role {
+    font-weight: 600;
+  }
+
+  .name-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .metadata-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: var(--space-xs);
+  }
+}

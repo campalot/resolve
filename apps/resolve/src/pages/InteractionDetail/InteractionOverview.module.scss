@@ -1,0 +1,8 @@
+@use "../../styles/tokens" as tokens;
+
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  gap: var(--space-md);
+}

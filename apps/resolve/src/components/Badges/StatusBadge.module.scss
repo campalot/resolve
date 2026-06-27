@@ -1,0 +1,82 @@
+@use "../../styles/tokens" as tokens;
+
+.status-badge {
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  gap: 6px;
+  padding: var(--space-xs) 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+  .icon-left {
+    display: flex;
+
+    svg.icon-svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.small {
+    padding: 1px 6px 1px 4px;
+    height: 16px;
+    align-self: flex-start;
+
+    &.no-align-self {
+      align-self: unset;
+    }
+
+    .icon-left {
+      display: flex;
+
+      svg.icon-svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+  &--draft {
+    background: var(--color-gray-100);
+    color: var(--color-gray-700);
+  }
+  &--in-review {
+    background: var(--color-brand-100);
+    color: var(--color-brand-600);
+    .icon-left {
+      svg {
+        g {
+          stroke: var(--color-brand-600);
+        }
+  
+        path {
+          fill: transparent;
+        }
+      }
+    }
+  }
+  &--approved {
+    background: #e6f4ea;
+    color: var(--color-success-500);
+    .icon-left {
+      svg {
+        path {
+          fill: var(--color-success-500);
+        }
+      }
+    }
+  }
+  &--rejected {
+    background: var(--color-danger-100);
+    color: var(--color-danger-500);
+    .icon-left {
+      svg {
+        path {
+          fill: var(--color-danger-500);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use "../../styles/skeleton" as skeleton;
+
+.icon {
+  @include skeleton.skeleton-base;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  /* Reference shimmer animation */
+}
+
+.title {
+  @include skeleton.skeleton-base;
+  width: 140px;
+  height: 22px;
+  
+}
+.timestamp-line {
+  @include skeleton.skeleton-base;
+  width: 130px;
+  height: 22px;
+}
+.interaction-title-line {
+  @include skeleton.skeleton-base;
+  width: 170px;
+  height: 17px;
+}
+.interaction-id-line {
+  @include skeleton.skeleton-base;
+  width: 82px;
+  height: 15px;
+}
+
+.activity-layout-line {
+  @include skeleton.skeleton-base;
+  width: 300px;
+  height: 24px;
+}

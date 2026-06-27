@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M19.6816,4.3184 C20.1056,4.7424 20.1056,5.4304 19.6816,5.8544 L13.5356,12.0004 L19.6816,18.1454 C20.1056,18.5694 20.1056,19.2574 19.6816,19.6814 C19.2576,20.1064 18.5696,20.1064 18.1456,19.6814 L11.9996,13.5364 L5.8546,19.6814 C5.4306,20.1064 4.7426,20.1064 4.3186,19.6814 C3.8936,19.2574 3.8936,18.5694 4.3186,18.1454 L10.4636,12.0004 L4.3186,5.8544 C3.8936,5.4304 3.8936,4.7424 4.3186,4.3184 C4.7426,3.8944 5.4306,3.8944 5.8546,4.3184 L11.9996,10.4644 L18.1456,4.3184 C18.5696,3.8944 19.2576,3.8944 19.6816,4.3184" id="path-1"></path>
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Floor" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-210.000000, -327.000000)">
+            <g id="Atoms/Icon/Nav/Close" transform="translate(206.000000, 323.000000)">
+                <g id="Icon/Nav/Close">
+                    <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
+                    <g id="Atoms/Color/Fill/Purple-" mask="url(#mask-2)" fill="#FFFFFF">
+                        <g transform="translate(-49.000000, -45.000000)" id="Color/Fill/Purple-">
+                            <rect x="0" y="0" width="120" height="120" rx="60"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

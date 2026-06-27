@@ -1,0 +1,28 @@
+@use "../../styles/tokens" as tokens;
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.25s ease;
+  z-index: 102;
+
+  /* Centering Logic */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: var(--radius-sm);
+  max-width: 500px;
+  width: 90%;
+  /* Responsive width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

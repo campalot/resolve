@@ -1,0 +1,123 @@
+@use "../../styles/tokens" as tokens;
+
+.toast-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; // Space between stacked toasts
+  pointer-events: none;
+
+  .toast {
+    --current-toast-color: var(--toast-color-neutral);
+    color: #1a1a1a;
+    border-radius: var(--radius-md);
+    /* Smoother, modern corners */
+    padding: var(--space-md) 20px;
+    background: var(--color-white);
+
+    /* Remove any individual 'left' or 'transform' from the toast itself */
+      /* Let the flex container handle the positioning */
+      min-width: 320px;
+      max-width: 90vw;
+      /* Prevents overflow on mobile */
+  
+    /* The Border: Subtle enough to define the shape without being harsh */
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  
+    /* The Sidebar: Keeps color-coding (Success, Error, Info, Neutral) */
+    border-left: 5px solid var(--toast-color-neutral);
+  
+    /* The Shadow: "Layered" shadow for a realistic 3D feel */
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06),
+      0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+    gap: var(--space-smd);
+    pointer-events: auto;
+    /* Start above */
+    animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    /* Smooth slide */
+
+
+    &.exit {
+      animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Map the colors to the sidebar */
+    &.success {--current-toast-color: var(--toast-color-sucess)}
+    &.info {--current-toast-color: var(--toast-color-info)}
+    &.error {--current-toast-color: var(--toast-color-error)}
+    &.neutral {--current-toast-color: var(--toast-color-neutral)}
+
+    /* Set the border left color once with variable */
+    border-left-color: var(--current-toast-color);
+    display: flex;
+    align-items: center;
+
+    .toast-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--toast-color);
+      width: 18px;
+      height: 18px;
+      /* Match icon to the sidebar */
+      flex-shrink: 0;
+      /* Prevent icon from squishing on long text */
+      svg {
+        width: 18px;
+        height: 18px;
+        g {
+          fill: var(--current-toast-color);
+        }
+      }
+    }
+
+    .toast-content {
+      font-size: var(--font-size-base);
+      /* Slightly smaller for a "pro" look */
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      /* Dark grey instead of pure black */
+      line-height: 1.4;
+    }
+  }
+
+ 
+}
+
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    /* Start above screen */
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    /* End at its fixed position */
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+
+

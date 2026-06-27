@@ -1,0 +1,23 @@
+@use "../../styles/tokens" as tokens;
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--color-white);
+  text-decoration: none;
+  border: 1px solid var(--color-border-subtle);
+  img {
+    border-radius: 50%;
+  }
+  &.avatar-square {
+    border-radius: 2px;
+    img {
+      border-radius: 2px;
+    }
+  }
+  &.avatar-circle {
+    border-radius: 50%;
+  }
+}

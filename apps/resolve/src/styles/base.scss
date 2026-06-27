@@ -1,0 +1,112 @@
+@use "./tokens" as tokens;
+@use "./fonts" as *;
+
+
+/* ========================================
+   Base Normalization
+   ======================================== */
+
+/* 1. Box sizing and base font size (14px) */
+html {
+  box-sizing: border-box;
+  font-size: var(--font-size-base);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* 2. Remove default margin */
+body {
+  margin: 0;
+}
+
+/* 3. Set consistent font inheritance */
+body {
+  font-family: var(--font-family, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 4. Remove default heading margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 {
+  margin: var(--space-md) 0;
+}
+
+/* 5. Remove default paragraph margin */
+p {
+  margin: 0;
+}
+
+/* 6. Remove list padding + margin */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 7. Make images behave */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 8. Form elements inherit font */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 9. Remove default button styling (but keep accessibility) */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* 10. Prevent textarea overflow issues */
+textarea {
+  resize: vertical;
+}
+
+/* 11. Ensure focus outlines are visible */
+:focus-visible {
+  outline: 2px solid var(--focus-color, #3b82f6);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  /* Deprecated but widely supported */
+  white-space: nowrap;
+  border: 0;
+}
+
+

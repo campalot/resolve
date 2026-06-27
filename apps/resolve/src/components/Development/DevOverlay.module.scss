@@ -1,0 +1,223 @@
+@use "../../styles/tokens" as tokens;
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981; // Emerald Green
+  box-shadow: 0 0 8px #10b981;
+  transition: opacity 0.3s;
+  opacity: 0; // Hidden by default
+}
+
+.is-syncing {
+  opacity: 1;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background: #1e1e1e;
+  color: #fff;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+  display: flex;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+  font-family: 'Inter', sans-serif;
+
+  // Toggle state
+  &.closed {
+    transform: translateX(100%);
+    box-shadow: none;
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+
+      g {
+        fill: var(--color-white);
+      }
+    }
+  }
+}
+
+.toggle-tab {
+  position: absolute;
+  left: -86px; // Pull the tab outside the drawer
+  top: 60px;
+  width: 86px;
+  height: 40px;
+  background: #ff4757; // High visibility red
+  color: white;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-left: var(--space-xs);
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  .dev-hud-icon {
+    &::before {
+      content: "\2699\fe0e";
+      font-size: 22px;
+      line-height: 22px;
+    }
+    &-close {
+      font-size: 14px;
+    }
+  }
+}
+
+.vertical-content {
+  width: 280px; // Comfortable width for controls
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+
+  h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #ff4757;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #aaa;
+    }
+
+    select,
+    input[type="range"] {
+      width: 100%;
+      background: #333;
+      color: white;
+      border: 1px solid #444;
+      padding: 6px;
+      border-radius: 4px;
+    }
+  }
+
+  .danger-zone {
+    gap: var(--space-md);
+    display: flex;
+    align-items: center;
+  }
+
+  .force-crash {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkbox-row {
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    justify-content: space-between;
+    background: #2a2a2a;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 12px;
+
+    input[type="checkbox"] {
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+  }
+
+  .reset-btn {
+    // margin-top: auto;
+    background: transparent;
+    border: 1px solid #ff4757;
+    color: #ff4757;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #ff4757;
+      color: white;
+    }
+  }
+}
+
+.mini-status {
+  position: absolute;
+  left: -216px; 
+  bottom: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #00ff00; // Terminal green for visibility
+  display: flex;
+  gap: 8px;
+  text-transform: uppercase;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.15s ease;
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  &.hidden {
+    opacity: 0;
+    transform: translateX(20px);
+    pointer-events: none;
+  }
+
+  .divider {
+    color: #FFF;
+    opacity: 0.25;
+  }
+  .dev-hud-icon {
+    &::before {
+      content: "\2699\fe0e";
+      font-size: 22px;
+      line-height: 22px;
+    }
+  }
+}

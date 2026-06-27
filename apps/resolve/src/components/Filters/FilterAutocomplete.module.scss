@@ -1,0 +1,16 @@
+@use "../../styles/tokens" as tokens;
+
+.select-container {
+
+  & > div > div {
+    height: 36px;
+    padding-top: var(--space-xs) !important;
+    padding-bottom: var(--space-xs) !important;
+  }
+  label {
+    line-height: 18px;
+  }
+}
+.input {
+  background: var(--color-white);
+}

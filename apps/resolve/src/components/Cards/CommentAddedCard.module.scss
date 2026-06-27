@@ -1,0 +1,14 @@
+.activity-comment {
+
+  .commenter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .quotation-marks {
+    font-size: 20px;
+    line-height: 16px;
+    padding: 0 2px;
+  }
+}

@@ -1,0 +1,53 @@
+@use "../../styles/tokens" as tokens;
+
+.person-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+  transition: all 120ms ease;
+  cursor: pointer;
+  &__header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  &__name {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  &__meta {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  &__stats {
+    color: rgba(0,0,0,0.5);
+    font-size: 0.9rem;
+    strong {
+      font-weight: 500;
+    }
+  }
+}
+
+.person-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border-color: #ddd;
+}
+
+.card-link {
+  display: block;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-decoration: none;
+  color: unset;
+}
+
+.card-link:focus-visible {
+  outline: 2px solid blue;
+  outline-offset: 2px;
+}
+
+.dot {
+  padding: 0 var(--space-sm);
+}

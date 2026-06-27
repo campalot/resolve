@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="20px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="0.0-Navigation---Collapse" transform="translate(-32.000000, -34.000000)" fill="#FFFFFF">
+            <g id="Hamburger-Copy" transform="translate(32.000000, 34.000000)">
+                <rect id="Rectangle-5" x="0" y="0" width="23.7176471" height="2.37176471" rx="1.18588235"></rect>
+                <path d="M1.18588235,8 L22.5317647,8 C23.1867094,8 23.7176471,8.53093761 23.7176471,9.18588235 L23.7176471,9.18588235 C23.7176471,9.84082709 23.1867094,10.3717647 22.5317647,10.3717647 L1.18588235,10.3717647 C0.530937614,10.3717647 8.02075978e-17,9.84082709 0,9.18588235 L0,9.18588235 C-8.02075978e-17,8.53093761 0.530937614,8 1.18588235,8 Z" id="Rectangle-5-Copy"></path>
+                <path d="M1.18588235,17 L22.5341176,17 C23.1890624,17 23.72,17.5309376 23.72,18.1858824 L23.72,18.1858824 C23.72,18.8408271 23.1890624,19.3717647 22.5341176,19.3717647 L1.18588235,19.3717647 C0.530937614,19.3717647 8.02075978e-17,18.8408271 0,18.1858824 L0,18.1858824 C-8.02075978e-17,17.5309376 0.530937614,17 1.18588235,17 Z" id="Rectangle-5-Copy-2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

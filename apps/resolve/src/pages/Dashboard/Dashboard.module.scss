@@ -1,0 +1,30 @@
+@use "../../styles/tokens" as tokens;
+
+.dashboard-feed {
+  height: 100%;
+  max-height: calc(100vh - 56px);
+    /* Adjust based on your header height */
+  overflow: auto;
+  overscroll-behavior: contain;
+  /* Prevents "scroll chaining" to the parent page */
+  -webkit-overflow-scrolling: touch;
+  /* Smooth momentum on mobile */
+
+  .dashboard-list {
+    gap: var(--space-md);
+    display: grid;
+    padding-left: 40px;
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-feed {
+    .dashboard-list {
+      padding-left: 0;
+    }
+  }
+}

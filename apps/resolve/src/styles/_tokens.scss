@@ -1,0 +1,83 @@
+:root {
+  /* Brand */
+  --color-brand-500: #3b6edc;
+  --color-brand-600: #2f5cc2;
+  --color-brand-100: #e8f0ff;
+
+  /* Neutral */
+  --color-gray-900: #111827;
+  --color-gray-700: #374151;
+  --color-gray-500: #6b7280;
+  --color-gray-300: #d1d5db;
+  --color-gray-200: #e5e7eb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-050: #f9f9fa;
+  --color-gray-025: #f3f4f640;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* App Shell */
+  --color-shell-header-bg: #ffffff;
+  --color-shell-sidebar-bg: #f7f8fa;
+  --color-shell-border: #e5e7eb;
+  --color-shell-text: #1f2937;
+  --color-shell-muted: #6b7280;
+    
+
+  /* Page Surface */
+  --color-page-bg: #f3f4f6;
+  --color-border-subtle: #e5e7eb;
+  --color-surface-subtle: #f9fafb;
+
+  /* Card Surface */
+  --color-surface: #ffffff;
+  --card-muted-bg: #f9fafb;
+
+  /* Text */
+  --color-text-primary: #111827; /* main headings */
+  --color-text-secondary: #374151; /* body text */
+  --color-text-muted: #6b7280; /* metadata */
+  --color-text-subtle: #9ca3af; /* very low emphasis */
+
+  /* Toast Colors */
+  --toast-color-sucess: #28a745;
+  --toast-color-info: #007bff;
+  --toast-color-error: #dc3545;
+  --toast-color-neutral: #6c757d;
+
+  /* Semantic */
+  --color-success-500: #15803d;
+  /* for approved badge */
+  --color-danger-500: #b91c1c;
+  /* for rejected badge */
+  --color-danger-100: #fee2e2;
+
+  /* Fonts */
+  --font-size-base: 14px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+
+  --font-family: "Figtree", sans-serif;
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-xsm: 6px;
+  --radius-sm: 8px;
+  --radius-smd: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-smd: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 64px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+}

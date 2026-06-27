@@ -1,0 +1,72 @@
+@use "../../styles/skeleton" as skeleton;
+
+
+/* Match your actual UI dimensions */
+.title {
+  @include skeleton.skeleton-base;
+  width: 40%;
+  height: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.badge {
+  @include skeleton.skeleton-base;
+  width: 60px;
+  height: 20px;
+  margin-left: 8px;
+}
+
+.text-line {
+  @include skeleton.skeleton-base;
+  width: 70%;
+  height: 0.9rem;
+  margin-top: 8px;
+}
+
+.status {
+  @include skeleton.skeleton-base;
+  width: 80px;
+  height: 24px;
+  align-self: flex-end;
+}
+
+.date {
+  @include skeleton.skeleton-base;
+  width: 100px;
+  height: 0.8rem;
+  margin-top: 8px;
+  align-self: flex-end;
+}
+
+.pagination {
+  @include skeleton.skeleton-base;
+  width: 117px;
+  height: 22px;
+  align-self: flex-end;
+}
+
+.search, .sort {
+  @include skeleton.skeleton-base;
+  display: inline-flex;
+  vertical-align: top;
+  height: 37px;
+}
+
+.sort {
+  min-width: 120px;
+}
+
+.status {
+  @include skeleton.skeleton-base;
+  gap: var(--space-sm);
+  display: flex;
+  align-items: center;
+  height: 36px;
+  width: 138px;
+}
+
+.date-range {
+  @include skeleton.skeleton-base;
+  width: 120px;
+  height: 36px;
+}

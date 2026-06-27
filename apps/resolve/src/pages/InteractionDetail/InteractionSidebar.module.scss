@@ -1,0 +1,19 @@
+@use "../../styles/tokens" as tokens;
+
+.interaction-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.metadata-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}

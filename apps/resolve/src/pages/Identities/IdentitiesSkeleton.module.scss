@@ -1,0 +1,56 @@
+@use "../../styles/skeleton" as skeleton;
+
+.avatar-circle {
+  @include skeleton.skeleton-base;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  /* Reference shimmer animation */
+}
+
+.name-line {
+  @include skeleton.skeleton-base;
+  width: 80%;
+  height: 1rem;
+  
+}
+
+.sub-line {
+  @include skeleton.skeleton-base;
+  width: 50%;
+  height: 0.8rem;
+}
+
+.stats {
+  @include skeleton.skeleton-base;
+  width: 156px;
+  height: 10px;
+}
+
+.pagination {
+  @include skeleton.skeleton-base;
+  width: 117px;
+  height: 22px;
+  align-self: flex-end;
+}
+
+.search,
+.sort {
+  @include skeleton.skeleton-base;
+  display: inline-flex;
+  vertical-align: top;
+  height: 37px;
+}
+
+.sort {
+  min-width: 120px;
+}
+
+.status {
+  @include skeleton.skeleton-base;
+  gap: var(--space-sm);
+  display: flex;
+  align-items: center;
+  height: 23px;
+  width: 200px;
+}

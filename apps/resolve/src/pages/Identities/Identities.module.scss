@@ -1,0 +1,58 @@
+@use "../../styles/tokens" as tokens;
+
+.identities {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-md);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+
+  &.sorting {
+    opacity: 0.5;
+  }
+}
+
+.filters-button {
+  background: none;
+  border: none;
+  position: relative;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--color-brand-600);
+    color: white;
+    font-size: 11px;
+    border-radius: 999px;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.loading-message {
+  padding: var(--space-md);
+}

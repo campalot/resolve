@@ -1,0 +1,40 @@
+@use "../styles/tokens" as tokens;
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background-color: var(--color-page-bg);
+  transition: opacity 180ms ease;
+  position: relative;
+}
+
+.transitioning {
+  opacity: 0.6;
+}
+
+.workspace-loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  animation: shimmer 1.2s infinite;
+}
+
+.no-padding {
+  padding: 0;
+}

@@ -1,0 +1,48 @@
+@use "../../styles/skeleton" as skeleton;
+
+.header-wrapper {
+  min-height: 76px;
+}
+
+.title {
+  @include skeleton.skeleton-base;
+  width: 330px;
+  height: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  @include skeleton.skeleton-base;
+  width: 30%;
+  height: 16px;
+}
+
+.tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  @include skeleton.skeleton-base;
+  width: 80px;
+  height: 24px;
+}
+
+.card {
+  @include skeleton.skeleton-base;
+  height: 120px;
+  margin-bottom: 16px;
+}
+
+.sidebar-card {
+  @include skeleton.skeleton-base;
+  height: 100px;
+  margin-bottom: 16px;
+}
+
+.sidebar-card-large {
+  @include skeleton.skeleton-base;
+  height: 140px;
+  margin-bottom: 16px;
+}

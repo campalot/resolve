@@ -1,0 +1,18 @@
+@use "../../styles/tokens" as tokens;
+
+.filter-pills-group {
+  display: flex;
+  gap: 6px;
+}
+
+.filter-pill {
+  border-radius: var(--radius-sm);
+  background-image: linear-gradient(#f2f2f2, #e6e6e6);
+  border-color: rgba(0, 0, 0, 0.1);
+  border-width: 1px;
+  padding: 1px 6px;
+  cursor: pointer;
+  &.active {
+    background-image: linear-gradient(#aaa, #e6e6e6);
+  }
+}

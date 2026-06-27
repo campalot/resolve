@@ -1,0 +1,28 @@
+@use "../../styles/tokens" as tokens;
+
+.identifier-badge {
+  background: #e3e3e3;
+  border-radius: 0.25rem;
+  padding: 2px 7px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.5);
+  white-space: nowrap;
+  vertical-align: middle;
+  align-self: flex-start;
+
+  &.small {
+    padding: 2px var(--space-xs);
+    font-size: 11px;
+  }
+
+  &.medium {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 0;
+  }
+
+  &.large {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

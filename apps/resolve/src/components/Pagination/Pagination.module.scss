@@ -1,0 +1,43 @@
+@use "../../styles/tokens" as tokens;
+
+.pagination {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+
+  select {
+    padding: var(--space-xs);
+    border-radius: var(--radius-xs);
+    border-color: rgba(0, 0, 0, 0.23);
+    border-style: solid;
+    border-width: 1px;
+  }
+}
+
+.pageButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 var(--space-sm);
+  &.pageButtonRight {
+    margin-left: 0;
+  }
+  &.disabled {
+    cursor: default;
+    svg {
+      g {
+        stroke: var(--color-gray-300);
+      }
+    }
+  }
+
+  svg {
+    width: 10px;
+    height: 13px;
+    g {
+      stroke-width: 1.75;
+    }
+  }
+}

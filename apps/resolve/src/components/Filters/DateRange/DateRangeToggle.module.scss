@@ -1,0 +1,78 @@
+
+@use "../../../styles/tokens" as tokens;
+
+.mui-fieldset {
+  border-radius: var(--radius-xs);
+  border-color: rgba(0, 0, 0, 0.23);
+  border-style: solid;
+  border-width: 1px;
+  text-align: left;
+  padding: 1px var(--space-sm);
+
+  // to account for legend absolutely positioned to appear and animate like
+  // other MUI bordered components with legends
+  min-width: 120px;
+  position: relative;
+  background: var(--color-white);
+  height: 36px;
+  &:hover {
+    border-color: rgba(0,0,0,0.66);
+  }
+
+  &.open {
+    border-width: 2px;
+    border-color: #3974cc;
+
+    legend {
+      color: #3974cc;
+    }
+  }
+
+  legend {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.4375em;
+    letter-spacing: 0.00938em;
+    position: absolute;
+    top: 6px;
+    left: 32px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background: var(--color-white);
+
+    &.active {
+      display: block;
+      font-size: 11px;
+      top: -9px;
+      left: unset;
+    }
+  }
+
+  .defaultvalue {
+    position: relative;
+    padding-left: 26px;
+    border-radius: 0;
+  }
+
+  .hasValue {
+    padding-left: var(--space-sm);
+    border-radius: 0;
+  }
+
+  .defaultLabel {
+    line-height: 1rem;
+    color: transparent;
+    &.open {
+      color: transparent;
+    }
+  }
+
+  svg.calendar {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+  }
+}

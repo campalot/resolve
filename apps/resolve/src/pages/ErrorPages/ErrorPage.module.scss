@@ -1,0 +1,48 @@
+@use "../../styles/tokens" as tokens;
+
+.error-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Horizontal center */
+  justify-content: center;
+  /* Vertical center */
+  height: 100%;
+  /* Fill the content area */
+  min-height: 400px;
+  /* Ensure it doesn't collapse */
+  text-align: center;
+  padding: 40px;
+}
+
+.error-icon {
+  font-size: 24px;
+}
+.error-icon-content {
+  font-size: 20px;
+}
+
+.error-title {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.error-text {
+  margin: 0 0 24px 0;
+  color: #666;
+  max-width: 300px;
+  /* Keeps text from stretching too wide */
+}
+
+.cta-row {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.dev-link {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #999;
+  text-decoration: underline;
+}

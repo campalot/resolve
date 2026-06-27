@@ -1,0 +1,52 @@
+@use "../../styles/tokens" as tokens;
+
+.header {
+  background: var(--color-shell-header-bg);
+  border-bottom: 1px solid var(--color-shell-border);
+  color: #fff;
+  min-height: 56px;
+  padding: 0 var(--space-sm);
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    height: 16px;
+    g {
+      fill: var(--color-text-primary);
+    }
+
+  }
+}
+
+.global-search-container {
+  flex: 1;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  max-width: 330px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.product-name {
+  padding: 0 var(--space-sm);
+  font-weight: 600;
+  color: var(--color-shell-text);
+}
+
+.separator {
+  color: var(--color-shell-muted);
+}

@@ -1,0 +1,40 @@
+@use "../../styles/skeleton" as skeleton;
+
+.avatar {
+  @include skeleton.skeleton-base;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.name {
+  @include skeleton.skeleton-base;
+  width: 240px;
+  height: 28px;
+  margin-bottom: 8px;
+}
+
+.subline {
+  @include skeleton.skeleton-base;
+  width: 180px;
+  height: 14px;
+  margin-bottom: 6px;
+}
+
+.sublineShort {
+  @include skeleton.skeleton-base;
+  width: 140px;
+  height: 14px;
+}
+
+.statsRow {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.statBlock {
+  @include skeleton.skeleton-base;
+  width: 60px;
+  height: 32px;
+}

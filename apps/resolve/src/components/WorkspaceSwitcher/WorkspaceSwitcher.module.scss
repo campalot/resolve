@@ -1,0 +1,49 @@
+@use "../../styles/tokens" as tokens;
+
+.workspace-container {
+
+  .switcher-button {
+    font-weight: 500;
+    color: var(--color-shell-text);
+    font-size: var(--font-size-base);
+    min-width: 190px;
+    display: flex;
+    align-items: center;
+    border-radius: 0;
+
+    .avatar-wrapper {
+      margin-right: var(--space-sm);
+      display: flex;
+    }
+  }
+
+  .caret {
+    margin-left: auto;
+    padding-top: 7px;
+  }
+}
+
+.workspace-menu {
+  list-style: none;
+  padding-inline-start: 0;
+  padding-right: 1rem;
+  min-width: 210px;
+  button {
+    text-transform: none;
+    font-size: var(--font-size-base);
+    width: 100%;
+    justify-content: flex-start;
+  }
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+  }
+
+  .avatar-wrapper {
+    margin-right: var(--space-sm);
+    display: flex;
+  }
+}
+
+

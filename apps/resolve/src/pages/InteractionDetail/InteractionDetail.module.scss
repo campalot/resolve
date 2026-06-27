@@ -1,0 +1,145 @@
+@use "../../styles/tokens" as baseTokens;
+@use "./Sidebar/sidebar.tokens" as tokens;
+
+.interaction-detail {
+  display: flex;
+  flex-direction: column;
+
+  &--header {
+    margin-bottom: var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &--title {
+    &#{&} {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
+    }
+  }
+  &--subtitle {
+    &#{&} {
+      font-size: 14px;
+      color: var(--color-gray-500);
+      margin-bottom: var(--space-md);
+    }
+
+    .identifier {
+      text-transform: uppercase;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+
+  &__sidebar {
+    position: sticky;
+    top: 1rem;
+  }
+
+  .tabs {
+    margin-bottom: var(--space-md);
+  }
+
+  @media (max-width: 900px) {
+    &__body {
+      grid-template-columns: 1fr;
+    }
+
+    &__sidebar {
+      order: -1; // metadata above content on mobile
+      position: static;
+    }
+  }
+}
+
+.activeTab {
+  color: #111827;
+  border-bottom: 2px solid #2563eb;
+}
+
+.content {
+  padding-top: 16px;
+}
+
+button {
+  display: inline-flex;
+}
+
+.metadata-list {
+  margin: 0.25rem 1rem 0.25rem 0;
+  font-size: 11px;
+  color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+}
+
+.actions {
+  padding: 0.5rem 1rem;
+}
+
+.actions-row {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.confirm-message {
+  margin: var(--space-sm) 0;
+}
+
+// Transition Modal Content styles
+.transition-comment {
+  width: 100%;
+  border: 1px solid var(--toast-color-neutral);
+  border-radius: var(--radius-xs);
+  padding: var(--space-sm);
+}
+
+/* Red border when validation fails */
+.input-error {
+  border-color: var(--color-danger-500);
+  outline-color: var(--color-danger-500);
+}
+
+.comment-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-xs);
+  font-size: 0.875rem;
+}
+
+.hint-text {
+  font-size: 0.875rem;
+  color: var(--toast-color-neutral);
+  margin-top: var(--space-xs);
+}
+
+/* Red text for the error state */
+.error-text {
+  font-size: 0.875rem;
+  color: var(--color-danger-500);
+  font-weight: 500;
+  margin-top: var(--space-xs);
+}
+
+.counter {
+  font-variant-numeric: tabular-nums;
+  /* Prevents "jumping" text as numbers change */
+}
+
+.counter-pending {
+  color: var(--toast-color-neutral);
+}
+
+.counter-success {
+  color: var(--toast-color-sucess);
+  /* Using your success green token */
+  font-weight: 600;
+}
