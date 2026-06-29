@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 import { GET_INTERACTION } from "../../graphql/queries/getInteraction";
-import type { Interaction } from "../../types/schema";
+import type { Interaction } from "@resolve/types";
 
 type GetInteractionData = {
   interaction: Interaction;
