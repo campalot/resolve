@@ -1,6 +1,4 @@
-import type { Identity } from "../../types/schema";
-import type { InteractionRecord } from "../../types/api";
-import type { IdentityRecord } from "../../types/api";
+import type { Identity, IdentityRecord, InteractionRecord } from "@resolve/types";
 import { resolveInteraction, interactionMatchesQuery } from "../mocks/common/resolvers";
 
 export type SearchVars = {

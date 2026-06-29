@@ -1,6 +1,4 @@
-import type { Interaction } from "../../types/schema";
-import type { InteractionFilters } from "../../types/api";
-import type { InteractionRecord } from "../../types/api";
+import type { Interaction, InteractionFilters, InteractionRecord } from "@resolve/types";
 import { interactionMatchesQuery, resolveInteraction } from "../mocks/common/resolvers";
 import { parseDate } from "../../helpers";
 

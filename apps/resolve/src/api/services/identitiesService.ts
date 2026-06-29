@@ -1,6 +1,5 @@
 import { HttpResponse } from 'msw';
-import type { IdentityFilters } from "../../types/api";
-import type { IdentityRecord } from "../../types/api";
+import type { IdentityFilters, IdentityRecord } from "@resolve/types";
 import { resolveIdentity, resolveInteraction, resolveInteractionActivity } from "../mocks/common/resolvers";
 import { getMockDb } from "../../mocks/mockDB";
 import { getProfileInteractionsAndActivities } from '../mocks/common/resolvers';

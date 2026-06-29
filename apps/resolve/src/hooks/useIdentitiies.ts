@@ -1,7 +1,7 @@
 import { useAppStore } from "../store/useAppStore";
 import { useIdentitiesApollo } from "./apollo/useIdentitiesApollo";
 import { useIdentitiesTanStack } from "./tanstack/useIdentitiesTanStack";
-import type { IdentityFilters } from "../types/api";
+import type { IdentityFilters } from "@resolve/types";
 
 export type IdentitiesListProps = {
   filters: IdentityFilters, 

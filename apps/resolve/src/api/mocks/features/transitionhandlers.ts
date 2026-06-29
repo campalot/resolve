@@ -1,6 +1,6 @@
 import { http, graphql, HttpResponse } from 'msw';
 import { interactionService } from '../../services/interactionService';
-import type { InteractionAction, Interaction } from '../../../types/schema';
+import type { InteractionAction, Interaction } from '@resolve/types';
 import { withMockBehavior } from '../common/withMockBehavior';
 
 export type TransitionVariables = {

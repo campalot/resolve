@@ -1,6 +1,6 @@
 import React from "react";
 import { InteractionsList } from "../Interactions/InteractionsList";
-import type { Interaction } from "../../types/schema";
+import type { Interaction } from "@resolve/types";
 
 type ProfileInteractionsProps = {
   interactions: Interaction[];

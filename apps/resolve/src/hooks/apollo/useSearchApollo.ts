@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_SEARCH_RESULTS } from "../../graphql/queries/getSearchResults";
-import type { SearchResult } from "../../types/schema";
+import type { SearchResult } from "@resolve/types";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 
 export function useSearchApollo(queryString: string, limit: number = 10, { skip = false}: {skip: boolean}) {

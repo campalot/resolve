@@ -1,7 +1,7 @@
 
 import { useRef, useState } from "react";
 import { useQuery } from "@apollo/client";
-import type { InteractionFilters } from "../../types/api";
+import type { InteractionFilters } from "@resolve/types";
 import { GET_INTERACTION_ACTIVITIES } from "../../graphql/queries/getInteractionActivities";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 

@@ -1,7 +1,7 @@
 
 import { useQuery } from "@apollo/client";
 import { GET_IDENTITIES } from "../../graphql/queries/getIdentities";
-import type { IdentityFilters } from "../../types/api";
+import type { IdentityFilters } from "@resolve/types";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 
 export function useIdentitiesApollo({

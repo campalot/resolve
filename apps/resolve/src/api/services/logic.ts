@@ -1,11 +1,11 @@
 import type { 
   InteractionAction, 
-} from "../../types/schema";
-import type { InteractionActivityRecord } from "../../types/api";
-import type { InteractionRecord } from "../../types/api";
+  InteractionActivityRecord,
+  InteractionRecord,
+} from "@resolve/types";
 import { getMockDb } from "../../mocks/mockDB";
 import { WORKFLOW } from "../mocks/common/constants";
-import { ACTION_TO_STATUS } from "../../types/schema";
+import { ACTION_TO_STATUS } from "@resolve/types";
 import { pickOne } from "../../helpers";
 import { 
   createCommentAddedActivity, 

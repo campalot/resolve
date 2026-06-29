@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { Identity } from "../../types/schema";
+import type { Identity } from "@resolve/types";
 import Avatar from "../Avatars/Avatar";
 import { useWorkspacePath } from "../../hooks/useWorkspacePath";
 import { identityRoute } from "../../routes/routes";

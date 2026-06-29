@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import type { InteractionActivity } from "../../types/schema";
-import type { InteractionActivityMetadata_Reviewer } from "../../types/schema";
+import type {
+  InteractionActivity,
+  InteractionActivityMetadata_Reviewer,
+} from "@resolve/types";
 import { ActivityCard } from "./ActivityCard";
 import { formatRelative } from "../../helpers";
 import AddUserIcon from "../../assets/add-user-svgrepo-com.svg?react";

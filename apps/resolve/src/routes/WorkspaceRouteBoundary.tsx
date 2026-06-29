@@ -4,7 +4,7 @@ import { WorkspaceProvider } from "../contexts/Workspace/WorkspaceProvider";
 import { useWorkspacesList } from "../hooks/useWorkspacesList";
 import { LoadingScreen } from "../pages/LoadingScreen";
 import { SimpleShellLayout } from "../layouts/SimpleShellLayout";
-import type { Workspace } from "../types/schema";
+import type { Workspace } from "@resolve/types";
 import { useAppStore } from "../store/useAppStore";
 import { DEFAULT_WORKSPACE_ID } from "./AppRoutes";
 

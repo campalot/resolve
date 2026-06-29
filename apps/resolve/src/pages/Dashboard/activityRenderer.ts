@@ -1,5 +1,4 @@
-import type { InteractionActivity } from "../../types/schema";
-import type { InteractionActivityType } from "../../types/schema";
+import type { InteractionActivity, InteractionActivityType } from "@resolve/types";
 import { StatusChangeCard } from "../../components/Cards/StatusChangeCard";
 import { CommentAddedCard } from "../../components/Cards/CommentAddedCard";
 import { ReviewerAssignedCard } from "../../components/Cards/ReviewerAssignedCard";

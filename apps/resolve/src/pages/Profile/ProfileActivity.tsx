@@ -1,5 +1,5 @@
 import React from "react";
-import type { InteractionActivity } from "../../types/schema";
+import type { InteractionActivity } from "@resolve/types";
 import { activityRenderers } from "../Dashboard/activityRenderer";
 
 type ProfileActivityProps = {

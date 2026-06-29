@@ -2,7 +2,7 @@ import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { getIdentities } from "../../api/endpoints/identities"; // You'll create this Axios call
 import { identityKeys } from "../queryKeys";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
-import type { IdentityFilters } from "../../types/api";
+import type { IdentityFilters } from "@resolve/types";
 
 export function useIdentitiesTanStack({
   filters, 

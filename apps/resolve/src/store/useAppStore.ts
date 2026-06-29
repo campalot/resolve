@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { Workspace } from '../types/schema';
+import type { Workspace } from '@resolve/types';
 
 type Role = 'Admin' | 'Editor' | 'Viewer';
 export type DataStrategy = 'APOLLO' | 'TANSTACK';

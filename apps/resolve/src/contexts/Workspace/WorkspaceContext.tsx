@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import type { Workspace } from "../../types/schema";
+import type { Workspace } from "@resolve/types";
 
 type WorkspaceContextValue = {
   workspace: Workspace;

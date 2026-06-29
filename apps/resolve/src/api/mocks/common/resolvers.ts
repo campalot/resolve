@@ -1,23 +1,23 @@
 import type { 
   Identity, 
+  IdentityRecord,
   Interaction,
+  InteractionRecord,
+  InteractionPartyRecord,
   InteractionActivity,
+  InteractionActivityRecord,
+  InteractionActivityMetadataRecord_Reviewer,
+  InteractionActivityMetadataRecord_Decision,
   InteractionParty, 
   InteractionState,
   InteractionAction,
-} from "../../../types/schema";
-import type { Role } from "../../cache";
-import type {
-  InteractionActivityRecord,
-  InteractionActivityMetadataRecord_Decision
-} from "../../../types/api";
-import type { InteractionActivityMetadataRecord_Reviewer } from "../../../types/api";
-import type { InteractionRecord } from "../../../types/api";
-import type { InteractionPartyRecord } from "../../../types/api";
-import type { IdentityRecord } from "../../../types/api";
+  Role,
+} from "@resolve/types";
+import { 
+  WORKFLOW,
+  ROLE_PERMISSIONS,
+} from "@resolve/types";
 import { getMockDb } from "../../../mocks/mockDB";
-import { WORKFLOW } from "./constants";
-import { ROLE_PERMISSIONS } from "../../../types/schema";
 import { useAppStore } from '../../../store/useAppStore';
 
 type IdentityStats = {

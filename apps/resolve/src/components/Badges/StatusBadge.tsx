@@ -1,6 +1,6 @@
 import React from "react";
 import type { HTMLAttributes } from "react";
-import type { InteractionState } from "../../types/schema";
+import type { InteractionState } from "@resolve/types";
 import {
   ICON_MAP,
   StatusBadgeSize,

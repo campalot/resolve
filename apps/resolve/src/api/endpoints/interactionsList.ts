@@ -1,5 +1,5 @@
 import { api } from '../axiosInstance';
-import type { InteractionFilters } from "../../types/api";
+import type { InteractionFilters } from "@resolve/types";
 
 export const getInteractionsList = async (workspaceId: string, offset: number, limit: number, filters: InteractionFilters, sortBy: string) => {
   try {

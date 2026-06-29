@@ -1,5 +1,4 @@
-import type { InteractionFilters } from "../types/api";
-import type { IdentityFilters } from "../types/api";
+import type { InteractionFilters, IdentityFilters } from "@resolve/types";
 
 export const profileKeys = {
   all: ['profile'] as const,

@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getInteractionActivities } from '../../api/endpoints/interactionActivities';
-import type { InteractionFilters } from "../../types/api";
+import type { InteractionFilters } from "@resolve/types";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 import { activityKeys } from '../queryKeys';
 

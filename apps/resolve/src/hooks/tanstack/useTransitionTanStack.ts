@@ -3,10 +3,9 @@ import type { InfiniteData } from '@tanstack/react-query';
 import { useToast } from '../../contexts/Toast/ToastContext';
 import { transitionInteraction } from '../../api/endpoints/transitionInteraction';
 import { activityKeys, interactionKeys } from '../queryKeys';
-import type { Identity, Interaction, InteractionActivity, ToastNotification } from '../../types/schema';
+import type { Identity, Interaction, InteractionActivity, ToastNotification, PageInfo } from '@resolve/types';
 import { useCurrentUser } from '../useCurrentUser';
 import type { CurrentUser } from '../../contexts/CurrentUser/CurrentUserContext';
-import type { PageInfo } from "../../types/schema";
 
 export type ActivityPage = {
   interactionActivities: {

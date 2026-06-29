@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 import { getInteractionsList } from '../../api/endpoints/interactionsList';
-import type { InteractionFilters } from "../../types/api";
+import type { InteractionFilters } from "@resolve/types";
 import { interactionKeys } from '../queryKeys';
 
 export function useInteractionsTanStack({ filters, sortBy = "recent", page = 1, pageSize = 50, enabled = true }: {

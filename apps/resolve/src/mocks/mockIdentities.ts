@@ -1,4 +1,4 @@
-import type { IdentityRecord } from "../types/api";
+import type { IdentityRecord } from "@resolve/types";
 import { getMockDb } from "./mockDB";
 
 // Helper to keep ID generation consistent across the app

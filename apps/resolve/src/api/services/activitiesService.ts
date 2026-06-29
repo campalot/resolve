@@ -1,5 +1,4 @@
-import type { InteractionActivity } from "../../types/schema";
-import type { InteractionActivityRecord, InteractionFilters } from "../../types/api";
+import type { InteractionActivity, InteractionActivityRecord, InteractionFilters } from "@resolve/types";
 import { resolveInteractionActivity } from "../mocks/common/resolvers";
 
 export type ActivitiesVars = {

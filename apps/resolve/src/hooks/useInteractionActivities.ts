@@ -1,7 +1,7 @@
 import { useAppStore } from "../store/useAppStore";
 import { useInteractionActivitiesApollo } from "./apollo/useInteractionActivitiesApollo";
 import { useInteractionActivitiesTanStack } from "./tanstack/useInteractionActivitiesTanStack";
-import type { InteractionFilters } from "../types/api";
+import type { InteractionFilters } from "@resolve/types";
 
 export function useInteractionActivities({ filters }: { filters: InteractionFilters }) {
   const strategy = useAppStore((state) => state.dataStrategy);

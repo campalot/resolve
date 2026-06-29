@@ -1,13 +1,13 @@
-import type { IdentityRecord } from "../types/api";
-import type { InteractionRecord } from "../types/api";
-import type { InteractionDataRecord } from "../types/schema";
-import type { VendorOnboardingData } from "../types/schema";
-import type { PolicyUpdateData } from "../types/schema";
-import type { ContractData } from "../types/schema";
-import type { ProposalData } from "../types/schema";
-import type { InteractionType } from "../types/schema";
-import { interactionStateValues } from "../types/schema";
-import { interactionRoleValues } from "../types/schema";
+import type { IdentityRecord } from "@resolve/types";
+import type { InteractionRecord } from "@resolve/types";
+import type { InteractionDataRecord } from "@resolve/types";
+import type { VendorOnboardingData } from "@resolve/types";
+import type { PolicyUpdateData } from "@resolve/types";
+import type { ContractData } from "@resolve/types";
+import type { ProposalData } from "@resolve/types";
+import type { InteractionType } from "@resolve/types";
+import { interactionStateValues } from "@resolve/types";
+import { interactionRoleValues } from "@resolve/types";
 import { pickOne } from "../helpers";
 
 

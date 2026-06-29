@@ -19,8 +19,7 @@ import { debounce } from "@mui/material/utils";
 import { useSearchResults } from "../../hooks/useSearchResults";
 import { identityRoute, interactionRoute } from "../../routes/routes";
 import { useWorkspacePath } from "../../hooks/useWorkspacePath";
-import type { SearchResult } from "../../types/schema";
-import type { Interaction } from "../../types/schema";
+import type { Interaction, SearchResult } from "@resolve/types";
 import dayjs from "dayjs";
 
 type GlobalSearchAppBarProps = {

@@ -1,4 +1,4 @@
-import type { Interaction } from "../../types/schema";
+import type { Interaction } from "@resolve/types";
 import { ButtonType } from "../../components/Buttons/Button";
 import { groupBy } from "../../helpers";
 

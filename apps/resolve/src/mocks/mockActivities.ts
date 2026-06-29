@@ -1,15 +1,15 @@
-import { ACTION_TO_STATUS, WORKFLOW } from "../types/schema";
+import { ACTION_TO_STATUS, WORKFLOW } from "@resolve/types";
 import type { 
   InteractionAction, 
   InteractionRole, 
   InteractionState, 
-} from "../types/schema";
+} from "@resolve/types";
 import type { 
   InteractionActivityRecord,
   InteractionRecord,
   InteractionPartyRecord,
   IdentityRecord,
- } from "../types/api";
+ } from "@resolve/types";
 import { generateRandomDateStringPriorTo, getRandomDate, getRandomInteger, pickOne } from "../helpers";
 import { getMockDb } from "./mockDB";
 

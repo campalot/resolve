@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import type { InteractionActivity } from "../../types/schema";
+import type { InteractionActivity } from "@resolve/types";
 import { useInteractionActivities } from "../../hooks/useInteractionActivities";
 import { activityRenderers } from "./activityRenderer";
 import styles from "./Dashboard.module.scss";

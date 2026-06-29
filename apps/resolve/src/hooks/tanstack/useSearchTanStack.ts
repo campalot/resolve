@@ -1,7 +1,7 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getSearchResults } from '../../api/endpoints/search';
 import { useWorkspace } from '../../contexts/Workspace/WorkspaceContext';
-import type { SearchResponse } from '../../types/schema';
+import type { SearchResponse } from '@resolve/types';
 import type { InfiniteData } from '@tanstack/react-query';
 
 export type SearchEnvelope = {

@@ -2,10 +2,8 @@ import { generateActivities } from "./mockActivities";
 import { generateInteractions } from "./mockInteractions";
 import { generateIdentities } from "./mockIdentities";
 import { generateWorkspaces } from "./mockWorkspaces";
-import type { IdentityRecord } from "../types/api";
-import type { InteractionActivityRecord } from "../types/api";
-import type { InteractionRecord } from "../types/api";
-import type { Workspace } from "../types/schema";
+import type { IdentityRecord, InteractionActivityRecord, InteractionRecord } from "@resolve/types";
+import type { Workspace } from "@resolve/types";
 import { throttle } from "lodash";
 import { useAppStore } from "../store/useAppStore";
 

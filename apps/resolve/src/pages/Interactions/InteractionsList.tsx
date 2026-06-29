@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { Interaction } from "../../types/schema";
+import type { Interaction } from "@resolve/types";
 import styles from "./Interactions.module.scss";
 import StatusBadge from "../../components/Badges/StatusBadge";
 import IdentifierBadge from "../../components/Badges/IdentifierBadge";

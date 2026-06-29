@@ -1,7 +1,7 @@
 
 import { useQuery } from "@apollo/client";
 import { GET_INTERACTIONS } from "../../graphql/queries/getInteractions";
-import type { InteractionFilters } from "../../types/api";
+import type { InteractionFilters } from "@resolve/types";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 
 export function useInteractionsApollo({

@@ -1,4 +1,4 @@
-import type { Interaction } from "../types/schema";
+import type { Interaction } from "@resolve/types";
 import { useAppStore } from "../store/useAppStore";
 import { useTransitionApollo } from "./apollo/useTransitionApollo";
 import { useTransitionTanStack } from "./tanstack/useTransitionTanStack";

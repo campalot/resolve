@@ -1,6 +1,6 @@
 import { resolveIdentity } from "../../../src/api/mocks/common/resolvers";
 import { getMockDb } from "../../../src/mocks/mockDB";
-import type { InteractionActivityMetadataRecord_Reviewer } from "../../../src/types/api";
+import type { InteractionActivityMetadataRecord_Reviewer } from "@resolve/types";
 
 describe('resolveIdentity', () => {
   const db = getMockDb();

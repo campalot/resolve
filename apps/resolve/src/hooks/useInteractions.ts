@@ -1,7 +1,7 @@
 import { useInteractionsApollo } from './apollo/useInteractionsApollo';
 import { useInteractionsTanStack } from './tanstack/useInteractionsTanStack';
 import { useAppStore } from '../store/useAppStore';
-import type { InteractionFilters } from "../types/api";
+import type { InteractionFilters } from "@resolve/types";
 
 type UseInteractionsProps = {
   filters: InteractionFilters, 

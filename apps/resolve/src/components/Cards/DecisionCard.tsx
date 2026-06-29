@@ -1,7 +1,9 @@
 import type { HTMLAttributes } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import type { InteractionActivity } from "../../types/schema";
-import type { InteractionActivityMetadata_Decision } from "../../types/schema";
+import type {
+  InteractionActivity,
+  InteractionActivityMetadata_Decision,
+} from "@resolve/types";
 import { ActivityCard } from "./ActivityCard";
 import { formatRelative } from "../../helpers";
 import { ICON_MAP } from "../Badges/helpers";

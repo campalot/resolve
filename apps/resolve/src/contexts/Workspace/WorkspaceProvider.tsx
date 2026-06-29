@@ -1,4 +1,4 @@
-import type { Workspace } from "../../types/schema";
+import type { Workspace } from "@resolve/types";
 import { WorkspaceContext } from "./WorkspaceContext";
 
 type WorkspaceProviderProps = {

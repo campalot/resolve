@@ -5,7 +5,7 @@ import { debounce } from "@mui/material/utils";
 import { identityRoute, interactionRoute } from "../../routes/routes";
 import { useWorkspacePath } from "../../hooks/useWorkspacePath";
 import { SearchResultRow } from "./SearchResultRow";
-import type { SearchResult } from "../../types/schema";
+import type { SearchResult } from "@resolve/types";
 import styles from "./MobileSearchPage.module.scss";
 
 export const MobileSearchPage:React.FC = () => {

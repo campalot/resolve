@@ -1,11 +1,11 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import type { Interaction } from "../../types/schema";
+import type { Interaction } from "@resolve/types";
 import { MetadataRow } from "./common/MetadataRow";
-import type { VendorOnboardingData } from "../../types/schema";
-import type { PolicyUpdateData } from "../../types/schema";
-import type { ContractData } from "../../types/schema";
-import type { ProposalData } from "../../types/schema";
+import type { VendorOnboardingData } from "@resolve/types";
+import type { PolicyUpdateData } from "@resolve/types";
+import type { ContractData } from "@resolve/types";
+import type { ProposalData } from "@resolve/types";
 import styles from "./Sidebar/SidebarCard.module.scss";
 import overViewStyles from "./InteractionOverview.module.scss";
 

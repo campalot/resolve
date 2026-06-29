@@ -1,5 +1,5 @@
 import { api } from '../axiosInstance';
-import type { IdentityFilters } from "../../types/api";
+import type { IdentityFilters } from "@resolve/types";
 
 export const getIdentities = async (workspaceId: string, offset: number, limit: number, filters: IdentityFilters, sortBy: string) => {
   try {

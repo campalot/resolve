@@ -1,5 +1,5 @@
 import { api } from '../axiosInstance';
-import type { InteractionFilters } from "../../types/api";
+import type { InteractionFilters } from "@resolve/types";
 
 export const getInteractionActivities = async (workspaceId: string, pageParam: number, limit: number, filters: InteractionFilters) => {
   const { data } = await api.get(`/w/${workspaceId}/activities`, {

@@ -1,4 +1,5 @@
-import type { InteractionState, InteractionAction } from "../../../types/schema";
+import type { InteractionState, InteractionAction } from "@resolve/types";
+
 
 // Workflow related types
 type WorkflowConfig = {

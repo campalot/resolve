@@ -1,4 +1,4 @@
-import type { Workspace } from "../types/schema";
+import type { Workspace } from "@resolve/types";
 import { capitalize } from "../helpers";
 
 const workspaceIds = ["alpha", "beta", "gamma"];

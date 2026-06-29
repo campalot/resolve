@@ -1,9 +1,9 @@
 import { useMutation } from "@apollo/client";
-import { ACTION_TO_STATUS } from "../../types/schema";
+import { ACTION_TO_STATUS } from "@resolve/types";
 import { useToast } from "../../contexts/Toast/ToastContext";
 import { TRANSITION_INTERACTION } from "../../graphql/mutations/transitionInteraction";
 import type { ClientActivity } from "../../pages/InteractionDetail/InteractionActivity";
-import type { Interaction, InteractionActivity, ToastNotification } from "../../types/schema";
+import type { Interaction, InteractionActivity, ToastNotification } from "@resolve/types";
 import { useCurrentUser } from "../useCurrentUser";
 import type { CurrentUser } from "../../contexts/CurrentUser/CurrentUserContext";
 import type { TransitionVariables } from "../../api/mocks/features/transitionhandlers";

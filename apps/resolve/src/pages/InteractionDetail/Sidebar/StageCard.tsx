@@ -4,7 +4,7 @@ import StatusBadge from "../../../components/Badges/StatusBadge";
 import Button from "../../../components/Buttons/Button";
 import { ButtonType } from "../../../components/Buttons/Button";
 import type { ButtonVariant } from "../../../components/Buttons/Button";
-import type { InteractionAction, InteractionState } from "../../../types/schema";
+import type { InteractionAction, InteractionState } from "@resolve/types";
 import type { Role } from "../../../api/cache";
 import styles from "./SidebarCard.module.scss";
 

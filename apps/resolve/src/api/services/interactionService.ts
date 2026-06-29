@@ -3,10 +3,9 @@ import { transitionInteraction as domainLogic } from './logic'; // Your existing
 import type { TransitionVariables } from '../mocks/features/transitionhandlers';
 import { backendLogger } from '../logger';
 import { useAppStore } from '../../store/useAppStore';
-import { ROLE_PERMISSIONS } from "../../types/schema";
+import { ROLE_PERMISSIONS } from "@resolve/types";
 import { resolveIdentity, resolveInteraction, resolveInteractionActivity } from '../mocks/common/resolvers';
-import type { InteractionActivity, ToastNotification } from '../../types/schema';
-import type { IdentityRecord } from "../../types/api";
+import type { IdentityRecord, InteractionActivity, ToastNotification } from '@resolve/types';
 import { buildInteractionToastMessage } from '../../pages/InteractionDetail/buildInteractionMetadata';
 
 export const interactionService = {

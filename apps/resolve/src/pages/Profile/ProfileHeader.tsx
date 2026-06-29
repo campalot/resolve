@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatars/Avatar";
-import type { Identity } from "../../types/schema";
-import type { InteractionActivity } from "../../types/schema";
-import type { InteractionActivityMetadata_Reviewer } from "../../types/schema";
-import type { Interaction } from "../../types/schema";
+import type {
+  Identity,
+  Interaction,
+  InteractionActivity,
+  InteractionActivityMetadata_Reviewer,
+} from "@resolve/types";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 import { useWorkspacePath } from "../../hooks/useWorkspacePath";
 import { identityRoute } from "../../routes/routes";

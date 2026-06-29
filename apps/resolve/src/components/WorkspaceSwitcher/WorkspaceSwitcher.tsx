@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import Button from "../Buttons/Button";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 import { useWorkspacesList } from "../../hooks/useWorkspacesList";
-import type { Workspace } from "../../types/schema";
+import type { Workspace } from "@resolve/types";
 import Avatar from "../Avatars/Avatar";
 import IconCheckmark from "../../assets/checkmark-svgrepo-com.svg?react";
 import { ArrowDropDownIcon } from "@mui/x-date-pickers";

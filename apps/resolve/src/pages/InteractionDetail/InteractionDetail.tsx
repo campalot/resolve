@@ -11,7 +11,7 @@ import { useWorkspacePath } from "../../hooks/useWorkspacePath";
 import { InteractionActivity } from "./InteractionActivity";
 import { InteractionOverview } from "./InteractionOverview";
 import { InteractionSidebar } from "./InteractionSidebar";
-import type { InteractionParty } from "../../types/schema";
+import type { InteractionParty } from "@resolve/types";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 import { Box, Tab, Tabs, Typography } from "@mui/material";
 import Button from "../../components/Buttons/Button";
