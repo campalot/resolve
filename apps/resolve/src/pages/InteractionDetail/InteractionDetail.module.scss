@@ -1,5 +1,4 @@
-@use "../../styles/tokens" as baseTokens;
-@use "./Sidebar/sidebar.tokens" as tokens;
+@use "./Sidebar/sidebar.tokens";
 
 .interaction-detail {
   display: flex;

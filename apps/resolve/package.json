@@ -23,6 +23,7 @@
     "@mui/material": "^7.3.7",
     "@mui/x-date-pickers": "^8.27.0",
     "@resolve/types": "workspace:*",
+    "@resolve/ui": "workspace:*",
     "@tanstack/react-query": "^5.95.2",
     "axios": "^1.13.6",
     "dayjs": "^1.11.19",

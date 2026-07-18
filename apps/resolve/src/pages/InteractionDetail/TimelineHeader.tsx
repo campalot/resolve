@@ -1,6 +1,5 @@
 import React from "react";
 import type { ReactNode } from "react";
-import { StatusBadgeSize } from "../../components/Badges/helpers";
 import styles from "./InteractionActivity.module.scss";
 import type {
   InteractionActivity,
@@ -11,7 +10,8 @@ import type {
   InteractionActivityType,
 } from "@resolve/types";
 import { Typography } from "@mui/material";
-import StatusBadge from "../../components/Badges/StatusBadge";
+import { StatusBadge } from "@resolve/ui";
+import { StatusBadgeSize } from "@resolve/ui";
 
 const activityTemplates: Record<
   InteractionActivityType,

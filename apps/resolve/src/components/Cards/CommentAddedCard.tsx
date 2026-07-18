@@ -7,7 +7,7 @@ import { ActivityCard } from "./ActivityCard";
 import { formatRelative } from "../../helpers";
 import styles from "./CommentAddedCard.module.scss";
 import CommentTextIcon from "../../assets/comment-text-svgrepo-com.svg?react";
-import IdentityBadge from "../Badges/IdentityBadge";
+import IdentityBadge from "../Badges/ResolveIdentityBadge";
 import { useWorkspacePath } from "../../hooks/useWorkspacePath";
 import { interactionRoute } from "../../routes/routes";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import StatusBadge from "../../../components/Badges/StatusBadge";
+import { StatusBadge } from "@resolve/ui";
 import Button from "../../../components/Buttons/Button";
 import { ButtonType } from "../../../components/Buttons/Button";
 import type { ButtonVariant } from "../../../components/Buttons/Button";

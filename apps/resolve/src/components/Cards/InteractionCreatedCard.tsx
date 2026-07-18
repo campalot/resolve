@@ -2,7 +2,7 @@ import type { HTMLAttributes } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import type { InteractionActivity } from "@resolve/types";
 import { ActivityCard } from "./ActivityCard";
-import StatusBadge from "../Badges/StatusBadge";
+import { StatusBadge } from "@resolve/ui";
 import { formatRelative } from "../../helpers";
 import { ICON_MAP } from "../Badges/helpers";
 import { useWorkspacePath } from "../../hooks/useWorkspacePath";
