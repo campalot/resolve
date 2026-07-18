@@ -1,0 +1,32 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.name {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  &.size-xs {
+      font-size: var(--font-size-xs);
+    }
+  &.size-sm {
+    font-size: var(--font-size-sm);
+  }
+  &.size-md {
+    font-size: var(--font-size-md);
+  }
+  &.size-lg {
+    font-size: var(--font-size-lg);
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    .name {
+      text-decoration: underline;
+    }
+  }
+}

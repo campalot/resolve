@@ -1,0 +1,29 @@
+{
+  "name": "@resolve/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles/*": {
+      "sass": "./src/styles/*",
+      "default": "./src/styles/*"
+    }
+  },
+  "dependencies": {
+    "@resolve/types": "workspace:*",
+    "@resolve/utils": "workspace:*",
+    "react": "^18.2.0",
+    "sass": "^1.97.3"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^19.2.5",
+    "globals": "^16.5.0",
+    "jsdom": "^28.1.0",
+    "typescript": "~5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
