@@ -3,7 +3,7 @@ import { INTERACTION_DETAILS } from "../fragments/InteractionDetails"
 
 export const GET_SEARCH_RESULTS = gql`
   query GetSearchResults(
-    $workspaceId: String!
+    $workspaceId: ID!
     $queryString: String!
     $offset: Int!
     $limit: Int!

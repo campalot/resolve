@@ -3,7 +3,7 @@ import { INTERACTION_DETAILS } from "../fragments/InteractionDetails";
 
 export const GET_INTERACTIONS = gql`
   query GetInteractions(
-  $workspaceId: String!
+  $workspaceId: ID!
   $filters: InteractionFilters
   $sortBy: InteractionsSort
   $offset: Int

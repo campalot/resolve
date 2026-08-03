@@ -24,16 +24,29 @@ export const INTERACTION_ACTIVITY_DETAILS = gql`
       }
 
       ... on InteractionActivityMetadata_Reviewer {
-        nextReviewer
+        nextReviewer {
+          role
+          identity {
+            id
+            name
+          }
+        }
       }
       
       ... on InteractionActivityMetadata_Decision {
-        decisionMaker
+        decisionMaker {
+          id
+          name
+        }
         finalStatus
       }
 
       ... on InteractionActivityMetadata_Comment {
         commentExcerpt
+      }
+
+      ... on InteractionActivityMetadata_Created {
+        initialStatus
       }
     }
   }

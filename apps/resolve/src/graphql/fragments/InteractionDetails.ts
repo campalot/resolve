@@ -15,8 +15,14 @@ export const INTERACTION_DETAILS = gql`
     }
     type
     status
-    currentReviewer
-    creator
+    currentReviewer {
+      id
+      name
+    }
+    creator {
+      id
+      name
+    }
     createdAt
     updatedAt
     __typename

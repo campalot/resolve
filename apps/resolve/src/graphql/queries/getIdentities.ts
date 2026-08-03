@@ -22,7 +22,11 @@ export const GET_IDENTITIES = gql`
       name
       type
       status
-      company
+      workspaceId
+      company {
+        id
+        name
+      }
       avatarUrl
       stats {
         total

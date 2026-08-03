@@ -21,7 +21,13 @@ export const GET_PROFILE = gql`
     workspaceId: $workspaceId,
     identityId: $identityId
   ) {
-    ...InteractionDetails
+    results {
+      ...InteractionDetails
+    }
+    pageInfo {
+      total
+      hasMore
+    }
   }
 
   activities(
