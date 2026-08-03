@@ -6,6 +6,9 @@
     { "path": "./apps/storybook" },
     { "path": "./packages/ui" },
     { "path": "./packages/utils" },
-    { "path": "./packages/types" }
+    { "path": "./packages/types" },
+    { "path": "./packages/mock-db" },
+    { "path": "./packages/domain" },
+    { "path": "./packages/logger" }
   ]
 }

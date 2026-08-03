@@ -18,7 +18,7 @@ import Button from "../../components/Buttons/Button";
 import { ButtonType } from "../../components/Buttons/Button";
 import { useCurrentUser } from "../../hooks/useCurrentUser";
 import { useTransitionInteraction } from "../../hooks/useTransitionInteraction";
-import { TRANSITION_METADATA } from "./buildInteractionMetadata";
+import { TRANSITION_METADATA } from "@resolve/domain";
 import styles from "./InteractionDetail.module.scss";
 import { InteractionDetailSkeleton } from "./InteractionDetailSkeleton";
 
@@ -155,7 +155,6 @@ export const InteractionDetail: React.FC = () => {
   const { interaction, loading, error, hasId } = useInteraction(
     interactionId || "",
   );
-
   const { mutate: transition } = useTransitionInteraction(interaction);
 
   const workspacePath = useWorkspacePath();

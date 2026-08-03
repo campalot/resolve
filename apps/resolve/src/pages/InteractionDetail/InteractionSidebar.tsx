@@ -7,7 +7,7 @@ import { ResponsibilityCard } from "./Sidebar/ResponsibilityCard";
 import { ParticipantsCard } from "./Sidebar/ParticipantsCard";
 import { LifecycleCard } from "./Sidebar/LifecycleCard";
 import { ActivityCard } from "./Sidebar/ActivityCard";
-import { buildInteractionMetadata } from "./buildInteractionMetadata";
+import { buildInteractionMetadata } from "@resolve/domain";
 import { useInteractionActivities } from "../../hooks/useInteractionActivities";
 import type { Role } from "../../api/cache";
 

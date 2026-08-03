@@ -13,7 +13,10 @@
     "paths": {
       "@resolve/ui": ["packages/ui/src"],
       "@resolve/types": ["packages/types/src"],
-      "@resolve/utils": ["packages/utils/src"]
+      "@resolve/utils": ["packages/utils/src"],
+      "@resolve/mock-db": ["packages/mock-db/src"],
+      "@resolve/domain": ["packages/domain/src"],
+      "@resolve/logger": ["packages/logger/src"]
     }
   }
 }

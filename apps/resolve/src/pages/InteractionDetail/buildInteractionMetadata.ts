@@ -1,5 +1,4 @@
 import type { Interaction } from "@resolve/types";
-import { ButtonType } from "../../components/Buttons/Button";
 import { groupBy } from "../../helpers";
 
 const STAGE_CONFIG: Record<InteractionStage, { label: string }> = {
@@ -14,6 +13,12 @@ export type InteractionStage =
   | "IN_REVIEW"
   | "APPROVED"
   | "REJECTED";
+
+export type ActionIntent =
+  | "primary"
+  | "secondary"
+  | "destructive"
+  | "text";
 
 export type InteractionMetadataViewModel = {
   stage: {
@@ -150,29 +155,29 @@ export function buildInteractionToastMessage(
   return message;
 }
 
-export const TRANSITION_METADATA: Record<string, { title: string; body: string; confirmLabel: string; type: (typeof ButtonType)[keyof typeof ButtonType] }> = {
+export const TRANSITION_METADATA: Record<string, { title: string; body: string; confirmLabel: string; type: ActionIntent }> = {
   SUBMIT: { 
     title: "Submit for Review", 
     body: "This will lock the interaction and notify the assigned reviewer.", 
     confirmLabel: "Submit", 
-    type: ButtonType.Primary 
+    type: "primary" 
   },
   APPROVE: { 
     title: "Approve Interaction", 
     body: "This will move the interaction to the Finalized state.", 
     confirmLabel: "Approve", 
-    type: ButtonType.Primary 
+    type: "primary" 
   },
   REJECT: { 
     title: "Reject Interaction", 
     body: "This will move the interaction to the Rejected state, from which it can be resubmitted. Please ensure feedback has been provided.", 
     confirmLabel: "Reject", 
-    type: ButtonType.Destructive 
+    type: "destructive" 
   },
   RESUBMIT: { 
     title: "Resubmit for Review", 
     body: "Send the updated interaction back to the reviewer.", 
     confirmLabel: "Resubmit", 
-    type: ButtonType.Primary 
+    type: "primary" 
   },
 };
