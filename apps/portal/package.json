@@ -9,11 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.4.0",
     "@resolve/types": "workspace:*",
     "@resolve/ui": "workspace:*",
+    "@resolve/mock-db": "workspace:*",
+    "axios": "^1.13.6",
     "next": "16.2.10",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-hook-form": "^7.82.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
