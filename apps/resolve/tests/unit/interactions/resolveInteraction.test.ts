@@ -1,9 +1,9 @@
-import { getPermittedActions } from "../../../src/api/mocks/common/resolvers";
-import { resolveInteraction } from "../../../src/api/mocks/common/resolvers";
-import { getMockDb } from "../../../src/mocks/mockDB";
+import { getPermittedActions } from "@resolve/domain";
+import { resolveInteraction } from "@resolve/domain";
+import { generateMockDb } from "@resolve/mock-db";
 
 describe('resolveInteraction', () => {
-  const db = getMockDb();
+  const db = generateMockDb();
 
   const mockDb = {
     ...db,

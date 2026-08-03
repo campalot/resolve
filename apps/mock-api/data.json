@@ -4637,11 +4637,11 @@
           "role": "Partner"
         }
       ],
-      "status": "DRAFT",
-      "updatedAt": "6/26/2026, 6:34:11 PM",
+      "status": "IN_REVIEW",
+      "updatedAt": "2026-08-03T17:33:16.239Z",
       "createdAt": "6/26/2026, 6:34:11 PM",
       "creatorId": "person-elijah-miller-alpha",
-      "currentReviewerId": null,
+      "currentReviewerId": "person-anna-foster-alpha",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
@@ -6620,12 +6620,12 @@
           "role": "Buyer"
         }
       ],
-      "status": "DRAFT",
-      "updatedAt": "6/12/2026, 12:13:40 PM",
+      "status": "IN_REVIEW",
+      "updatedAt": "2026-08-03T17:34:30.207Z",
       "createdAt": "6/12/2026, 12:13:40 PM",
       "creatorId": "person-ethan-harris-alpha",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "currentReviewerId": null
+      "currentReviewerId": "person-anna-foster-alpha"
     },
     {
       "id": "alpha_4wb8q6oy",
@@ -6705,12 +6705,12 @@
           "role": "Buyer"
         }
       ],
-      "status": "DRAFT",
-      "updatedAt": "6/21/2026, 3:59:27 AM",
+      "status": "IN_REVIEW",
+      "updatedAt": "2026-08-03T17:34:23.772Z",
       "createdAt": "6/21/2026, 3:59:27 AM",
       "creatorId": "person-aaron-alvarez-alpha",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "currentReviewerId": null
+      "currentReviewerId": "person-aaron-alvarez-alpha"
     },
     {
       "id": "alpha_tbxihu3p",
@@ -8373,11 +8373,11 @@
           "role": "Buyer"
         }
       ],
-      "status": "DRAFT",
-      "updatedAt": "6/25/2026, 8:37:32 AM",
+      "status": "IN_REVIEW",
+      "updatedAt": "2026-08-03T17:33:22.520Z",
       "createdAt": "6/25/2026, 8:37:32 AM",
       "creatorId": "person-zara-cook-alpha",
-      "currentReviewerId": null,
+      "currentReviewerId": "person-zara-cook-alpha",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
@@ -20034,6 +20034,134 @@
     }
   ],
   "interactionActivities": [
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-1e7f4bba-b1e6-4aa9-8430-c2045de8d7c9",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_vgejdate",
+      "interactionTitle": "Proposal – $104,967",
+      "type": "STATUS_CHANGED",
+      "occurredAt": "2026-08-03T17:34:30.207Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Status",
+        "previousStatus": "DRAFT",
+        "newStatus": "IN_REVIEW"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-1407cdff-a813-466e-bb86-d5a703cc2f40",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_vgejdate",
+      "interactionTitle": "Proposal – $104,967",
+      "type": "REVIEWER_ASSIGNED",
+      "occurredAt": "2026-08-03T17:34:30.207Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadataRecord_Reviewer",
+        "nextReviewer": {
+          "identityId": "person-anna-foster-alpha",
+          "role": "Seller"
+        }
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-afff546b-de2b-4a01-a3f7-fd871b5efbde",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_477dtfi2",
+      "interactionTitle": "Proposal – $163,497",
+      "type": "STATUS_CHANGED",
+      "occurredAt": "2026-08-03T17:34:23.772Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Status",
+        "previousStatus": "DRAFT",
+        "newStatus": "IN_REVIEW"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-83e5a732-31a5-4ecf-99b8-8d5c306f5517",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_477dtfi2",
+      "interactionTitle": "Proposal – $163,497",
+      "type": "REVIEWER_ASSIGNED",
+      "occurredAt": "2026-08-03T17:34:23.772Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadataRecord_Reviewer",
+        "nextReviewer": {
+          "identityId": "person-anna-foster-alpha",
+          "role": "Partner"
+        }
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-ec742557-90b3-458e-98fc-b557cc0fe5df",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_51g7vntp",
+      "interactionTitle": "Proposal – $35,630",
+      "type": "STATUS_CHANGED",
+      "occurredAt": "2026-08-03T17:33:22.520Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Status",
+        "previousStatus": "DRAFT",
+        "newStatus": "IN_REVIEW"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-3217e5c0-e9c1-4ab0-a852-854090632cff",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_51g7vntp",
+      "interactionTitle": "Proposal – $35,630",
+      "type": "REVIEWER_ASSIGNED",
+      "occurredAt": "2026-08-03T17:33:22.520Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadataRecord_Reviewer",
+        "nextReviewer": {
+          "identityId": "person-anna-foster-alpha",
+          "role": "Buyer"
+        }
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-da7cc8f5-47b1-4e05-9919-67f34e3e275d",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_dadxose5",
+      "interactionTitle": "Policy Update – HR",
+      "type": "STATUS_CHANGED",
+      "occurredAt": "2026-08-03T17:33:16.239Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Status",
+        "previousStatus": "DRAFT",
+        "newStatus": "IN_REVIEW"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-d85d49c1-e249-4f5b-bb66-f62a75603ea1",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_dadxose5",
+      "interactionTitle": "Policy Update – HR",
+      "type": "REVIEWER_ASSIGNED",
+      "occurredAt": "2026-08-03T17:33:16.239Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadataRecord_Reviewer",
+        "nextReviewer": {
+          "identityId": "person-anna-foster-alpha",
+          "role": "Seller"
+        }
+      }
+    },
     {
       "__typename": "InteractionActivityRecord",
       "id": "activity-8f94cfef-0c3d-459a-a4cc-05d8453ae81e",

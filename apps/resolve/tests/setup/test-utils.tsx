@@ -9,7 +9,6 @@ import { client } from "../../src/api/mockApolloClient";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useAppStore } from "../../src/store/useAppStore";
 import { workspaceKeys, referenceKeys } from "../../src/hooks/queryKeys";
-import { getMockDb, resetMockDb } from "../../src/mocks/mockDB";
 import { GET_WORKSPACES } from "../../src/graphql/queries/getWorkspaces";
 
 interface LocationStateProps {
@@ -62,16 +61,19 @@ export function renderWithRouter(
     },
   });
 
+  const testWorkspaces = [
+    { id: "alpha", name: "Alpha Workspace" },
+    { id: "beta", name: "Beta Workspace" },
+  ];
+
   // Pre-fill the "Workspaces" query so the boundary doesn't crash or redirect
   queryClient.setQueryData(workspaceKeys.all, {
-    workspaces: [
-      { id: "alpha", name: "Alpha Workspace" },
-      { id: "beta", name: "Beta Workspace" },
-    ],
+    workspaces: testWorkspaces,
   });
   client.writeQuery({
     query: GET_WORKSPACES,
-    data: { workspaces: getMockDb().workspaces },
+    // data: { workspaces: getMockDb().workspaces },
+    data: { workspaces: testWorkspaces },
   });
   queryClient.setQueryData(referenceKeys.interactions("alpha"), {
     parties: [], // or mock parties
@@ -83,15 +85,6 @@ export function renderWithRouter(
       "VENDOR_ONBOARDING",
     ],
   });
-
-  resetMockDb();
-  const db = getMockDb();
-
-  // Force the specific IDs test expects
-  if (db.workspaces.length > 0) {
-    db.workspaces[0].id = "alpha";
-    db.workspaces[0].name = "Alpha Workspace";
-  }
 
   const result = render(
     <ToastProvider>

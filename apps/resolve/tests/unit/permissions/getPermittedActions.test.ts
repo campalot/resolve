@@ -1,4 +1,4 @@
-import { getPermittedActions } from "../../../src/api/mocks/common/resolvers";
+import { getPermittedActions} from "@resolve/domain";
 
 describe('getPermittedActions', () => {
   it('returns correct actions for ADMIN in DRAFT state', () => {

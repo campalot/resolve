@@ -1,4 +1,4 @@
-import { screen, within, fireEvent } from "@testing-library/react";
+import { screen, within, fireEvent, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { renderWithRouter } from "../setup/test-utils";
 import AppRoutes from "../../src/routes/AppRoutes";
@@ -47,13 +47,12 @@ describe("Interaction workflow", () => {
     // Use fireEvent for a single, non-simulated click to avoid double-events
     fireEvent.click(submitBtn);
 
-    // After clicking submit in the dialog:
-    // Status should update
-    await screen.findByTestId("interaction-status");
-
-    expect(screen.getByTestId("interaction-status")).toHaveTextContent(
-      /in review/i,
-    );
+    // Periodically re-evaluate the assertion until the backend responds
+    await waitFor(() => {
+      expect(screen.getByTestId("interaction-status")).toHaveTextContent(
+        /in review/i,
+      );
+    });
 
     // Navigate to dashboard
     await user.click(screen.getByRole("link", { name: /activity/i }));
