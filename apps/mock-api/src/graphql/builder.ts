@@ -1,0 +1,70 @@
+import SchemaBuilder from '@pothos/core';
+import type { 
+    Identity, 
+    Interaction, 
+    Workspace, 
+    ToastNotification, 
+    ProposalData, 
+    ContractData, 
+    VendorOnboardingData,
+    PolicyUpdateData,
+    InteractionActivity,
+    InteractionActivityMetadata_Status,
+    InteractionActivityMetadata_Reviewer,
+    InteractionActivityMetadata_Comment,
+    InteractionActivityMetadata_Decision,
+    InteractionActivityMetadata_Created,
+} from '@resolve/types';
+
+// Declare the layout structure explicitly as a standalone type
+type PothosConfig = {
+  Objects: {
+    Identity: Identity;
+    Interaction: Interaction;
+    ToastNotification: ToastNotification;
+
+    ProposalData: ProposalData;
+    ContractData: ContractData;
+    VendorOnboardingData: VendorOnboardingData;
+    PolicyUpdateData: PolicyUpdateData;
+
+    InteractionActivity: InteractionActivity;
+    InteractionActivityMetadata_Status: InteractionActivityMetadata_Status;
+    InteractionActivityMetadata_Reviewer: InteractionActivityMetadata_Reviewer;
+    InteractionActivityMetadata_Comment: InteractionActivityMetadata_Comment;
+    InteractionActivityMetadata_Decision: InteractionActivityMetadata_Decision;
+    InteractionActivityMetadata_Created: InteractionActivityMetadata_Created;
+    // Map your custom relation sub-shapes too
+    InteractionParty: {
+      role: string;
+      identity: Identity;
+    };
+    Workspace: Workspace;
+    // Tells Pothos that this string corresponds to a generic connection object
+    IdentitiesConnection: {
+      results: Identity[];
+      pageInfo: {
+        total: number;
+        hasMore: boolean;
+      };
+    };
+    InteractionsConnection: {
+      results: Interaction[];
+      pageInfo: {
+        total: number;
+        hasMore: boolean;
+      };
+    };
+    ActivitiesConnection: {
+      results: InteractionActivity[];
+      pageInfo: { 
+        total: number; 
+        hasMore: boolean 
+      };
+    };
+  };
+};
+
+
+// Enforce that "Identity" strictly maps to your shared TypeScript interface
+export const builder = new SchemaBuilder<PothosConfig>({});

@@ -1,0 +1,19 @@
+{
+    "name": "mock-api",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "tsx --watch server.ts"
+    },
+    "dependencies": {
+        "@fastify/cors": "^11.3.0",
+        "@pothos/core": "^4.13.1",
+        "@resolve/domain": "workspace:*",
+        "@resolve/mock-db": "workspace:*",
+        "@resolve/types": "workspace:*",
+        "fastify": "^5.10.0",
+        "graphql": "^16.14.2",
+        "mercurius": "^16.10.0"
+    }
+}
