@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import Popover from "@mui/material/Popover";
@@ -8,20 +8,33 @@ import { identityRoute } from "../../routes/routes";
 import IconSettings from "../../assets/settings-svgrepo-com.svg?react";
 import IconProfile from "../../assets/profile-svgrepo-com.svg?react";
 import IconSignOut from "../../assets/sign-out-2-svgrepo-com.svg?react";
-import { getMockDb } from "../../mocks/mockDB";
 import { useCurrentUser } from "../../hooks/useCurrentUser";
 import { useWorkspacePath } from "../../hooks/useWorkspacePath";
-import styles from "./UserMenu.module.scss"
+import { useIdentities } from "../../hooks/useIdentitiies";
+import styles from "./UserMenu.module.scss";
+import type { IdentityRecord } from "@resolve/types";
 
 export const UserMenu: React.FC = () => {
   const [anchor, setAnchor] = useState<HTMLElement | null>(null);
   const currentUser = useCurrentUser();
   const workspacePath = useWorkspacePath();
-  const mockDb = getMockDb();
-  const currentUserIdentity = mockDb.identities.find((i) => i.id === currentUser.id);
+  const { identities } = useIdentities({
+    filters: {
+      type: ["Individual"],
+    },
+    page: 1,
+    pageSize: 80,
+  });
+
+  const currentUserIdentity = useMemo(
+    () => {
+      return identities.find((i: IdentityRecord) => i.id === currentUser?.id);
+    },
+    [identities, currentUser],
+  );
   
   if (!currentUserIdentity) {
-    throw new Error("current user nout found");
+    return null;
   }
 
   const open = Boolean(anchor);

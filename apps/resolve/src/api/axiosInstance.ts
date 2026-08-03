@@ -1,10 +1,13 @@
 import axios from 'axios';
+import { useAppStore } from '../store/useAppStore';
 
 const isTest = import.meta.env.MODE === 'test';
+const currentRole = useAppStore.getState().activeRole;
 
 export const api = axios.create({
   // Use absolute URL for Node/Vitest, relative for Browser
-  baseURL: isTest ? 'http://localhost:3000/api' : '/api',
+  //baseURL: isTest ? 'http://localhost:3000/api' : '/api',
+  baseURL: 'http://localhost:3001/api',
   paramsSerializer: {
     indexes: null, // Global fix for all the filter objects. This prevents the [] brackets in the URL
   },
@@ -16,6 +19,7 @@ export const api = axios.create({
 api.interceptors.request.use((config) => {
   config.params = {
     ...config.params,
+    role: currentRole,
     strategy: 'REST',
   };
   return config;

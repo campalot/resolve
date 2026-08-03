@@ -1,15 +1,50 @@
-import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
+import { ApolloClient, InMemoryCache, HttpLink, ApolloLink } from "@apollo/client";
 import type { InteractionState } from "@resolve/types";
 import { activeRoleVar } from "./cache";
-import { getPermittedActions } from "./mocks/common/resolvers";
+import { getPermittedActions } from "@resolve/domain";
 
 // This tells Apollo: "Send all GQL queries to this local path"
 const httpLink = new HttpLink({
-  uri: ({ operationName }) => `/graphql?op=${operationName}`,
+  // uri: ({ operationName }) => `/graphql?op=${operationName}`,
+  uri: ({ operationName }) => `http://localhost:3001/graphql?op=${operationName}`,
 });
+
+// const liveHttpLink = new HttpLink({
+//   // uri: ({ operationName }) => `/graphql?op=${operationName}`,
+//   uri: ({ operationName }) => `http://localhost:3001/graphql?op=${operationName}`,
+// });
+
+// 2. Custom Routing Link (The Fail-Safe Guardrail)
+// const protocolRoutingLink = new ApolloLink((operation, forward) => {
+//   // const operationName = operation.operationName;
+
+//   // Route to Fastify ONLY if the user is testing the Identities list flow
+//   // if (
+//   //   operationName === 'GetIdentities' || 
+//   //   operationName === 'GetWorkspaces' || 
+//   //   operationName === 'GetInteractions' || 
+//   //   operationName === 'GetInteraction' || 
+//   //   operationName === 'TransitionInteraction' || 
+//   //   operationName === 'GetInteractionActivities' || 
+//   //   operationName === 'GetProfile' ||
+//   //   operationName === 'GetSearchResults' ||
+//   //   operationName === 'InteractionsReferenceData'
+//   // ) {
+//   //   return liveHttpLink.request(operation);
+//   // }
+
+//   // Fall back to your existing setup (like MSW or local memory) for other pages
+//   // return forward(operation);
+//  // return httpLink.request(operation);
+
+//   return liveHttpLink.request(operation);
+// });
+
+
 
 export const client = new ApolloClient({
   link: httpLink,
+  // link: protocolRoutingLink,
   cache: new InMemoryCache({
     canonizeResults: false, // Turn this off to prevent the timeout
     typePolicies: {

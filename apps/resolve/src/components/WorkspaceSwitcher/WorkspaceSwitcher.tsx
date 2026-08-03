@@ -25,6 +25,10 @@ export const WorkspaceSwitcher: React.FC = () => {
   const currentUser = useCurrentUser();
   const { workspaces } = useWorkspacesList();
 
+  if (!currentUser) {
+    return null;
+  }
+
   const open = Boolean(anchor);
 
   const handleOpen = (e: React.MouseEvent<HTMLButtonElement>) => {

@@ -15,7 +15,8 @@ export function useProfileApollo({ identityId, skip = false }: {identityId?: str
 
   return {
     identity: data?.identity ?? null,
-    interactions: data?.interactions ?? [],
+    // interactions: data?.interactions ?? [],
+    interactions: data?.interactions?.results ?? [],
     activities: data?.activities ?? [],
     loading,
     error,

@@ -16,7 +16,6 @@ import { DevCrashTrigger } from "./components/Development/DevCrashTrigger";
 import { useAppStore } from "./store/useAppStore";
 import { AppError } from "./pages/ErrorPages/AppError";
 import { activeRoleVar } from "./api/cache";
-import { ensureMsw } from "./api/mswManager";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,8 +42,10 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const handleFocus = async () => {
-      await ensureMsw();
       await queryClient.refetchQueries({ type: "active" });
+      await client.refetchQueries({
+        include: "active",
+      });
     };
 
     window.addEventListener("focus", handleFocus);

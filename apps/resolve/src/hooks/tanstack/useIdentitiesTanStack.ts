@@ -28,8 +28,10 @@ export function useIdentitiesTanStack({
   });
 
   return {
-    identities: data?.identities?.results ?? [],
-    total: data?.identities?.pageInfo?.total ?? 0,
+    // identities: data?.identities?.results ?? [],
+    // total: data?.identities?.pageInfo?.total ?? 0,
+    identities: data?.results ?? [],
+    total: data?.pageInfo?.total ?? 0,
     loading: isLoading,
     isRefetching: isFetching,
     // matches previous logic for 'isSorting' or 'isFiltering'

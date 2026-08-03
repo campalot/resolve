@@ -22,10 +22,12 @@ export function useInteractionsTanStack({ filters, sortBy = "recent", page = 1, 
   });
 
   return {
-    interactions: data?.interactions?.results ?? [],
+    //interactions: data?.interactions?.results ?? [],
+    interactions: data?.results ?? [],
     loading: isLoading,
     isRefetching: isFetching, // Like notifyOnNetworkStatusChange
     error,
-    total: data?.interactions?.pageInfo?.total ?? 0,
+    //total: data?.interactions?.pageInfo?.total ?? 0,
+    total: data?.pageInfo?.total ?? 0,
   };
 }
