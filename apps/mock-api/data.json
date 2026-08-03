@@ -20025,14 +20025,47 @@
           "role": "Buyer"
         }
       ],
-      "status": "DRAFT",
-      "updatedAt": "2026-08-03T02:52:43.080Z",
+      "status": "IN_REVIEW",
+      "updatedAt": "2026-08-03T15:57:58.225Z",
       "createdAt": "2026-08-03T02:52:43.080Z",
       "creatorId": "person-elijah-miller-gamma",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "currentReviewerId": "person-maya-chavez-alpha"
     }
   ],
   "interactionActivities": [
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-8f94cfef-0c3d-459a-a4cc-05d8453ae81e",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_id2udoi2",
+      "interactionTitle": "ALEX Policy Update – Security",
+      "type": "STATUS_CHANGED",
+      "occurredAt": "2026-08-03T15:57:58.225Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Status",
+        "previousStatus": "DRAFT",
+        "newStatus": "IN_REVIEW"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-cdf770ac-c63a-49a4-8e22-149b2daa0567",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_id2udoi2",
+      "interactionTitle": "ALEX Policy Update – Security",
+      "type": "REVIEWER_ASSIGNED",
+      "occurredAt": "2026-08-03T15:57:58.225Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadataRecord_Reviewer",
+        "nextReviewer": {
+          "identityId": "person-anna-foster-alpha",
+          "role": "Seller"
+        }
+      }
+    },
     {
       "__typename": "InteractionActivityRecord",
       "id": "activity-d6309b52-02e0-403e-b79d-080fd3f3eaf7",

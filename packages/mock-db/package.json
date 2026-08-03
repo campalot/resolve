@@ -1,0 +1,19 @@
+{
+  "name": "@resolve/mock-db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./browser": "./src/storage/BrowserStorage.ts",
+    "./node": "./src/storage/NodeStorage.ts"
+  },
+  "dependencies": {
+    "@resolve/types": "workspace:*",
+    "@resolve/utils": "workspace:*",
+    "lodash": "^4.17.23"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.24"
+  }
+}
