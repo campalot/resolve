@@ -1,9 +1,13 @@
 import React, { useEffect } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { useAppStore } from "../../store/useAppStore";
 import type { Role } from "../../api/cache";
 import styles from "./DevOverlay.module.scss";
 import type { DataStrategy } from "../../store/useAppStore";
 import IconClose from "../../assets/icon-close.svg?react";
+import { BrowserStorage } from "@resolve/mock-db/browser";
+import { api } from "../../api/axiosInstance";
+import { client } from "../../api/mockApolloClient";
 
 export const DevOverlay: React.FC = () => {
   const {
@@ -20,14 +24,18 @@ export const DevOverlay: React.FC = () => {
 
   const [isOpen, setIsOpen] = React.useState(false);
   const [showMiniBar, setShowMiniBar] = React.useState(true);
+  const queryClient = useQueryClient();
 
   const handleRoleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setRole(e.target.value as Role);
   };
 
-  const handleReset = () => {
+  const handleReset = async () => {
     if (window.confirm("Wipe local data and reset to factory defaults?")) {
-      localStorage.removeItem("RESOLVE_DEMO_DB");
+      BrowserStorage.clear();
+      await api.post("/dev/reset");
+      queryClient.clear();
+      client.clearStore();
       window.location.reload(); // Hard reload to re-seed
     }
   };
