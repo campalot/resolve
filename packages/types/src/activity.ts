@@ -55,6 +55,7 @@ export type InteractionActivityMetadata_Comment = {
 
 export type InteractionActivityMetadata_Created = {
   __typename?: "InteractionActivityMetadata_Created";
+  initialStatus: InteractionState;
 };
 
 export type InteractionActivityMetadata_Decision = {

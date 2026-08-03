@@ -72,7 +72,12 @@ export type InteractionRecord = {
   description?: string;
 };
 
-export type InteractionsSort = "recent" | "oldest" | "created";
+export enum InteractionsSort {
+  Recent = "recent",
+  Oldest = "oldest",
+  Created = "created",
+}
+
 export type InteractionFilters = {
   status?: string[];
   identityId?: string;

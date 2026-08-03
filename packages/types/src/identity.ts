@@ -22,7 +22,13 @@ export type IdentityFilters = {
   searchText?: string;
   companyId?: string;
 };
-export type IdentitySort = "name" | "interactions" | "active" | "recent";
+
+export enum IdentitySort {
+  Name = "name",
+  Interactions = "interactions",
+  Active = "active",
+  Recent = "recent",
+}
 
 export type IdentityType = "Company" | "Individual";
 
