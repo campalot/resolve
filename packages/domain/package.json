@@ -1,0 +1,15 @@
+{
+  "name": "@resolve/domain",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@resolve/types": "workspace:*",
+    "@resolve/mock-db": "workspace:*",
+    "@resolve/utils": "workspace:*",
+    "@resolve/logger": "workspace:*"
+  }
+}
