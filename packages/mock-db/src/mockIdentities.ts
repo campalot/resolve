@@ -75,10 +75,10 @@ const women = ["Olivia Johnson", "Amelia Brown", "Charlotte Garcia", "Sophia Dav
 
 // Arrays contain AI generated photos for representing fictional names above 
 const mLength = 20;
-const menPics = Array.from({ length: mLength }, (_, i) => `/images/man${String(i + 1).padStart(2, '0')}.jpeg`);
+const menPics = Array.from({ length: mLength }, (_, i) => `man${String(i + 1).padStart(2, '0')}`);
 
 const wLength = 20;
-const womenPics = Array.from({ length: wLength }, (_, i) => `/images/woman${String(i + 1).padStart(2, '0')}.jpeg`);
+const womenPics = Array.from({ length: wLength }, (_, i) => `woman${String(i + 1).padStart(2, '0')}`);
 
 // 1. Helper outside the function (Standard Fisher-Yates)
 function shuffle<T>(array: T[]): T[] {
@@ -130,10 +130,10 @@ function generatePeople(
     const slug = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
     
     // 50% chance for a photo
-    let avatarUrl = "";
+    let avatarKey = "";
     if (Math.random() > 0.5) {
       const picPool = gender === 'man' ? mPics : wPics;
-      avatarUrl = picPool.pop() || ""; 
+      avatarKey = picPool.pop() || "";
     }
 
     return {
@@ -146,7 +146,7 @@ function generatePeople(
       companyId,
       country: "US",
       createdAt: new Date(Date.now() - Math.floor(Math.random() * 10000000000)).toISOString(),
-      avatarUrl,
+      avatarKey
     };
   }).filter(Boolean) as IdentityRecord[]; // Clean up any nulls if we ran out of names
 }

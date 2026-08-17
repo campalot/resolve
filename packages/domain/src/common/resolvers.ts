@@ -19,6 +19,7 @@ import {
 } from "@resolve/types";
 // import { getMockDb } from "../../../mocks/mockDB";
 import { getMockDb } from "@resolve/mock-db";
+import { ASSET_BASE_URL } from "./constants";
 // import { useAppStore } from '../../../store/useAppStore';
 
 type IdentityStats = {
@@ -191,14 +192,19 @@ export function resolveIdentity(
   }): Identity & { stats: IdentityStats} {
   const mockDb = options?.db ?? getMockDb();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { companyId, ...resolvedIdentity } =  {
+  const { companyId, avatarKey, ...resolvedIdentity } =  {
     ...identity,
     __typename: "Identity" as const,
     company: mockDb.identities.find((id: IdentityRecord) => id.id === identity.companyId),
     stats: resolveIdentityStats(identity.workspaceId, identity.id, { db: mockDb }),
   };
 
-  return resolvedIdentity;
+  return {
+    ...resolvedIdentity,
+    avatarUrl: avatarKey
+      ? `${ASSET_BASE_URL}/images/avatars/${avatarKey}.jpeg`
+      : undefined,
+  };
 }
 
 export function resolveInteraction(

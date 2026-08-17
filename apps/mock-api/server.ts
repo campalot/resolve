@@ -1,13 +1,15 @@
 import Fastify from 'fastify';
+import fastifyCors from '@fastify/cors';
+import fastifyStatic from '@fastify/static';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { identityService, interactionService, interactionsListService, activitiesService, searchService } from '@resolve/domain';
 import { getMockDb, configureStorage, persistDb, initializeMockDb, resetMockDb } from '@resolve/mock-db';
 import { NodeStorage } from "@resolve/mock-db/node";
 import mercurius from 'mercurius'; // Import the official package
 import { schema } from './src/graphql'; 
 
-const cors = import('@fastify/cors');
 const fs = import('fs/promises');
-const path = import('path');
 
 
 async function start() {
@@ -15,15 +17,29 @@ async function start() {
     configureStorage(NodeStorage);
     await initializeMockDb();
 
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
     const fastify = Fastify({ logger: true });
 
+    const sharedAssetsPath = path.resolve(
+    __dirname, 
+    'public/images/avatars/'
+    );
+
+    fastify.register(fastifyStatic, {
+        root: sharedAssetsPath,
+        prefix: '/images/avatars/', // Matches the URL other apps use
+    });
+
     // Register CORS so different frontend ports can hit this API
-    fastify.register(cors, {
+    fastify.register(fastifyCors, {
     origin: (origin, cb) => {
         // Allow all local dev origins (e.g., http://localhost:3000, http://localhost:4000)
         cb(null, true); 
     }
     });
+
 
     // Register mercurius to mount the /graphql endpoint
     fastify.register(mercurius, {
@@ -196,21 +212,69 @@ async function start() {
         return { interaction: data };
     }),
 
-    fastify.get(
-        "/api/w/:workspaceId/interactions/policy-update/new",
+    fastify.post(
+        "/api/w/:workspaceId/interactions/new/policy-update",
         async (request) => {
-
-
+            const workspaceId = request.params.workspaceId;
             const db = getMockDb();
             const identities = db.identities;
-            const newInteraction = await interactionService.generatePolicyUpdate("alpha", identities, request.query);
+            const { newInteraction, newActivities } = await interactionService.generateNewInteraction(workspaceId, identities, request.body);
 
             db.interactions.push(newInteraction);
+            db.interactionActivities.unshift(...newActivities);
             persistDb(db);
-            return newInteraction;
+            return { newInteraction, newActivities };
             // Simulate API submission or Server Action
             // await new Promise((resolve) => setTimeout(resolve, 1000));
             // alert("Policy update generated successfully!");
+
+        }
+    );
+
+    fastify.post(
+        "/api/w/:workspaceId/interactions/new/vendor-onboarding",
+        async (request) => {
+            const workspaceId = request.params.workspaceId;
+            const db = getMockDb();
+            const identities = db.identities;
+            const { newInteraction, newActivities } = await interactionService.generateNewInteraction(workspaceId, identities, request.body);
+
+            db.interactions.push(newInteraction);
+            db.interactionActivities.unshift(...newActivities);
+            persistDb(db);
+            return { newInteraction, newActivities };
+
+        }
+    );
+
+    fastify.post(
+        "/api/w/:workspaceId/interactions/new/contract",
+        async (request) => {
+            const workspaceId = request.params.workspaceId;
+            const db = getMockDb();
+            const identities = db.identities;
+            const { newInteraction, newActivities } = await interactionService.generateNewInteraction(workspaceId, identities, request.body);
+
+            db.interactions.push(newInteraction);
+            db.interactionActivities.unshift(...newActivities);
+            persistDb(db);
+            return { newInteraction, newActivities };
+
+        }
+    );
+
+    fastify.post(
+        "/api/w/:workspaceId/interactions/new/proposal",
+        async (request) => {
+            const workspaceId = request.params.workspaceId;
+            const db = getMockDb();
+            const identities = db.identities;
+            const { newInteraction, newActivities } = await interactionService.generateNewInteraction(workspaceId, identities, request.body);
+
+            db.interactions.push(newInteraction);
+            db.interactionActivities.unshift(...newActivities);
+            persistDb(db);
+            return { newInteraction, newActivities };
 
         }
     );

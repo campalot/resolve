@@ -5,7 +5,7 @@ export type IdentityRecord = {
   name: string;
   type: IdentityType;
   status: IdentityStatus;
-  avatarUrl?: string;
+  avatarKey?: string;
 
   // Optional metadata (keep minimal)
   industry?: string;

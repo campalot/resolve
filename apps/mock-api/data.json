@@ -410,7 +410,7 @@
       "companyId": "company-5117bab3-2aa1-4663-b9f0-8a44ab3d9f61",
       "country": "US",
       "createdAt": "2026-06-30T05:04:55.218Z",
-      "avatarUrl": "/images/man02.jpeg"
+      "avatarKey": "man02"
     },
     {
       "id": "person-chloe-ramirez-alpha",
@@ -422,7 +422,7 @@
       "companyId": "company-5117bab3-2aa1-4663-b9f0-8a44ab3d9f61",
       "country": "US",
       "createdAt": "2026-06-20T05:05:44.532Z",
-      "avatarUrl": "/images/woman09.jpeg"
+      "avatarKey": "woman09"
     },
     {
       "id": "person-paisley-patel-alpha",
@@ -434,7 +434,7 @@
       "companyId": "company-27b14857-c096-4bb0-97e5-f6f209bc91a6",
       "country": "US",
       "createdAt": "2026-05-24T03:15:25.381Z",
-      "avatarUrl": "/images/woman18.jpeg"
+      "avatarKey": "woman18"
     },
     {
       "id": "person-zoe-adams-alpha",
@@ -446,7 +446,7 @@
       "companyId": "company-27b14857-c096-4bb0-97e5-f6f209bc91a6",
       "country": "US",
       "createdAt": "2026-04-18T00:39:42.594Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-eli-myers-alpha",
@@ -458,7 +458,7 @@
       "companyId": "company-27b14857-c096-4bb0-97e5-f6f209bc91a6",
       "country": "US",
       "createdAt": "2026-06-17T07:29:29.510Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-ava-martinez-alpha",
@@ -470,7 +470,7 @@
       "companyId": "company-32ab6c34-1b46-4227-94b5-ea367e1db70f",
       "country": "US",
       "createdAt": "2026-07-24T08:45:40.907Z",
-      "avatarUrl": "/images/woman13.jpeg"
+      "avatarKey": "woman13"
     },
     {
       "id": "person-hudson-ramos-alpha",
@@ -482,7 +482,7 @@
       "companyId": "company-32ab6c34-1b46-4227-94b5-ea367e1db70f",
       "country": "US",
       "createdAt": "2026-04-26T15:18:49.853Z",
-      "avatarUrl": "/images/man01.jpeg"
+      "avatarKey": "man01"
     },
     {
       "id": "person-carter-evans-alpha",
@@ -494,7 +494,7 @@
       "companyId": "company-82ea113e-8571-4e8d-a6be-0c1dea86d89b",
       "country": "US",
       "createdAt": "2026-06-04T00:16:29.787Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-noah-williams-alpha",
@@ -506,7 +506,7 @@
       "companyId": "company-82ea113e-8571-4e8d-a6be-0c1dea86d89b",
       "country": "US",
       "createdAt": "2026-04-14T08:07:57.334Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-stella-rivera-alpha",
@@ -518,7 +518,7 @@
       "companyId": "company-82ea113e-8571-4e8d-a6be-0c1dea86d89b",
       "country": "US",
       "createdAt": "2026-04-12T13:34:11.202Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-theodore-hall-alpha",
@@ -530,7 +530,7 @@
       "companyId": "company-4de0d94f-145f-4a4d-9264-9053a206f5ad",
       "country": "US",
       "createdAt": "2026-07-19T17:49:56.667Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-jackson-allen-alpha",
@@ -542,7 +542,7 @@
       "companyId": "company-4de0d94f-145f-4a4d-9264-9053a206f5ad",
       "country": "US",
       "createdAt": "2026-07-07T10:21:18.004Z",
-      "avatarUrl": "/images/man05.jpeg"
+      "avatarKey": "man05"
     },
     {
       "id": "person-jack-green-alpha",
@@ -554,7 +554,7 @@
       "companyId": "company-e54286cc-ddb7-492f-b06b-5186d9a900a9",
       "country": "US",
       "createdAt": "2026-06-09T14:19:48.952Z",
-      "avatarUrl": "/images/man13.jpeg"
+      "avatarKey": "man13"
     },
     {
       "id": "person-elijah-miller-alpha",
@@ -566,7 +566,7 @@
       "companyId": "company-e54286cc-ddb7-492f-b06b-5186d9a900a9",
       "country": "US",
       "createdAt": "2026-06-04T10:06:29.394Z",
-      "avatarUrl": "/images/man17.jpeg"
+      "avatarKey": "man17"
     },
     {
       "id": "person-mia-wilson-alpha",
@@ -578,7 +578,7 @@
       "companyId": "company-e1117fd5-f6ee-4135-bb16-059a928f91b1",
       "country": "US",
       "createdAt": "2026-05-01T18:17:11.099Z",
-      "avatarUrl": "/images/woman03.jpeg"
+      "avatarKey": "woman03"
     },
     {
       "id": "person-ella-perez-alpha",
@@ -590,7 +590,7 @@
       "companyId": "company-a4fd8031-cfd9-4231-933e-ed2f958981d2",
       "country": "US",
       "createdAt": "2026-06-18T14:59:25.043Z",
-      "avatarUrl": "/images/woman02.jpeg"
+      "avatarKey": "woman02"
     },
     {
       "id": "person-leo-hughes-alpha",
@@ -602,7 +602,7 @@
       "companyId": "company-a4fd8031-cfd9-4231-933e-ed2f958981d2",
       "country": "US",
       "createdAt": "2026-04-16T02:38:49.063Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-layla-king-alpha",
@@ -614,7 +614,7 @@
       "companyId": "company-df206088-c44b-4f61-b42e-3dec0427d27a",
       "country": "US",
       "createdAt": "2026-07-19T20:39:12.506Z",
-      "avatarUrl": "/images/woman01.jpeg"
+      "avatarKey": "woman01"
     },
     {
       "id": "person-charlotte-garcia-alpha",
@@ -626,7 +626,7 @@
       "companyId": "company-b16f4822-dd0f-458c-8137-926477b66f90",
       "country": "US",
       "createdAt": "2026-06-30T16:53:10.042Z",
-      "avatarUrl": "/images/woman19.jpeg"
+      "avatarKey": "woman19"
     },
     {
       "id": "person-isabelle-ward-alpha",
@@ -638,7 +638,7 @@
       "companyId": "company-b16f4822-dd0f-458c-8137-926477b66f90",
       "country": "US",
       "createdAt": "2026-07-30T06:05:24.490Z",
-      "avatarUrl": "/images/woman15.jpeg"
+      "avatarKey": "woman15"
     },
     {
       "id": "person-oliver-jones-alpha",
@@ -650,7 +650,7 @@
       "companyId": "company-b16f4822-dd0f-458c-8137-926477b66f90",
       "country": "US",
       "createdAt": "2026-07-19T10:38:28.169Z",
-      "avatarUrl": "/images/man18.jpeg"
+      "avatarKey": "man18"
     },
     {
       "id": "person-michael-thompson-alpha",
@@ -662,7 +662,7 @@
       "companyId": "company-0aece637-8e86-42a2-849a-d75a8fde7fed",
       "country": "US",
       "createdAt": "2026-05-20T11:57:41.954Z",
-      "avatarUrl": "/images/man14.jpeg"
+      "avatarKey": "man14"
     },
     {
       "id": "person-scarlett-robinson-alpha",
@@ -674,7 +674,7 @@
       "companyId": "company-0aece637-8e86-42a2-849a-d75a8fde7fed",
       "country": "US",
       "createdAt": "2026-07-08T11:34:42.435Z",
-      "avatarUrl": "/images/woman06.jpeg"
+      "avatarKey": "woman06"
     },
     {
       "id": "person-anthony-diaz-alpha",
@@ -686,7 +686,7 @@
       "companyId": "company-3fbd1470-e0d3-45d6-b619-8dc9e4015eed",
       "country": "US",
       "createdAt": "2026-06-21T02:14:35.314Z",
-      "avatarUrl": "/images/man11.jpeg"
+      "avatarKey": "man11"
     },
     {
       "id": "person-lucas-anderson-alpha",
@@ -698,7 +698,7 @@
       "companyId": "company-4d4f85aa-48de-4c41-9ec6-6c788cfdc7ab",
       "country": "US",
       "createdAt": "2026-05-13T18:12:43.374Z",
-      "avatarUrl": "/images/man16.jpeg"
+      "avatarKey": "man16"
     },
     {
       "id": "person-sebastian-torres-alpha",
@@ -710,7 +710,7 @@
       "companyId": "company-518fbb01-830b-41fb-afe0-6531e4a709a0",
       "country": "US",
       "createdAt": "2026-04-14T18:16:45.326Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-ian-cox-alpha",
@@ -722,7 +722,7 @@
       "companyId": "company-518fbb01-830b-41fb-afe0-6531e4a709a0",
       "country": "US",
       "createdAt": "2026-06-04T04:52:14.078Z",
-      "avatarUrl": "/images/man03.jpeg"
+      "avatarKey": "man03"
     },
     {
       "id": "person-james-rodriguez-alpha",
@@ -734,7 +734,7 @@
       "companyId": "company-7bb29650-715c-4b0a-a5cd-4e7d6c2b50e4",
       "country": "US",
       "createdAt": "2026-04-14T03:08:24.589Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-luna-martin-alpha",
@@ -746,7 +746,7 @@
       "companyId": "company-7bb29650-715c-4b0a-a5cd-4e7d6c2b50e4",
       "country": "US",
       "createdAt": "2026-07-08T18:10:22.583Z",
-      "avatarUrl": "/images/woman05.jpeg"
+      "avatarKey": "woman05"
     },
     {
       "id": "person-victoria-morales-alpha",
@@ -758,7 +758,7 @@
       "companyId": "company-7bb29650-715c-4b0a-a5cd-4e7d6c2b50e4",
       "country": "US",
       "createdAt": "2026-07-26T17:54:34.249Z",
-      "avatarUrl": "/images/woman11.jpeg"
+      "avatarKey": "woman11"
     },
     {
       "id": "person-hannah-edwards-alpha",
@@ -770,7 +770,7 @@
       "companyId": "company-d9c41fa8-e0b6-4112-8069-008c34ed6c6e",
       "country": "US",
       "createdAt": "2026-07-27T08:56:19.393Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-benjamin-gonzalez-alpha",
@@ -782,7 +782,7 @@
       "companyId": "company-d9c41fa8-e0b6-4112-8069-008c34ed6c6e",
       "country": "US",
       "createdAt": "2026-06-07T21:04:23.092Z",
-      "avatarUrl": "/images/man06.jpeg"
+      "avatarKey": "man06"
     },
     {
       "id": "person-penelope-young-alpha",
@@ -794,7 +794,7 @@
       "companyId": "company-13554269-3993-485f-a7b4-bc43ee623e06",
       "country": "US",
       "createdAt": "2026-07-06T15:14:58.895Z",
-      "avatarUrl": "/images/woman07.jpeg"
+      "avatarKey": "woman07"
     },
     {
       "id": "person-maverick-bailey-alpha",
@@ -806,7 +806,7 @@
       "companyId": "company-13554269-3993-485f-a7b4-bc43ee623e06",
       "country": "US",
       "createdAt": "2026-05-19T13:19:42.424Z",
-      "avatarUrl": "/images/man19.jpeg"
+      "avatarKey": "man19"
     },
     {
       "id": "person-skylar-price-alpha",
@@ -818,7 +818,7 @@
       "companyId": "company-5a5250a5-2013-445d-9c15-1240d07019e6",
       "country": "US",
       "createdAt": "2026-06-24T13:53:24.719Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-aria-sanchez-alpha",
@@ -830,7 +830,7 @@
       "companyId": "company-5a5250a5-2013-445d-9c15-1240d07019e6",
       "country": "US",
       "createdAt": "2026-07-14T16:17:36.887Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-luke-kelly-alpha",
@@ -842,7 +842,7 @@
       "companyId": "company-5a5250a5-2013-445d-9c15-1240d07019e6",
       "country": "US",
       "createdAt": "2026-07-21T17:51:04.007Z",
-      "avatarUrl": "/images/man15.jpeg"
+      "avatarKey": "man15"
     },
     {
       "id": "person-samuel-carter-alpha",
@@ -854,7 +854,7 @@
       "companyId": "company-48f3aab4-9a34-4f3c-9347-d3a22b92f531",
       "country": "US",
       "createdAt": "2026-06-19T16:29:26.484Z",
-      "avatarUrl": "/images/man04.jpeg"
+      "avatarKey": "man04"
     },
     {
       "id": "person-natalie-watson-alpha",
@@ -866,7 +866,7 @@
       "companyId": "company-48f3aab4-9a34-4f3c-9347-d3a22b92f531",
       "country": "US",
       "createdAt": "2026-04-09T18:35:33.994Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-nolan-jimenez-alpha",
@@ -878,7 +878,7 @@
       "companyId": "company-3320f3ee-a005-4535-890e-5b6e8a294e5e",
       "country": "US",
       "createdAt": "2026-07-12T06:15:10.651Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-aiden-campbell-alpha",
@@ -890,7 +890,7 @@
       "companyId": "company-10130c27-f1aa-47c2-a3a0-c76d270b9c40",
       "country": "US",
       "createdAt": "2026-05-13T10:52:53.649Z",
-      "avatarUrl": "/images/man10.jpeg"
+      "avatarKey": "man10"
     },
     {
       "id": "person-bella-ruiz-alpha",
@@ -902,7 +902,7 @@
       "companyId": "company-7cab1229-fa0b-46a2-91a9-a51c5c3de060",
       "country": "US",
       "createdAt": "2026-06-15T17:00:37.059Z",
-      "avatarUrl": "/images/woman17.jpeg"
+      "avatarKey": "woman17"
     },
     {
       "id": "person-aaron-alvarez-alpha",
@@ -914,7 +914,7 @@
       "companyId": "company-a7676c55-6be1-437f-ae22-d60a6779ea64",
       "country": "US",
       "createdAt": "2026-05-04T12:59:15.278Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-amelia-brown-alpha",
@@ -926,7 +926,7 @@
       "companyId": "company-376e5a90-5766-45d4-9ebd-c01acd6e1df7",
       "country": "US",
       "createdAt": "2026-05-20T19:36:39.562Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-alexander-jackson-alpha",
@@ -938,7 +938,7 @@
       "companyId": "company-376e5a90-5766-45d4-9ebd-c01acd6e1df7",
       "country": "US",
       "createdAt": "2026-07-14T16:11:43.843Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-isabella-lopez-alpha",
@@ -950,7 +950,7 @@
       "companyId": "company-5aae6d1e-149e-49ac-9f2b-64e132ff0b8e",
       "country": "US",
       "createdAt": "2026-06-24T03:48:13.133Z",
-      "avatarUrl": "/images/woman20.jpeg"
+      "avatarKey": "woman20"
     },
     {
       "id": "person-riley-baker-alpha",
@@ -962,7 +962,7 @@
       "companyId": "company-d941a7c7-4432-4e23-be20-e17e85e3c0ea",
       "country": "US",
       "createdAt": "2026-07-30T07:25:03.668Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-violet-roberts-alpha",
@@ -974,7 +974,7 @@
       "companyId": "company-d941a7c7-4432-4e23-be20-e17e85e3c0ea",
       "country": "US",
       "createdAt": "2026-05-03T09:56:06.966Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-jacob-lewis-alpha",
@@ -986,7 +986,7 @@
       "companyId": "company-0437b5e5-268c-46eb-a4f7-65e3557fa793",
       "country": "US",
       "createdAt": "2026-05-26T00:41:11.601Z",
-      "avatarUrl": "/images/man07.jpeg"
+      "avatarKey": "man07"
     },
     {
       "id": "person-nathan-richardson-alpha",
@@ -998,7 +998,7 @@
       "companyId": "company-0437b5e5-268c-46eb-a4f7-65e3557fa793",
       "country": "US",
       "createdAt": "2026-06-18T05:43:39.237Z",
-      "avatarUrl": "/images/man08.jpeg"
+      "avatarKey": "man08"
     },
     {
       "id": "person-daniel-clark-alpha",
@@ -1010,7 +1010,7 @@
       "companyId": "company-0437b5e5-268c-46eb-a4f7-65e3557fa793",
       "country": "US",
       "createdAt": "2026-05-24T07:07:15.767Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-aurora-phillips-alpha",
@@ -1022,7 +1022,7 @@
       "companyId": "company-10b5a0fe-17d1-466f-abe2-4b1f01f8a61e",
       "country": "US",
       "createdAt": "2026-05-02T01:41:51.857Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-lincoln-bennett-alpha",
@@ -1034,7 +1034,7 @@
       "companyId": "company-10b5a0fe-17d1-466f-abe2-4b1f01f8a61e",
       "country": "US",
       "createdAt": "2026-05-17T03:11:45.557Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-joshua-mendoza-alpha",
@@ -1046,7 +1046,7 @@
       "companyId": "company-10b5a0fe-17d1-466f-abe2-4b1f01f8a61e",
       "country": "US",
       "createdAt": "2026-05-31T13:57:51.817Z",
-      "avatarUrl": "/images/man20.jpeg"
+      "avatarKey": "man20"
     },
     {
       "id": "person-grace-turner-alpha",
@@ -1058,7 +1058,7 @@
       "companyId": "company-022698b5-1992-4787-820e-6240e470eaf9",
       "country": "US",
       "createdAt": "2026-06-16T22:52:11.204Z",
-      "avatarUrl": "/images/woman04.jpeg"
+      "avatarKey": "woman04"
     },
     {
       "id": "person-thomas-murphy-alpha",
@@ -1070,7 +1070,7 @@
       "companyId": "company-de343576-db04-4624-8732-758fae1a2200",
       "country": "US",
       "createdAt": "2026-07-01T07:26:07.491Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-gabriel-gomez-alpha",
@@ -1082,7 +1082,7 @@
       "companyId": "company-de343576-db04-4624-8732-758fae1a2200",
       "country": "US",
       "createdAt": "2026-07-27T09:36:45.836Z",
-      "avatarUrl": "/images/man09.jpeg"
+      "avatarKey": "man09"
     },
     {
       "id": "person-dylan-collins-alpha",
@@ -1094,7 +1094,7 @@
       "companyId": "company-0c1c3a25-4489-4ba2-89ce-3272111a079d",
       "country": "US",
       "createdAt": "2026-05-16T18:15:04.904Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-caroline-powell-alpha",
@@ -1106,7 +1106,7 @@
       "companyId": "company-0c1c3a25-4489-4ba2-89ce-3272111a079d",
       "country": "US",
       "createdAt": "2026-07-13T23:46:15.952Z",
-      "avatarUrl": "/images/woman16.jpeg"
+      "avatarKey": "woman16"
     },
     {
       "id": "person-leilani-peterson-alpha",
@@ -1118,7 +1118,7 @@
       "companyId": "company-0c1c3a25-4489-4ba2-89ce-3272111a079d",
       "country": "US",
       "createdAt": "2026-05-17T02:09:53.939Z",
-      "avatarUrl": "/images/woman12.jpeg"
+      "avatarKey": "woman12"
     },
     {
       "id": "person-roman-sanders-alpha",
@@ -1130,7 +1130,7 @@
       "companyId": "company-97b17513-c305-48d1-9f7a-d1c34a40b493",
       "country": "US",
       "createdAt": "2026-04-18T09:02:25.198Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-henry-taylor-alpha",
@@ -1142,7 +1142,7 @@
       "companyId": "company-97b17513-c305-48d1-9f7a-d1c34a40b493",
       "country": "US",
       "createdAt": "2026-07-24T10:17:55.382Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-christopher-ortiz-alpha",
@@ -1154,7 +1154,7 @@
       "companyId": "company-97b17513-c305-48d1-9f7a-d1c34a40b493",
       "country": "US",
       "createdAt": "2026-04-21T13:32:16.570Z",
-      "avatarUrl": "/images/man12.jpeg"
+      "avatarKey": "man12"
     },
     {
       "id": "person-ethan-harris-alpha",
@@ -1166,7 +1166,7 @@
       "companyId": "company-bc6912d5-0a12-4b67-9fc4-37b949175b5a",
       "country": "US",
       "createdAt": "2026-07-14T14:05:00.001Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-maya-chavez-alpha",
@@ -1178,7 +1178,7 @@
       "companyId": "company-2c3bdc6d-53be-4cc8-a4df-748cda49f4f7",
       "country": "US",
       "createdAt": "2026-06-10T03:21:38.593Z",
-      "avatarUrl": "/images/woman08.jpeg"
+      "avatarKey": "woman08"
     },
     {
       "id": "person-anna-foster-alpha",
@@ -1190,7 +1190,7 @@
       "companyId": "company-2c3bdc6d-53be-4cc8-a4df-748cda49f4f7",
       "country": "US",
       "createdAt": "2026-07-20T06:42:20.843Z",
-      "avatarUrl": "/images/woman14.jpeg"
+      "avatarKey": "woman14"
     },
     {
       "id": "person-levi-wright-alpha",
@@ -1202,7 +1202,7 @@
       "companyId": "company-5674c891-c648-482f-a67e-9fa72e80bc26",
       "country": "US",
       "createdAt": "2026-05-07T01:18:32.115Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-piper-morgan-alpha",
@@ -1214,7 +1214,7 @@
       "companyId": "company-5674c891-c648-482f-a67e-9fa72e80bc26",
       "country": "US",
       "createdAt": "2026-07-29T06:13:50.693Z",
-      "avatarUrl": "/images/woman10.jpeg"
+      "avatarKey": "woman10"
     },
     {
       "id": "person-harper-moore-alpha",
@@ -1226,7 +1226,7 @@
       "companyId": "company-5674c891-c648-482f-a67e-9fa72e80bc26",
       "country": "US",
       "createdAt": "2026-07-11T04:12:44.104Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-zara-cook-alpha",
@@ -1238,7 +1238,7 @@
       "companyId": "company-d79abc50-918d-40eb-b592-b3731fb3554b",
       "country": "US",
       "createdAt": "2026-06-19T20:38:39.249Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-ezra-morris-alpha",
@@ -1250,7 +1250,7 @@
       "companyId": "company-0e1f0b7c-d110-4442-9ee8-c93f406f1197",
       "country": "US",
       "createdAt": "2026-06-20T21:12:36.001Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-isaac-cruz-alpha",
@@ -1262,7 +1262,7 @@
       "companyId": "company-619cc85b-b17d-46fe-9d84-fb3b131a1243",
       "country": "US",
       "createdAt": "2026-05-15T19:48:10.976Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-naomi-howard-alpha",
@@ -1274,7 +1274,7 @@
       "companyId": "company-619cc85b-b17d-46fe-9d84-fb3b131a1243",
       "country": "US",
       "createdAt": "2026-07-28T23:54:40.960Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-andrew-wood-alpha",
@@ -1286,7 +1286,7 @@
       "companyId": "company-619cc85b-b17d-46fe-9d84-fb3b131a1243",
       "country": "US",
       "createdAt": "2026-05-03T13:30:28.060Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-charles-rogers-alpha",
@@ -1298,7 +1298,7 @@
       "companyId": "company-4d3131d8-bda2-4e5d-be25-3f63e3a94915",
       "country": "US",
       "createdAt": "2026-07-05T06:27:47.654Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-william-hernandez-alpha",
@@ -1310,7 +1310,7 @@
       "companyId": "company-4d3131d8-bda2-4e5d-be25-3f63e3a94915",
       "country": "US",
       "createdAt": "2026-07-10T01:31:13.549Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-hazel-flores-alpha",
@@ -1322,7 +1322,7 @@
       "companyId": "company-4d3131d8-bda2-4e5d-be25-3f63e3a94915",
       "country": "US",
       "createdAt": "2026-07-13T17:34:04.385Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-logan-walker-alpha",
@@ -1334,7 +1334,7 @@
       "companyId": "company-dd37459a-9648-42eb-b127-9af407290023",
       "country": "US",
       "createdAt": "2026-05-11T05:22:56.558Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-sophia-davis-alpha",
@@ -1346,7 +1346,7 @@
       "companyId": "company-dd37459a-9648-42eb-b127-9af407290023",
       "country": "US",
       "createdAt": "2026-07-24T19:11:20.005Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-olivia-johnson-alpha",
@@ -1358,7 +1358,7 @@
       "companyId": "company-dd37459a-9648-42eb-b127-9af407290023",
       "country": "US",
       "createdAt": "2026-07-16T13:12:57.075Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "company-2e9a09f0-942c-47cc-a8ac-c652503de4d8",
@@ -1770,7 +1770,7 @@
       "companyId": "company-2e9a09f0-942c-47cc-a8ac-c652503de4d8",
       "country": "US",
       "createdAt": "2026-05-30T23:11:42.067Z",
-      "avatarUrl": "/images/man07.jpeg"
+      "avatarKey": "man07"
     },
     {
       "id": "person-victoria-morales-beta",
@@ -1782,7 +1782,7 @@
       "companyId": "company-2e9a09f0-942c-47cc-a8ac-c652503de4d8",
       "country": "US",
       "createdAt": "2026-04-09T06:00:24.266Z",
-      "avatarUrl": "/images/woman03.jpeg"
+      "avatarKey": "woman03"
     },
     {
       "id": "person-jaxon-cooper-beta",
@@ -1794,7 +1794,7 @@
       "companyId": "company-2e9a09f0-942c-47cc-a8ac-c652503de4d8",
       "country": "US",
       "createdAt": "2026-04-27T09:45:41.145Z",
-      "avatarUrl": "/images/man09.jpeg"
+      "avatarKey": "man09"
     },
     {
       "id": "person-paisley-patel-beta",
@@ -1806,7 +1806,7 @@
       "companyId": "company-430d8283-4bee-4ced-9bfa-7d65e785ad66",
       "country": "US",
       "createdAt": "2026-06-10T12:51:53.807Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-zoe-adams-beta",
@@ -1818,7 +1818,7 @@
       "companyId": "company-f3f7b8df-2e1a-4432-adf0-1455227c4f13",
       "country": "US",
       "createdAt": "2026-04-29T13:07:20.044Z",
-      "avatarUrl": "/images/woman09.jpeg"
+      "avatarKey": "woman09"
     },
     {
       "id": "person-henry-taylor-beta",
@@ -1830,7 +1830,7 @@
       "companyId": "company-f3f7b8df-2e1a-4432-adf0-1455227c4f13",
       "country": "US",
       "createdAt": "2026-04-17T14:25:38.826Z",
-      "avatarUrl": "/images/man02.jpeg"
+      "avatarKey": "man02"
     },
     {
       "id": "person-addison-kim-beta",
@@ -1842,7 +1842,7 @@
       "companyId": "company-f3f7b8df-2e1a-4432-adf0-1455227c4f13",
       "country": "US",
       "createdAt": "2026-05-21T17:52:55.552Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-mason-lee-beta",
@@ -1854,7 +1854,7 @@
       "companyId": "company-ce871323-cc07-4fa4-92ab-cdcb9b8481cc",
       "country": "US",
       "createdAt": "2026-05-11T20:25:21.123Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-owen-nelson-beta",
@@ -1866,7 +1866,7 @@
       "companyId": "company-ce871323-cc07-4fa4-92ab-cdcb9b8481cc",
       "country": "US",
       "createdAt": "2026-06-17T06:21:10.029Z",
-      "avatarUrl": "/images/man20.jpeg"
+      "avatarKey": "man20"
     },
     {
       "id": "person-sebastian-torres-beta",
@@ -1878,7 +1878,7 @@
       "companyId": "company-ce871323-cc07-4fa4-92ab-cdcb9b8481cc",
       "country": "US",
       "createdAt": "2026-06-29T03:49:00.248Z",
-      "avatarUrl": "/images/man10.jpeg"
+      "avatarKey": "man10"
     },
     {
       "id": "person-skylar-price-beta",
@@ -1890,7 +1890,7 @@
       "companyId": "company-36a804e2-0d71-4ebb-aace-a4d3c3bf3dbb",
       "country": "US",
       "createdAt": "2026-06-24T12:21:46.744Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-ryan-ross-beta",
@@ -1902,7 +1902,7 @@
       "companyId": "company-36a804e2-0d71-4ebb-aace-a4d3c3bf3dbb",
       "country": "US",
       "createdAt": "2026-04-13T22:33:20.213Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-anthony-diaz-beta",
@@ -1914,7 +1914,7 @@
       "companyId": "company-8984f34d-8140-4477-9b45-6f72b378b990",
       "country": "US",
       "createdAt": "2026-07-10T09:51:50.372Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-eli-myers-beta",
@@ -1926,7 +1926,7 @@
       "companyId": "company-8d85a133-e427-43aa-b8cc-17b53a87503a",
       "country": "US",
       "createdAt": "2026-07-28T06:06:15.844Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-jackson-allen-beta",
@@ -1938,7 +1938,7 @@
       "companyId": "company-c397febf-c77f-416a-8513-c92046a62cae",
       "country": "US",
       "createdAt": "2026-06-10T19:39:57.561Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-benjamin-gonzalez-beta",
@@ -1950,7 +1950,7 @@
       "companyId": "company-c397febf-c77f-416a-8513-c92046a62cae",
       "country": "US",
       "createdAt": "2026-04-27T19:43:04.263Z",
-      "avatarUrl": "/images/man18.jpeg"
+      "avatarKey": "man18"
     },
     {
       "id": "person-ava-martinez-beta",
@@ -1962,7 +1962,7 @@
       "companyId": "company-c397febf-c77f-416a-8513-c92046a62cae",
       "country": "US",
       "createdAt": "2026-04-28T09:17:51.393Z",
-      "avatarUrl": "/images/woman14.jpeg"
+      "avatarKey": "woman14"
     },
     {
       "id": "person-penelope-young-beta",
@@ -1974,7 +1974,7 @@
       "companyId": "company-29255cbc-5694-4336-a972-374021fcd397",
       "country": "US",
       "createdAt": "2026-06-26T20:00:47.622Z",
-      "avatarUrl": "/images/woman16.jpeg"
+      "avatarKey": "woman16"
     },
     {
       "id": "person-leo-hughes-beta",
@@ -1986,7 +1986,7 @@
       "companyId": "company-29255cbc-5694-4336-a972-374021fcd397",
       "country": "US",
       "createdAt": "2026-05-25T04:15:40.350Z",
-      "avatarUrl": "/images/man04.jpeg"
+      "avatarKey": "man04"
     },
     {
       "id": "person-samuel-carter-beta",
@@ -1998,7 +1998,7 @@
       "companyId": "company-c4d0cd25-5d87-4294-b872-7f413ae37241",
       "country": "US",
       "createdAt": "2026-04-19T12:04:50.281Z",
-      "avatarUrl": "/images/man08.jpeg"
+      "avatarKey": "man08"
     },
     {
       "id": "person-luna-martin-beta",
@@ -2010,7 +2010,7 @@
       "companyId": "company-c4d0cd25-5d87-4294-b872-7f413ae37241",
       "country": "US",
       "createdAt": "2026-06-02T14:23:23.790Z",
-      "avatarUrl": "/images/woman11.jpeg"
+      "avatarKey": "woman11"
     },
     {
       "id": "person-lucas-anderson-beta",
@@ -2022,7 +2022,7 @@
       "companyId": "company-c4d0cd25-5d87-4294-b872-7f413ae37241",
       "country": "US",
       "createdAt": "2026-04-10T03:34:33.896Z",
-      "avatarUrl": "/images/man13.jpeg"
+      "avatarKey": "man13"
     },
     {
       "id": "person-mateo-hill-beta",
@@ -2034,7 +2034,7 @@
       "companyId": "company-3bfe93a7-29e3-4b89-bd87-6542dafce068",
       "country": "US",
       "createdAt": "2026-07-05T10:21:13.569Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-olivia-johnson-beta",
@@ -2046,7 +2046,7 @@
       "companyId": "company-3f6d3e3c-3905-4c15-a06e-4a3bc80b2563",
       "country": "US",
       "createdAt": "2026-08-01T08:59:07.357Z",
-      "avatarUrl": "/images/woman17.jpeg"
+      "avatarKey": "woman17"
     },
     {
       "id": "person-ian-cox-beta",
@@ -2058,7 +2058,7 @@
       "companyId": "company-3f6d3e3c-3905-4c15-a06e-4a3bc80b2563",
       "country": "US",
       "createdAt": "2026-07-30T23:37:01.161Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-jack-green-beta",
@@ -2070,7 +2070,7 @@
       "companyId": "company-3f6d3e3c-3905-4c15-a06e-4a3bc80b2563",
       "country": "US",
       "createdAt": "2026-07-01T16:17:22.123Z",
-      "avatarUrl": "/images/man03.jpeg"
+      "avatarKey": "man03"
     },
     {
       "id": "person-isaac-cruz-beta",
@@ -2082,7 +2082,7 @@
       "companyId": "company-ebd9cc91-45f2-49c7-9d31-5c0519a79e75",
       "country": "US",
       "createdAt": "2026-07-01T14:26:07.331Z",
-      "avatarUrl": "/images/man05.jpeg"
+      "avatarKey": "man05"
     },
     {
       "id": "person-thomas-murphy-beta",
@@ -2094,7 +2094,7 @@
       "companyId": "company-ebd9cc91-45f2-49c7-9d31-5c0519a79e75",
       "country": "US",
       "createdAt": "2026-07-02T17:12:03.179Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-gianna-white-beta",
@@ -2106,7 +2106,7 @@
       "companyId": "company-ebd9cc91-45f2-49c7-9d31-5c0519a79e75",
       "country": "US",
       "createdAt": "2026-06-17T06:16:59.478Z",
-      "avatarUrl": "/images/woman01.jpeg"
+      "avatarKey": "woman01"
     },
     {
       "id": "person-jacob-lewis-beta",
@@ -2118,7 +2118,7 @@
       "companyId": "company-35167f9c-9c2f-4331-b0f1-1e91d4b4ecc2",
       "country": "US",
       "createdAt": "2026-06-17T06:08:30.054Z",
-      "avatarUrl": "/images/man11.jpeg"
+      "avatarKey": "man11"
     },
     {
       "id": "person-hudson-ramos-beta",
@@ -2130,7 +2130,7 @@
       "companyId": "company-35167f9c-9c2f-4331-b0f1-1e91d4b4ecc2",
       "country": "US",
       "createdAt": "2026-05-30T09:27:27.470Z",
-      "avatarUrl": "/images/man14.jpeg"
+      "avatarKey": "man14"
     },
     {
       "id": "person-mia-wilson-beta",
@@ -2142,7 +2142,7 @@
       "companyId": "company-35167f9c-9c2f-4331-b0f1-1e91d4b4ecc2",
       "country": "US",
       "createdAt": "2026-07-30T11:42:04.233Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-nolan-jimenez-beta",
@@ -2154,7 +2154,7 @@
       "companyId": "company-37ba0a57-546f-4e8f-9d00-885ce2ec059c",
       "country": "US",
       "createdAt": "2026-05-07T20:57:56.210Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-nora-nguyen-beta",
@@ -2166,7 +2166,7 @@
       "companyId": "company-37ba0a57-546f-4e8f-9d00-885ce2ec059c",
       "country": "US",
       "createdAt": "2026-07-24T05:50:42.093Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-lincoln-bennett-beta",
@@ -2178,7 +2178,7 @@
       "companyId": "company-d40f78d7-dd4f-469a-8d21-102b22fa4a54",
       "country": "US",
       "createdAt": "2026-07-23T16:49:33.116Z",
-      "avatarUrl": "/images/man06.jpeg"
+      "avatarKey": "man06"
     },
     {
       "id": "person-maya-chavez-beta",
@@ -2190,7 +2190,7 @@
       "companyId": "company-5d935755-62db-482d-8703-a3b14cb84ffd",
       "country": "US",
       "createdAt": "2026-06-15T07:59:52.604Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-chloe-ramirez-beta",
@@ -2202,7 +2202,7 @@
       "companyId": "company-5d935755-62db-482d-8703-a3b14cb84ffd",
       "country": "US",
       "createdAt": "2026-04-30T13:27:13.642Z",
-      "avatarUrl": "/images/woman08.jpeg"
+      "avatarKey": "woman08"
     },
     {
       "id": "person-isabelle-ward-beta",
@@ -2214,7 +2214,7 @@
       "companyId": "company-5d935755-62db-482d-8703-a3b14cb84ffd",
       "country": "US",
       "createdAt": "2026-05-14T18:51:17.730Z",
-      "avatarUrl": "/images/woman10.jpeg"
+      "avatarKey": "woman10"
     },
     {
       "id": "person-dylan-collins-beta",
@@ -2226,7 +2226,7 @@
       "companyId": "company-7e2444bd-f6ae-4397-9a0e-dfd1cfaf681d",
       "country": "US",
       "createdAt": "2026-07-30T13:49:40.046Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-maverick-bailey-beta",
@@ -2238,7 +2238,7 @@
       "companyId": "company-ef590b2e-5666-4577-9871-23549ec09657",
       "country": "US",
       "createdAt": "2026-07-23T04:22:22.677Z",
-      "avatarUrl": "/images/man01.jpeg"
+      "avatarKey": "man01"
     },
     {
       "id": "person-ella-perez-beta",
@@ -2250,7 +2250,7 @@
       "companyId": "company-ef590b2e-5666-4577-9871-23549ec09657",
       "country": "US",
       "createdAt": "2026-07-13T19:26:19.564Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-aria-sanchez-beta",
@@ -2262,7 +2262,7 @@
       "companyId": "company-ef590b2e-5666-4577-9871-23549ec09657",
       "country": "US",
       "createdAt": "2026-05-09T12:04:17.541Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-andrew-wood-beta",
@@ -2274,7 +2274,7 @@
       "companyId": "company-7aa31ca4-5db0-43fa-822d-e6ecb27e5892",
       "country": "US",
       "createdAt": "2026-05-06T18:23:46.647Z",
-      "avatarUrl": "/images/man16.jpeg"
+      "avatarKey": "man16"
     },
     {
       "id": "person-liam-smith-beta",
@@ -2286,7 +2286,7 @@
       "companyId": "company-7aa31ca4-5db0-43fa-822d-e6ecb27e5892",
       "country": "US",
       "createdAt": "2026-07-14T18:20:44.391Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-logan-walker-beta",
@@ -2298,7 +2298,7 @@
       "companyId": "company-f5b6d83a-abb7-4270-bdfb-7a8aea54b151",
       "country": "US",
       "createdAt": "2026-05-14T09:25:40.785Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-riley-baker-beta",
@@ -2310,7 +2310,7 @@
       "companyId": "company-f5b6d83a-abb7-4270-bdfb-7a8aea54b151",
       "country": "US",
       "createdAt": "2026-04-13T08:48:41.258Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-michael-thompson-beta",
@@ -2322,7 +2322,7 @@
       "companyId": "company-f5b6d83a-abb7-4270-bdfb-7a8aea54b151",
       "country": "US",
       "createdAt": "2026-04-09T09:36:43.054Z",
-      "avatarUrl": "/images/man12.jpeg"
+      "avatarKey": "man12"
     },
     {
       "id": "person-joshua-mendoza-beta",
@@ -2334,7 +2334,7 @@
       "companyId": "company-ab93c1db-7de5-48f8-a6ad-ee84511b3ce3",
       "country": "US",
       "createdAt": "2026-06-03T01:22:04.140Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-ethan-harris-beta",
@@ -2346,7 +2346,7 @@
       "companyId": "company-96039f7a-2e7f-42ba-b36c-d78fdb437a28",
       "country": "US",
       "createdAt": "2026-06-06T11:28:26.080Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-zara-cook-beta",
@@ -2358,7 +2358,7 @@
       "companyId": "company-96039f7a-2e7f-42ba-b36c-d78fdb437a28",
       "country": "US",
       "createdAt": "2026-04-13T17:10:40.543Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-sophia-davis-beta",
@@ -2370,7 +2370,7 @@
       "companyId": "company-f07d63bd-2e1c-41ba-83c7-e9e1703769fb",
       "country": "US",
       "createdAt": "2026-05-18T02:14:12.418Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-isabella-lopez-beta",
@@ -2382,7 +2382,7 @@
       "companyId": "company-f07d63bd-2e1c-41ba-83c7-e9e1703769fb",
       "country": "US",
       "createdAt": "2026-07-15T04:34:18.143Z",
-      "avatarUrl": "/images/woman19.jpeg"
+      "avatarKey": "woman19"
     },
     {
       "id": "person-christian-brooks-beta",
@@ -2394,7 +2394,7 @@
       "companyId": "company-f07d63bd-2e1c-41ba-83c7-e9e1703769fb",
       "country": "US",
       "createdAt": "2026-05-01T01:47:15.699Z",
-      "avatarUrl": "/images/man17.jpeg"
+      "avatarKey": "man17"
     },
     {
       "id": "person-stella-rivera-beta",
@@ -2406,7 +2406,7 @@
       "companyId": "company-fda5a132-7f5c-4a72-9353-9c1648f7b737",
       "country": "US",
       "createdAt": "2026-04-24T14:34:13.346Z",
-      "avatarUrl": "/images/woman18.jpeg"
+      "avatarKey": "woman18"
     },
     {
       "id": "person-ellie-parker-beta",
@@ -2418,7 +2418,7 @@
       "companyId": "company-ec467e32-5465-4ddf-9417-10e3004afe84",
       "country": "US",
       "createdAt": "2026-04-19T04:51:29.908Z",
-      "avatarUrl": "/images/woman02.jpeg"
+      "avatarKey": "woman02"
     },
     {
       "id": "person-scarlett-robinson-beta",
@@ -2430,7 +2430,7 @@
       "companyId": "company-ec467e32-5465-4ddf-9417-10e3004afe84",
       "country": "US",
       "createdAt": "2026-05-24T08:04:53.789Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-anna-foster-beta",
@@ -2442,7 +2442,7 @@
       "companyId": "company-ec467e32-5465-4ddf-9417-10e3004afe84",
       "country": "US",
       "createdAt": "2026-05-18T15:36:16.831Z",
-      "avatarUrl": "/images/woman20.jpeg"
+      "avatarKey": "woman20"
     },
     {
       "id": "person-roman-sanders-beta",
@@ -2454,7 +2454,7 @@
       "companyId": "company-d7f7ce99-8821-4a93-be07-9c5002b4f23d",
       "country": "US",
       "createdAt": "2026-06-22T18:18:59.632Z",
-      "avatarUrl": "/images/man15.jpeg"
+      "avatarKey": "man15"
     },
     {
       "id": "person-naomi-howard-beta",
@@ -2466,7 +2466,7 @@
       "companyId": "company-93474876-0114-45ca-bc4d-7ba3a4778b91",
       "country": "US",
       "createdAt": "2026-04-14T02:07:45.953Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-levi-wright-beta",
@@ -2478,7 +2478,7 @@
       "companyId": "company-93474876-0114-45ca-bc4d-7ba3a4778b91",
       "country": "US",
       "createdAt": "2026-07-26T06:38:56.731Z",
-      "avatarUrl": "/images/man19.jpeg"
+      "avatarKey": "man19"
     },
     {
       "id": "person-violet-roberts-beta",
@@ -2490,7 +2490,7 @@
       "companyId": "company-daccef2e-544a-48be-a38c-96ca4f0797a0",
       "country": "US",
       "createdAt": "2026-06-06T08:32:57.944Z",
-      "avatarUrl": "/images/woman15.jpeg"
+      "avatarKey": "woman15"
     },
     {
       "id": "person-everly-long-beta",
@@ -2502,7 +2502,7 @@
       "companyId": "company-daccef2e-544a-48be-a38c-96ca4f0797a0",
       "country": "US",
       "createdAt": "2026-07-24T04:36:28.347Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-grace-turner-beta",
@@ -2514,7 +2514,7 @@
       "companyId": "company-01f137e9-96f4-424c-a2e1-60cc84ddbc62",
       "country": "US",
       "createdAt": "2026-05-02T08:40:41.083Z",
-      "avatarUrl": "/images/woman07.jpeg"
+      "avatarKey": "woman07"
     },
     {
       "id": "person-audrey-james-beta",
@@ -2526,7 +2526,7 @@
       "companyId": "company-01f137e9-96f4-424c-a2e1-60cc84ddbc62",
       "country": "US",
       "createdAt": "2026-07-15T03:11:23.816Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-hannah-edwards-beta",
@@ -2538,7 +2538,7 @@
       "companyId": "company-01f137e9-96f4-424c-a2e1-60cc84ddbc62",
       "country": "US",
       "createdAt": "2026-04-28T07:01:41.679Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-alexander-jackson-beta",
@@ -2550,7 +2550,7 @@
       "companyId": "company-496c6ab2-d67a-4077-8a68-d131dfb829a5",
       "country": "US",
       "createdAt": "2026-07-01T06:53:14.242Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-noah-williams-beta",
@@ -2562,7 +2562,7 @@
       "companyId": "company-6c5b4ad8-3385-4953-9644-dc1ff2966343",
       "country": "US",
       "createdAt": "2026-06-11T05:27:18.150Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-evelyn-thomas-beta",
@@ -2574,7 +2574,7 @@
       "companyId": "company-6c5b4ad8-3385-4953-9644-dc1ff2966343",
       "country": "US",
       "createdAt": "2026-06-16T21:59:31.126Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-caroline-powell-beta",
@@ -2586,7 +2586,7 @@
       "companyId": "company-6c5b4ad8-3385-4953-9644-dc1ff2966343",
       "country": "US",
       "createdAt": "2026-04-15T03:29:41.545Z",
-      "avatarUrl": "/images/woman13.jpeg"
+      "avatarKey": "woman13"
     },
     {
       "id": "person-bella-ruiz-beta",
@@ -2598,7 +2598,7 @@
       "companyId": "company-057a8633-42d5-45fe-814e-b191a94ea8b6",
       "country": "US",
       "createdAt": "2026-05-16T10:02:15.660Z",
-      "avatarUrl": "/images/woman05.jpeg"
+      "avatarKey": "woman05"
     },
     {
       "id": "person-leilani-peterson-beta",
@@ -2610,7 +2610,7 @@
       "companyId": "company-ea37b72e-2dbf-45b6-b2d4-8cc12ba861e3",
       "country": "US",
       "createdAt": "2026-06-23T12:08:27.060Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-charles-rogers-beta",
@@ -2622,7 +2622,7 @@
       "companyId": "company-ea37b72e-2dbf-45b6-b2d4-8cc12ba861e3",
       "country": "US",
       "createdAt": "2026-05-19T22:14:38.095Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-aurora-phillips-beta",
@@ -2634,7 +2634,7 @@
       "companyId": "company-ea37b72e-2dbf-45b6-b2d4-8cc12ba861e3",
       "country": "US",
       "createdAt": "2026-07-08T07:42:58.974Z",
-      "avatarUrl": "/images/woman06.jpeg"
+      "avatarKey": "woman06"
     },
     {
       "id": "person-carter-evans-beta",
@@ -2646,7 +2646,7 @@
       "companyId": "company-18d262ae-5c13-4d68-b2aa-33cfcc71f261",
       "country": "US",
       "createdAt": "2026-06-14T07:15:38.472Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-harper-moore-beta",
@@ -2658,7 +2658,7 @@
       "companyId": "company-3084f0fa-1b70-4b9f-b45c-7acc9abfe3c0",
       "country": "US",
       "createdAt": "2026-04-23T10:39:11.836Z",
-      "avatarUrl": "/images/woman12.jpeg"
+      "avatarKey": "woman12"
     },
     {
       "id": "person-piper-morgan-beta",
@@ -2670,7 +2670,7 @@
       "companyId": "company-3084f0fa-1b70-4b9f-b45c-7acc9abfe3c0",
       "country": "US",
       "createdAt": "2026-05-12T07:42:23.179Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-christopher-ortiz-beta",
@@ -2682,7 +2682,7 @@
       "companyId": "company-ce95d51d-05fe-45bd-bd2d-985ff95c360e",
       "country": "US",
       "createdAt": "2026-05-20T13:50:20.448Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-lucy-gutierrez-beta",
@@ -2694,7 +2694,7 @@
       "companyId": "company-ce95d51d-05fe-45bd-bd2d-985ff95c360e",
       "country": "US",
       "createdAt": "2026-06-17T11:15:50.689Z",
-      "avatarUrl": "/images/woman04.jpeg"
+      "avatarKey": "woman04"
     },
     {
       "id": "person-emery-stewart-beta",
@@ -2706,7 +2706,7 @@
       "companyId": "company-1485b171-a48b-43d5-b099-d6dbaecc5086",
       "country": "US",
       "createdAt": "2026-04-14T22:30:28.869Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-william-hernandez-beta",
@@ -2718,7 +2718,7 @@
       "companyId": "company-ed5d1172-e566-4502-a961-06a8b66e746e",
       "country": "US",
       "createdAt": "2026-04-29T09:14:27.714Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-sadie-reed-beta",
@@ -2730,7 +2730,7 @@
       "companyId": "company-ed5d1172-e566-4502-a961-06a8b66e746e",
       "country": "US",
       "createdAt": "2026-06-11T13:05:20.273Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-gabriel-gomez-beta",
@@ -2742,7 +2742,7 @@
       "companyId": "company-ed5d1172-e566-4502-a961-06a8b66e746e",
       "country": "US",
       "createdAt": "2026-04-27T19:15:40.108Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-hazel-flores-beta",
@@ -2754,7 +2754,7 @@
       "companyId": "company-79114037-b42d-453a-9680-53676130dd9e",
       "country": "US",
       "createdAt": "2026-05-22T12:20:36.204Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-ezra-morris-beta",
@@ -2766,7 +2766,7 @@
       "companyId": "company-79114037-b42d-453a-9680-53676130dd9e",
       "country": "US",
       "createdAt": "2026-05-25T21:20:22.970Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "company-3009abee-e8b9-4ccc-96fb-8d1089bebcb2",
@@ -3178,7 +3178,7 @@
       "companyId": "company-3009abee-e8b9-4ccc-96fb-8d1089bebcb2",
       "country": "US",
       "createdAt": "2026-05-14T17:27:27.284Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-isabella-lopez-gamma",
@@ -3190,7 +3190,7 @@
       "companyId": "company-3009abee-e8b9-4ccc-96fb-8d1089bebcb2",
       "country": "US",
       "createdAt": "2026-05-21T13:12:54.885Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-hazel-flores-gamma",
@@ -3202,7 +3202,7 @@
       "companyId": "company-3009abee-e8b9-4ccc-96fb-8d1089bebcb2",
       "country": "US",
       "createdAt": "2026-05-09T13:01:21.620Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-scarlett-robinson-gamma",
@@ -3214,7 +3214,7 @@
       "companyId": "company-8cb6a172-13c4-4754-bb23-4fd13ce4b181",
       "country": "US",
       "createdAt": "2026-05-25T12:27:36.466Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-henry-taylor-gamma",
@@ -3226,7 +3226,7 @@
       "companyId": "company-8cb6a172-13c4-4754-bb23-4fd13ce4b181",
       "country": "US",
       "createdAt": "2026-06-20T08:35:34.816Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-mateo-hill-gamma",
@@ -3238,7 +3238,7 @@
       "companyId": "company-5608578e-db85-4c09-a528-460acbf6652f",
       "country": "US",
       "createdAt": "2026-05-29T05:42:28.762Z",
-      "avatarUrl": "/images/man19.jpeg"
+      "avatarKey": "man19"
     },
     {
       "id": "person-alexander-jackson-gamma",
@@ -3250,7 +3250,7 @@
       "companyId": "company-d6b43aa8-5fd9-4789-9c22-34d5f26180e3",
       "country": "US",
       "createdAt": "2026-07-31T08:03:01.263Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-caroline-powell-gamma",
@@ -3262,7 +3262,7 @@
       "companyId": "company-d6b43aa8-5fd9-4789-9c22-34d5f26180e3",
       "country": "US",
       "createdAt": "2026-04-28T00:17:45.331Z",
-      "avatarUrl": "/images/woman14.jpeg"
+      "avatarKey": "woman14"
     },
     {
       "id": "person-samuel-carter-gamma",
@@ -3274,7 +3274,7 @@
       "companyId": "company-518517bf-8b78-49ca-8607-be8a74b95f2f",
       "country": "US",
       "createdAt": "2026-04-25T13:53:12.232Z",
-      "avatarUrl": "/images/man05.jpeg"
+      "avatarKey": "man05"
     },
     {
       "id": "person-aria-sanchez-gamma",
@@ -3286,7 +3286,7 @@
       "companyId": "company-518517bf-8b78-49ca-8607-be8a74b95f2f",
       "country": "US",
       "createdAt": "2026-05-16T02:12:56.018Z",
-      "avatarUrl": "/images/woman10.jpeg"
+      "avatarKey": "woman10"
     },
     {
       "id": "person-everly-long-gamma",
@@ -3298,7 +3298,7 @@
       "companyId": "company-518517bf-8b78-49ca-8607-be8a74b95f2f",
       "country": "US",
       "createdAt": "2026-06-29T07:16:39.311Z",
-      "avatarUrl": "/images/woman05.jpeg"
+      "avatarKey": "woman05"
     },
     {
       "id": "person-victoria-morales-gamma",
@@ -3310,7 +3310,7 @@
       "companyId": "company-d7ba02c3-37e8-45fb-941c-648484088574",
       "country": "US",
       "createdAt": "2026-04-21T11:36:23.841Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-chloe-ramirez-gamma",
@@ -3322,7 +3322,7 @@
       "companyId": "company-e512f471-f365-44d8-a4dc-020fff252ffe",
       "country": "US",
       "createdAt": "2026-07-05T17:57:57.661Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-harper-moore-gamma",
@@ -3334,7 +3334,7 @@
       "companyId": "company-e512f471-f365-44d8-a4dc-020fff252ffe",
       "country": "US",
       "createdAt": "2026-05-12T21:32:57.595Z",
-      "avatarUrl": "/images/woman08.jpeg"
+      "avatarKey": "woman08"
     },
     {
       "id": "person-nora-nguyen-gamma",
@@ -3346,7 +3346,7 @@
       "companyId": "company-0356584c-3177-4e18-a727-63ff50ba49bc",
       "country": "US",
       "createdAt": "2026-07-02T08:04:15.569Z",
-      "avatarUrl": "/images/woman06.jpeg"
+      "avatarKey": "woman06"
     },
     {
       "id": "person-ella-perez-gamma",
@@ -3358,7 +3358,7 @@
       "companyId": "company-0356584c-3177-4e18-a727-63ff50ba49bc",
       "country": "US",
       "createdAt": "2026-04-23T01:20:40.839Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-ellie-parker-gamma",
@@ -3370,7 +3370,7 @@
       "companyId": "company-9e42d28d-c02d-4e0e-9e6e-56f1e8c0d903",
       "country": "US",
       "createdAt": "2026-04-22T14:45:39.817Z",
-      "avatarUrl": "/images/woman04.jpeg"
+      "avatarKey": "woman04"
     },
     {
       "id": "person-lily-mitchell-gamma",
@@ -3382,7 +3382,7 @@
       "companyId": "company-9e42d28d-c02d-4e0e-9e6e-56f1e8c0d903",
       "country": "US",
       "createdAt": "2026-07-08T04:51:43.399Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-eli-myers-gamma",
@@ -3394,7 +3394,7 @@
       "companyId": "company-9e42d28d-c02d-4e0e-9e6e-56f1e8c0d903",
       "country": "US",
       "createdAt": "2026-06-26T16:44:43.282Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-noah-williams-gamma",
@@ -3406,7 +3406,7 @@
       "companyId": "company-94ceffc9-88db-41ad-9f58-211ce1a75d0a",
       "country": "US",
       "createdAt": "2026-04-26T01:40:37.198Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-gabriel-gomez-gamma",
@@ -3418,7 +3418,7 @@
       "companyId": "company-94ceffc9-88db-41ad-9f58-211ce1a75d0a",
       "country": "US",
       "createdAt": "2026-05-07T23:31:44.066Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-aaron-alvarez-gamma",
@@ -3430,7 +3430,7 @@
       "companyId": "company-9782623a-074c-421f-8af0-b4e4e405f2d6",
       "country": "US",
       "createdAt": "2026-04-23T03:59:49.773Z",
-      "avatarUrl": "/images/man01.jpeg"
+      "avatarKey": "man01"
     },
     {
       "id": "person-isabelle-ward-gamma",
@@ -3442,7 +3442,7 @@
       "companyId": "company-cb0bc1af-8b6d-47c3-abca-64c7f74942d7",
       "country": "US",
       "createdAt": "2026-06-30T14:51:40.123Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-gianna-white-gamma",
@@ -3454,7 +3454,7 @@
       "companyId": "company-cb0bc1af-8b6d-47c3-abca-64c7f74942d7",
       "country": "US",
       "createdAt": "2026-06-21T01:15:00.467Z",
-      "avatarUrl": "/images/woman11.jpeg"
+      "avatarKey": "woman11"
     },
     {
       "id": "person-thomas-murphy-gamma",
@@ -3466,7 +3466,7 @@
       "companyId": "company-cb0bc1af-8b6d-47c3-abca-64c7f74942d7",
       "country": "US",
       "createdAt": "2026-07-19T19:06:21.365Z",
-      "avatarUrl": "/images/man02.jpeg"
+      "avatarKey": "man02"
     },
     {
       "id": "person-nathan-richardson-gamma",
@@ -3478,7 +3478,7 @@
       "companyId": "company-3b173556-4756-4023-802c-8a0cc2edc292",
       "country": "US",
       "createdAt": "2026-04-17T02:33:26.569Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-amelia-brown-gamma",
@@ -3490,7 +3490,7 @@
       "companyId": "company-3b173556-4756-4023-802c-8a0cc2edc292",
       "country": "US",
       "createdAt": "2026-07-13T00:51:19.944Z",
-      "avatarUrl": "/images/woman17.jpeg"
+      "avatarKey": "woman17"
     },
     {
       "id": "person-layla-king-gamma",
@@ -3502,7 +3502,7 @@
       "companyId": "company-3b173556-4756-4023-802c-8a0cc2edc292",
       "country": "US",
       "createdAt": "2026-07-22T01:42:54.704Z",
-      "avatarUrl": "/images/woman07.jpeg"
+      "avatarKey": "woman07"
     },
     {
       "id": "person-bella-ruiz-gamma",
@@ -3514,7 +3514,7 @@
       "companyId": "company-2a1ceaa6-005c-456f-9cbe-2dff9bc88ac0",
       "country": "US",
       "createdAt": "2026-07-03T22:26:30.633Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-brooklyn-gray-gamma",
@@ -3526,7 +3526,7 @@
       "companyId": "company-2a1ceaa6-005c-456f-9cbe-2dff9bc88ac0",
       "country": "US",
       "createdAt": "2026-06-03T21:42:44.042Z",
-      "avatarUrl": "/images/woman09.jpeg"
+      "avatarKey": "woman09"
     },
     {
       "id": "person-elijah-miller-gamma",
@@ -3538,7 +3538,7 @@
       "companyId": "company-495afb07-d2ba-451d-9379-0cf834e43f31",
       "country": "US",
       "createdAt": "2026-05-06T12:09:32.046Z",
-      "avatarUrl": "/images/man20.jpeg"
+      "avatarKey": "man20"
     },
     {
       "id": "person-ryan-ross-gamma",
@@ -3550,7 +3550,7 @@
       "companyId": "company-495afb07-d2ba-451d-9379-0cf834e43f31",
       "country": "US",
       "createdAt": "2026-04-23T21:21:54.855Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-carter-evans-gamma",
@@ -3562,7 +3562,7 @@
       "companyId": "company-689e927e-9057-496e-ab45-b53e447faaa0",
       "country": "US",
       "createdAt": "2026-05-24T11:00:39.731Z",
-      "avatarUrl": "/images/man11.jpeg"
+      "avatarKey": "man11"
     },
     {
       "id": "person-audrey-james-gamma",
@@ -3574,7 +3574,7 @@
       "companyId": "company-9842cd85-224b-4407-a88e-ff2552c4d39f",
       "country": "US",
       "createdAt": "2026-04-10T04:44:06.263Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-aurora-phillips-gamma",
@@ -3586,7 +3586,7 @@
       "companyId": "company-9842cd85-224b-4407-a88e-ff2552c4d39f",
       "country": "US",
       "createdAt": "2026-05-18T20:10:43.614Z",
-      "avatarUrl": "/images/woman15.jpeg"
+      "avatarKey": "woman15"
     },
     {
       "id": "person-christopher-ortiz-gamma",
@@ -3598,7 +3598,7 @@
       "companyId": "company-29e33965-5daf-4fec-9156-731eabf3550e",
       "country": "US",
       "createdAt": "2026-06-23T13:29:57.085Z",
-      "avatarUrl": "/images/man08.jpeg"
+      "avatarKey": "man08"
     },
     {
       "id": "person-liam-smith-gamma",
@@ -3610,7 +3610,7 @@
       "companyId": "company-52d57499-b034-4eab-8d72-25499e9cf832",
       "country": "US",
       "createdAt": "2026-05-06T21:58:35.422Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-daniel-clark-gamma",
@@ -3622,7 +3622,7 @@
       "companyId": "company-3372bff3-1eda-485e-8a52-b499bd6c5d52",
       "country": "US",
       "createdAt": "2026-06-27T14:14:13.890Z",
-      "avatarUrl": "/images/man13.jpeg"
+      "avatarKey": "man13"
     },
     {
       "id": "person-roman-sanders-gamma",
@@ -3634,7 +3634,7 @@
       "companyId": "company-fca969d4-5c22-4a2e-b5c0-5c6cd502cd8b",
       "country": "US",
       "createdAt": "2026-04-26T13:19:12.914Z",
-      "avatarUrl": "/images/man07.jpeg"
+      "avatarKey": "man07"
     },
     {
       "id": "person-nolan-jimenez-gamma",
@@ -3646,7 +3646,7 @@
       "companyId": "company-fca969d4-5c22-4a2e-b5c0-5c6cd502cd8b",
       "country": "US",
       "createdAt": "2026-05-14T14:17:51.594Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-charles-rogers-gamma",
@@ -3658,7 +3658,7 @@
       "companyId": "company-e6812788-991a-4386-a7b8-d122f576f996",
       "country": "US",
       "createdAt": "2026-07-13T23:17:02.606Z",
-      "avatarUrl": "/images/man04.jpeg"
+      "avatarKey": "man04"
     },
     {
       "id": "person-ethan-harris-gamma",
@@ -3670,7 +3670,7 @@
       "companyId": "company-2ad66d42-eb6f-4fed-96df-c196a2fd7f47",
       "country": "US",
       "createdAt": "2026-05-09T14:44:43.087Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-natalie-watson-gamma",
@@ -3682,7 +3682,7 @@
       "companyId": "company-0e0e2006-1789-4cb4-bf9a-604c10fd7fe2",
       "country": "US",
       "createdAt": "2026-04-19T14:44:06.431Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-luna-martin-gamma",
@@ -3694,7 +3694,7 @@
       "companyId": "company-fc26f01f-5f8e-4038-ba47-7b199ceddfd6",
       "country": "US",
       "createdAt": "2026-06-21T03:51:02.552Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-jack-green-gamma",
@@ -3706,7 +3706,7 @@
       "companyId": "company-8c936a16-19c8-4886-9bef-bbdd820fe5c3",
       "country": "US",
       "createdAt": "2026-08-01T15:20:31.744Z",
-      "avatarUrl": "/images/man03.jpeg"
+      "avatarKey": "man03"
     },
     {
       "id": "person-stella-rivera-gamma",
@@ -3718,7 +3718,7 @@
       "companyId": "company-de5af29e-4aab-4de1-a070-be729c4ed7af",
       "country": "US",
       "createdAt": "2026-07-02T15:15:02.381Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-sadie-reed-gamma",
@@ -3730,7 +3730,7 @@
       "companyId": "company-de5af29e-4aab-4de1-a070-be729c4ed7af",
       "country": "US",
       "createdAt": "2026-07-24T06:31:13.748Z",
-      "avatarUrl": "/images/woman01.jpeg"
+      "avatarKey": "woman01"
     },
     {
       "id": "person-sophia-davis-gamma",
@@ -3742,7 +3742,7 @@
       "companyId": "company-de5af29e-4aab-4de1-a070-be729c4ed7af",
       "country": "US",
       "createdAt": "2026-04-29T12:13:47.242Z",
-      "avatarUrl": "/images/woman02.jpeg"
+      "avatarKey": "woman02"
     },
     {
       "id": "person-zara-cook-gamma",
@@ -3754,7 +3754,7 @@
       "companyId": "company-2072965b-4fe3-4cdb-a115-b64ddf2d060a",
       "country": "US",
       "createdAt": "2026-05-28T02:55:42.862Z",
-      "avatarUrl": "/images/woman13.jpeg"
+      "avatarKey": "woman13"
     },
     {
       "id": "person-anna-foster-gamma",
@@ -3766,7 +3766,7 @@
       "companyId": "company-2072965b-4fe3-4cdb-a115-b64ddf2d060a",
       "country": "US",
       "createdAt": "2026-04-09T00:40:40.334Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-olivia-johnson-gamma",
@@ -3778,7 +3778,7 @@
       "companyId": "company-14a62906-fc37-4736-b2ad-055867d102e0",
       "country": "US",
       "createdAt": "2026-07-18T10:15:42.194Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-evelyn-thomas-gamma",
@@ -3790,7 +3790,7 @@
       "companyId": "company-14a62906-fc37-4736-b2ad-055867d102e0",
       "country": "US",
       "createdAt": "2026-05-06T23:37:46.634Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-hannah-edwards-gamma",
@@ -3802,7 +3802,7 @@
       "companyId": "company-85b50ca0-6b1c-49e0-b72a-eafdee1baebf",
       "country": "US",
       "createdAt": "2026-05-13T19:03:05.859Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-christian-brooks-gamma",
@@ -3814,7 +3814,7 @@
       "companyId": "company-85b50ca0-6b1c-49e0-b72a-eafdee1baebf",
       "country": "US",
       "createdAt": "2026-04-09T11:17:03.673Z",
-      "avatarUrl": "/images/man15.jpeg"
+      "avatarKey": "man15"
     },
     {
       "id": "person-lincoln-bennett-gamma",
@@ -3826,7 +3826,7 @@
       "companyId": "company-85b50ca0-6b1c-49e0-b72a-eafdee1baebf",
       "country": "US",
       "createdAt": "2026-05-12T01:33:27.904Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-isaac-cruz-gamma",
@@ -3838,7 +3838,7 @@
       "companyId": "company-b73a4d9c-2a31-4a67-b8d3-7793e8f010e0",
       "country": "US",
       "createdAt": "2026-07-20T02:13:00.351Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-leo-hughes-gamma",
@@ -3850,7 +3850,7 @@
       "companyId": "company-b73a4d9c-2a31-4a67-b8d3-7793e8f010e0",
       "country": "US",
       "createdAt": "2026-07-29T16:47:23.196Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-jacob-lewis-gamma",
@@ -3862,7 +3862,7 @@
       "companyId": "company-c8578b69-221e-4ea3-8d9a-1aa157f9184c",
       "country": "US",
       "createdAt": "2026-07-17T10:15:45.225Z",
-      "avatarUrl": "/images/man14.jpeg"
+      "avatarKey": "man14"
     },
     {
       "id": "person-naomi-howard-gamma",
@@ -3874,7 +3874,7 @@
       "companyId": "company-523ede3c-f28e-475c-ba6b-c25c24980dc0",
       "country": "US",
       "createdAt": "2026-05-30T23:26:42.318Z",
-      "avatarUrl": "/images/woman12.jpeg"
+      "avatarKey": "woman12"
     },
     {
       "id": "person-mia-wilson-gamma",
@@ -3886,7 +3886,7 @@
       "companyId": "company-523ede3c-f28e-475c-ba6b-c25c24980dc0",
       "country": "US",
       "createdAt": "2026-07-08T08:35:49.885Z",
-      "avatarUrl": "/images/woman20.jpeg"
+      "avatarKey": "woman20"
     },
     {
       "id": "person-charlotte-garcia-gamma",
@@ -3898,7 +3898,7 @@
       "companyId": "company-523ede3c-f28e-475c-ba6b-c25c24980dc0",
       "country": "US",
       "createdAt": "2026-04-25T21:00:14.286Z",
-      "avatarUrl": "/images/woman03.jpeg"
+      "avatarKey": "woman03"
     },
     {
       "id": "person-oliver-jones-gamma",
@@ -3910,7 +3910,7 @@
       "companyId": "company-f3f0a438-1436-46ba-8731-fcdc2c3e8d98",
       "country": "US",
       "createdAt": "2026-08-01T14:47:22.296Z",
-      "avatarUrl": "/images/man06.jpeg"
+      "avatarKey": "man06"
     },
     {
       "id": "person-lucy-gutierrez-gamma",
@@ -3922,7 +3922,7 @@
       "companyId": "company-f3f0a438-1436-46ba-8731-fcdc2c3e8d98",
       "country": "US",
       "createdAt": "2026-04-22T16:39:08.154Z",
-      "avatarUrl": "/images/woman19.jpeg"
+      "avatarKey": "woman19"
     },
     {
       "id": "person-levi-wright-gamma",
@@ -3934,7 +3934,7 @@
       "companyId": "company-f32e4612-6451-436d-9845-eed2a6fb8ac2",
       "country": "US",
       "createdAt": "2026-05-13T02:57:03.417Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-violet-roberts-gamma",
@@ -3946,7 +3946,7 @@
       "companyId": "company-31f86986-d132-450b-8c77-068022a99d23",
       "country": "US",
       "createdAt": "2026-07-09T13:58:17.129Z",
-      "avatarUrl": "/images/woman18.jpeg"
+      "avatarKey": "woman18"
     },
     {
       "id": "person-maya-chavez-gamma",
@@ -3958,7 +3958,7 @@
       "companyId": "company-d7557a21-1cfa-4166-b14c-2f20a72d3613",
       "country": "US",
       "createdAt": "2026-04-18T18:19:44.654Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-theodore-hall-gamma",
@@ -3970,7 +3970,7 @@
       "companyId": "company-f1dbf9ab-d434-42c0-8008-77dce9f82590",
       "country": "US",
       "createdAt": "2026-06-24T07:47:07.802Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-addison-kim-gamma",
@@ -3982,7 +3982,7 @@
       "companyId": "company-f1dbf9ab-d434-42c0-8008-77dce9f82590",
       "country": "US",
       "createdAt": "2026-05-29T16:23:47.164Z",
-      "avatarUrl": "/images/woman16.jpeg"
+      "avatarKey": "woman16"
     },
     {
       "id": "person-maverick-bailey-gamma",
@@ -3994,7 +3994,7 @@
       "companyId": "company-224dd514-2b07-4ea5-b865-25d7ad58644b",
       "country": "US",
       "createdAt": "2026-06-21T20:38:47.700Z",
-      "avatarUrl": "/images/man17.jpeg"
+      "avatarKey": "man17"
     },
     {
       "id": "person-jaxon-cooper-gamma",
@@ -4006,7 +4006,7 @@
       "companyId": "company-6223ef24-f374-4632-b78c-b8317323a741",
       "country": "US",
       "createdAt": "2026-07-19T16:42:48.881Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     },
     {
       "id": "person-leilani-peterson-gamma",
@@ -4018,7 +4018,7 @@
       "companyId": "company-6223ef24-f374-4632-b78c-b8317323a741",
       "country": "US",
       "createdAt": "2026-06-23T17:50:16.726Z",
-      "avatarUrl": ""
+      "avatarKey": ""
     }
   ],
   "interactions": [
@@ -20031,9 +20031,2079 @@
       "creatorId": "person-elijah-miller-gamma",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "currentReviewerId": "person-maya-chavez-alpha"
+    },
+    {
+      "id": "alpha_wfr9tkpx",
+      "workspaceId": "alpha",
+      "title": "ALEX Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "12345 Update to internal policy requirements.",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-05",
+        "impactLevel": "High"
+      },
+      "parties": [
+        {
+          "identityId": "person-aaron-alvarez-gamma",
+          "role": "Buyer"
+        },
+        {
+          "identityId": "person-isabella-lopez-alpha",
+          "role": "Seller"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-05T17:27:33.925Z",
+      "createdAt": "2026-08-05T17:27:33.925Z",
+      "creatorId": "person-aaron-alvarez-gamma",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_pxttfhqp",
+      "workspaceId": "alpha",
+      "title": "ALEX Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-05",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "company-496c6ab2-d67a-4077-8a68-d131dfb829a5",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-anthony-diaz-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-05T19:11:17.458Z",
+      "createdAt": "2026-08-05T19:11:17.458Z",
+      "creatorId": "company-496c6ab2-d67a-4077-8a68-d131dfb829a5",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_1322k7v7",
+      "workspaceId": "alpha",
+      "title": "ALEX Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-05",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "company-7cab1229-fa0b-46a2-91a9-a51c5c3de060",
+          "role": "Buyer"
+        },
+        {
+          "identityId": "person-leilani-peterson-alpha",
+          "role": "Seller"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-05T19:12:26.490Z",
+      "createdAt": "2026-08-05T19:12:26.490Z",
+      "creatorId": "person-leilani-peterson-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_19r1yw8h",
+      "workspaceId": "alpha",
+      "title": "ALEX Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-05",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "company-7e2444bd-f6ae-4397-9a0e-dfd1cfaf681d",
+          "role": "Seller"
+        },
+        {
+          "identityId": "company-e54286cc-ddb7-492f-b06b-5186d9a900a9",
+          "role": "Buyer"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-05T19:15:15.191Z",
+      "createdAt": "2026-08-05T19:15:15.191Z",
+      "creatorId": "company-7e2444bd-f6ae-4397-9a0e-dfd1cfaf681d",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_y4ahluj0",
+      "workspaceId": "alpha",
+      "title": "ALEX Policy Update – HR",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "54321 Update to internal policy requirements.",
+        "policyArea": "HR",
+        "effectiveDate": "2026-08-05",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "company-430d8283-4bee-4ced-9bfa-7d65e785ad66",
+          "role": "Buyer"
+        },
+        {
+          "identityId": "person-samuel-carter-alpha",
+          "role": "Seller"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-05T19:18:15.702Z",
+      "createdAt": "2026-08-05T19:18:15.702Z",
+      "creatorId": "company-430d8283-4bee-4ced-9bfa-7d65e785ad66",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_o59xkby2",
+      "workspaceId": "alpha",
+      "title": "ALEX Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-05",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "person-harper-moore-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-alexander-jackson-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-05T19:58:16.205Z",
+      "createdAt": "2026-08-05T19:58:16.205Z",
+      "creatorId": "person-harper-moore-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_s36akss8",
+      "workspaceId": "alpha",
+      "title": "ALEX Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-06",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "person-jack-green-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-roman-sanders-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-06T04:12:59.656Z",
+      "createdAt": "2026-08-06T04:12:59.656Z",
+      "creatorId": "person-andrew-wood-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_y56gmjuv",
+      "workspaceId": "alpha",
+      "title": "ALEX Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-06",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "person-amelia-brown-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-piper-morgan-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-06T04:14:37.940Z",
+      "createdAt": "2026-08-06T04:14:37.940Z",
+      "creatorId": "person-andrew-wood-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_2f67ml6g",
+      "workspaceId": "alpha",
+      "title": "ALEX Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-07",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "person-bella-ruiz-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-sophia-davis-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-07T20:21:43.457Z",
+      "createdAt": "2026-08-07T20:21:43.457Z",
+      "creatorId": "person-aurora-phillips-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_zyj5wkkl",
+      "workspaceId": "alpha",
+      "title": "Policy Update – HR",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Hellllloooo Update to internal policy requirements.",
+        "policyArea": "HR",
+        "effectiveDate": "2026-08-12",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-natalie-watson-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-nolan-jimenez-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T01:22:01.392Z",
+      "createdAt": "2026-08-12T01:22:01.392Z",
+      "creatorId": "person-charles-rogers-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_8yrph7ub",
+      "workspaceId": "alpha",
+      "title": "Policy Update – HR",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "1234 Update to internal policy requirements.",
+        "policyArea": "HR",
+        "effectiveDate": "2026-08-12",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-caroline-powell-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-97b17513-c305-48d1-9f7a-d1c34a40b493",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T01:24:03.442Z",
+      "createdAt": "2026-08-12T01:24:03.442Z",
+      "creatorId": "person-charles-rogers-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_6i4a1t5k",
+      "workspaceId": "alpha",
+      "title": "Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "54321 Update to internal policy requirements.",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-15",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-naomi-howard-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-olivia-johnson-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T01:35:10.798Z",
+      "createdAt": "2026-08-12T01:35:10.798Z",
+      "creatorId": "person-charles-rogers-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_n9v32hqy",
+      "workspaceId": "alpha",
+      "title": "Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "345345 Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-25",
+        "impactLevel": "High"
+      },
+      "parties": [
+        {
+          "identityId": "person-logan-walker-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-ella-perez-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T03:04:48.309Z",
+      "createdAt": "2026-08-12T03:04:48.309Z",
+      "creatorId": "person-charles-rogers-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_8ladefkx",
+      "workspaceId": "alpha",
+      "title": "Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "786787 Update to internal policy requirements.",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-09",
+        "impactLevel": "High"
+      },
+      "parties": [
+        {
+          "identityId": "person-maverick-bailey-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-oliver-jones-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T03:06:21.521Z",
+      "createdAt": "2026-08-12T03:06:21.521Z",
+      "creatorId": "person-charles-rogers-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_dus8mf2j",
+      "workspaceId": "alpha",
+      "title": "Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "xzxzxz Update to internal policy requirements.",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-12",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-jack-green-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-alexander-jackson-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T03:49:47.995Z",
+      "createdAt": "2026-08-12T03:49:47.995Z",
+      "creatorId": "person-charles-rogers-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_o8vuxn9l",
+      "workspaceId": "alpha",
+      "title": "Vendor Onboarding – Logistics",
+      "type": "VENDOR_ONBOARDING",
+      "data": {
+        "summary": "234234 Update to internal policy requirements.",
+        "vendorType": "Logistics",
+        "riskLevel": "Low",
+        "onboardingChecklistComplete": true
+      },
+      "parties": [
+        {
+          "identityId": "person-nolan-jimenez-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-isaac-cruz-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T16:13:47.262Z",
+      "createdAt": "2026-08-12T16:13:47.262Z",
+      "creatorId": "person-charles-rogers-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_r9nzeo3q",
+      "workspaceId": "alpha",
+      "title": "Vendor Onboarding – Consulting",
+      "type": "VENDOR_ONBOARDING",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "vendorType": "Consulting",
+        "riskLevel": "High",
+        "onboardingChecklistComplete": false
+      },
+      "parties": [
+        {
+          "identityId": "person-ella-perez-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-aria-sanchez-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T16:19:41.672Z",
+      "createdAt": "2026-08-12T16:19:41.672Z",
+      "creatorId": "person-charles-rogers-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_7vhmuz69",
+      "workspaceId": "alpha",
+      "title": "Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-12",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "person-natalie-watson-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-aaron-alvarez-gamma",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T16:23:01.326Z",
+      "createdAt": "2026-08-12T16:23:01.326Z",
+      "creatorId": "person-charles-rogers-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_7uswnztc",
+      "workspaceId": "alpha",
+      "title": "Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-12",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-hannah-edwards-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-29255cbc-5694-4336-a972-374021fcd397",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T16:29:03.245Z",
+      "createdAt": "2026-08-12T16:29:03.245Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_ocyjhmuv",
+      "workspaceId": "beta",
+      "title": "Vendor Onboarding – Consulting",
+      "type": "VENDOR_ONBOARDING",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "vendorType": "Consulting",
+        "riskLevel": "High",
+        "onboardingChecklistComplete": false
+      },
+      "parties": [
+        {
+          "identityId": "person-harper-moore-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-ce871323-cc07-4fa4-92ab-cdcb9b8481cc",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T16:37:08.982Z",
+      "createdAt": "2026-08-12T16:37:08.982Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_3lb7nnms",
+      "workspaceId": "beta",
+      "title": "Contract – 24 Month Term",
+      "type": "CONTRACT",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "contractValue": 100000,
+        "termLengthMonths": 24,
+        "autoRenew": true
+      },
+      "parties": [
+        {
+          "identityId": "company-ce871323-cc07-4fa4-92ab-cdcb9b8481cc",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-ec467e32-5465-4ddf-9417-10e3004afe84",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T17:37:01.695Z",
+      "createdAt": "2026-08-12T17:37:01.695Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_h2pc16ql",
+      "workspaceId": "beta",
+      "title": "Proposal – $50,000",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "new proposal request",
+        "amount": 50000,
+        "currency": "USD",
+        "effectiveDate": "2026-08-27",
+        "expirationDate": "2026-09-30"
+      },
+      "parties": [
+        {
+          "identityId": "company-93474876-0114-45ca-bc4d-7ba3a4778b91",
+          "role": "Buyer"
+        },
+        {
+          "identityId": "company-c4d0cd25-5d87-4294-b872-7f413ae37241",
+          "role": "Seller"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T17:54:38.703Z",
+      "createdAt": "2026-08-12T17:54:38.703Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_mnv06z3s",
+      "workspaceId": "beta",
+      "title": "Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-12",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "company-496c6ab2-d67a-4077-8a68-d131dfb829a5",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-evelyn-thomas-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T19:54:42.664Z",
+      "createdAt": "2026-08-12T19:54:42.664Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_6qz89iha",
+      "workspaceId": "beta",
+      "title": "Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "ZZZ Update to internal policy requirements.",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-12",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-lucy-gutierrez-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-victoria-morales-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T21:05:59.268Z",
+      "createdAt": "2026-08-12T21:05:59.268Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_adk0rdj6",
+      "workspaceId": "beta",
+      "title": "Contract – 36 Month Term",
+      "type": "CONTRACT",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "contractValue": 200000,
+        "termLengthMonths": 36,
+        "autoRenew": false
+      },
+      "parties": [
+        {
+          "identityId": "person-skylar-price-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-joshua-mendoza-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T21:12:33.298Z",
+      "createdAt": "2026-08-12T21:12:33.298Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_yr1h5ptg",
+      "workspaceId": "beta",
+      "title": "Proposal – $540,000",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "amount": 540000,
+        "currency": "USD",
+        "effectiveDate": "2026-08-24",
+        "expirationDate": "2028-06-12"
+      },
+      "parties": [
+        {
+          "identityId": "person-alexander-jackson-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-ea37b72e-2dbf-45b6-b2d4-8cc12ba861e3",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T21:17:34.534Z",
+      "createdAt": "2026-08-12T21:17:34.534Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_6yni4ao6",
+      "workspaceId": "beta",
+      "title": "Vendor Onboarding – Consulting",
+      "type": "VENDOR_ONBOARDING",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "vendorType": "Consulting",
+        "riskLevel": "Medium",
+        "onboardingChecklistComplete": true
+      },
+      "parties": [
+        {
+          "identityId": "person-isabella-lopez-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-gianna-white-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T21:21:44.938Z",
+      "createdAt": "2026-08-12T21:21:44.938Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_tvhk5m7n",
+      "workspaceId": "beta",
+      "title": "Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.1231231",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-12",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "person-grace-turner-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-d40f78d7-dd4f-469a-8d21-102b22fa4a54",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T23:01:33.903Z",
+      "createdAt": "2026-08-12T23:01:33.903Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_noguj5fi",
+      "workspaceId": "beta",
+      "title": "Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Testing my newly shared form field",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-12",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-paisley-patel-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-aurora-phillips-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-12T23:13:41.667Z",
+      "createdAt": "2026-08-12T23:13:41.667Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_n8his7v0",
+      "workspaceId": "beta",
+      "title": "Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "TEST Update to internal policy requirements.",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-17",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-mia-wilson-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-496c6ab2-d67a-4077-8a68-d131dfb829a5",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-13T17:40:02.847Z",
+      "createdAt": "2026-08-13T17:40:02.847Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_ozpvx9ff",
+      "workspaceId": "beta",
+      "title": "Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-15",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-skylar-price-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-victoria-morales-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-13T19:14:55.304Z",
+      "createdAt": "2026-08-13T19:14:55.304Z",
+      "creatorId": "person-audrey-james-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_dsytjxcg",
+      "workspaceId": "beta",
+      "title": "Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-14",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "company-1485b171-a48b-43d5-b099-d6dbaecc5086",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-victoria-morales-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T03:48:37.593Z",
+      "createdAt": "2026-08-14T03:48:37.593Z",
+      "creatorId": "person-carter-evans-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_tzjlr4ub",
+      "workspaceId": "beta",
+      "title": "Proposal – $50,000",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "amount": 50000,
+        "currency": "USD",
+        "effectiveDate": "2026-08-18",
+        "expirationDate": ""
+      },
+      "parties": [
+        {
+          "identityId": "person-caroline-powell-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-noah-williams-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T04:20:20.350Z",
+      "createdAt": "2026-08-14T04:20:20.350Z",
+      "creatorId": "person-carter-evans-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_i597kz9v",
+      "workspaceId": "beta",
+      "title": "Proposal – $300,000",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "amount": 300000,
+        "currency": "USD",
+        "effectiveDate": "2026-08-18",
+        "expirationDate": "2027-08-13"
+      },
+      "parties": [
+        {
+          "identityId": "person-hudson-ramos-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-f5b6d83a-abb7-4270-bdfb-7a8aea54b151",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T04:29:07.358Z",
+      "createdAt": "2026-08-14T04:29:07.358Z",
+      "creatorId": "person-carter-evans-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_6fqs3myy",
+      "workspaceId": "beta",
+      "title": "Proposal – $1,000",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "my new proposal",
+        "amount": 1000,
+        "currency": "USD",
+        "effectiveDate": "2026-08-20",
+        "expirationDate": "2026-08-31"
+      },
+      "parties": [
+        {
+          "identityId": "person-skylar-price-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-victoria-morales-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T15:54:45.654Z",
+      "createdAt": "2026-08-14T15:54:45.654Z",
+      "creatorId": "person-carter-evans-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_og38ikt9",
+      "workspaceId": "beta",
+      "title": "Proposal – $30,000",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "amount": 30000,
+        "currency": "USD",
+        "effectiveDate": "2026-08-24",
+        "expirationDate": "2026-09-30"
+      },
+      "parties": [
+        {
+          "identityId": "company-496c6ab2-d67a-4077-8a68-d131dfb829a5",
+          "role": "Buyer"
+        },
+        {
+          "identityId": "person-hazel-flores-beta",
+          "role": "Seller"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T15:56:43.353Z",
+      "createdAt": "2026-08-14T15:56:43.353Z",
+      "creatorId": "person-carter-evans-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_rhr45q5b",
+      "workspaceId": "beta",
+      "title": "Policy Update – HR",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "HR",
+        "effectiveDate": "2026-08-28",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-caroline-powell-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-3bfe93a7-29e3-4b89-bd87-6542dafce068",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T16:01:08.745Z",
+      "createdAt": "2026-08-14T16:01:08.745Z",
+      "creatorId": "person-carter-evans-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_pxk9bljz",
+      "workspaceId": "beta",
+      "title": "Policy Update – HR",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "HR",
+        "effectiveDate": "2026-08-28",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-caroline-powell-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-3bfe93a7-29e3-4b89-bd87-6542dafce068",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T16:02:40.280Z",
+      "createdAt": "2026-08-14T16:02:40.280Z",
+      "creatorId": "person-carter-evans-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_h6oity3i",
+      "workspaceId": "beta",
+      "title": "Policy Update – HR",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "HR",
+        "effectiveDate": "2026-08-28",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-caroline-powell-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-3bfe93a7-29e3-4b89-bd87-6542dafce068",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T16:05:27.552Z",
+      "createdAt": "2026-08-14T16:05:27.552Z",
+      "creatorId": "person-carter-evans-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_1muslh6c",
+      "workspaceId": "beta",
+      "title": "Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-14",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "person-chloe-ramirez-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-paisley-patel-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T20:18:22.090Z",
+      "createdAt": "2026-08-14T20:18:22.090Z",
+      "creatorId": "person-carter-evans-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_3xwfas81",
+      "workspaceId": "beta",
+      "title": "Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-14",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "person-luna-martin-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-gianna-white-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T20:20:18.291Z",
+      "createdAt": "2026-08-14T20:20:18.291Z",
+      "creatorId": "person-carter-evans-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_kge7lwle",
+      "workspaceId": "beta",
+      "title": "Policy Update – Compliance",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Compliance",
+        "effectiveDate": "2026-08-14",
+        "impactLevel": "High"
+      },
+      "parties": [
+        {
+          "identityId": "person-hazel-flores-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-d40f78d7-dd4f-469a-8d21-102b22fa4a54",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T20:33:54.417Z",
+      "createdAt": "2026-08-14T20:33:54.417Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_nnp4pngd",
+      "workspaceId": "beta",
+      "title": "Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-14",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-grace-turner-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-gianna-white-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T21:34:58.804Z",
+      "createdAt": "2026-08-14T21:34:58.804Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_6kpvwimj",
+      "workspaceId": "beta",
+      "title": "Proposal – $4,000",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "amount": 4000,
+        "currency": "USD",
+        "effectiveDate": "2026-08-20",
+        "expirationDate": ""
+      },
+      "parties": [
+        {
+          "identityId": "person-grace-turner-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-victoria-morales-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T22:06:18.617Z",
+      "createdAt": "2026-08-14T22:06:18.617Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_4mzgn29c",
+      "workspaceId": "beta",
+      "title": "Proposal – $500,000",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "amount": 500000,
+        "currency": "USD",
+        "effectiveDate": "2026-08-31",
+        "expirationDate": ""
+      },
+      "parties": [
+        {
+          "identityId": "person-michael-thompson-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-aurora-phillips-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T22:07:43.133Z",
+      "createdAt": "2026-08-14T22:07:43.133Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_urf49oxg",
+      "workspaceId": "beta",
+      "title": "Proposal – $734,531",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "amount": 734531,
+        "currency": "USD",
+        "effectiveDate": "2026-08-24",
+        "expirationDate": ""
+      },
+      "parties": [
+        {
+          "identityId": "person-nolan-jimenez-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-everly-long-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T22:21:09.660Z",
+      "createdAt": "2026-08-14T22:21:09.660Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_g74tk1av",
+      "workspaceId": "beta",
+      "title": "Proposal – $124,235",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "amount": 124235,
+        "currency": "USD",
+        "effectiveDate": "2026-08-17",
+        "expirationDate": ""
+      },
+      "parties": [
+        {
+          "identityId": "person-gianna-white-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-fda5a132-7f5c-4a72-9353-9c1648f7b737",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-14T22:22:22.105Z",
+      "createdAt": "2026-08-14T22:22:22.105Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_cm260yuy",
+      "workspaceId": "beta",
+      "title": "Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-15",
+        "impactLevel": "Low"
+      },
+      "parties": [
+        {
+          "identityId": "person-everly-long-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-ed5d1172-e566-4502-a961-06a8b66e746e",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-15T00:00:55.338Z",
+      "createdAt": "2026-08-15T00:00:55.338Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_so6is2vk",
+      "workspaceId": "beta",
+      "title": "Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-15",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "company-d40f78d7-dd4f-469a-8d21-102b22fa4a54",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-christian-brooks-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-15T00:01:33.409Z",
+      "createdAt": "2026-08-15T00:01:33.409Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_qm85ai7x",
+      "workspaceId": "beta",
+      "title": "Contract – 24 Month Term",
+      "type": "CONTRACT",
+      "data": {
+        "summary": "new contract",
+        "contractValue": 120000,
+        "termLengthMonths": 24,
+        "autoRenew": false
+      },
+      "parties": [
+        {
+          "identityId": "person-mia-wilson-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-aurora-phillips-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-16T16:35:35.305Z",
+      "createdAt": "2026-08-16T16:35:35.305Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_sk59vkn2",
+      "workspaceId": "beta",
+      "title": "Contract – 24 Month Term",
+      "type": "CONTRACT",
+      "data": {
+        "summary": "another new contract",
+        "contractValue": 180000,
+        "termLengthMonths": 24,
+        "autoRenew": true
+      },
+      "parties": [
+        {
+          "identityId": "person-skylar-price-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-ec467e32-5465-4ddf-9417-10e3004afe84",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-16T16:47:32.907Z",
+      "createdAt": "2026-08-16T16:47:32.907Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_0ysl2sac",
+      "workspaceId": "beta",
+      "title": "Contract – 30 Month Term",
+      "type": "CONTRACT",
+      "data": {
+        "summary": "contract between companies",
+        "contractValue": 500000,
+        "termLengthMonths": 30,
+        "autoRenew": false
+      },
+      "parties": [
+        {
+          "identityId": "company-ce871323-cc07-4fa4-92ab-cdcb9b8481cc",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-37ba0a57-546f-4e8f-9d00-885ce2ec059c",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-16T16:50:10.931Z",
+      "createdAt": "2026-08-16T16:50:10.931Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_3xslc8y9",
+      "workspaceId": "beta",
+      "title": "Vendor Onboarding – Consulting",
+      "type": "VENDOR_ONBOARDING",
+      "data": {
+        "summary": "new vendor onboarding",
+        "vendorType": "Consulting",
+        "riskLevel": "Medium",
+        "onboardingChecklistComplete": true
+      },
+      "parties": [
+        {
+          "identityId": "person-lucy-gutierrez-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-36a804e2-0d71-4ebb-aace-a4d3c3bf3dbb",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-16T17:08:17.479Z",
+      "createdAt": "2026-08-16T17:08:17.479Z",
+      "creatorId": "person-sadie-reed-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "beta_pdsrf9wk",
+      "workspaceId": "beta",
+      "title": "Policy Update – Security",
+      "type": "POLICY_UPDATE",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "policyArea": "Security",
+        "effectiveDate": "2026-08-16",
+        "impactLevel": "Medium"
+      },
+      "parties": [
+        {
+          "identityId": "person-gianna-white-beta",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-grace-turner-beta",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-16T17:18:19.882Z",
+      "createdAt": "2026-08-16T17:18:19.882Z",
+      "creatorId": "person-aurora-phillips-beta",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     }
   ],
   "interactionActivities": [
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-694904fa-b09f-4cd8-bc4e-bf428392edf5",
+      "workspaceId": "beta",
+      "interactionId": "beta_pdsrf9wk",
+      "interactionTitle": "Policy Update – Security",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-16T17:18:19.882Z",
+      "actorId": "person-aurora-phillips-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-d354dcc4-148d-4dee-91cc-4476a86308ab",
+      "workspaceId": "beta",
+      "interactionId": "beta_3xslc8y9",
+      "interactionTitle": "Vendor Onboarding – Consulting",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-16T17:08:17.479Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-4b81be6b-d083-4a6a-af19-b88f00e5913b",
+      "workspaceId": "beta",
+      "interactionId": "beta_0ysl2sac",
+      "interactionTitle": "Contract – 30 Month Term",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-16T16:50:10.931Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-34cee102-5e64-4e7a-8487-d1ef032778ff",
+      "workspaceId": "beta",
+      "interactionId": "beta_sk59vkn2",
+      "interactionTitle": "Contract – 24 Month Term",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-16T16:47:32.907Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-486844a3-0c7d-4203-8f53-c823725de6cb",
+      "workspaceId": "beta",
+      "interactionId": "beta_qm85ai7x",
+      "interactionTitle": "Contract – 24 Month Term",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-16T16:35:35.305Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-7db5067c-c9f8-4ade-a0c4-8e82f28121be",
+      "workspaceId": "beta",
+      "interactionId": "beta_so6is2vk",
+      "interactionTitle": "Policy Update – Security",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-15T00:01:33.409Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-2805858f-3f33-41bb-b07e-ea9a413c2b45",
+      "workspaceId": "beta",
+      "interactionId": "beta_cm260yuy",
+      "interactionTitle": "Policy Update – Security",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-15T00:00:55.338Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-2d64d89a-ef66-4f87-8f3e-50c8047e2e6e",
+      "workspaceId": "beta",
+      "interactionId": "beta_g74tk1av",
+      "interactionTitle": "Proposal – $124,235",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T22:22:22.105Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-fa7d4d45-1862-45cb-b0ee-cae5f09aaade",
+      "workspaceId": "beta",
+      "interactionId": "beta_urf49oxg",
+      "interactionTitle": "Proposal – $734,531",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T22:21:09.660Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-bb91741b-35d5-43ca-b2ea-d40c648e6914",
+      "workspaceId": "beta",
+      "interactionId": "beta_4mzgn29c",
+      "interactionTitle": "Proposal – $500,000",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T22:07:43.133Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-3843a87e-7691-4383-86a8-35d7fa96f235",
+      "workspaceId": "beta",
+      "interactionId": "beta_6kpvwimj",
+      "interactionTitle": "Proposal – $4,000",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T22:06:18.617Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-4badd934-fdca-4b42-9ba0-9f5663335743",
+      "workspaceId": "beta",
+      "interactionId": "beta_nnp4pngd",
+      "interactionTitle": "Policy Update – Security",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T21:34:58.804Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-54bc9429-86e9-429b-b103-69ac96f1a21e",
+      "workspaceId": "beta",
+      "interactionId": "beta_kge7lwle",
+      "interactionTitle": "Policy Update – Compliance",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T20:33:54.417Z",
+      "actorId": "person-sadie-reed-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-4295e995-5bf8-44a2-8171-e10c08c565e6",
+      "workspaceId": "beta",
+      "interactionId": "beta_3xwfas81",
+      "interactionTitle": "Policy Update – Security",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T20:20:18.291Z",
+      "actorId": "person-carter-evans-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-751ee36c-6b6f-4d92-ab10-30ca5fb16f55",
+      "workspaceId": "beta",
+      "interactionId": "beta_1muslh6c",
+      "interactionTitle": "Policy Update – Security",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T20:18:22.090Z",
+      "actorId": "person-carter-evans-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-a757fc5b-d936-4ebb-a153-3286e29441cf",
+      "workspaceId": "beta",
+      "interactionId": "beta_h6oity3i",
+      "interactionTitle": "Policy Update – HR",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T16:05:27.552Z",
+      "actorId": "person-carter-evans-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-c663d024-e5f2-4b71-bd46-04f63662f3f3",
+      "workspaceId": "beta",
+      "interactionId": "beta_pxk9bljz",
+      "interactionTitle": "Policy Update – HR",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T16:02:40.280Z",
+      "actorId": "person-carter-evans-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-2bfa9c5e-73cf-450e-b0fd-02e722f4c9f3",
+      "workspaceId": "beta",
+      "interactionId": "beta_rhr45q5b",
+      "interactionTitle": "Policy Update – HR",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T16:01:08.745Z",
+      "actorId": "person-carter-evans-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-35262977-d0d3-4d2a-a1f2-3cfbe77cdf39",
+      "workspaceId": "beta",
+      "interactionId": "beta_og38ikt9",
+      "interactionTitle": "Proposal – $30,000",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T15:56:43.353Z",
+      "actorId": "person-carter-evans-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-abd15fa6-e2ee-4257-8596-582e94128598",
+      "workspaceId": "beta",
+      "interactionId": "beta_6fqs3myy",
+      "interactionTitle": "Proposal – $1,000",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T15:54:45.654Z",
+      "actorId": "person-carter-evans-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-f5deb326-9f96-4a59-88b6-d0a33672a68b",
+      "workspaceId": "beta",
+      "interactionId": "beta_i597kz9v",
+      "interactionTitle": "Proposal – $300,000",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T04:29:07.358Z",
+      "actorId": "person-carter-evans-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-7e8483ae-ad87-40df-9f94-51428ffcf03b",
+      "workspaceId": "beta",
+      "interactionId": "beta_tzjlr4ub",
+      "interactionTitle": "Proposal – $50,000",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T04:20:20.350Z",
+      "actorId": "person-carter-evans-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-9737214f-c202-4208-964b-69b67fc969e1",
+      "workspaceId": "beta",
+      "interactionId": "beta_dsytjxcg",
+      "interactionTitle": "Policy Update – Security",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-14T03:48:37.593Z",
+      "actorId": "person-carter-evans-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-ed2bed94-5471-4f7d-be56-8c527448864d",
+      "workspaceId": "beta",
+      "interactionId": "beta_ozpvx9ff",
+      "interactionTitle": "Policy Update – Compliance",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-13T19:14:55.304Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-c37c54b5-e4cd-41c5-8b63-c503065636bc",
+      "workspaceId": "beta",
+      "interactionId": "beta_n8his7v0",
+      "interactionTitle": "Policy Update – Compliance",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-13T17:40:02.847Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-2a568e53-0d8b-40b8-8483-4644761e01f3",
+      "workspaceId": "beta",
+      "interactionId": "beta_noguj5fi",
+      "interactionTitle": "Policy Update – Compliance",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T23:13:41.667Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-33af7232-498d-4d21-b553-b0c4b77b1c2b",
+      "workspaceId": "beta",
+      "interactionId": "beta_tvhk5m7n",
+      "interactionTitle": "Policy Update – Compliance",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T23:01:33.903Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-a956d35a-0493-4a29-aae7-2d3f75917355",
+      "workspaceId": "beta",
+      "interactionId": "beta_6yni4ao6",
+      "interactionTitle": "Vendor Onboarding – Consulting",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T21:21:44.938Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-a42e6636-06b3-44da-90bf-a67150d642b8",
+      "workspaceId": "beta",
+      "interactionId": "beta_yr1h5ptg",
+      "interactionTitle": "Proposal – $540,000",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T21:17:34.534Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-03d738fe-0e1a-4af9-9826-7cc0034b53e8",
+      "workspaceId": "beta",
+      "interactionId": "beta_adk0rdj6",
+      "interactionTitle": "Contract – 36 Month Term",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T21:12:33.298Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-bfc1d480-ef84-4196-bdf6-d938d8a5e6b3",
+      "workspaceId": "beta",
+      "interactionId": "beta_6qz89iha",
+      "interactionTitle": "Policy Update – Compliance",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T21:05:59.268Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-7e6465fc-1b21-4726-8c61-b5d175dd5dc8",
+      "workspaceId": "beta",
+      "interactionId": "beta_mnv06z3s",
+      "interactionTitle": "Policy Update – Compliance",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T19:54:42.664Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-89c17abc-6ca0-4ecd-b87d-6f5244ec6a36",
+      "workspaceId": "beta",
+      "interactionId": "beta_h2pc16ql",
+      "interactionTitle": "Proposal – $50,000",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T17:54:38.703Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-60964864-159b-46f1-8088-3f6d40033e60",
+      "workspaceId": "beta",
+      "interactionId": "beta_3lb7nnms",
+      "interactionTitle": "Contract – 24 Month Term",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T17:37:01.695Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-d385ea04-8e27-435c-87fb-4c79d5f68082",
+      "workspaceId": "beta",
+      "interactionId": "beta_ocyjhmuv",
+      "interactionTitle": "Vendor Onboarding – Consulting",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T16:37:08.982Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-24958371-ddbc-423c-90a4-28586f725e74",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_7uswnztc",
+      "interactionTitle": "Policy Update – Security",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T16:29:03.245Z",
+      "actorId": "person-audrey-james-beta",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-06bf834e-1513-496a-9a81-b7e885004aa4",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_7vhmuz69",
+      "interactionTitle": "Policy Update – Security",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T16:23:01.326Z",
+      "actorId": "person-charles-rogers-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-6b160c84-4b15-46d8-9a56-ccff29b30e2e",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_r9nzeo3q",
+      "interactionTitle": "Vendor Onboarding – Consulting",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T16:19:41.672Z",
+      "actorId": "person-charles-rogers-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-503ab746-ada5-4b63-92ca-978e6d5256e7",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_o8vuxn9l",
+      "interactionTitle": "Vendor Onboarding – Logistics",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T16:13:47.262Z",
+      "actorId": "person-charles-rogers-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-318c2675-af07-41b3-9cbb-25160bfe1c75",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_dus8mf2j",
+      "interactionTitle": "Policy Update – Compliance",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T03:49:47.995Z",
+      "actorId": "person-charles-rogers-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-80d1b8de-ba57-4c70-9fbb-da3ec62d3577",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_8ladefkx",
+      "interactionTitle": "Policy Update – Compliance",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T03:06:21.521Z",
+      "actorId": "person-charles-rogers-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-2a6a4914-3c33-4053-aab6-deb5011d4b98",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_n9v32hqy",
+      "interactionTitle": "Policy Update – Security",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T03:04:48.309Z",
+      "actorId": "person-charles-rogers-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-b51b4d79-536c-4966-b4da-dcd90bfdc105",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_6i4a1t5k",
+      "interactionTitle": "Policy Update – Compliance",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T01:35:10.798Z",
+      "actorId": "person-charles-rogers-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
     {
       "__typename": "InteractionActivityRecord",
       "id": "activity-1e7f4bba-b1e6-4aa9-8430-c2045de8d7c9",
@@ -52924,6 +54994,34 @@
       "type": "INTERACTION_CREATED",
       "occurredAt": "2026-03-08",
       "actorId": "person-christopher-ortiz-gamma",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-251a70f5-2be3-42b7-b043-32fb6be6a58a",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_zyj5wkkl",
+      "interactionTitle": "Policy Update – HR",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T01:22:01.392Z",
+      "actorId": "person-charles-rogers-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-2ace5282-0c95-4c18-8089-8ef4f317c7aa",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_8yrph7ub",
+      "interactionTitle": "Policy Update – HR",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-12T01:24:03.442Z",
+      "actorId": "person-charles-rogers-alpha",
       "metadata": {
         "__typename": "InteractionActivityMetadata_Created",
         "initialStatus": "DRAFT"
