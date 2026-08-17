@@ -5,6 +5,7 @@ import { GlobalSearchAppBar } from "../Search/GlobalSearchAppBar";
 import { BreakpointContext } from "../../contexts/Breakpoints/BreakpointContext";
 import IconHamburgerCollapse from "../../assets/hamburger-collapse.svg?react";
 import IconHamburgerExpand from "../../assets/hamburger-expand.svg?react";
+import CircleCheckmark from "../../assets/approved-aproved-confirm-2-svgrepo-com.svg?react";
 import { UserMenu } from "../UserMenu/UserMenu";
 import { WorkspaceSwitcher } from "../WorkspaceSwitcher/WorkspaceSwitcher";
 import styles from "./Header.module.scss";
@@ -47,7 +48,11 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick, isSidebarOpen }) =>
           </>
         ) : (
           <>
-            <span className={styles.productName}>Resolve</span>
+            <span className={styles.productName}>
+              Res
+              <CircleCheckmark />
+              lve
+            </span>
             <span className={styles.separator}>/</span>
             {workspaceId && <WorkspaceSwitcher />}
           </>

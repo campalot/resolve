@@ -43,6 +43,15 @@
   padding: 0 var(--space-sm);
   font-weight: 600;
   color: var(--color-shell-text);
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  svg {
+      width: 16px;
+      height: 16px;
+      margin: 4px 2px;
+      fill: #16A34A;
+    }
 }
 
 .separator {

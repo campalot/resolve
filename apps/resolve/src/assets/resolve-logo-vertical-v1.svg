@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1200 800"
+     role="img"
+     aria-labelledby="title desc">
+  <title id="title">Resolve logo — vertical workflow</title>
+  <desc id="desc">Resolve wordmark with a green completion node and checkmark forming the letter o, connected to two subtle workflow nodes above.</desc>
+
+  <style>
+    :root {
+      --resolve-neutral: #9AA0A6;
+      --resolve-success: #16C45A;
+      --resolve-text: #101820;
+    }
+
+    .neutral { stroke: var(--resolve-neutral); }
+    .success { stroke: var(--resolve-success); }
+
+    .wordmark {
+      fill: var(--resolve-text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      font-size: 170px;
+      font-weight: 500;
+      letter-spacing: -7px;
+    }
+  </style>
+
+  <!-- Vertical workflow, shortened ~12% while keeping the completion node size -->
+  <line x1="633" y1="158" x2="633" y2="254"
+        class="neutral" stroke-width="10" stroke-linecap="round"/>
+  <line x1="633" y1="326" x2="633" y2="362"
+        class="success" stroke-width="10" stroke-linecap="round"/>
+
+  <!-- Two workflow nodes -->
+  <circle cx="633" cy="122" r="36"
+          fill="white" class="neutral" stroke-width="10"/>
+  <circle cx="633" cy="290" r="36"
+          fill="white" class="neutral" stroke-width="10"/>
+
+  <!-- Wordmark -->
+  <text x="600" y="490"
+        text-anchor="middle"
+        class="wordmark">Resolve</text>
+
+  <!-- Completion node replaces the 'o' -->
+  <circle cx="633" cy="430" r="68"
+          fill="white" class="success" stroke-width="12"/>
+
+  <!-- Checkmark -->
+  <path d="M601 430 L626 455 L671 406"
+        fill="none"
+        class="success"
+        stroke-width="15"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
