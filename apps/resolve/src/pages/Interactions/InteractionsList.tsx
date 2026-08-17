@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import type { Interaction } from "@resolve/types";
 import styles from "./Interactions.module.scss";
 import { StatusBadge } from "@resolve/ui";
-import IdentifierBadge from "../../components/Badges/IdentifierBadge";
+import { IdentifierBadge } from "@resolve/ui";
 import { interactionRoute } from "../../routes/routes";
 import { useWorkspacePath } from "../../hooks/useWorkspacePath";
 

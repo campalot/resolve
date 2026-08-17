@@ -21,6 +21,7 @@ import { useTransitionInteraction } from "../../hooks/useTransitionInteraction";
 import { TRANSITION_METADATA } from "@resolve/domain";
 import styles from "./InteractionDetail.module.scss";
 import { InteractionDetailSkeleton } from "./InteractionDetailSkeleton";
+import { IdentifierBadge } from "@resolve/ui";
 
 const TABS = [
   { label: "Overview", path: "overview" },
@@ -228,7 +229,8 @@ export const InteractionDetail: React.FC = () => {
               {interaction.title}
             </Typography>
             <Typography className={styles.interactionDetailSubtitle}>
-              <span className={styles.identifier}>{interaction.id}</span> ·{" "}
+              <IdentifierBadge text={interaction.id} size={`medium`} />
+               {" "}·{" "}
               {primaryparty?.identity.name}
             </Typography>
           </Box>
@@ -245,11 +247,7 @@ export const InteractionDetail: React.FC = () => {
               className={styles.tabs}
             >
               {TABS.map((tab) => (
-                <Tab
-                  key={tab.label}
-                  value={tab.path}
-                  label={tab.label}
-                />
+                <Tab key={tab.label} value={tab.path} label={tab.label} />
               ))}
             </Tabs>
 

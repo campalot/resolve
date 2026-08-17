@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { MetadataRow } from "../common/MetadataRow";
+import { MetadataRow } from "@resolve/ui";
 import styles from "./SidebarCard.module.scss";
 
 type LifecycleCardProps = {

@@ -13,6 +13,8 @@
   "dependencies": {
     "@resolve/types": "workspace:*",
     "@resolve/utils": "workspace:*",
+    "@mui/icons-material": "^7.3.7",
+    "@mui/material": "^7.3.7",
     "react": "^18.2.0",
     "sass": "^1.97.3"
   },
