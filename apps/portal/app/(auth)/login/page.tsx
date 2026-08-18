@@ -1,66 +1,63 @@
-import Image from "next/image";
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import styles from "./page.module.css";
-import { StatusBadgeAdapter } from "../../../components/StatusBadgeAdapter";
+import type { Identity } from "@resolve/types";
+import { useIdentities } from "@/hooks/useIdentities";
+import { useCurrentUser } from "@/contexts/CurrentUser/CurrentUserContext";
+
+const LOGGED_IN_REDIRECT = `/dashboard`;
 
 export default function Login() {
+  const { identities } = useIdentities({
+    filters: {
+      type: ["Individual"],
+    },
+    page: 1,
+    pageSize: 80,
+  });
+  const router = useRouter();
+  const { currentUser, selectCurrentUser } = useCurrentUser();
+
+  const updateSelection = (dropdown) => {
+    console.log("user select=",dropdown.target.value);
+    // 1. Get the raw value of the selected option
+    const selectedValue = dropdown.target.value;
+    const selectedIdentity = identities?.find((i) => i.id === selectedValue);
+    if (selectedIdentity) {
+      selectCurrentUser(selectedIdentity);
+      router.replace(LOGGED_IN_REDIRECT);
+    }
+  };
+
+
+ useEffect(() => {
+   if (currentUser) {
+     router.replace(LOGGED_IN_REDIRECT);
+   }
+ }, [currentUser, router]);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <StatusBadgeAdapter />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            LOGIN
+          </label><p />
+          <select
+            onChange={updateSelection}
+            className="mt-1 block w-full border border-gray-300 rounded-md p-2 shadow-sm focus:ring-blue-500 focus:border-blue-500 text-gray-900"
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <option value="">Select a current user</option>
+            {identities.map((identity: Identity, idx: number) => {
+              return (
+                <option key={identity.id} value={identity.id}>
+                  {identity.name}
+                </option>
+              );
+            })}
+          </select>
         </div>
       </main>
     </div>
