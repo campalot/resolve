@@ -27,7 +27,7 @@
   align-items: flex-start;
   justify-content: space-between;
   background-color: var(--foreground);
-  padding: 120px 60px;
+  padding: 12px 24px 24px;
 }
 
 .intro {
@@ -92,16 +92,6 @@ a.primary {
 
 a.secondary {
   border-color: var(--button-secondary-border);
-}
-
-.menuContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-.dashboardSection {
-  width: 100%;
 }
 
 /* Enable hover only on non-touch devices */

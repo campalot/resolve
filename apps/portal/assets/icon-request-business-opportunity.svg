@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="28px" viewBox="0 0 30 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Icon/Medium/Request---Business-Opportunity" transform="translate(-1.000000, -2.000000)" stroke="#000000" stroke-width="2">
+            <g id="Group" transform="translate(2.000000, 3.000000)">
+                <path d="M11,18.2493333 C11,19.492 12.3426667,20.5 14,20.5 C15.6573333,20.5 17,19.492 17,18.2493333 C17,17.0066667 15.6573333,16 14,16 C12.3426667,16 11,14.992 11,13.7493333 C11,12.5066667 12.3426667,11.5 14,11.5 C15.6573333,11.5 17,12.5066667 17,13.7493333" id="Path"></path>
+                <path d="M14,10 L14,11.5" id="Path"></path>
+                <path d="M14,20.5 L14,22" id="Path"></path>
+                <polygon id="Path" points="-6.66133815e-16 6 28 6 28 26 -6.66133815e-16 26"></polygon>
+                <path d="M18.456,1.36666667 C18.1834717,0.550340864 17.4192824,-0.000111689722 16.5586667,-1.69936731e-08 L11.4413333,-1.69936731e-08 C10.5807176,-0.000111689722 9.81652832,0.550340864 9.544,1.36666667 L8,5.99999998 L20,5.99999998 L18.456,1.36666667 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

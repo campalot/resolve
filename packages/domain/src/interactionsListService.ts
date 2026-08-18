@@ -35,7 +35,7 @@ export const interactionsListService = {
 
     if (filters.identityId) {
         resolved = resolved.filter((interaction) =>
-            interaction.parties.some(
+            interaction.creator.id === filters.identityId || interaction.parties.some(
             (p) => p?.identity.id === filters.identityId
             )
         );

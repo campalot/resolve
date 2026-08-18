@@ -1,0 +1,32 @@
+.menu {
+  padding: 1rem;
+  width: 192px;
+  height: 128px;
+  border-radius: 1rem;
+  background: #fafafa;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &__title {
+    // @include font-medium;
+    // @include truncate-multiline-string;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  svg {
+    max-width: 30px;
+    max-height: 33px;
+    g {
+      stroke: #724ae2;
+    }
+  }
+  &:hover {
+    background: #0000000d;
+  }
+}
+
