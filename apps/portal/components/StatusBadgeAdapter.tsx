@@ -1,6 +1,11 @@
 import { StatusBadge } from "@resolve/ui";
 import type { InteractionState } from "@resolve/types";
 
-export function StatusBadgeAdapter() {
-  return <StatusBadge status={`APPROVED` as InteractionState} />;
+type StatusBadgeProps = {
+  status?: InteractionState;
+  hideIcon?: boolean;
+};
+
+export function StatusBadgeAdapter({ status = "APPROVED", hideIcon = true }: StatusBadgeProps) {
+  return <StatusBadge status={status} hideIcon={hideIcon} />;
 }
