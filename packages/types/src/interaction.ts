@@ -55,7 +55,15 @@ export type VendorOnboardingData = {
 export type InteractionDataRecord = ProposalData |
   ContractData |
   PolicyUpdateData |
-  VendorOnboardingData;
+  VendorOnboardingData | null;
+
+export type CreateFormProps = {
+  data: InteractionDataRecord;
+  parties: InteractionPartyRecord[];
+  actorId: string;
+  workspaceId: string;
+  type: InteractionType;
+}
 
 export type InteractionRecord = {
   id: string;

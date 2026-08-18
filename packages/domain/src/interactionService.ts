@@ -1,5 +1,6 @@
 // import { getMockDb, persistDb } from '../../mocks/mockDB';
 import { 
+  createInteractionCreatedActivity,
   getMockDb, 
   generateInteractionTitle, 
   randomCounterparties,
@@ -11,9 +12,17 @@ import { backendLogger } from '@resolve/logger';
 // import { useAppStore } from '../../store/useAppStore';
 import { ROLE_PERMISSIONS } from "@resolve/types";
 import { resolveIdentity, resolveInteraction, resolveInteractionActivity, resolveProfileAssociations } from './common/resolvers';
-import type { IdentityRecord, InteractionActivity, ToastNotification } from '@resolve/types';
+import type { IdentityRecord, InteractionActivity, InteractionActivityRecord, InteractionType, ToastNotification } from '@resolve/types';
 import { buildInteractionToastMessage } from "./buildInteractionMetadata";
-import type { InteractionAction } from "@resolve/types";
+import type { 
+  InteractionAction, 
+  InteractionDataRecord,
+  CreateFormProps,
+  ContractData,
+  ProposalData,
+  PolicyUpdateData,
+  VendorOnboardingData
+} from "@resolve/types";
 import { pickOne } from "@resolve/utils";
 
 //TEMPORARY UNTIL I FIGURE OUT ALL CONNECTIONS 
@@ -24,6 +33,53 @@ export type TransitionVariables = {
   workspaceId: string;
   comment?: string;
 }
+
+const createInteractionMetadata = (
+  type: InteractionType,
+  data: InteractionDataRecord
+) => {
+  switch (type) {
+    case "CONTRACT":
+      const contractData = data as ContractData;
+      return {
+          summary: contractData.summary,
+          contractValue: contractData.contractValue,
+          termLengthMonths: contractData.termLengthMonths,
+          autoRenew: contractData.autoRenew,
+        };
+
+    case "PROPOSAL":
+      const proposalData = data as ProposalData;
+      return {
+        summary: proposalData.summary,
+        amount: proposalData.amount,
+        currency: proposalData.currency,
+        effectiveDate: proposalData.effectiveDate,
+        expirationDate: proposalData.expirationDate,
+      };
+
+    case "POLICY_UPDATE":
+      const policyData = data as PolicyUpdateData;
+      return {
+        summary: policyData.summary,
+        policyArea: policyData.policyArea,
+        effectiveDate: policyData.effectiveDate,
+        impactLevel: policyData.impactLevel,
+      };
+
+    case "VENDOR_ONBOARDING":
+      const vendorOnboardingData = data as VendorOnboardingData;
+      return {
+        summary: vendorOnboardingData.summary,
+        vendorType: vendorOnboardingData.vendorType,
+        riskLevel: vendorOnboardingData.riskLevel,
+        onboardingChecklistComplete: vendorOnboardingData.onboardingChecklistComplete,
+      };
+
+    default:
+      return null;
+  }
+};
 
 export const interactionService = {
   executeTransition: async (vars: TransitionVariables) => {
@@ -146,40 +202,47 @@ export const interactionService = {
     return resolveProfileAssociations(workspaceId, identityId).interactions;
   },
 
-  generatePolicyUpdate: async (workspaceId: string, identities: IdentityRecord[], formData: any) => {
-    const randomDate = new Date(
-      Date.now() - Math.floor(Math.random() * 10000000000)
-    ).toLocaleString();
+  generateNewInteraction: async (workspaceId: string, identities: IdentityRecord[], formData: CreateFormProps) => {
     const currentDate = new Date().toISOString();
-    // const randomCreateDate = new Date(
-    //   new Date(randomDate).getTime() - Math.floor(Math.random() * 10000000000)
-    // ).toLocaleString();
-    const counterParties = randomCounterparties(identities);
+    const counterParties = formData.parties;
     const status = "DRAFT" as any;
     const currentReviewer = pickOne(identities);
-    const type = "POLICY_UPDATE";
-    const data = {
-      summary: formData.summary,
-      policyArea: formData.policyArea,
-      effectiveDate: formData.effectiveDate,
-      impactLevel: formData.impactLevel,
-    };
+    const type = formData.type;
+    const data = createInteractionMetadata(formData.type, formData.data);
 
     const title = generateInteractionTitle(type, data);
-  
-    return ({
+    const newInteraction = {
       id: workspaceId + "_" + randomId(),
       workspaceId,
-      title: "ALEX " + title,
+      title,
       type,
       data,
       parties: counterParties,
       status,
       updatedAt: currentDate,
       createdAt: currentDate,
-      creatorId: pickOne(counterParties).identityId,
+      creatorId: formData.actorId,
       ...(status === "IN_REVIEW" && { currentReviewerId: currentReviewer.id }),
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    })
+    };
+
+    const newActivities: InteractionActivityRecord[] = [];
+
+    const actor = identities.find((ident) => ident.id === formData.actorId);
+
+    const newActivity = createInteractionCreatedActivity(
+      workspaceId,
+      newInteraction,
+      actor ? [actor] : identities,
+    );
+
+    if (newActivity) {
+      newActivities.push(newActivity);
+    }
+
+    return {
+      newInteraction,
+      newActivities,
+    }
   }
 };

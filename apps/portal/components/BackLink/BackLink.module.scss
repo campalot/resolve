@@ -1,0 +1,24 @@
+/* BackLink.module.css */
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  padding: 12px 0px;
+  margin: 4px 0;
+  color: #4b5563;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.2s ease;
+}
+
+.container:active {
+  opacity: 0.6;
+}
+
+.arrow {
+  font-size: 16px;
+  line-height: 1;
+}

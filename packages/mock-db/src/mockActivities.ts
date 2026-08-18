@@ -70,7 +70,7 @@ export function createInteractionCreatedActivity(
   interaction: InteractionRecord,
   identities: IdentityRecord[]
 ): InteractionActivityRecord {
-  const actor = pickActorFromInteraction(interaction, identities);
+  const actor = identities.length === 1 ? identities[0] : pickActorFromInteraction(interaction, identities);
 
   if (!actor) throw new Error("Actor not found");
 
