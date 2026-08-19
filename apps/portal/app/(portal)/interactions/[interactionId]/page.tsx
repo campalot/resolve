@@ -1,38 +1,13 @@
 "use client"; 
 
-// import styles from "./page.module.css";
-
-// export default async function InteractionDetailPage({ params }) {
-//   const { interactionId } = await params;
-
-//   return (
-//     <div className={styles.page}>
-//       <div className={styles.main}>
-//         <h1>Interaction Details</h1>
-//         <p>Current ID: {interactionId}</p>
-//       </div>
-//     </div>
-//   );
-// }
-
 import styles from "./page.module.css";
 import React, {
-  useContext,
   useEffect,
-  useRef,
-  useState,
   useMemo,
   use,
 } from "react";
-// import {
-//   useParams,
-//   Navigate,
-//   useNavigate,
-// } from "react-router-dom";
 import {
   useRouter,
-  useParams,
-  useSearchParams,
   redirect,
 } from "next/navigation";
 import BackLink from "@/components/BackLink/BackLink";
@@ -53,6 +28,7 @@ import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { TRANSITION_METADATA } from "@resolve/domain";
 import detailStyles from "./InteractionDetail.module.scss";
 import { InteractionDetailSkeleton } from "./InteractionDetailSkeleton";
+import { IdentifierBadge } from "@resolve/ui";
 
 const TABS = [
   { label: "Overview", path: "overview" },
@@ -292,7 +268,8 @@ export default function InteractionDetail({ params, searchParams }: PageProps) {
               {interaction.title}
             </Typography>
             <Typography className={detailStyles.interactionDetailSubtitle}>
-              <span className={detailStyles.identifier}>{interaction.id}</span>{" "}
+              <IdentifierBadge text={interaction.id} />
+              {" "}
               · {primaryparty?.identity.name}
             </Typography>
           </Box>
