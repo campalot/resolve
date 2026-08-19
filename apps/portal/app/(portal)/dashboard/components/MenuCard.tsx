@@ -5,7 +5,6 @@ import "./MenuCard.scss";
 
 interface MenuCardProps {
   displayName: string;
-  // menuIcon: InteractionType;
   MenuIcon: React.ComponentType<{ className?: string }>;
   onClick: () => void;
 }
