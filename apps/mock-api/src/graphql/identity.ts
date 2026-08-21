@@ -1,20 +1,33 @@
 import { builder } from './builder';
 import { identityService } from '@resolve/domain';
 import { getMockDb } from '@resolve/mock-db';
-import { IdentityFilters } from '@resolve/mock-db';
+import type { Identity, IdentityFilters, IdentitiesConnection, IdentityStats, IdentityReference } from '@resolve/types';
 
+export const IdentityReferenceType =
+  builder.objectRef<IdentityReference>("IdentityReference");
 
-export const StatsType = builder.objectRef<{ total: number; active: number; awaiting: number; lastActivityAt: string }>('Stats').implement({
+IdentityReferenceType.implement({
+  fields: (t) => ({
+    id: t.exposeID("id"),
+    name: t.exposeString("name"),
+  }),
+});
+
+export const StatsType = builder.objectRef<IdentityStats>('Stats').implement({
   fields: (t) => ({
     total: t.exposeInt('total'),
     active: t.exposeInt('active'),
     awaiting: t.exposeInt('awaiting'),
-    lastActivityAt: t.exposeString('lastActivityAt'),
+    lastActivityAt: t.exposeInt("lastActivityAt", {
+        nullable: true,
+    }),
   }),
 });
 
 // 1. Compile the Identity type configuration using its backing model properties
-export const IdentityType = builder.objectRef<any>('Identity').implement({
+export const IdentityType = builder.objectRef<Identity>("Identity");
+
+IdentityType.implement({
   fields: (t) => ({
     id: t.exposeID('id'),
     workspaceId: t.exposeID('workspaceId'),
@@ -23,9 +36,12 @@ export const IdentityType = builder.objectRef<any>('Identity').implement({
     createdAt: t.exposeString('createdAt'),
     type: t.exposeString('type'),
     status: t.exposeString('status'),
-    company: t.expose('company', { type: IdentityType }),
+    company: t.expose('company', { type: IdentityType, nullable: true, }),
     country: t.exposeString('country'),
-    stats: t.expose('stats', { type: StatsType }),
+    stats: t.field({
+        type: StatsType,
+        resolve: (p) => p.stats,
+    }),
     // industry: t.exposeString('industry'),
     // personKey: t.exposeString('personKey'),
   }),
@@ -39,11 +55,24 @@ export const PageInfoType = builder.objectRef<{ total: number; hasMore: boolean 
   }),
 });
 
+const IdentitiesConnectionRef =
+  builder.objectRef<IdentitiesConnection>(
+    "IdentitiesConnection"
+  );
+
 // 2. New Identities Connection Object Ref (No manual field typing!)
-const IdentitiesConnectionType = builder.objectRef('IdentitiesConnection').implement({
+const IdentitiesConnectionType = IdentitiesConnectionRef.implement({
   fields: (t) => ({
-    results: t.expose('results', { type: [IdentityType] }),
-    pageInfo: t.expose('pageInfo', { type: PageInfoType }), // Pure reference—no inline function call!
+    // results: t.expose('results', { type: [IdentityType] }),
+    // pageInfo: t.expose('pageInfo', { type: PageInfoType }), // Pure reference—no inline function call!
+    results: t.field({
+        type: [IdentityType],
+        resolve: (p) => p.results,
+    }),
+    pageInfo: t.field({
+        type: PageInfoType,
+        resolve: (p) => p.pageInfo,
+    }),
   }),
 });
 
@@ -85,19 +114,19 @@ builder.queryFields((t) => ({
       }),
     },
     resolve: async (_root, args) => {
-        console.log("args=",args);
+      const filters = args.filters ?? {};
       // Direct pass-through execution to your existing domain service method
       const response = await identityService.processIdentities(getMockDb().identities, {
         workspaceId: args.workspaceId,
         offset: args.offset ?? 0,
         limit: args.limit ?? 12,
-        sortBy: args.sortBy ?? null,
+        sortBy: args.sortBy ?? "",
         filters: {
-          status: args.filters.status ?? [],
-          type: args.filters.type ?? [],
-          identityId: args.filters.identityId ?? null,
-          searchText: args.filters.searchText ?? null,
-          companyId: args.filters.companyId ?? null,
+          status: filters.status ?? [],
+          type: filters.type ?? [],
+          identityId: filters.identityId ?? "",
+          searchText: filters.searchText ?? "",
+          companyId: filters.companyId ?? "",
         },
       });
 

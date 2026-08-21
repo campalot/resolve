@@ -22,32 +22,28 @@ export const activitiesService = {
       }
 
       let resolved = allActivities
-      .map(activity => {
-        try {
-          return resolveInteractionActivity(activity);
-        } catch (e) {
-          console.error("Crash during resolution of activity:", activity.id, e);
-          return null;
-        }
-      })
-      .filter(ia => ia?.workspaceId === workspaceId);
+        .map(activity => resolveInteractionActivity(activity))
+        .filter(ia => ia.workspaceId === workspaceId);
 
       console.log("Service: Successfully resolved", resolved.length);
 
       if (filters.interactionId) {
-          resolved = resolved.filter((a: InteractionActivity | null) => a?.interactionId === filters.interactionId);
+        resolved = resolved.filter(
+          a => a.interactionId === filters.interactionId
+        );
       }
 
       const batch = resolved.slice(offset, offset + limit);
 
-      // Standard Response Shape
       return {
-          results: batch,
-          pageInfo: {
-              total: resolved.length,
-              hasMore: offset + limit < resolved.length,
-              comments: resolved.filter((a: InteractionActivity | null) => a?.type === "COMMENT_ADDED").length
-          }
+        results: batch,
+        pageInfo: {
+          total: resolved.length,
+          hasMore: offset + limit < resolved.length,
+          comments: resolved.filter(
+            a => a.type === "COMMENT_ADDED"
+          ).length,
+        },
       };
     } catch (globalError) {
       console.error("CRITICAL SERVICE ERROR:", globalError);

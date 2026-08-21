@@ -14,6 +14,10 @@ import type {
     InteractionActivityMetadata_Comment,
     InteractionActivityMetadata_Decision,
     InteractionActivityMetadata_Created,
+    InteractionsConnection,
+    IdentitiesConnection,
+    ActivitiesConnection,
+    SearchConnection
 } from '@resolve/types';
 
 // Declare the layout structure explicitly as a standalone type
@@ -41,27 +45,10 @@ type PothosConfig = {
     };
     Workspace: Workspace;
     // Tells Pothos that this string corresponds to a generic connection object
-    IdentitiesConnection: {
-      results: Identity[];
-      pageInfo: {
-        total: number;
-        hasMore: boolean;
-      };
-    };
-    InteractionsConnection: {
-      results: Interaction[];
-      pageInfo: {
-        total: number;
-        hasMore: boolean;
-      };
-    };
-    ActivitiesConnection: {
-      results: InteractionActivity[];
-      pageInfo: { 
-        total: number; 
-        hasMore: boolean 
-      };
-    };
+    IdentitiesConnection: IdentitiesConnection;
+    InteractionsConnection: InteractionsConnection;
+    ActivitiesConnection: ActivitiesConnection;
+    SearchConnection: SearchConnection;
   };
 };
 

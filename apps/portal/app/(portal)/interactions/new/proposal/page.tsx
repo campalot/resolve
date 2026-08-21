@@ -35,13 +35,11 @@ import SubmissionSuccess from "../components/SubmissionSuccess/SubmissionSuccess
 // Define the Zod schema matching your PolicyUpdateData model
 const proposalSchema = z.object({
   summary: summarySchema,
-  amount: z.coerce
-    .number({
-      message: "Amount is required and must be a number",
-    })
+  amount: z
+    .number({ error: "Amount is required and must be a number" })
     .positive({ message: "Amount must be greater than 0" }),
   currency: z.enum(["USD"], {
-    required_error: "Please select a currency",
+    error: "Please select a currency",
   }),
   effectiveDate: z
     .string({ message: "Effective date is required" })
@@ -58,12 +56,13 @@ const proposalSchema = z.object({
 });
 
 // Infer TypeScript type from the Zod schema
-export type ProposalFormData = z.infer<typeof proposalSchema>;
+export type ProposalFormData = z.input<typeof proposalSchema>;
+export type ProposalFormOutput = z.infer<typeof proposalSchema>;
 
 export default function PolicyUpdateForm() {
 
-  const methods = useForm<ProposalFormData>({
-    resolver: zodResolver(proposalSchema) as any,
+  const methods = useForm<ProposalFormData, undefined, ProposalFormOutput>({
+    resolver: zodResolver(proposalSchema),
     defaultValues: {
       summary: "Update to internal policy requirements.",
       amount: 0,
@@ -93,7 +92,7 @@ export default function PolicyUpdateForm() {
   const [submittedInteraction, setSubmittedInteraction] =
       useState<InteractionRecord | null>(null);
 
-  const onSubmit = async (data: ProposalFormData) => {
+  const onSubmit = async (data: ProposalFormOutput) => {
     console.log("made it here");
     const { parties, ...remainingFormData } = data;
     const interactionPayload: CreateFormProps = {

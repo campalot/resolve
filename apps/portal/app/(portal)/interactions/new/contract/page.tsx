@@ -35,15 +35,11 @@ import SubmissionSuccess from "../components/SubmissionSuccess/SubmissionSuccess
 // Define the Zod schema matching your PolicyUpdateData model
 const contractSchema = z.object({
   summary: summarySchema,
-  contractValue: z.coerce
-    .number({
-      message: "Contract value is required and must be a number",
-    })
+  contractValue: z
+    .number({ error: "Contract value is required" })
     .positive({ message: "Contract value must be greater than 0" }),
-  termLengthMonths: z.coerce
-    .number({
-      message: "Term length is required and must be a number",
-    })
+  termLengthMonths: z
+    .number({ error: "Term length is required and must be a number" })
     .positive({ message: "Term length must be greater than 0" }),
   autoRenew: z
     .union([z.boolean(), z.literal("true"), z.literal("false")])
@@ -57,12 +53,13 @@ const contractSchema = z.object({
 });
 
 // Infer TypeScript type from the Zod schema
-export type ContractFormData = z.infer<typeof contractSchema>;
+export type ContractFormData = z.input<typeof contractSchema>;
+export type ContractFormOutput = z.infer<typeof contractSchema>;
 
 export default function ContractForm() {
 
-  const methods = useForm<ContractFormData>({
-    resolver: zodResolver(contractSchema) as any,
+  const methods = useForm<ContractFormData, undefined, ContractFormOutput>({
+    resolver: zodResolver(contractSchema),
     defaultValues: {
       summary: "Update to internal policy requirements.",
       contractValue: 0,
@@ -91,7 +88,7 @@ export default function ContractForm() {
   const [submittedInteraction, setSubmittedInteraction] =
       useState<InteractionRecord | null>(null);
 
-  const onSubmit = async (data: ContractFormData) => {
+  const onSubmit = async (data: ContractFormOutput) => {
     const { parties, ...remainingFormData } = data;
     const interactionPayload: CreateFormProps = {
       actorId: currentUser?.id ?? "", // Fallback to empty string if undefined
@@ -154,6 +151,7 @@ export default function ContractForm() {
                       label="Contract Value ($)"
                       // min={0}
                       // max={40}
+                      // If it's a string, convert it to a number or undefined so NumberInput is happy
                       value={field.value}
                       onValueChange={field.onChange}
                       inputRef={field.ref}

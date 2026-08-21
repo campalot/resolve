@@ -1,6 +1,5 @@
-// apps/mock-api/src/graphql/activity.ts
 import { builder } from './builder';
-import { IdentityType } from './identity'; // Reuse your working Identity ref
+import { IdentityType } from './identity';
 import { getMockDb } from '@resolve/mock-db';
 import { activitiesService } from '@resolve/domain';
 import type {
@@ -9,6 +8,10 @@ import type {
   InteractionActivityMetadata_Comment,
   InteractionActivityMetadata_Decision,
   InteractionActivityMetadata_Created,
+  ActivitiesConnection,
+  InteractionParty,
+  InteractionActivity,
+  ActivitiesPageInfo
 } from '@resolve/types';
 import { InteractionFiltersInput } from "./interaction";
  
@@ -33,7 +36,7 @@ export const StatusMetaType = StatusMetaRef.implement({
 });
 
 // 1. Declare a clean, explicit Object Reference blueprint for the party structure
-const InteractionPartyStubType = builder.objectRef('InteractionPartyStub').implement({
+const InteractionPartyStubType = builder.objectRef<InteractionParty>('InteractionPartyStub').implement({
   fields: (t) => ({
     role: t.exposeString('role'),
     identity: t.field({
@@ -97,7 +100,7 @@ const ActivityMetadataUnion = builder.unionType('InteractionActivityMetadata', {
 });
 
 // E. Implement the Master Activity Type Ref
-export const ActivityType = builder.objectRef('InteractionActivity').implement({
+export const ActivityType = builder.objectRef<InteractionActivity>('InteractionActivity').implement({
   fields: (t) => ({
     id: t.exposeID('id'),
     workspaceId: t.exposeString('workspaceId'),
@@ -115,18 +118,26 @@ export const ActivityType = builder.objectRef('InteractionActivity').implement({
 });
 
 // 1. Declare a clean, explicit Object Reference blueprint for the party structure
-const ActivitiesPageInfoType = builder.objectRef('ActivitiesPageInfo').implement({
+const ActivitiesPageInfoType = builder.objectRef<ActivitiesPageInfo>('ActivitiesPageInfo').implement({
   fields: (t) => ({
-    total: t.int(),
-    hasMore: t.boolean(),
-    comments: t.int(),
+    total: t.exposeInt('total'),
+    hasMore: t.exposeBoolean('hasMore'),
+    comments: t.exposeInt('comments'),
   }),
 });
 
+const ActivitiesConnectionRef =
+  builder.objectRef<ActivitiesConnection>(
+    "ActivitiesConnection"
+  );
+
 // F. Map your connection type container for the standalone paginated query
-const ActivitiesConnectionType = builder.objectRef('ActivitiesConnection').implement({
+const ActivitiesConnectionType = ActivitiesConnectionRef.implement({
   fields: (t) => ({
-    results: t.expose('results', { type: [ActivityType] }),
+    results: t.field({
+      type: [ActivityType],
+      resolve: (p) => p.results,
+    }),
     pageInfo: t.field({
       type: ActivitiesPageInfoType,
       resolve: (p) => p.pageInfo,
@@ -145,7 +156,7 @@ builder.queryFields((t) => ({
       actorId: t.arg.id(), // Links query to the specific active profile filter
     },
     resolve: async (_root, args) => {
-       const response = await activitiesService.getProfileActivities(args.workspaceId, args.actorId);
+       const response = await activitiesService.getProfileActivities(args.workspaceId, args.actorId || "");
   
       return response;
     },
@@ -173,4 +184,3 @@ builder.queryFields((t) => ({
     },
   }),
 }));
-

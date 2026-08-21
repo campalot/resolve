@@ -21499,9 +21499,133 @@
       "createdAt": "2026-08-16T17:18:19.882Z",
       "creatorId": "person-aurora-phillips-beta",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_qnc6tpgd",
+      "workspaceId": "alpha",
+      "title": "Contract – 60 Month Term",
+      "type": "CONTRACT",
+      "data": {
+        "summary": "here is my new contract proposal",
+        "contractValue": 1243823,
+        "termLengthMonths": 60,
+        "autoRenew": false
+      },
+      "parties": [
+        {
+          "identityId": "company-b16f4822-dd0f-458c-8137-926477b66f90",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-3320f3ee-a005-4535-890e-5b6e8a294e5e",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-19T19:31:45.493Z",
+      "createdAt": "2026-08-19T19:31:45.493Z",
+      "creatorId": "person-caroline-powell-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_h6nzv6hd",
+      "workspaceId": "alpha",
+      "title": "Contract – 48 Month Term",
+      "type": "CONTRACT",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "contractValue": 400000,
+        "termLengthMonths": 48,
+        "autoRenew": true
+      },
+      "parties": [
+        {
+          "identityId": "person-paisley-patel-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-henry-taylor-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-21T19:39:06.704Z",
+      "createdAt": "2026-08-21T19:39:06.704Z",
+      "creatorId": "person-caroline-powell-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_9ku5on9g",
+      "workspaceId": "alpha",
+      "title": "Proposal – $350,000",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "amount": 350000,
+        "currency": "USD",
+        "effectiveDate": "2026-08-24",
+        "expirationDate": "2030-08-21"
+      },
+      "parties": [
+        {
+          "identityId": "company-3320f3ee-a005-4535-890e-5b6e8a294e5e",
+          "role": "Partner"
+        },
+        {
+          "identityId": "company-df206088-c44b-4f61-b42e-3dec0427d27a",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-21T19:55:42.892Z",
+      "createdAt": "2026-08-21T19:55:42.892Z",
+      "creatorId": "person-caroline-powell-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     }
   ],
   "interactionActivities": [
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-e2732a08-8bfd-45d9-ab56-4a60faae868a",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_9ku5on9g",
+      "interactionTitle": "Proposal – $350,000",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-21T19:55:42.892Z",
+      "actorId": "person-caroline-powell-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-1829ab1b-de91-4fed-922e-b6f2f28f812f",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_h6nzv6hd",
+      "interactionTitle": "Contract – 48 Month Term",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-21T19:39:06.704Z",
+      "actorId": "person-caroline-powell-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-0b79c4c9-2af2-4e6c-ba1a-9aa9074ff4a6",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_qnc6tpgd",
+      "interactionTitle": "Contract – 60 Month Term",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-19T19:31:45.493Z",
+      "actorId": "person-caroline-powell-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
     {
       "__typename": "InteractionActivityRecord",
       "id": "activity-694904fa-b09f-4cd8-bc4e-bf428392edf5",

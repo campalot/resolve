@@ -27,6 +27,7 @@ const config: NextConfig = {
   },
 
   // 2. WEBPACK CONFIGURATION (Used during 'next build' for production packaging)
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   webpack: (config) => {
     // SVG handling
     const fileLoaderRule = config.module.rules.find((rule: any) =>
@@ -71,6 +72,7 @@ const config: NextConfig = {
 
     return config;
   },
+  /* eslint-enable @typescript-eslint/no-explicit-any */
 };
 
 // Export casting to NextConfig preserves the strict type framework export contract

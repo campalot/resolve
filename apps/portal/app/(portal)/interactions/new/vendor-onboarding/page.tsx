@@ -37,10 +37,10 @@ import SubmissionSuccess from "../components/SubmissionSuccess/SubmissionSuccess
 const vendorOnboardingSchema = z.object({
   summary: z.string().min(10, "Summary must be at least 10 characters"),
   vendorType: z.enum(["Logistics", "Software", "Consulting"], {
-    required_error: "Please select a vendor type",
+    error: "Please select a vendor type",
   }),
   riskLevel: z.enum(["Low", "Medium", "High"], {
-    required_error: "Please select a risk level",
+    error: "Please select a risk level",
   }),
   onboardingChecklistComplete: z
     .union([z.boolean(), z.literal("true"), z.literal("false")])
@@ -55,12 +55,17 @@ const vendorOnboardingSchema = z.object({
 });
 
 // Infer TypeScript type from the Zod schema
-export type VendorOnboardingData = z.infer<typeof vendorOnboardingSchema>;
+export type VendorOnboardingData = z.input<typeof vendorOnboardingSchema>;
+export type VendorOnboardingOutput = z.infer<typeof vendorOnboardingSchema>;
 
 export default function PolicyUpdateForm() {
 
-  const methods = useForm<VendorOnboardingData>({
-    resolver: zodResolver(vendorOnboardingSchema) as any,
+  const methods = useForm<
+    VendorOnboardingData,
+    undefined,
+    VendorOnboardingOutput
+  >({
+    resolver: zodResolver(vendorOnboardingSchema),
     defaultValues: {
       summary: "Update to internal policy requirements.",
       vendorType: "Software",
@@ -89,7 +94,7 @@ export default function PolicyUpdateForm() {
   const [submittedInteraction, setSubmittedInteraction] =
         useState<InteractionRecord | null>(null);
 
-  const onSubmit = async (data: VendorOnboardingData) => {
+  const onSubmit = async (data: VendorOnboardingOutput) => {
     const { parties, ...remainingFormData } = data;
     const interactionPayload: CreateFormProps = {
       actorId: currentUser?.id ?? "", // Fallback to empty string if undefined
@@ -204,34 +209,6 @@ export default function PolicyUpdateForm() {
           </Box>
 
           {/* Onboarding Checklist Complete Field */}
-          {/*<div>
-            <label className="block text-sm font-medium text-gray-700">
-              Onboarding Checklist Complete?
-            </label>
-            <div className="mt-2 space-x-4">
-              {["true", "false"].map((choice) => (
-                <label
-                  key={choice}
-                  className="inline-flex items-center text-gray-900"
-                >
-                  <input
-                    type="radio"
-                    value={choice}
-                    {...register("onboardingChecklistComplete")}
-                    className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300"
-                  />
-                  <span className="ml-2">
-                    {choice === "true" ? "Yes" : "No"}
-                  </span>
-                </label>
-              ))}
-            </div>
-            {errors.onboardingChecklistComplete && (
-              <p className="text-red-600 text-sm">
-                {errors.onboardingChecklistComplete.message}
-              </p>
-            )}
-          </div>*/}
           <Box sx={{ minWidth: 320, mb: 2 }}>
             <Controller
               name="onboardingChecklistComplete"

@@ -25,7 +25,7 @@ export const searchService = {
                     identity.name?.toLowerCase().includes(normalizedQuery)
                 )
                 .map((identity: Identity) => ({
-                    __typename: "Identity",
+                    __typename: "Identity" as const,
                     ...identity,
                 }));
           

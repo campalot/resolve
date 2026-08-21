@@ -8,8 +8,63 @@ import { getMockDb, configureStorage, persistDb, initializeMockDb, resetMockDb }
 import { NodeStorage } from "@resolve/mock-db/node";
 import mercurius from 'mercurius'; // Import the official package
 import { schema } from './src/graphql'; 
+import type { CreateFormProps, InteractionAction } from '@resolve/types';
 
 const fs = import('fs/promises');
+
+type WorkspaceParams = {
+  workspaceId: string;
+};
+
+type ActivitiesQuery = {
+  offset?: string;
+  limit?: string;
+  interactionId?: string;
+};
+
+type IdentitiesQuery = {
+    offset?: string;
+    limit?: string;
+    sortBy: string;
+    interactionId?: string;
+    role?: string;
+    type?: string[];
+    status?: string[];
+    identityId?: string;
+    companyId?: string;
+    searchText?: string;
+};
+
+type InteractionsQuery = {
+    offset?: string;
+    limit?: string;
+    sortBy: string;
+    interactionId?: string;
+    role?: string;
+    type?: string[];
+    status?: string[];
+    parties?: string[];
+    identityId?: string;
+    endDate?: string;
+    startDate?: string;
+    searchText?: string;
+};
+
+type SearchQuery = {
+  offset?: string;
+  limit?: string;
+  q?: string;
+};
+
+type TransitionMutation = { 
+    Params: WorkspaceParams & { id: string }; 
+    Body: { 
+        action: InteractionAction, 
+        actorId: string, 
+        comment?: string 
+    }; 
+}
+
 
 
 async function start() {
@@ -64,10 +119,9 @@ async function start() {
     });
 
     // Endpoint to simulate setting data (simulating localStorage write)
-    fastify.post('/api/w/:workspaceId/interactions/:id/transition', async (request, reply) => {
+    fastify.post<TransitionMutation>('/api/w/:workspaceId/interactions/:id/transition', async (request, reply) => {
         const { workspaceId, id } = request.params;
         const { action, actorId, comment } = request.body;
-        //const body = (await request.json()) as TransitionVariables;
         try {
         // Call your persistence service
         const result = await interactionService.executeTransition({
@@ -97,7 +151,7 @@ async function start() {
         };
     }),
 
-    fastify.get("/api/w/:workspaceId/activities", async (request) => {
+    fastify.get<{ Params: WorkspaceParams; Querystring: ActivitiesQuery; }>("/api/w/:workspaceId/activities", async (request) => {
 
         const vars = {
             workspaceId: request.params.workspaceId,
@@ -114,7 +168,7 @@ async function start() {
 
     }),
 
-    fastify.get(
+    fastify.get<{ Params: WorkspaceParams; Querystring: IdentitiesQuery; }>(
         "/api/w/:workspaceId/identities",
         async (request) => {
             const role = request.query.role;
@@ -125,8 +179,6 @@ async function start() {
                 offset: parseInt(request.query.offset || '0'),
                 limit: parseInt(request.query.limit || '12'),
                 filters: {
-                    // status: request.query.status, // Returns [] if empty
-                    // type: request.query.type,
                     type: Array.isArray(request.query.type) || !request.query.type ? request.query.type : [request.query.type],
                     status: Array.isArray(request.query.status) || !request.query.status ? request.query.status : [request.query.status],
                     identityId:request.query.identityId,
@@ -144,7 +196,8 @@ async function start() {
         }
     );
 
-    fastify.get(
+
+    fastify.get<{ Params: WorkspaceParams; Querystring: InteractionsQuery; }>(
         "/api/w/:workspaceId/interactions",
         async (request) => {
             const role = request.query.role;
@@ -174,23 +227,23 @@ async function start() {
         }
     );
 
-    fastify.get('/api/w/:workspaceId/reference/interactions', async (request) => {
+    fastify.get<{ Params: WorkspaceParams; }>('/api/w/:workspaceId/reference/interactions', async (request) => {
       const workspaceId = request.params.workspaceId;
 
       const data = await interactionsListService.processReferenceData(
         getMockDb().interactions, 
-        workspaceId as string
+        workspaceId
       );
 
       return data;
     }),
 
-    fastify.get('/api/w/:workspaceId/identities/:identityId', async (request) => {
+    fastify.get<{ Params: WorkspaceParams & { identityId: string }; }>('/api/w/:workspaceId/identities/:identityId', async (request) => {
         const workspaceId = request.params.workspaceId;
         const identityId = request.params.identityId;
         const data = await identityService.processProfile(
-            workspaceId as string, 
-            identityId as string
+            workspaceId, 
+            identityId
         );
 
         // if (!data) {
@@ -200,19 +253,19 @@ async function start() {
         return data;
     }),
 
-    fastify.get('/api/w/:workspaceId/interactions/:interactionId', async (request) => {
+    fastify.get<{ Params: WorkspaceParams & { interactionId: string }; }>('/api/w/:workspaceId/interactions/:interactionId', async (request) => {
         const workspaceId = request.params.workspaceId;
         const interactionId = request.params.interactionId;
 
         const data = await interactionService.getInteraction(
-            workspaceId as string, 
-            interactionId as string
+            workspaceId, 
+            interactionId
         );
 
         return { interaction: data };
     }),
 
-    fastify.post(
+    fastify.post<{ Params: WorkspaceParams; Body: CreateFormProps; }>(
         "/api/w/:workspaceId/interactions/new/policy-update",
         async (request) => {
             const workspaceId = request.params.workspaceId;
@@ -231,7 +284,7 @@ async function start() {
         }
     );
 
-    fastify.post(
+    fastify.post<{ Params: WorkspaceParams; Body: CreateFormProps; }>(
         "/api/w/:workspaceId/interactions/new/vendor-onboarding",
         async (request) => {
             const workspaceId = request.params.workspaceId;
@@ -247,7 +300,7 @@ async function start() {
         }
     );
 
-    fastify.post(
+    fastify.post<{ Params: WorkspaceParams; Body: CreateFormProps; }>(
         "/api/w/:workspaceId/interactions/new/contract",
         async (request) => {
             const workspaceId = request.params.workspaceId;
@@ -263,7 +316,7 @@ async function start() {
         }
     );
 
-    fastify.post(
+    fastify.post<{ Params: WorkspaceParams; Body: CreateFormProps; }>(
         "/api/w/:workspaceId/interactions/new/proposal",
         async (request) => {
             const workspaceId = request.params.workspaceId;
@@ -279,7 +332,7 @@ async function start() {
         }
     );
 
-    fastify.get('/api/w/:workspaceId/search', async (request) => {
+    fastify.get<{ Params: WorkspaceParams; Querystring: SearchQuery; }>('/api/w/:workspaceId/search', async (request) => {
 
         // Extract variables from REST URL
         const vars = {

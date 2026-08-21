@@ -98,7 +98,7 @@ export const interactionsListService = {
         resolved
             .flatMap(int => int.parties)
             .flatMap(party => party?.identity || [])
-            .map(ident => [ident.id, { __typename: "Identity", id: ident.id, name: ident.name }])
+            .map(ident => [ident.id, { id: ident.id, name: ident.name }])
         ).values()
     );
     const interactionStatuses = Array.from(new Set(resolved.map((int) => int.status)));

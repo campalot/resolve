@@ -12,6 +12,7 @@ import type {
   InteractionState,
   InteractionAction,
   Role,
+  IdentityStats
 } from "@resolve/types";
 import { 
   WORKFLOW,
@@ -21,13 +22,6 @@ import {
 import { getMockDb } from "@resolve/mock-db";
 import { ASSET_BASE_URL } from "./constants";
 // import { useAppStore } from '../../../store/useAppStore';
-
-type IdentityStats = {
-  total: number;
-  active: number;
-  awaiting: number;
-  lastActivityAt: number | null;
-}
 
 export function getPermittedActions(
   status: InteractionState,
@@ -189,7 +183,7 @@ export function resolveIdentity(
   options?: {
     role?: Role;
     db?: ReturnType<typeof getMockDb>;
-  }): Identity & { stats: IdentityStats} {
+  }): Identity {
   const mockDb = options?.db ?? getMockDb();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { companyId, avatarKey, ...resolvedIdentity } =  {
@@ -279,7 +273,7 @@ function projectIdentityForActivity(
   };
 }
 
-export function resolveInteractionActivity(interactionActivity: InteractionActivityRecord): InteractionActivity | null {
+export function resolveInteractionActivity(interactionActivity: InteractionActivityRecord): InteractionActivity {
   switch (interactionActivity.metadata.__typename) {
     case 'InteractionActivityMetadataRecord_Reviewer': {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -297,7 +291,6 @@ export function resolveInteractionActivity(interactionActivity: InteractionActiv
         },
       };
       return resolvedActivity;
-      break;
     }
 
     case 'InteractionActivityMetadataRecord_Decision': {
@@ -313,7 +306,6 @@ export function resolveInteractionActivity(interactionActivity: InteractionActiv
         },
       };
       return resolvedActivity;
-      break;
     }
 
     case 'InteractionActivityMetadata_Created':
@@ -329,10 +321,13 @@ export function resolveInteractionActivity(interactionActivity: InteractionActiv
         },
       };
       return resolvedActivity;
-      break;
     }
+
+    default:
+      throw new Error(
+        `Unsupported interaction activity metadata type: ${interactionActivity.metadata.__typename}`
+      );
   }
-  return null;
 }
 
 // Match the text of multiple interaction properties to a search query

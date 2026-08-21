@@ -3,6 +3,7 @@ import { searchService } from '@resolve/domain'; // Your core domain service pac
 import { IdentityType } from './identity';       // Reuse your working Identity schema ref
 import { InteractionType } from './interaction'; // Reuse your working Interaction schema ref
 import { getMockDb } from '@resolve/mock-db';
+import { PageInfo, SearchConnection } from '@resolve/types';
 
 // 1. Create a Union type that bundles your existing schemas together
 const SearchResultUnion = builder.unionType('SearchResult', {
@@ -17,7 +18,7 @@ const SearchResultUnion = builder.unionType('SearchResult', {
 });
 
 // 2. Map the standalone PageInfo type wrapper for search pagination
-const SearchPageInfoType = builder.objectRef<{ total: number; hasMore: boolean }>('SearchPageInfo').implement({
+const SearchPageInfoType = builder.objectRef<PageInfo>('SearchPageInfo').implement({
   fields: (t) => ({
     total: t.exposeInt('total'),
     hasMore: t.exposeBoolean('hasMore'),
@@ -25,7 +26,7 @@ const SearchPageInfoType = builder.objectRef<{ total: number; hasMore: boolean }
 });
 
 // 3. Map the master SearchResultsConnection reference container
-const SearchResultsConnectionType = builder.objectRef('SearchResultsConnection').implement({
+const SearchResultsConnectionType = builder.objectRef<SearchConnection>('SearchResultsConnection').implement({
   fields: (t) => ({
     results: t.expose('results', { type: [SearchResultUnion] }), // Exposes the mixed union list!
     pageInfo: t.expose('pageInfo', { type: SearchPageInfoType }),

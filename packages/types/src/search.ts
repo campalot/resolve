@@ -1,5 +1,6 @@
-import type { Interaction, PageInfo } from "./interaction";
+import type { Interaction } from "./interaction";
 import type { Identity } from "./identity";
+import { PageInfo } from "./connections";
 
 export type SearchResult = Interaction | Identity;
 

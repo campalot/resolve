@@ -1,7 +1,9 @@
 "use client";
 
+/* eslint-disable react-hooks/set-state-in-effect */
+
 import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { CurrentUserContext } from "./CurrentUserContext";
 import type { CurrentUser } from "./CurrentUserContext";
 import type { Identity } from "@resolve/types";
@@ -20,7 +22,7 @@ export const CurrentUserProvider: React.FC<CurrentUserProviderProps> = ({
     useState<Identity | null>(null);
   const [isHydrated, setIsHydrated] = useState(false);
 
-  const selectCurrentUser = (identity: Identity | null) => {
+  const selectCurrentUser = useCallback((identity: Identity | null) => {
     setCurrentUserIdentity(identity);
     setCurrentUser(
       identity
@@ -33,16 +35,19 @@ export const CurrentUserProvider: React.FC<CurrentUserProviderProps> = ({
         : null,
     );
     localStorage.setItem(STORAGE_KEY, JSON.stringify(identity));
-  };
-
-  useEffect(() => {
-    // This safely runs only in the browser
-    const savedCurrentUser = localStorage.getItem(STORAGE_KEY);
-    if (savedCurrentUser) {
-      selectCurrentUser(JSON.parse(savedCurrentUser));
-      setIsHydrated(true);
-    }
   }, []);
+
+  useEffect(
+    () => {
+      // This safely runs only in the browser
+      const savedCurrentUser = localStorage.getItem(STORAGE_KEY);
+      if (savedCurrentUser) {
+        selectCurrentUser(JSON.parse(savedCurrentUser));
+        setIsHydrated(true);
+      }
+    },
+    [selectCurrentUser],
+  );
 
   return (
     <CurrentUserContext.Provider

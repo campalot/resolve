@@ -30,7 +30,7 @@ export default function Login() {
     // 1. Get the raw value of the selected option
     const selectedValue = event.target.value;
     const selectedUserIdentity = identities?.find(
-      (i) => i.id === selectedValue,
+      (i: Identity) => i.id === selectedValue,
     );
     if (selectedUserIdentity) {
       setSelectedIdentity(selectedUserIdentity);

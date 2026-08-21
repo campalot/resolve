@@ -6,10 +6,15 @@ import type {
   PolicyUpdateData, 
   VendorOnboardingData, 
   InteractionFilters,
+  InteractionParty,
+  InteractionsConnection,
+  ToastNotification,
+  Interaction
 } from '@resolve/types'; 
 import { getMockDb } from '@resolve/mock-db';
-import { IdentityType, PageInfoType } from './identity';
+import { IdentityType, PageInfoType, IdentityReferenceType } from './identity';
 import { ActivityType } from "./activity";
+
 
 // 1. Declare your core enums
 const InteractionTypeEnum = builder.enumType('InteractionType', {
@@ -100,7 +105,7 @@ const InteractionDataUnion = builder.unionType("InteractionData", {
 });
 
 // 3. Define the ToastNotification structural type
-const ToastNotificationType = builder.objectRef('ToastNotification').implement({
+const ToastNotificationType = builder.objectRef<ToastNotification>('ToastNotification').implement({
   fields: (t) => ({
     message: t.exposeString('message'),
     type: t.exposeString('type'),
@@ -108,7 +113,7 @@ const ToastNotificationType = builder.objectRef('ToastNotification').implement({
 });
 
 // 4. Define the InteractionParty relational type
-const InteractionPartyType = builder.objectRef('InteractionParty').implement({
+const InteractionPartyType = builder.objectRef<InteractionParty>('InteractionParty').implement({
   fields: (t) => ({
     role: t.exposeString('role'),
     identity: t.field({
@@ -120,7 +125,7 @@ const InteractionPartyType = builder.objectRef('InteractionParty').implement({
 
 
 // 5. Implement the main Interaction Type Ref
-export const InteractionType = builder.objectRef('Interaction').implement({
+export const InteractionType = builder.objectRef<Interaction>('Interaction').implement({
   fields: (t) => ({
     id: t.exposeID('id'),
     workspaceId: t.exposeID('workspaceId'),
@@ -148,7 +153,12 @@ export const InteractionType = builder.objectRef('Interaction').implement({
     }),
     data: t.expose('data', { type: InteractionDataUnion }),
     
-    permittedActions: t.expose('permittedActions', { type: [InteractionActionEnum], nullable: true }),
+    // permittedActions: t.expose('permittedActions', { type: [InteractionActionEnum], nullable: true }),
+    permittedActions: t.field({
+        type: [InteractionActionEnum],
+        nullable: true, 
+        resolve: (p) => p.permittedActions,
+    }),
     notifications: t.expose('notifications', { type: [ToastNotificationType], nullable: true }),
     activities: t.expose('activities', { type: [ActivityType] }),
 
@@ -190,11 +200,22 @@ const InteractionsSortEnum = builder.enumType("InteractionsSort", {
   } as const,
 });
 
+const InteractionsConnectionRef =
+  builder.objectRef<InteractionsConnection>(
+    "InteractionsConnection"
+  );
+
 // 2. New Identities Connection Object Ref (No manual field typing!)
-const InteractionsConnectionType = builder.objectRef('InteractionsConnection').implement({
+const InteractionsConnectionType = InteractionsConnectionRef.implement({
   fields: (t) => ({
-    results: t.expose('results', { type: [InteractionType] }),
-    pageInfo: t.expose('pageInfo', { type: PageInfoType }), // Pure reference—no inline function call!
+    results: t.field({
+      type: [InteractionType],
+      resolve: (p) => p.results,
+    }),
+    pageInfo: t.field({
+      type: PageInfoType,
+      resolve: (p) => p.pageInfo,
+    }),
   }),
 });
 
@@ -251,21 +272,20 @@ builder.queryFields((t) => ({
     },
     resolve: async (_root, args) => {
       // 2. Build your unified variables map, gracefully falling back to defaults
-      console.info("args=",args);
       const filters = args.filters ?? {};
       const vars = {
         workspaceId: args.workspaceId,
-        sortBy: args.sortBy ?? null,
+        sortBy: args.sortBy ?? "",
         offset: args.offset ?? 0,
         limit: args.limit ?? 50,
         filters: {
           status: filters.status ?? [],
           type: filters.type ?? [],
           parties: filters.parties ?? [],
-          identityId: filters.identityId ?? args.identityId ?? null,
-          searchQuery: filters.searchQuery ?? null,
-          startDate: filters.startDate ?? null,
-          endDate: filters.endDate ?? null,
+          identityId: filters.identityId ?? args.identityId ?? undefined,
+          searchQuery: filters.searchQuery ?? undefined,
+          startDate: filters.startDate ?? undefined,
+          endDate: filters.endDate ?? undefined,
         },
       };
       //throw new Error("INTERACTIONS RESOLVER");
@@ -294,7 +314,7 @@ builder.queryFields((t) => ({
   }),
 
   parties: t.field({
-    type: [IdentityType], // Reuses your master Identity blueprint array!
+    type: [IdentityReferenceType], // Reuses your master Identity blueprint array!
     args: {
       workspaceId: t.arg.id({ required: true }),
     },

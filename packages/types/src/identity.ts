@@ -34,6 +34,13 @@ export type IdentityType = "Company" | "Individual";
 
 export type IdentityStatus = "Active" | "Inactive";
 
+export type IdentityStats = {
+  total: number;
+  active: number;
+  awaiting: number;
+  lastActivityAt: number | null;
+}
+
 export type Identity = {
   __typename?: "Identity";
   id: string;
@@ -42,6 +49,7 @@ export type Identity = {
   type: IdentityType;
   status: IdentityStatus;
   avatarUrl?: string;
+  stats?: IdentityStats;
 
   // Optional metadata (keep minimal)
   industry?: string;
@@ -49,4 +57,9 @@ export type Identity = {
   company?: Identity;
   personKey?: string;
   createdAt: string;
+};
+
+export type IdentityReference = {
+  id: string;
+  name: string;
 };

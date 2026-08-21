@@ -22,9 +22,14 @@ export const partiesSchema = z
   .array(partySchema)
   .min(1, "At least one party is required");
 
+type PartyOption = {
+  id: string; 
+  name: string;
+}
+
 // 2. Define the props type
 interface PartiesSectionProps {
-  parties: Array<{ id: string; name: string }>;
+  parties: Array<PartyOption>;
 }
 
 // 3. Your component remains exactly the same
@@ -118,7 +123,7 @@ export function PartiesSection({ parties }: PartiesSectionProps) {
                       </MenuItem>
 
                       {/* Render your data collection */}
-                      {parties.map((party: any) => (
+                      {parties.map((party: PartyOption) => (
                         <MenuItem key={party.id} value={party.id}>
                           {party.name}
                         </MenuItem>

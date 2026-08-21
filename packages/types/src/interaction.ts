@@ -131,11 +131,6 @@ export type InteractionRole = (typeof interactionRoleValues)[number];
 export const interactionStateValues = ["DRAFT", "IN_REVIEW", "APPROVED", "REJECTED"];
 export type InteractionState = typeof interactionStateValues[number];
 
-export const interactionActionValues = ["SUBMIT", "APPROVE", "REJECT", "RESUBMIT"];
+export const interactionActionValues = ["SUBMIT", "APPROVE", "REJECT", "RESUBMIT"] as const;
 export type InteractionAction = typeof interactionActionValues[number];
-
-export type PageInfo = {
-  hasMore: boolean;
-  total: number;
-};
 
