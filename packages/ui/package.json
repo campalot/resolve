@@ -11,14 +11,15 @@
     }
   },
   "dependencies": {
-    "@resolve/types": "workspace:*",
-    "@resolve/utils": "workspace:*",
     "@mui/icons-material": "^7.3.7",
     "@mui/material": "^7.3.7",
+    "@resolve/types": "workspace:*",
+    "@resolve/utils": "workspace:*",
     "react": "^18.2.0",
     "sass": "^1.97.3"
   },
   "devDependencies": {
+    "@storybook/react": "^10.5.10",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",

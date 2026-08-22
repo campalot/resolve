@@ -38,10 +38,16 @@ export const identityService = {
     
     // 3. Sorting
     resolved.sort((a, b) => {
-      if (sortBy === "interactions") return b.stats.total - a.stats.total;
+      if (sortBy === "interactions") {
+        // Provide a fallback of 0 if stats is missing
+        const totalB = b.stats?.total ?? 0;
+        const totalA = a.stats?.total ?? 0;
+        return totalB - totalA;
+      }
       if (sortBy === "recent") {
-        const dateB = b.stats.lastActivityAt ? new Date(b.stats.lastActivityAt).getTime() : 0;
-        const dateA = a.stats.lastActivityAt ? new Date(a.stats.lastActivityAt).getTime() : 0;
+        // Provide a fallback of 0 if stats or lastActivityAt is missing
+        const dateB = b.stats?.lastActivityAt ? new Date(b.stats.lastActivityAt).getTime() : 0;
+        const dateA = a.stats?.lastActivityAt ? new Date(a.stats.lastActivityAt).getTime() : 0;
         return dateB - dateA;
       }
       return a.name.localeCompare(b.name); // Default: Name

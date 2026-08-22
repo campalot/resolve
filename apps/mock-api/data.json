@@ -21580,9 +21580,51 @@
       "createdAt": "2026-08-21T19:55:42.892Z",
       "creatorId": "person-caroline-powell-alpha",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "alpha_05kdf5oi",
+      "workspaceId": "alpha",
+      "title": "Proposal – $124,300",
+      "type": "PROPOSAL",
+      "data": {
+        "summary": "Update to internal policy requirements.",
+        "amount": 124300,
+        "currency": "USD",
+        "effectiveDate": "2026-08-25",
+        "expirationDate": ""
+      },
+      "parties": [
+        {
+          "identityId": "person-owen-nelson-alpha",
+          "role": "Partner"
+        },
+        {
+          "identityId": "person-hudson-ramos-alpha",
+          "role": "Partner"
+        }
+      ],
+      "status": "DRAFT",
+      "updatedAt": "2026-08-22T00:39:56.263Z",
+      "createdAt": "2026-08-22T00:39:56.263Z",
+      "creatorId": "person-benjamin-gonzalez-alpha",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     }
   ],
   "interactionActivities": [
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-bdfffe81-268b-4a41-a19d-a894fb36b99b",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_05kdf5oi",
+      "interactionTitle": "Proposal – $124,300",
+      "type": "INTERACTION_CREATED",
+      "occurredAt": "2026-08-22T00:39:56.263Z",
+      "actorId": "person-benjamin-gonzalez-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Created",
+        "initialStatus": "DRAFT"
+      }
+    },
     {
       "__typename": "InteractionActivityRecord",
       "id": "activity-384c79ac-9a64-4fd8-8bfe-9bad97199161",
