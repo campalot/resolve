@@ -22,6 +22,7 @@ import { TRANSITION_METADATA } from "@resolve/domain";
 import styles from "./InteractionDetail.module.scss";
 import { InteractionDetailSkeleton } from "./InteractionDetailSkeleton";
 import { IdentifierBadge } from "@resolve/ui";
+import type { InteractionAction } from "@resolve/types";
 
 const TABS = [
   { label: "Overview", path: "overview" },
@@ -176,7 +177,7 @@ export const InteractionDetail: React.FC = () => {
       party.role === "Seller" || party.role === "Partner",
   );
 
-  const handleAction = (action: string) => {
+  const handleAction = (action: InteractionAction) => {
     openModal(
       <TransitionModalContent
         action={action}
@@ -187,7 +188,7 @@ export const InteractionDetail: React.FC = () => {
           transition({
             id: interactionId as string,
             action,
-            actorId: currentUser.id,
+            actorId: currentUser?.id || "",
             workspaceId: workspace.id,
             comment,
           });

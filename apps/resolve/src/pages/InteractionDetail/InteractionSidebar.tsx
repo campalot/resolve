@@ -1,5 +1,5 @@
 import React from "react";
-import type { Interaction } from "@resolve/types";
+import type { Interaction, InteractionAction } from "@resolve/types";
 import styles from "./InteractionSidebar.module.scss";
 import { Box } from "@mui/material";
 import { StageCard } from "./Sidebar/StageCard";
@@ -13,7 +13,7 @@ import type { Role } from "../../api/cache";
 
 type InteractionSidebarProps = {
   interaction: Interaction;
-  handleAction: (action: string) => void;
+  handleAction: (action: InteractionAction) => void;
   allowedActions: string[];
   role: Role;
 };

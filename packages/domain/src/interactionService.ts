@@ -7,7 +7,7 @@ import {
   randomId
  } from "@resolve/mock-db";
 import { transitionInteraction as domainLogic, persistDbWithSync } from './logic'; // Your existing function
-// import type { TransitionVariables } from '../mocks/features/transitionhandlers';
+import { TransitionVariables } from "@resolve/types";
 import { backendLogger } from '@resolve/logger';
 // import { useAppStore } from '../../store/useAppStore';
 import { ROLE_PERMISSIONS } from "@resolve/types";
@@ -24,15 +24,6 @@ import type {
   VendorOnboardingData
 } from "@resolve/types";
 import { pickOne } from "@resolve/utils";
-
-//TEMPORARY UNTIL I FIGURE OUT ALL CONNECTIONS 
-export type TransitionVariables = {
-  id: string;
-  action: InteractionAction; // Or your specific Action enum
-  actorId: string;
-  workspaceId: string;
-  comment?: string;
-}
 
 const createInteractionMetadata = (
   type: InteractionType,

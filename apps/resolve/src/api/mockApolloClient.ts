@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, HttpLink, ApolloLink } from "@apollo/client";
+import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 import type { InteractionState } from "@resolve/types";
 import { activeRoleVar } from "./cache";
 import { getPermittedActions } from "@resolve/domain";

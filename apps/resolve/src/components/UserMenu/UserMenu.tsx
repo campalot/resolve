@@ -33,7 +33,7 @@ export const UserMenu: React.FC = () => {
     [identities, currentUser],
   );
   
-  if (!currentUserIdentity) {
+  if (!currentUserIdentity || !currentUser) {
     return null;
   }
 

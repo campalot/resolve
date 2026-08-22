@@ -18,7 +18,7 @@ export const StatsType = builder.objectRef<IdentityStats>('Stats').implement({
     total: t.exposeInt('total'),
     active: t.exposeInt('active'),
     awaiting: t.exposeInt('awaiting'),
-    lastActivityAt: t.exposeInt("lastActivityAt", {
+    lastActivityAt: t.exposeFloat("lastActivityAt", {
         nullable: true,
     }),
   }),

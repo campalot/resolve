@@ -26,7 +26,7 @@ type StageCardProps = {
   status: string;
   label: string;
   description?: string;
-  handleAction: (action: string) => void;
+  handleAction: (action: InteractionAction) => void;
   allowedActions: string[];
   role: Role;
 };
@@ -66,8 +66,8 @@ export const StageCard: React.FC<StageCardProps> = ({
             {allowedActions.map((action) => (
               <Button
                 key={action}
-                buttonType={actionButtonMap[action]}
-                onClick={() => handleAction(action)}
+                buttonType={actionButtonMap[action as InteractionAction]}
+                onClick={() => handleAction(action as InteractionAction)}
               >
                 {action}
               </Button>

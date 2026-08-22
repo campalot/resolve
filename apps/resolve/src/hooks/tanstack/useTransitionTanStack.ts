@@ -33,7 +33,7 @@ export type InteractionSingleCache = InteractionListPage;
 export function useTransitionTanStack(interaction: Interaction) {
   const queryClient = useQueryClient();
   const { addToast } = useToast();
-  const currentUser: CurrentUser = useCurrentUser();
+  const currentUser: CurrentUser | null = useCurrentUser();
 
   
   return useMutation<
@@ -50,9 +50,9 @@ export function useTransitionTanStack(interaction: Interaction) {
 
       const optimisticActor: Identity = {
         __typename: "Identity" as const,
-        id: currentUser.id,
+        id: currentUser?.id || "",
         workspaceId,
-        name: currentUser.name || "Current User",
+        name: currentUser?.name || "Current User",
         type: "Individual",
         status: "Active",
         createdAt: new Date().toISOString(),
@@ -79,6 +79,7 @@ export function useTransitionTanStack(interaction: Interaction) {
           interactionTitle: interaction.title,
           metadata: {
             __typename: "InteractionActivityMetadata_Created" as const,
+            initialStatus: "DRAFT",
           },
 
         };

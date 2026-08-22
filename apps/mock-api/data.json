@@ -6535,11 +6535,10 @@
           "role": "Partner"
         }
       ],
-      "status": "IN_REVIEW",
-      "updatedAt": "7/23/2026, 10:29:25 AM",
+      "status": "APPROVED",
+      "updatedAt": "2026-08-21T20:54:39.148Z",
       "createdAt": "2026-06-23",
       "creatorId": "person-penelope-young-alpha",
-      "currentReviewerId": "person-naomi-howard-alpha",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     },
     {
@@ -21584,6 +21583,21 @@
     }
   ],
   "interactionActivities": [
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-384c79ac-9a64-4fd8-8bfe-9bad97199161",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_69gu5bdl",
+      "interactionTitle": "Proposal – $85,809",
+      "type": "INTERACTION_DECIDED",
+      "occurredAt": "2026-08-21T20:54:39.148Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadataRecord_Decision",
+        "finalStatus": "APPROVED",
+        "decisionMakerId": "person-anna-foster-alpha"
+      }
+    },
     {
       "__typename": "InteractionActivityRecord",
       "id": "activity-e2732a08-8bfd-45d9-ab56-4a60faae868a",

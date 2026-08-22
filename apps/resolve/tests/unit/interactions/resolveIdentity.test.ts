@@ -66,17 +66,17 @@ describe('resolveIdentity', () => {
 
   it('computes users total interactions correctly', () => {
     const result = resolve();
-    expect(result.stats.total).toEqual(2);
+    expect(result.stats?.total).toEqual(2);
   });
 
   it('computes users interactions awaiting action correctly', () => {
     const result = resolve();
-    expect(result.stats.awaiting).toEqual(1);
+    expect(result.stats?.awaiting).toEqual(1);
   });
 
   it('computes users active interactions correctly', () => {
     const result = resolve();
-    expect(result.stats.active).toEqual(1);
+    expect(result.stats?.active).toEqual(1);
   });
 
   it('handles null company gracefully', () => {

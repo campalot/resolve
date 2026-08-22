@@ -5,13 +5,12 @@ import { TRANSITION_INTERACTION } from "../../graphql/mutations/transitionIntera
 import type { ClientActivity } from "../../pages/InteractionDetail/InteractionActivity";
 import type { Interaction, InteractionActivity, ToastNotification } from "@resolve/types";
 import { useCurrentUser } from "../useCurrentUser";
-import type { CurrentUser } from "../../contexts/CurrentUser/CurrentUserContext";
-import type { TransitionVariables } from "../../api/mocks/features/transitionhandlers";
+import type { TransitionVariables } from "@resolve/types";
 
 
 export function useTransitionApollo(interaction: Interaction) {
   const { addToast } = useToast();
-  const currentUser: CurrentUser = useCurrentUser();
+  const currentUser = useCurrentUser();
 
   const [mutate, { loading }] = useMutation(TRANSITION_INTERACTION, {
     update(cache, { data }) {
@@ -20,7 +19,7 @@ export function useTransitionApollo(interaction: Interaction) {
 
       // 1. UPDATE USER STATS (Surgical Scalpel)
       cache.modify({
-        id: cache.identify({ __typename: 'Identity', id: currentUser.id }),
+        id: cache.identify({ __typename: 'Identity', id: currentUser?.id }),
         fields: {
           stats(existing) {
             return { ...existing, lastActivityAt: new Date().toISOString() };
@@ -105,9 +104,9 @@ export function useTransitionApollo(interaction: Interaction) {
 
               actor: {
                 __typename: "Identity",
-                id: currentUser.id,
+                id: currentUser?.id,
                 workspaceId: variables.workspaceId,
-                name: currentUser.name || "Current User",
+                name: currentUser?.name || "Current User",
                 type: "Individual",
                 status: "Active",
                 createdAt: new Date().toISOString(),

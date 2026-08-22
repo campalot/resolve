@@ -134,3 +134,10 @@ export type InteractionState = typeof interactionStateValues[number];
 export const interactionActionValues = ["SUBMIT", "APPROVE", "REJECT", "RESUBMIT"] as const;
 export type InteractionAction = typeof interactionActionValues[number];
 
+export type TransitionVariables = {
+  id: string;
+  action: InteractionAction; // Or your specific Action enum
+  actorId: string;
+  workspaceId: string;
+  comment?: string;
+}

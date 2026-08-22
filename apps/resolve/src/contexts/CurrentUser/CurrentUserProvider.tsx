@@ -5,7 +5,7 @@ import { CurrentUserContext } from "./CurrentUserContext";
 import type { CurrentUser } from "./CurrentUserContext";
 import { useIdentities } from "../../hooks/useIdentitiies";
 import { useWorkspacesList } from "../../hooks/useWorkspacesList";
-import type { IdentityRecord } from "@resolve/types";
+import type { IdentityRecord, Workspace } from "@resolve/types";
 import { SimpleShellLayout } from "../../layouts/SimpleShellLayout";
 import { LoadingScreen } from "../..//pages/LoadingScreen";
 
@@ -47,7 +47,7 @@ export const CurrentUserProvider: React.FC<CurrentUserProviderProps> = ({
       const index = workspaceId.length % workspacePeople.length;
       const picked = workspacePeople[index];
 
-      const workspaceIds = workspaces.map((ws) => ws.id); // e.g., ["alpha", "beta", "gamma"]
+      const workspaceIds = workspaces.map((ws: Workspace) => ws.id); // e.g., ["alpha", "beta", "gamma"]
       const subset: string[] = [];
 
       const hash = picked?.id.charCodeAt(7);
