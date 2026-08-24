@@ -2,10 +2,9 @@ import type { ReactNode } from "react";
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { CurrentUserContext } from "./CurrentUserContext";
-import type { CurrentUser } from "./CurrentUserContext";
 import { useIdentities } from "../../hooks/useIdentitiies";
 import { useWorkspacesList } from "../../hooks/useWorkspacesList";
-import type { IdentityRecord, Workspace } from "@resolve/types";
+import type { IdentityRecord, Workspace, CurrentUser } from "@resolve/types";
 import { SimpleShellLayout } from "../../layouts/SimpleShellLayout";
 import { LoadingScreen } from "../..//pages/LoadingScreen";
 

@@ -6,14 +6,13 @@ import Box from "@mui/material/Box";
 import Button from "../Buttons/Button";
 import { useWorkspace } from "../../contexts/Workspace/WorkspaceContext";
 import { useWorkspacesList } from "../../hooks/useWorkspacesList";
-import type { Workspace } from "@resolve/types";
+import type { Workspace, CurrentUser } from "@resolve/types";
 import Avatar from "../Avatars/Avatar";
 import IconCheckmark from "../../assets/checkmark-svgrepo-com.svg?react";
 import { ArrowDropDownIcon } from "@mui/x-date-pickers";
 import { ArrowDropUp } from "@mui/icons-material";
 import styles from "./WorkspaceSwitcher.module.scss";
 import { Route } from "../../routes/routes";
-import type { CurrentUser } from "../../contexts/CurrentUser/CurrentUserContext";
 import { useCurrentUser } from "../../hooks/useCurrentUser";
 
 export const WorkspaceSwitcher: React.FC = () => {

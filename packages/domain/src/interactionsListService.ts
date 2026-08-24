@@ -1,5 +1,5 @@
 import type { Interaction, InteractionFilters, InteractionRecord } from "@resolve/types";
-import { interactionMatchesQuery, resolveInteraction } from "./common/resolvers";
+import { interactionMatchesQuery, resolveInteraction, resolveDashboardInteraction } from "./common/resolvers";
 import { parseDate } from "@resolve/utils";
 
 export type InteractionsListVars = {
@@ -35,7 +35,7 @@ export const interactionsListService = {
 
     if (filters.identityId) {
         resolved = resolved.filter((interaction) =>
-            interaction.creator.id === filters.identityId || interaction.parties.some(
+            interaction.creator.id === filters.identityId || interaction.currentReviewer?.id === filters.identityId || interaction.parties.some(
             (p) => p?.identity.id === filters.identityId
             )
         );
@@ -82,6 +82,72 @@ export const interactionsListService = {
       pageInfo: {
         hasMore: offset + limit < resolved.length,
         total: resolved.length,
+      },
+    };
+  },
+
+  processDashboardInteractions: (allInteractions: InteractionRecord[], variables: InteractionsListVars) => {
+    const { workspaceId, sortBy, filters = {}, offset = 0, limit = 50 } = variables ?? {};
+
+    let resolved = allInteractions.filter(i => i.workspaceId === workspaceId);
+    // 2. Apply Filters (Ported from your Apollo logic)
+    if (filters.identityId) {
+        resolved = resolved.filter((interaction) =>
+            interaction.creatorId === filters.identityId || interaction.currentReviewerId === filters.identityId || interaction.parties.some(
+            (p) => p?.identityId === filters.identityId
+            )
+        );
+    }
+
+    const statusFilter = filters.status;
+    if (statusFilter && statusFilter.length > 0) {
+        resolved = resolved.filter(i => statusFilter.includes(i.status.toLowerCase()));
+    }
+
+    const partiesFilter = filters.parties;
+    if (partiesFilter && partiesFilter.length > 0) {
+        resolved = resolved.filter((interaction) => {
+            return interaction.parties.some(
+            (p) => partiesFilter.includes(p?.identityId) 
+            )
+        });
+    }
+
+    if (filters.searchQuery) {
+      const q = filters.searchQuery.toLowerCase();
+      resolved = resolved.filter(i => interactionMatchesQuery(i, q));
+    }
+
+    const startDateFilter = filters.startDate;
+    if (startDateFilter) {
+      resolved = resolved.filter(i => parseDate(i.updatedAt) > startDateFilter);
+    }
+    const endDateFilter = filters.endDate;
+    if (endDateFilter) {
+      resolved = resolved.filter(i => parseDate(i.updatedAt) < endDateFilter);
+    }
+
+    // 3. Sorting
+    if (sortBy) {
+        if (sortBy === "recent") {
+            resolved = resolved.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+        } else if (sortBy === "oldest") {
+            resolved = resolved.sort((a, b) => new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime());
+        } else if (sortBy === "created") {
+            resolved = resolved.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        }
+    }
+
+    const dashboardResolved = resolved.map(i => resolveDashboardInteraction(i, filters.identityId || ""));
+
+    const batch = dashboardResolved.slice(offset, offset + limit);
+
+    // 4. Standard Response Shape
+    return { 
+      results: batch,
+      pageInfo: {
+        hasMore: offset + limit < dashboardResolved.length,
+        total: dashboardResolved.length,
       },
     };
   },

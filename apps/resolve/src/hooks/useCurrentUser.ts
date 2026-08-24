@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CurrentUserContext } from "../contexts/CurrentUser/CurrentUserContext";
-import type { CurrentUser } from "../contexts/CurrentUser/CurrentUserContext";
+import type { CurrentUser } from "@resolve/types";
 
 
 export function useCurrentUser(): CurrentUser | null {

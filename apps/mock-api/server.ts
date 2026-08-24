@@ -227,6 +227,36 @@ async function start() {
         }
     );
 
+    fastify.get<{ Params: WorkspaceParams; Querystring: InteractionsQuery; }>(
+        "/api/w/:workspaceId/interactions/dashboard",
+        async (request) => {
+            const role = request.query.role;
+
+            const vars = {
+                workspaceId: request.params.workspaceId,
+                sortBy: request.query.sortBy,
+                offset: parseInt(request.query.offset || '0'),
+                limit: parseInt(request.query.limit || '12'),
+                filters: {
+                    type: Array.isArray(request.query.type) || !request.query.type ? request.query.type : [request.query.type],
+                    status: Array.isArray(request.query.status) || !request.query.status ? request.query.status : [request.query.status],
+                    parties: Array.isArray(request.query.parties) || !request.query.parties ? request.query.parties : [request.query.parties],
+                    identityId:request.query.identityId,
+                    startDate: request.query.startDate,
+                    endDate: request.query.endDate,
+                    searchQuery: request.query.searchText,
+                },
+            };
+            
+
+            return interactionsListService.processDashboardInteractions(
+                getMockDb().interactions,
+                vars
+            );
+
+        }
+    );
+
     fastify.get<{ Params: WorkspaceParams; }>('/api/w/:workspaceId/reference/interactions', async (request) => {
       const workspaceId = request.params.workspaceId;
 

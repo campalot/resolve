@@ -63,3 +63,10 @@ export type IdentityReference = {
   id: string;
   name: string;
 };
+
+export type CurrentUser = {
+  id: string;
+  name: string;
+  accessibleWorkspaceIds: string[];
+  role: "Legal" | "Finance" | "Admin";
+};

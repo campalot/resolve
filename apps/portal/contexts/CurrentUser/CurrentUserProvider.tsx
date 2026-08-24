@@ -5,8 +5,7 @@
 import type { ReactNode } from "react";
 import { useCallback, useEffect, useState } from "react";
 import { CurrentUserContext } from "./CurrentUserContext";
-import type { CurrentUser } from "./CurrentUserContext";
-import type { Identity } from "@resolve/types";
+import type { Identity, CurrentUser } from "@resolve/types";
 
 type CurrentUserProviderProps = {
   children: ReactNode;

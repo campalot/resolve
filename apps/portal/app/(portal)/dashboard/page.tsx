@@ -2,18 +2,16 @@
 
 import type { HTMLAttributes } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import type { Interaction, InteractionType } from "@resolve/types";
-import { useInteractions } from "@/hooks/useInteractions";
+import type { InteractionType } from "@resolve/types";
+import { useDashboardInteractions } from "@/hooks/useDashboardInteractions";
 import { useCurrentUser } from "@/contexts/CurrentUser/CurrentUserContext";
 import IconContract from "@/assets/icon-contracts.svg";
 import IconProposal from "@/assets/icon-request-business-opportunity.svg";
 import IconPolicy from "@/assets/icon-policies.svg";
 import IconVendor from "@/assets/icon-tasks.svg";
-import styles from "./page.module.css";
-import listStyles from "./interactions.module.scss";
+import styles from "./page.module.scss";
 import { MenuCard } from "./components/MenuCard";
-import { StatusBadgeAdapter } from "@/components/StatusBadgeAdapter";
+import { InteractionsList } from "./components/InteractionsList";
 
 const menuItems = [
   { id: "CONTRACT", label: "Create New Contract" },
@@ -46,9 +44,9 @@ export const getMenuIcon = (
 export default function Home() {
   const router = useRouter();
   const { currentUser } = useCurrentUser();
-  const { interactions } = useInteractions({
+  const { dashboardInteractions } = useDashboardInteractions({
     page: 1,
-    pageSize: 10,
+    pageSize: 20,
     filters: {
       identityId: currentUser?.id,
     },
@@ -75,59 +73,20 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.dashboardSection}>
-          <h2>Your Interactions</h2>
-          <div className={styles.listContainer}>
-            <ul className={listStyles.list} data-testid="interaction-list">
-              {interactions.map((interaction: Interaction) => (
-                <li
-                  key={interaction.id}
-                  className={listStyles.row}
-                  data-testid="interaction-row"
-                >
-                  <Link
-                    // href={workspacePath(
-                    //   interactionRoute(interaction.id, "overview"),
-                    // )}
-                    href={`/interactions/${interaction.id}`}
-                    className={listStyles.rowLink}
-                  >
-                    <div className={listStyles.main}>
-                      <div className={listStyles.titleRow}>
-                        <div className={listStyles.title}>
-                          {interaction.title}
-                        </div>
-                        {/*<IdentifierBadge text={interaction.id} size={`small`} />*/}
-                      </div>
-                      <div className={listStyles.meta}>
-                        {interaction.parties
-                          .map(
-                            (party) => `${party.role}: ${party.identity?.name}`,
-                          )
-                          .filter(Boolean)
-                          .join("  –  ")}
-                      </div>
-                    </div>
+        {/* ACTIVE REQUESTS */}
+        <InteractionsList
+          dashboardInteractions={dashboardInteractions}
+          title="Your Active Interactions"
+          allowedStatuses={["DRAFT", "IN_REVIEW"]}
+          isCards={true}
+        />
 
-                    <div className={listStyles.side}>
-                      {/*<StatusBadge status={interaction.status} hideIcon />*/}
-                      <StatusBadgeAdapter
-                        status={interaction.status}
-                        hideIcon
-                      />
-                      <time
-                        className={listStyles.date}
-                        dateTime={interaction.updatedAt}
-                      >
-                        {interaction.updatedAt}
-                      </time>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        {/* RESOLVED REQUESTS */}
+        <InteractionsList
+          dashboardInteractions={dashboardInteractions}
+          title="Resolved Interactions"
+          allowedStatuses={["APPROVED", "REJECTED"]}
+        />
       </main>
     </div>
   );

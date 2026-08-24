@@ -8,7 +8,7 @@ import type { InteractionAction, InteractionState } from "@resolve/types";
 // import type { Role } from "../../../api/cache";
 import styles from "./SidebarCard.module.scss";
 
-const statusColorMap: Record<InteractionState, string> = {
+export const statusColorMap: Record<InteractionState, string> = {
   DRAFT: "#9ca3af",
   IN_REVIEW: "#2563eb",
   APPROVED: "#16a34a",

@@ -1,11 +1,5 @@
 import { createContext, useContext } from "react";
-
-export type CurrentUser = {
-  id: string;
-  name: string;
-  accessibleWorkspaceIds: string[];
-  role: "Legal" | "Finance" | "Admin";
-};
+import type { CurrentUser } from "@resolve/types";
 
 type CurrentUserContextData = {
   currentUser: CurrentUser | null;

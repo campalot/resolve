@@ -12,15 +12,15 @@ import type {
   InteractionState,
   InteractionAction,
   Role,
-  IdentityStats
+  IdentityStats,
+  DashboardInteraction
 } from "@resolve/types";
 import { 
   WORKFLOW,
   ROLE_PERMISSIONS,
 } from "@resolve/types";
-// import { getMockDb } from "../../../mocks/mockDB";
 import { getMockDb } from "@resolve/mock-db";
-import { ASSET_BASE_URL } from "./constants";
+import { ASSET_BASE_URL, activityTemplates } from "./constants";
 // import { useAppStore } from '../../../store/useAppStore';
 
 export function getPermittedActions(
@@ -243,6 +243,71 @@ export function resolveInteraction(
   return {
     ...resolvedInteraction,
     permittedActions,
+  };
+}
+
+
+const getLastEvent = (lastActivity: InteractionActivity) =>
+  activityTemplates[lastActivity?.type]?.(
+    lastActivity,
+  ) ?? null;
+
+const getRequestRole = (
+  interaction: InteractionRecord,
+  userId: string | null,
+) => {
+  if (interaction?.currentReviewerId === userId) {
+    return "Reviewer";
+  } 
+  
+  if (interaction.creatorId === userId) {
+   return "Creator";
+  }
+
+  const party = interaction.parties.find(
+    (p) => p.identityId === userId
+  );
+
+  return party?.role ?? null;
+  
+};
+
+export function resolveDashboardInteraction(
+    interaction: InteractionRecord, 
+    userId: string,
+    options?: {
+      role?: Role;
+      db?: ReturnType<typeof getMockDb>;
+    }
+  ): DashboardInteraction {
+  const mockDb = options?.db ?? getMockDb();
+  const interactionActivities = mockDb.interactionActivities.filter(ia => ia.interactionId === interaction.id).sort(
+    (a, b) =>
+      new Date(b.occurredAt).getTime() -
+      new Date(a.occurredAt).getTime()
+  );
+  const lastActivity = resolveInteractionActivity(interactionActivities[0]);
+  const lastEvent = getLastEvent(lastActivity);
+
+  return {
+    id: interaction.id,
+    title: interaction.title,
+    status: interaction.status,
+    updatedAt: interaction.updatedAt,
+    relationship: getRequestRole(interaction, userId),
+    latestActivity: lastEvent,
+    parties: interaction.parties.map((party: InteractionPartyRecord) => {
+      const identity = mockDb.identities.find(
+        (id: Identity) => id.id === party.identityId
+      );
+
+      if (!identity) return null;
+
+      return ({
+        role: party.role,
+        identity,
+      })
+    }).filter((party): party is InteractionParty => party !== null),
   };
 }
 

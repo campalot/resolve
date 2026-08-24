@@ -13,7 +13,7 @@ import { Typography } from "@mui/material";
 import { StatusBadge } from "@resolve/ui";
 import { StatusBadgeSize } from "@resolve/ui";
 
-const activityTemplates: Record<
+export const activityTemplates: Record<
   InteractionActivityType,
   (activity: InteractionActivity) => string | ReactNode
 > = {
@@ -24,7 +24,7 @@ const activityTemplates: Record<
     return (
       <>
         {a.actor.name} moved this interaction to{" "}
-        <StatusBadge status={meta.newStatus} size={StatusBadgeSize.Small} />
+        <StatusBadge status={meta.newStatus} size={StatusBadgeSize.Small} hideIcon />
       </>
     );
   },

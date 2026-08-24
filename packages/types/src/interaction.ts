@@ -1,5 +1,5 @@
 import type { Identity } from "./identity";
-import type { InteractionActivity } from "./activity";
+import type { InteractionActivity, InteractionActivityType } from "./activity";
 
 export type ToastType = "info" | "success" | "error" | "neutral";
 type Toast = {
@@ -134,10 +134,29 @@ export type InteractionState = typeof interactionStateValues[number];
 export const interactionActionValues = ["SUBMIT", "APPROVE", "REJECT", "RESUBMIT"] as const;
 export type InteractionAction = typeof interactionActionValues[number];
 
+export const interactionRelationshipValues = ["Buyer", "Seller", "Partner", "Creator", "Reviewer"];
+export type InteractionRelationship = (typeof interactionRelationshipValues)[number];
+
 export type TransitionVariables = {
   id: string;
   action: InteractionAction; // Or your specific Action enum
   actorId: string;
   workspaceId: string;
   comment?: string;
+}
+
+export type DashboardInteraction = {
+  id: string;
+  title: string;
+  status: InteractionState;
+  relationship: InteractionRelationship | null;
+  latestActivity: string | StatusChangeObj;
+  updatedAt: string;
+  parties: InteractionParty[];
+}
+
+export type StatusChangeObj = {
+  type: InteractionActivityType,
+  actorName: string;
+  newStatus: InteractionState;
 }

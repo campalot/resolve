@@ -21603,14 +21603,47 @@
           "role": "Partner"
         }
       ],
-      "status": "DRAFT",
-      "updatedAt": "2026-08-22T00:39:56.263Z",
+      "status": "IN_REVIEW",
+      "updatedAt": "2026-08-23T03:27:38.819Z",
       "createdAt": "2026-08-22T00:39:56.263Z",
       "creatorId": "person-benjamin-gonzalez-alpha",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "currentReviewerId": "person-anna-foster-alpha"
     }
   ],
   "interactionActivities": [
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-bab8e322-f016-4851-894e-5961ec11ee71",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_05kdf5oi",
+      "interactionTitle": "Proposal – $124,300",
+      "type": "STATUS_CHANGED",
+      "occurredAt": "2026-08-23T03:27:38.819Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadata_Status",
+        "previousStatus": "DRAFT",
+        "newStatus": "IN_REVIEW"
+      }
+    },
+    {
+      "__typename": "InteractionActivityRecord",
+      "id": "activity-64a76a85-ebcf-4e16-a165-77144acde809",
+      "workspaceId": "alpha",
+      "interactionId": "alpha_05kdf5oi",
+      "interactionTitle": "Proposal – $124,300",
+      "type": "REVIEWER_ASSIGNED",
+      "occurredAt": "2026-08-23T03:27:38.819Z",
+      "actorId": "person-anna-foster-alpha",
+      "metadata": {
+        "__typename": "InteractionActivityMetadataRecord_Reviewer",
+        "nextReviewer": {
+          "identityId": "person-anna-foster-alpha",
+          "role": "Seller"
+        }
+      }
+    },
     {
       "__typename": "InteractionActivityRecord",
       "id": "activity-bdfffe81-268b-4a41-a19d-a894fb36b99b",

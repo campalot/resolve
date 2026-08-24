@@ -1,14 +1,7 @@
 "use client";
 
 import { createContext, useContext } from "react";
-import type { Identity } from "@resolve/types";
-
-export type CurrentUser = {
-  id: string;
-  name: string;
-  accessibleWorkspaceIds: string[];
-  role: "Legal" | "Finance" | "Admin";
-};
+import type { Identity, CurrentUser } from "@resolve/types";
 
 type CurrentUserContextData = {
   currentUser: CurrentUser | null;

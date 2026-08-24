@@ -92,7 +92,7 @@ export const InteractionOverview: React.FC<InteractionOverviewProps> = ({
         <Typography variant="overline" className={styles.sectionLabel}>
           Summary
         </Typography>
-        <Typography variant="body2">{interaction.data.summary}</Typography>
+        <Typography variant="body2">{interaction.data?.summary}</Typography>
       </Box>
       <Box className={`${styles.sidebarCard} ${styles.sectionCard}`}>
         <Typography variant="overline" className={styles.sectionLabel}>
