@@ -13,5 +13,10 @@ export default defineConfig({
         url: 'http://localhost:3000', // Must match test baseURL
       },
     },
+    env: {
+      UPSTASH_REDIS_REST_URL: '',
+      UPSTASH_REDIS_REST_TOKEN: '',
+      NODE_ENV: 'test',
+    }
   },
 });

@@ -1,9 +1,9 @@
 import { resolveIdentity } from "@resolve/domain";
-import { generateMockDb } from "@resolve/mock-db";
+import { generateWorkspaceData } from "@resolve/mock-db";
 import type { InteractionActivityMetadataRecord_Reviewer } from "@resolve/types";
 
 describe('resolveIdentity', () => {
-  const db = generateMockDb();
+  const db = generateWorkspaceData("alpha");
 
   const mockDb = {
     ...db,

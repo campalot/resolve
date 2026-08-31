@@ -43,13 +43,13 @@ export function getProfileInteractionsAndActivities(
   }
 ) {
   const mockDb = options?.db ?? getMockDb();
-  let activities = mockDb.interactionActivities.filter((activity) => {
+  let activities = mockDb.interactionActivities.filter((activity: InteractionActivityRecord) => {
     return activity.workspaceId === workspaceId;
   })
-  activities = activities.filter((activity) => {
+  activities = activities.filter((activity: InteractionActivityRecord) => {
     const isActor =
       activity?.actorId === identityId;
-    const actor = mockDb.identities.find((i) => i.id === activity?.actorId);
+    const actor = mockDb.identities.find((i: IdentityRecord) => i.id === activity?.actorId);
     const isActorCompany = actor?.companyId === identityId;
 
     const isNextReviewer =
@@ -67,15 +67,15 @@ export function getProfileInteractionsAndActivities(
 
   const activityInteractionIds = new Set(
     activities
-      .map((a) => a?.interactionId)
+      .map((a: InteractionActivityRecord) => a?.interactionId)
       .filter(Boolean) // Remove null/undefined IDs
   );
 
-  let interactions = mockDb.interactions.filter((interaction) => {
+  let interactions = mockDb.interactions.filter((interaction: InteractionRecord) => {
     return interaction.workspaceId === workspaceId;
   })
 
-  interactions = interactions.filter((interaction) => {
+  interactions = interactions.filter((interaction: InteractionRecord) => {
     const isPartyOrReviewer = 
         interaction.parties.some((p) => p?.identityId === identityId) || 
         interaction.currentReviewerId === identityId;
@@ -97,13 +97,13 @@ export function resolveProfileAssociations(
   }
 ) {
   const mockDb = options?.db ?? getMockDb();
-  let activities = mockDb.interactionActivities.filter((activity) => {
+  let activities = mockDb.interactionActivities.filter((activity: InteractionActivityRecord) => {
     return activity.workspaceId === workspaceId;
   });
-  activities = activities.filter((activity) => {
+  activities = activities.filter((activity: InteractionActivityRecord) => {
     const isActor =
       activity?.actorId === identityId;
-    const actor = mockDb.identities.find((i) => i.id === activity?.actorId);
+    const actor = mockDb.identities.find((i: IdentityRecord) => i.id === activity?.actorId);
     const isActorCompany = actor?.companyId === identityId;
 
     const isNextReviewer =
@@ -121,15 +121,15 @@ export function resolveProfileAssociations(
 
   const activityInteractionIds = new Set(
     activities
-      .map((a) => a?.interactionId)
+      .map((a: InteractionActivityRecord) => a?.interactionId)
       .filter(Boolean) // Remove null/undefined IDs
   );
 
-  let interactions = mockDb.interactions.filter((interaction) => {
+  let interactions = mockDb.interactions.filter((interaction: InteractionRecord) => {
     return interaction.workspaceId === workspaceId;
   })
 
-  interactions = interactions.filter((interaction) => {
+  interactions = interactions.filter((interaction: InteractionRecord) => {
     const isPartyOrReviewer = 
         interaction.parties.some((p) => p?.identityId === identityId) || 
         interaction.currentReviewerId === identityId;
@@ -154,20 +154,20 @@ function resolveIdentityStats(
   const { activities, interactions } = getProfileInteractionsAndActivities(workspaceId, identityId, { db: mockDb });
 
   const lastActivityAt = activities.length
-    ? Math.max(...activities.map(a => new Date(a.occurredAt).getTime()))
+    ? Math.max(...activities.map((a: InteractionActivityRecord) => new Date(a.occurredAt).getTime()))
     : null;
 
   const total = interactions.length;
   const decidedCount = interactions.filter(
-    (i) => i.status === "APPROVED" || i.status === "REJECTED",
+    (i: InteractionRecord) => i.status === "APPROVED" || i.status === "REJECTED",
   ).length;
   const active = total - decidedCount;
 
   const reviewerActivities = activities.filter(
-    (activity) => activity.metadata.__typename === "InteractionActivityMetadataRecord_Reviewer"
+    (activity: InteractionActivityRecord) => activity.metadata.__typename === "InteractionActivityMetadataRecord_Reviewer"
   );
   const awaiting = reviewerActivities.filter(
-    (activity) => (activity.metadata as InteractionActivityMetadataRecord_Reviewer)
+    (activity: InteractionActivityRecord) => (activity.metadata as InteractionActivityMetadataRecord_Reviewer)
     .nextReviewer.identityId === identityId).length;
 
   return {
@@ -281,8 +281,8 @@ export function resolveDashboardInteraction(
     }
   ): DashboardInteraction {
   const mockDb = options?.db ?? getMockDb();
-  const interactionActivities = mockDb.interactionActivities.filter(ia => ia.interactionId === interaction.id).sort(
-    (a, b) =>
+  const interactionActivities = mockDb.interactionActivities.filter((ia: InteractionActivityRecord) => ia.interactionId === interaction.id).sort(
+    (a: InteractionActivityRecord, b: InteractionActivityRecord) =>
       new Date(b.occurredAt).getTime() -
       new Date(a.occurredAt).getTime()
   );
@@ -318,7 +318,7 @@ function projectIdentityForActivity(
 ): Identity | null {
   const mockDb = getMockDb();
   const record = mockDb.identities.find(
-    (id) => id.id === identityId
+    (id: IdentityRecord) => id.id === identityId
   );
 
   if (!record) return null;

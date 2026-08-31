@@ -1,9 +1,9 @@
 import { getPermittedActions } from "@resolve/domain";
 import { resolveInteraction } from "@resolve/domain";
-import { generateMockDb } from "@resolve/mock-db";
+import { generateWorkspaceData } from "@resolve/mock-db";
 
 describe('resolveInteraction', () => {
-  const db = generateMockDb();
+  const db = generateWorkspaceData("alpha");
 
   const mockDb = {
     ...db,

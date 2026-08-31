@@ -1,12 +1,14 @@
 import { expect, afterEach, beforeEach } from 'vitest';
-import { cleanup } from '@testing-library/react';
+import { cleanup, configure } from '@testing-library/react';
 import * as matchers from '@testing-library/jest-dom/matchers'; 
 import '@testing-library/jest-dom/vitest'; // Provides the types for Vitest
-import { resetMockDb } from "@resolve/mock-db";
+import { api } from "../../src/api/axiosInstance";
 import { client } from "../../src/api/mockApolloClient";
 
 // This bridges the matchers to Vitest's expect
 expect.extend(matchers);
+
+configure({ asyncUtilTimeout: 8000 });
 
 global.IntersectionObserver = class IntersectionObserver {
   // Required properties for the interface
@@ -41,7 +43,13 @@ Object.defineProperty(window, 'localStorage', { value: localStorageMock });
 
 
 beforeEach(async () => {
-  resetMockDb();
+  try {
+    // Hit the real backend reset route. 
+    // Axios interceptor automatically adds the 'x-resolve-test-context' header!
+    await api.post('/dev/reset');
+  } catch (error) {
+    console.error("⚠️ Failed to reset mock database on the backend server:", error);
+  }
   await client.clearStore();
 
   localStorage.clear();

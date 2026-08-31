@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { api } from '../axiosInstance';
 
 type TransitionParams = {
   id: string;
@@ -17,7 +17,7 @@ export type TransitionBody = {
 const baseURL = 'http://localhost:3001/api';
 
 export const transitionInteraction = async (data: TransitionParams) => {
-  const response = await axios.post(`${baseURL}/w/${data.workspaceId}/interactions/${data.id}/transition`, {
+  const response = await api.post(`${baseURL}/w/${data.workspaceId}/interactions/${data.id}/transition`, {
     action: data.action,
     actorId: data.actorId,
     comment: data.comment,

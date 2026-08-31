@@ -7,6 +7,7 @@ import { getPermittedActions } from "@resolve/domain";
 const httpLink = new HttpLink({
   // uri: ({ operationName }) => `/graphql?op=${operationName}`,
   uri: ({ operationName }) => `http://localhost:3001/graphql?op=${operationName}`,
+  credentials: 'include',
 });
 
 // const liveHttpLink = new HttpLink({

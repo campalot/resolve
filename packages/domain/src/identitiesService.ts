@@ -1,5 +1,5 @@
 // import { HttpResponse } from 'msw';
-import type { IdentityFilters, IdentityRecord } from "@resolve/types";
+import type { IdentityFilters, IdentityRecord, InteractionActivityRecord, InteractionRecord } from "@resolve/types";
 import { resolveIdentity, resolveInteraction, resolveInteractionActivity } from "./common/resolvers";
 // import { getMockDb } from "../../mocks/mockDB";
 import { getMockDb } from "@resolve/mock-db";
@@ -67,10 +67,10 @@ export const identityService = {
     const db = getMockDb();
     const { activities, interactions } = resolveProfileAssociations(workspaceId as string, identityId as string);
 
-    const resolvedInteractions = interactions.map((interaction) => resolveInteraction(interaction));
-    const resolvedActivities = activities.map((ia) => resolveInteractionActivity(ia));
+    const resolvedInteractions = interactions.map((interaction: InteractionRecord) => resolveInteraction(interaction));
+    const resolvedActivities = activities.map((ia: InteractionActivityRecord) => resolveInteractionActivity(ia));
 
-    const identityRecord = db.identities.find(i => i.id === identityId && i.workspaceId === workspaceId);
+    const identityRecord = db.identities.find((i: IdentityRecord) => i.id === identityId && i.workspaceId === workspaceId);
     const identity = identityRecord ? resolveIdentity(identityRecord) : undefined;
 
     // if (!identity) return new HttpResponse(null, { status: 404 });

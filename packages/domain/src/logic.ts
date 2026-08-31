@@ -14,7 +14,7 @@ import {
 } from "@resolve/mock-db";
 //import { useAppStore } from "../../store/useAppStore";
 import { getMockDb, persistDb } from "@resolve/mock-db";
-import type { MockDbProps } from "@resolve/mock-db";
+import type { MockDbProps } from "@resolve/types";
 //import { delay } from "msw";
 
 function getNextReviewer(

@@ -12,7 +12,7 @@ import { backendLogger } from '@resolve/logger';
 // import { useAppStore } from '../../store/useAppStore';
 import { ROLE_PERMISSIONS } from "@resolve/types";
 import { resolveIdentity, resolveInteraction, resolveInteractionActivity, resolveProfileAssociations } from './common/resolvers';
-import type { IdentityRecord, InteractionActivity, InteractionActivityRecord, InteractionType, ToastNotification } from '@resolve/types';
+import type { IdentityRecord, InteractionActivity, InteractionActivityRecord, InteractionRecord, InteractionType, ToastNotification } from '@resolve/types';
 import { buildInteractionToastMessage } from "./buildInteractionMetadata";
 import type { 
   InteractionAction, 
@@ -79,7 +79,7 @@ export const interactionService = {
     backendLogger.latencyStart(250); 
 
     const { id, workspaceId, action, actorId, comment } = vars;
-    const db = getMockDb();
+    const db = vars.db || getMockDb();
     
     // 2. Security Check
     // const currentRole = useAppStore.getState().activeRole;
@@ -94,7 +94,7 @@ export const interactionService = {
     }
 
     // 3. Find Interaction
-    const interactionIndex = db.interactions.findIndex(i => i.id === id);
+    const interactionIndex = db.interactions.findIndex((i: InteractionRecord) => i.id === id);
     if (interactionIndex === -1) {
        backendLogger.endGroup();
        throw { status: 404, message: "Not found" };
@@ -180,7 +180,7 @@ export const interactionService = {
   getInteraction: async (workspaceId: string, interactionId: string) => {
     const db = getMockDb();
     const interaction = db.interactions.find(
-      (i) => i.id === interactionId && i.workspaceId === workspaceId
+      (i: InteractionRecord) => i.id === interactionId && i.workspaceId === workspaceId
     );
 
     if (!interaction) return null;

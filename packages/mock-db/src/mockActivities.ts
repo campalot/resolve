@@ -53,8 +53,6 @@ function pickActorFromInteraction(
   if (actor?.type === "Individual") {
     return actor;
   }
-  // const employees = identities.find((i) => i.companyId === party.identityId);
-  // return Array.isArray(employees) ? pickOne(employees) : employees;
 
   const employees = identities.filter(
     (i) => i.companyId === party.identityId
@@ -371,7 +369,7 @@ export function transitionInteraction(
 
   const newActivities: InteractionActivityRecord[] = [];
 
-  const actor = mockDb.identities.find((ident) => ident.id === actorId);
+  const actor = mockDb.identities.find((ident: IdentityRecord) => ident.id === actorId);
 
   // If there's no actor, we can't attribute the event, so we stop here.
   if (!actor) {

@@ -5,3 +5,5 @@ export * from "./search";
 export * from "./workflow";
 export * from "./workspace";
 export * from "./connections";
+export * from "./session";
+export * from "./database";

@@ -1,6 +1,6 @@
 import { builder } from './builder';
 import { IdentityType } from './identity';
-import { getMockDb } from '@resolve/mock-db';
+import { getMockDb, runAgnosticDatabaseHydration } from '@resolve/mock-db';
 import { activitiesService } from '@resolve/domain';
 import type {
   InteractionActivityMetadata_Status,
@@ -15,19 +15,19 @@ import type {
 } from '@resolve/types';
 import { InteractionFiltersInput } from "./interaction";
  
-// A. Register your core activity enums
+// Register your core activity enums
 const ActivityTypeEnum = builder.enumType('InteractionActivityType', {
   values: ['INTERACTION_CREATED', 'STATUS_CHANGED', 'REVIEWER_ASSIGNED', 'COMMENT_ADDED', 'INTERACTION_DECIDED'] as const,
 });
 
-// B. Define Object Reference blueprints for the metadata variants
+// Define Object Reference blueprints for the metadata variants
 const StatusMetaRef = builder.objectRef<InteractionActivityMetadata_Status>('InteractionActivityMetadata_Status');
 const ReviewerMetaRef = builder.objectRef<InteractionActivityMetadata_Reviewer>('InteractionActivityMetadata_Reviewer');
 const CommentMetaRef = builder.objectRef<InteractionActivityMetadata_Comment>('InteractionActivityMetadata_Comment');
 const DecisionMetaRef = builder.objectRef<InteractionActivityMetadata_Decision>('InteractionActivityMetadata_Decision');
 const CreatedMetaRef = builder.objectRef<InteractionActivityMetadata_Created>('InteractionActivityMetadata_Created');
 
-// C. Implement the distinct standalone variant shapes
+// Implement the distinct standalone variant shapes
 export const StatusMetaType = StatusMetaRef.implement({
   fields: (t) => ({
     previousStatus: t.exposeString('previousStatus'),
@@ -35,7 +35,7 @@ export const StatusMetaType = StatusMetaRef.implement({
   }),
 });
 
-// 1. Declare a clean, explicit Object Reference blueprint for the party structure
+// Declare a clean, explicit Object Reference blueprint for the party structure
 const InteractionPartyStubType = builder.objectRef<InteractionParty>('InteractionPartyStub').implement({
   fields: (t) => ({
     role: t.exposeString('role'),
@@ -46,13 +46,7 @@ const InteractionPartyStubType = builder.objectRef<InteractionParty>('Interactio
   }),
 });
 
-// 2. Use it directly inside your Reviewer Metadata definition block
-const CreatedMetaType = CreatedMetaRef.implement({
-  fields: (t) => ({
-   initialStatus: t.exposeString('initialStatus'),
-  }),
-});
-
+// Use it directly inside the Reviewer Metadata definition block
 export const ReviewerMetaType = ReviewerMetaRef.implement({
   fields: (t) => ({
     nextReviewer: t.field({
@@ -61,6 +55,12 @@ export const ReviewerMetaType = ReviewerMetaRef.implement({
         return parentMetadata.nextReviewer;
       }
     }),
+  }),
+});
+
+const CreatedMetaType = CreatedMetaRef.implement({
+  fields: (t) => ({
+   initialStatus: t.exposeString('initialStatus'),
   }),
 });
 
@@ -82,7 +82,7 @@ export const DecisionMetaType = DecisionMetaRef.implement({
   }),
 });
 
-// D. Group them into the unified metadata union type
+// Group them into the unified metadata union type
 const ActivityMetadataUnion = builder.unionType('InteractionActivityMetadata', {
   types: [StatusMetaType, ReviewerMetaType, CommentMetaType, DecisionMetaType, CreatedMetaType],
   resolveType(metaValue: any) {
@@ -99,7 +99,7 @@ const ActivityMetadataUnion = builder.unionType('InteractionActivityMetadata', {
   }
 });
 
-// E. Implement the Master Activity Type Ref
+// Implement the Master Activity Type Ref
 export const ActivityType = builder.objectRef<InteractionActivity>('InteractionActivity').implement({
   fields: (t) => ({
     id: t.exposeID('id'),
@@ -117,7 +117,7 @@ export const ActivityType = builder.objectRef<InteractionActivity>('InteractionA
   }),
 });
 
-// 1. Declare a clean, explicit Object Reference blueprint for the party structure
+// Declare a clean, explicit Object Reference blueprint for the party structure
 const ActivitiesPageInfoType = builder.objectRef<ActivitiesPageInfo>('ActivitiesPageInfo').implement({
   fields: (t) => ({
     total: t.exposeInt('total'),
@@ -131,7 +131,7 @@ const ActivitiesConnectionRef =
     "ActivitiesConnection"
   );
 
-// F. Map your connection type container for the standalone paginated query
+// Map the connection type container for the standalone paginated query
 const ActivitiesConnectionType = ActivitiesConnectionRef.implement({
   fields: (t) => ({
     results: t.field({
@@ -145,24 +145,27 @@ const ActivitiesConnectionType = ActivitiesConnectionRef.implement({
   }),
 });
 
-// G. Inject your two parallel endpoints straight to the global query bucket
+// Inject the two parallel endpoints straight to the global query bucket
 builder.queryFields((t) => ({
   
-  // ENDPOINT 1: Used by your GET_PROFILE query (Parallel call, returns array)
+  // ENDPOINT 1: Used by GET_PROFILE query (Parallel call, returns array)
   activities: t.field({
     type: [ActivityType],
     args: {
       workspaceId: t.arg.id({ required: true }),
       actorId: t.arg.id(), // Links query to the specific active profile filter
     },
-    resolve: async (_root, args) => {
-       const response = await activitiesService.getProfileActivities(args.workspaceId, args.actorId || "");
+    resolve: async (_root, args, context) => {
+      const { sessionId } = context.sessionContext;
+      const workspaceId = args.workspaceId || context.sessionContext.currentWorkspaceId;
+      await runAgnosticDatabaseHydration(sessionId, workspaceId);
+      const response = await activitiesService.getProfileActivities(args.workspaceId, args.actorId || "");
   
       return response;
     },
   }),
 
-  // ENDPOINT 2: Used by your standalone GET_INTERACTION_ACTIVITIES query (Returns connection)
+  // ENDPOINT 2: Used by the standalone GET_INTERACTION_ACTIVITIES query (Returns connection)
   interactionActivities: t.field({
     type: ActivitiesConnectionType,
     args: {
@@ -174,8 +177,12 @@ builder.queryFields((t) => ({
         type: InteractionFiltersInput,
       }),
     },
-    resolve: async (_root, args) => {
-      return activitiesService.processActivities(getMockDb().interactionActivities, {
+    resolve: async (_root, args, context) => {
+      const { sessionId } = context.sessionContext;
+      const workspaceId = args.workspaceId || context.sessionContext.currentWorkspaceId;
+      await runAgnosticDatabaseHydration(sessionId, workspaceId);
+      const db = getMockDb();
+      return activitiesService.processActivities(db.interactionActivities, {
         workspaceId: args.workspaceId,
         offset: args.offset ?? 0,
         limit: args.limit ?? 20,

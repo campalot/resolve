@@ -1,11 +1,11 @@
 import { builder } from './builder';
-import { searchService } from '@resolve/domain'; // Your core domain service package
-import { IdentityType } from './identity';       // Reuse your working Identity schema ref
-import { InteractionType } from './interaction'; // Reuse your working Interaction schema ref
-import { getMockDb } from '@resolve/mock-db';
+import { searchService } from '@resolve/domain';
+import { IdentityType } from './identity';
+import { InteractionType } from './interaction';
+import { getMockDb, runAgnosticDatabaseHydration } from '@resolve/mock-db';
 import { PageInfo, SearchConnection } from '@resolve/types';
 
-// 1. Create a Union type that bundles your existing schemas together
+// Create a Union type that bundles existing schemas together
 const SearchResultUnion = builder.unionType('SearchResult', {
   types: [IdentityType, InteractionType],
   resolveType: (recordValue: any) => {
@@ -17,7 +17,7 @@ const SearchResultUnion = builder.unionType('SearchResult', {
   },
 });
 
-// 2. Map the standalone PageInfo type wrapper for search pagination
+// Map the standalone PageInfo type wrapper for search pagination
 const SearchPageInfoType = builder.objectRef<PageInfo>('SearchPageInfo').implement({
   fields: (t) => ({
     total: t.exposeInt('total'),
@@ -25,10 +25,10 @@ const SearchPageInfoType = builder.objectRef<PageInfo>('SearchPageInfo').impleme
   }),
 });
 
-// 3. Map the master SearchResultsConnection reference container
+// Map the master SearchResultsConnection reference container
 const SearchResultsConnectionType = builder.objectRef<SearchConnection>('SearchResultsConnection').implement({
   fields: (t) => ({
-    results: t.expose('results', { type: [SearchResultUnion] }), // Exposes the mixed union list!
+    results: t.expose('results', { type: [SearchResultUnion] }), // Exposes the mixed union list
     pageInfo: t.expose('pageInfo', { type: SearchPageInfoType }),
   }),
 });
@@ -42,8 +42,12 @@ builder.queryFields((t) => ({
       offset: t.arg.int({ required: true }),
       limit: t.arg.int({ required: true }),
     },
-    resolve: async (_root, args) => {
-      // 1. Structure the args to strictly match your SearchVars contract
+    resolve: async (_root, args, context) => {
+      const { sessionId } = context.sessionContext;
+      const workspaceId = args.workspaceId || context.sessionContext.currentWorkspaceId;
+      await runAgnosticDatabaseHydration(sessionId, workspaceId);
+      const db = getMockDb();
+      // Structure the args to strictly match the SearchVars contract
       const vars = {
         workspaceId: args.workspaceId,
         queryString: args.queryString,
@@ -51,10 +55,9 @@ builder.queryFields((t) => ({
         limit: args.limit,
       };
 
-      // 2. Execute the exact same domain method your MSW & REST endpoints used!
       return searchService.processSearchResults(
-        getMockDb().interactions,
-        getMockDb().identities,
+        db.interactions,
+        db.identities,
         vars
       );
     },

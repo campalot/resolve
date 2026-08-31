@@ -17,11 +17,13 @@ import type {
     InteractionsConnection,
     IdentitiesConnection,
     ActivitiesConnection,
-    SearchConnection
+    SearchConnection,
+    GraphQLContext
 } from '@resolve/types';
 
 // Declare the layout structure explicitly as a standalone type
 type PothosConfig = {
+  Context: GraphQLContext;
   Objects: {
     Identity: Identity;
     Interaction: Interaction;
@@ -38,7 +40,7 @@ type PothosConfig = {
     InteractionActivityMetadata_Comment: InteractionActivityMetadata_Comment;
     InteractionActivityMetadata_Decision: InteractionActivityMetadata_Decision;
     InteractionActivityMetadata_Created: InteractionActivityMetadata_Created;
-    // Map your custom relation sub-shapes too
+    // Map custom relation sub-shapes too
     InteractionParty: {
       role: string;
       identity: Identity;
@@ -53,5 +55,5 @@ type PothosConfig = {
 };
 
 
-// Enforce that "Identity" strictly maps to your shared TypeScript interface
+// Enforce that "Identity" strictly maps to the shared TypeScript interface
 export const builder = new SchemaBuilder<PothosConfig>({});

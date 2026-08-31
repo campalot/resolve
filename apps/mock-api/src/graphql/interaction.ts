@@ -9,14 +9,15 @@ import type {
   InteractionParty,
   InteractionsConnection,
   ToastNotification,
-  Interaction
+  Interaction,
+  IdentityRecord
 } from '@resolve/types'; 
-import { getMockDb } from '@resolve/mock-db';
+import { getMockDb, runAgnosticDatabaseHydration } from '@resolve/mock-db';
 import { IdentityType, PageInfoType, IdentityReferenceType } from './identity';
 import { ActivityType } from "./activity";
 
 
-// 1. Declare your core enums
+// Declare your core enums
 const InteractionTypeEnum = builder.enumType('InteractionType', {
   values: ['PROPOSAL', 'CONTRACT', 'POLICY_UPDATE', 'VENDOR_ONBOARDING'] as const,
 });
@@ -29,13 +30,13 @@ const InteractionActionEnum = builder.enumType('InteractionAction', {
   values: ['SUBMIT', 'APPROVE', 'REJECT', 'RESUBMIT'] as const,
 });
 
-// 1. Create the Object Reference blueprints first
+// Create the Object Reference blueprints first
 const ProposalDataRef = builder.objectRef<ProposalData>('ProposalData');
 const ContractDataRef = builder.objectRef<ContractData>('ContractData');
 const PolicyUpdateDataRef = builder.objectRef<PolicyUpdateData>('PolicyUpdateData');
 const VendorOnboardingDataRef = builder.objectRef<VendorOnboardingData>('VendorOnboardingData');
 
-// 2. Separate implementation blocks into dedicated statements
+// Separate implementation blocks into dedicated statements
 export const ProposalDataType = ProposalDataRef.implement({
   fields: (t) => ({
     summary: t.exposeString('summary'),
@@ -104,7 +105,7 @@ const InteractionDataUnion = builder.unionType("InteractionData", {
   },
 });
 
-// 3. Define the ToastNotification structural type
+// Define the ToastNotification structural type
 const ToastNotificationType = builder.objectRef<ToastNotification>('ToastNotification').implement({
   fields: (t) => ({
     message: t.exposeString('message'),
@@ -112,7 +113,7 @@ const ToastNotificationType = builder.objectRef<ToastNotification>('ToastNotific
   }),
 });
 
-// 4. Define the InteractionParty relational type
+// Define the InteractionParty relational type
 const InteractionPartyType = builder.objectRef<InteractionParty>('InteractionParty').implement({
   fields: (t) => ({
     role: t.exposeString('role'),
@@ -124,7 +125,7 @@ const InteractionPartyType = builder.objectRef<InteractionParty>('InteractionPar
 });
 
 
-// 5. Implement the main Interaction Type Ref
+// Implement the main Interaction Type Ref
 export const InteractionType = builder.objectRef<Interaction>('Interaction').implement({
   fields: (t) => ({
     id: t.exposeID('id'),
@@ -133,10 +134,6 @@ export const InteractionType = builder.objectRef<Interaction>('Interaction').imp
     description: t.exposeString('description', { nullable: true }),
     createdAt: t.exposeString('createdAt'),
     updatedAt: t.exposeString('updatedAt'),
-
-    // Expose your mapped enums and unions
-    // type: t.expose('type', { type: InteractionTypeEnum }),
-    // status: t.expose('status', { type: InteractionStateEnum }),
 
     // Exposed as String instead of GraphQL enums.
     //
@@ -153,7 +150,6 @@ export const InteractionType = builder.objectRef<Interaction>('Interaction').imp
     }),
     data: t.expose('data', { type: InteractionDataUnion }),
     
-    // permittedActions: t.expose('permittedActions', { type: [InteractionActionEnum], nullable: true }),
     permittedActions: t.field({
         type: [InteractionActionEnum],
         nullable: true, 
@@ -205,7 +201,7 @@ const InteractionsConnectionRef =
     "InteractionsConnection"
   );
 
-// 2. New Identities Connection Object Ref (No manual field typing!)
+// New Identities Connection Object Ref (No manual field typing!)
 const InteractionsConnectionType = InteractionsConnectionRef.implement({
   fields: (t) => ({
     results: t.field({
@@ -222,10 +218,9 @@ const InteractionsConnectionType = InteractionsConnectionRef.implement({
 builder.mutationType({});
 
 builder.mutationFields((t) => ({
-  
-  // This key MUST match the field name inside your frontend client operation string
+  // This key MUST match the field name inside the frontend client operation string
   transitionInteraction: t.field({
-    type: InteractionType, // Returns the freshly updated interaction record shape!
+    type: InteractionType, // Returns the freshly updated interaction record shape
     args: {
       id: t.arg.id({ required: true }),
       action: t.arg({ type: InteractionActionEnum, required: true }),
@@ -233,17 +228,21 @@ builder.mutationFields((t) => ({
       workspaceId: t.arg.id({ required: true }),
       comment: t.arg.string(), // Optional field (defaults to undefined/nullable)
     },
-    resolve: async (_root, args) => {
+    resolve: async (_root, args, context) => {
+      const { sessionId } = context.sessionContext;
+      const workspaceId = args.workspaceId || context.sessionContext.currentWorkspaceId;
+      await runAgnosticDatabaseHydration(sessionId, workspaceId);
+      const db = getMockDb();
       try {
-        // 3. Call your exact same domain logic method that your REST route uses!
         const result = await interactionService.executeTransition({
           id: args.id,
-          action: args.action as any, // Casts gracefully into your InteractionAction enum
+          action: args.action as any, // Casts gracefully into InteractionAction enum
           actorId: args.actorId,
           workspaceId: args.workspaceId,
           comment: args.comment ?? undefined,
+          db
         });
-        // 4. Return the database record; Pothos handles formatting the response payload
+        // Return the database record; Pothos handles formatting the response payload
         return result;
       } catch (error) {
         // Gracefully translate backend workflow crashes into standard GraphQLErrors
@@ -270,8 +269,12 @@ builder.queryFields((t) => ({
       }),
       identityId: t.arg.id(),
     },
-    resolve: async (_root, args) => {
-      // 2. Build your unified variables map, gracefully falling back to defaults
+    resolve: async (_root, args, context) => {
+      const { sessionId } = context.sessionContext;
+      const workspaceId = args.workspaceId || context.sessionContext.currentWorkspaceId;
+      await runAgnosticDatabaseHydration(sessionId, workspaceId);
+      const db = getMockDb();
+      // Build your unified variables map, gracefully falling back to defaults
       const filters = args.filters ?? {};
       const vars = {
         workspaceId: args.workspaceId,
@@ -288,24 +291,25 @@ builder.queryFields((t) => ({
           endDate: filters.endDate ?? undefined,
         },
       };
-      //throw new Error("INTERACTIONS RESOLVER");
 
-      // 3. Invoke the exact same service method your REST endpoints execute
       return interactionsListService.processInteractions(
-        getMockDb().interactions, 
+        db.interactions, 
         vars
       );
     },
   }),
 
-  // FIELD 2: Singular field for your Interaction Detail Page
+  // Singular field for the Interaction Detail Page
   interaction: t.field({
-    type: InteractionType, // Notice this is NOT wrapped in an array bracket!
+    type: InteractionType,
     args: {
       workspaceId: t.arg.id({ required: true }),
-      id: t.arg.id({ required: true }), // Maps to your frontend's $interactionId
+      id: t.arg.id({ required: true }), // Maps to the frontend's $interactionId
     },
-    resolve: async (_root, args) => {
+    resolve: async (_root, args, context) => {
+      const { sessionId } = context.sessionContext;
+      const workspaceId = args.workspaceId || context.sessionContext.currentWorkspaceId;
+      await runAgnosticDatabaseHydration(sessionId, workspaceId);
       const item = await interactionService.getInteraction(args.workspaceId, args.id);
       
       if (!item) throw new Error('Interaction not found');
@@ -314,37 +318,37 @@ builder.queryFields((t) => ({
   }),
 
   parties: t.field({
-    type: [IdentityReferenceType], // Reuses your master Identity blueprint array!
+    type: [IdentityReferenceType], // Reuses the master Identity blueprint array
     args: {
       workspaceId: t.arg.id({ required: true }),
     },
-    resolve: async (_root, args) => {
+    resolve: async (_root, args, context) => {
+      const { sessionId } = context.sessionContext;
+      const workspaceId = args.workspaceId || context.sessionContext.currentWorkspaceId;
+      await runAgnosticDatabaseHydration(sessionId, workspaceId);
       const db = getMockDb();
       const referenceData = await interactionsListService.processReferenceData(
         db.interactions,
         args.workspaceId
       );
       
-      // Extract the parties list (hydrated identities) from your service response
-      // Fallback to searching identities if your reference data returns primitive records
-      return referenceData?.parties || db.identities.filter(id => id.workspaceId === args.workspaceId);
+      // Extract the parties list (hydrated identities) from the service response
+      // Fallback to searching identities if the reference data returns primitive records
+      return referenceData?.parties || db.identities.filter((id: IdentityRecord) => id.workspaceId === args.workspaceId);
     },
   }),
 
-  // FIELD 2: Returns an array of simple string status tokens
+  // Returns an array of simple string status tokens
   interactionStatuses: t.field({
-    //type: [t.string()], // Defines an array of standard strings [String!]!
     type: ['String'], 
     resolve: async () => {
-      // You can read this straight from your exported core constant arrays:
-      // ["DRAFT", "IN_REVIEW", "APPROVED", "REJECTED"]
+      // Look to read this from the exported core constant arrays:
       return ["DRAFT", "IN_REVIEW", "APPROVED", "REJECTED"];
     },
   }),
 
-  // FIELD 3: Returns an array of simple string type tokens
+  // Returns an array of simple string type tokens
   interactionTypes: t.field({
-    //type: [t.string()],
     type: ['String'], 
     resolve: async () => {
       return ["PROPOSAL", "CONTRACT", "POLICY_UPDATE", "VENDOR_ONBOARDING"];

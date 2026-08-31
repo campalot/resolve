@@ -150,7 +150,7 @@ export function generateInteractionTitle(
 
 export function generateInteractions(workspaceId: string, identities: IdentityRecord[]) {
   const randomLength = Math.floor(Math.random() * (200 - 175 + 1)) + 175;
-  return Array.from({ length: randomLength }).map(() => {
+  return Array.from({ length: randomLength }).map((_, index) => {
     const randomDate = new Date(
       Date.now() - Math.floor(Math.random() * 10000000000)
     ).toLocaleString();
@@ -163,7 +163,7 @@ export function generateInteractions(workspaceId: string, identities: IdentityRe
     const type = pickInteractionType();
     const data = generateInteractionData(type);
     const title = generateInteractionTitle(type, data);
-
+    
     return ({
       id: workspaceId + "_" + randomId(),
       workspaceId,

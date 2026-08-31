@@ -1,6 +1,6 @@
 import { builder } from './builder';
 import { identityService } from '@resolve/domain';
-import { getMockDb } from '@resolve/mock-db';
+import { getMockDb, runAgnosticDatabaseHydration } from '@resolve/mock-db';
 import type { Identity, IdentityFilters, IdentitiesConnection, IdentityStats, IdentityReference } from '@resolve/types';
 
 export const IdentityReferenceType =
@@ -24,7 +24,7 @@ export const StatsType = builder.objectRef<IdentityStats>('Stats').implement({
   }),
 });
 
-// 1. Compile the Identity type configuration using its backing model properties
+// Compile the Identity type configuration using its backing model properties
 export const IdentityType = builder.objectRef<Identity>("Identity");
 
 IdentityType.implement({
@@ -42,12 +42,10 @@ IdentityType.implement({
         type: StatsType,
         resolve: (p) => p.stats,
     }),
-    // industry: t.exposeString('industry'),
-    // personKey: t.exposeString('personKey'),
   }),
 });
 
-// 1. Define a standalone ref for PageInfo
+// Define a standalone ref for PageInfo
 export const PageInfoType = builder.objectRef<{ total: number; hasMore: boolean }>('PageInfo').implement({
   fields: (t) => ({
     total: t.exposeInt('total'),
@@ -60,11 +58,9 @@ const IdentitiesConnectionRef =
     "IdentitiesConnection"
   );
 
-// 2. New Identities Connection Object Ref (No manual field typing!)
+// New Identities Connection Object Ref (No manual field typing!)
 const IdentitiesConnectionType = IdentitiesConnectionRef.implement({
   fields: (t) => ({
-    // results: t.expose('results', { type: [IdentityType] }),
-    // pageInfo: t.expose('pageInfo', { type: PageInfoType }), // Pure reference—no inline function call!
     results: t.field({
         type: [IdentityType],
         resolve: (p) => p.results,
@@ -97,7 +93,7 @@ const IdentitySortEnum = builder.enumType("IdentitySort", {
   } as const,
 });
 
-// xInject identities query field straight into the container
+// Inject identities query field straight into the container
 builder.queryFields((t) => ({
   identities: t.field({
     type: IdentitiesConnectionType, // Signifies an array array list
@@ -113,10 +109,14 @@ builder.queryFields((t) => ({
         type: IdentitySortEnum,
       }),
     },
-    resolve: async (_root, args) => {
+    resolve: async (_root, args, context) => {
+      const { sessionId } = context.sessionContext;
+      const workspaceId = args.workspaceId || context.sessionContext.currentWorkspaceId;
+      await runAgnosticDatabaseHydration(sessionId, workspaceId);
+      const db = getMockDb();
       const filters = args.filters ?? {};
-      // Direct pass-through execution to your existing domain service method
-      const response = await identityService.processIdentities(getMockDb().identities, {
+      // Direct pass-through execution to existing domain service method
+      const response = await identityService.processIdentities(db.identities, {
         workspaceId: args.workspaceId,
         offset: args.offset ?? 0,
         limit: args.limit ?? 12,
@@ -134,14 +134,17 @@ builder.queryFields((t) => ({
     },
   }),
 
-  // FIELD 2: Singular field for your Profile Detail Page
+  // Singular field for the Profile Detail Page
     identity: t.field({
-      type: IdentityType, // Notice this is NOT wrapped in an array bracket!
+      type: IdentityType,
       args: {
         workspaceId: t.arg.id({ required: true }),
-        id: t.arg.id({ required: true }), // Maps to your frontend's $interactionId
+        id: t.arg.id({ required: true }), // Maps to the frontend's $interactionId
       },
-      resolve: async (_root, args) => {
+      resolve: async (_root, args, context) => {
+        const { sessionId } = context.sessionContext;
+        const workspaceId = args.workspaceId || context.sessionContext.currentWorkspaceId;
+        await runAgnosticDatabaseHydration(sessionId, workspaceId);
         const item = await identityService.processProfile(args.workspaceId, args.id);
         
         if (!item) throw new Error('Identity not found');

@@ -2,6 +2,8 @@ import axios from 'axios';
 
 export const api = axios.create({
   baseURL: 'http://localhost:3001/api',
+  // CRUCIAL: This forces the browser to send cookies with every request
+  withCredentials: true, 
   paramsSerializer: {
     indexes: null, // Global fix for all the filter objects. This prevents the [] brackets in the URL
   },

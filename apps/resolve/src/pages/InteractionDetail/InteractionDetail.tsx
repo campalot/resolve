@@ -230,8 +230,7 @@ export const InteractionDetail: React.FC = () => {
               {interaction.title}
             </Typography>
             <Typography className={styles.interactionDetailSubtitle}>
-              <IdentifierBadge text={interaction.id} size={`medium`} />
-               {" "}·{" "}
+              <IdentifierBadge text={interaction.id} size={`medium`} /> ·{" "}
               {primaryparty?.identity.name}
             </Typography>
           </Box>
@@ -248,7 +247,12 @@ export const InteractionDetail: React.FC = () => {
               className={styles.tabs}
             >
               {TABS.map((tab) => (
-                <Tab key={tab.label} value={tab.path} label={tab.label} />
+                <Tab
+                  key={tab.label}
+                  value={tab.path}
+                  label={tab.label}
+                  data-testid="overview-tab"
+                />
               ))}
             </Tabs>
 

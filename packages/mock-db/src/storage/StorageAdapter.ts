@@ -1,5 +1,5 @@
-export type StorageAdapter = {
-    save(data: unknown): Promise<void>;
-    load(): Promise<string | null>;
-    clear(): Promise<void>;
+export interface StorageAdapter {
+  loadWorkspace(sessionId: string, workspaceId: string): Promise<any | null>;
+  saveWorkspace(sessionId: string, workspaceId: string, data: any): Promise<void>;
+  clearWorkspace?(sessionId: string, workspaceId: string): Promise<void>;
 }

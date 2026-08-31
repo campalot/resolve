@@ -1,5 +1,7 @@
 import type { Identity } from "./identity";
 import type { InteractionActivity, InteractionActivityType } from "./activity";
+import type { MockDbProps } from "./database";
+
 
 export type ToastType = "info" | "success" | "error" | "neutral";
 type Toast = {
@@ -143,6 +145,7 @@ export type TransitionVariables = {
   actorId: string;
   workspaceId: string;
   comment?: string;
+  db?: MockDbProps;
 }
 
 export type DashboardInteraction = {
