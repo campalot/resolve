@@ -3,7 +3,6 @@ import { useAppStore } from '../store/useAppStore';
 
 // Safe environment sniff for Vitest or Vite test mode
 const isTest = import.meta.env.MODE === 'test' || (typeof globalThis !== 'undefined' && (globalThis as any).process?.env?.VITEST);
-const currentRole = useAppStore.getState().activeRole;
 
 export const api = axios.create({
   // Use absolute URL for Node/Vitest, and for Browser, since incorporating real backend
@@ -19,6 +18,8 @@ export const api = axios.create({
 
 // AUTO-BADGING: Add the strategy=REST param to every call automatically
 api.interceptors.request.use((config) => {
+  const currentRole = useAppStore.getState().activeRole;
+  
   config.params = {
     ...config.params,
     role: currentRole,

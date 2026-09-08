@@ -21,7 +21,8 @@ import type {
   ContractData,
   ProposalData,
   PolicyUpdateData,
-  VendorOnboardingData
+  VendorOnboardingData,
+  Role
 } from "@resolve/types";
 import { pickOne } from "@resolve/utils";
 
@@ -82,8 +83,7 @@ export const interactionService = {
     const db = vars.db || getMockDb();
     
     // 2. Security Check
-    // const currentRole = useAppStore.getState().activeRole;
-    const currentRole = "Admin";
+    const currentRole = vars.role || "Admin";
     const isAllowed = ROLE_PERMISSIONS[currentRole].includes(action);
     backendLogger.security(currentRole, action, isAllowed);
 
@@ -177,7 +177,7 @@ export const interactionService = {
     return finalData;
   },
 
-  getInteraction: async (workspaceId: string, interactionId: string) => {
+  getInteraction: async (workspaceId: string, interactionId: string, role?: Role) => {
     const db = getMockDb();
     const interaction = db.interactions.find(
       (i: InteractionRecord) => i.id === interactionId && i.workspaceId === workspaceId
@@ -186,7 +186,9 @@ export const interactionService = {
     if (!interaction) return null;
 
     // 2. Return the resolved shape
-    return resolveInteraction(interaction);
+    return resolveInteraction(interaction, {
+      role: role || "Admin"
+    });
   },
 
   getProfileInteractions: async (workspaceId: string, identityId: string) => {

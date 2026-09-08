@@ -25,7 +25,7 @@ import { UpstashRedisStorage } from '@resolve/mock-db/redis';
 import { TestStorage } from 'packages/mock-db/src/storage/TestStorage';
 import mercurius from 'mercurius';
 import { schema } from './src/graphql'; 
-import type { CreateFormProps, InteractionAction } from '@resolve/types';
+import type { CreateFormProps, InteractionAction, Role } from '@resolve/types';
 // import { getStorage } from '@resolve/mock-db';
 
 const fs = import('fs/promises');
@@ -89,7 +89,8 @@ type TransitionMutation = {
     Body: { 
         action: InteractionAction, 
         actorId: string, 
-        comment?: string 
+        comment?: string,
+        role?: Role;
     }; 
 }
 
@@ -287,7 +288,7 @@ async function start() {
 
     fastify.post<TransitionMutation>('/api/w/:workspaceId/interactions/:id/transition', async (request, reply) => {
         const { workspaceId, id } = request.params;
-        const { action, actorId, comment } = request.body;
+        const { action, actorId, comment, role } = request.body;
 
         try {
             // 1. Grab the database instance that was already hydrated perfectly by your preHandler hook
@@ -300,7 +301,8 @@ async function start() {
                 action, 
                 actorId, 
                 comment,
-                db 
+                db,
+                role 
             });
 
             // 3. Nest inside the wrapper key to satisfy frontend TanStack Mutation success triggers
@@ -448,13 +450,15 @@ async function start() {
         return data;
     }),
 
-    fastify.get<{ Params: WorkspaceParams & { interactionId: string }; }>('/api/w/:workspaceId/interactions/:interactionId', async (request) => {
+    fastify.get<{ Params: WorkspaceParams & { interactionId: string }; Querystring: { role: Role } }>('/api/w/:workspaceId/interactions/:interactionId', async (request) => {
         const workspaceId = request.params.workspaceId;
         const interactionId = request.params.interactionId;
+        const role = request.query.role;
 
         const data = await interactionService.getInteraction(
             workspaceId, 
-            interactionId
+            interactionId,
+            role
         );
 
         return { interaction: data };

@@ -209,7 +209,7 @@ export function resolveInteraction(
     }
   ): Interaction {
   // const currentRole = options?.role ?? useAppStore.getState().activeRole;
-  const currentRole = "Admin" as Role;
+  const currentRole = options?.role ?? "Admin" as Role;
   const mockDb = options?.db ?? getMockDb();
   // Use that role to filter the buttons/actions
   const permittedActions = getPermittedActions(
