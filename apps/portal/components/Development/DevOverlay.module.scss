@@ -1,0 +1,98 @@
+.overlay {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999; // Ensure it's always on top
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-smd);
+  padding: 6px var(--space-smd) 6px var(--space-sm);
+
+  background: rgba(15, 23, 42, 0.85); // Deep Slate
+  backdrop-filter: blur(10px); // The "Frosty" look
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px; // Pill shape
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+
+  color: var(--color-white);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+}
+
+.tag {
+  background: #f59e0b; // Amber/Gold
+  color: var(--color-text-primary);
+  font-weight: 800;
+  font-size: 10px;
+  padding: 2px var(--space-sm);
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+
+  label {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  select {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: var(--radius-xs);
+    padding: 2px var(--space-xs);
+    outline: none;
+    cursor: pointer;
+    font-size: 12px;
+
+    option {
+      background: #1e293b; // Match slate for the dropdown menu
+    }
+  }
+
+  .reset-btn {
+    background: rgba(239, 68, 68, 0.1); // Very subtle red tint
+    border: 1px solid rgba(239, 68, 68, 0.3); // Dimmed red border
+    color: #fca5a5; // Soft salmon/red text
+
+    padding: 2px var(--space-sm);
+    border-radius: 4px; // Square-ish to contrast with the Pill HUD
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(239, 68, 68, 0.3);
+      border-color: #ef4444;
+      color: white;
+      box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+    }
+  }
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981; // Emerald Green
+  box-shadow: 0 0 8px #10b981;
+  transition: opacity 0.3s;
+  opacity: 0; // Hidden by default
+}
+
+.is-syncing {
+  opacity: 1;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.4;
+  }
+}

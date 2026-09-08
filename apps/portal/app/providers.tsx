@@ -7,6 +7,7 @@ import { useState } from "react";
 import { WorkspaceBoundary } from "@/components/WorkspaceRouteBoundary";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DevOverlay } from "@/components/Development/DevOverlay";
 
 const DEFAULT_WORKSPACE_ID = "alpha";
 
@@ -34,11 +35,12 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <QueryClientProvider client={queryClient}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <WorkspaceBoundary workspaceId={DEFAULT_WORKSPACE_ID}>
-          <ReferenceDataProvider>
-            <CurrentUserProvider>{children}</CurrentUserProvider>
-          </ReferenceDataProvider>
-        </WorkspaceBoundary>
+        <CurrentUserProvider>
+          <WorkspaceBoundary workspaceId={DEFAULT_WORKSPACE_ID}>
+            <ReferenceDataProvider>{children}</ReferenceDataProvider>
+            <DevOverlay />
+          </WorkspaceBoundary>
+        </CurrentUserProvider>
       </LocalizationProvider>
     </QueryClientProvider>
   );
