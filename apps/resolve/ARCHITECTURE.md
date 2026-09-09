@@ -1,16 +1,21 @@
 # Architecture Overview
 
-This document describes the architectural decisions and tradeoffs behind this demo application. It assumes familiarity with React, TypeScript, GraphQL, and modern SPA patterns.
+This document describes the architectural decisions and tradeoffs behind this demo application. It assumes familiarity with React, TypeScript, GraphQL, REST, and modern SPA patterns.
 
 ---
 
-# Project Goals
+# Resolve Application Goals
 
-- Demonstrate senior-level frontend architecture in a standalone, public repository  
-- Model realistic enterprise-style data relationships and workflows  
-- Favor clarity, maintainability, and correctness over over-abstraction  
-- Support deep linking, URL-driven state, and realistic navigation flows  
-- Provide a demo that can be confidently walked through in interviews  
+Resolve is the primary application used to demonstrate the frontend architecture of the ecosystem.
+
+- URL-driven application state
+- interchangeable GraphQL and REST data-fetching strategies
+- normalized vs. document caching
+- workspace-aware routing
+- responsive application behavior
+- accessible UI
+- predictable mutation and activity workflows
+- testable application behavior
 
 ## Non-Goals
 
@@ -20,7 +25,81 @@ This document describes the architectural decisions and tradeoffs behind this de
 
 ---
 
-# High-Level Architecture
+# System Architecture
+
+Resolve is the primary React application within the Resolve monorepo. It consumes the shared packages for domain contracts, UI components, and backend services while maintaining its own application-specific concerns such as routing, caching, state management, and responsive behavior.
+
+At a high level, data flows through the application as follows:
+
+```
+┌───────────────────────────────┐
+│        Resolve / React        │
+│                               │
+│  Components                   │
+│  Hooks                        │
+│  Routing / URL State          │
+│  Zustand Application State    │
+│  Apollo / React Query         │
+└───────────────┬───────────────┘
+                │
+                │ REST / GraphQL
+                ▼
+┌───────────────────────────────┐
+│       @resolve/mock-api       │
+│                               │
+│  Fastify                      │
+│  REST / GraphQL               │
+│  Request Context              │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│        @resolve/domain        │
+│                               │
+│  Business Rules               │
+│  Authorization                │
+│  Workflows                    │
+│  Record Resolution            │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│        @resolve/mock-db       │
+│                               │
+│  Mock Data                    │
+│  In-Memory State              │
+│  StorageAdapter               │
+│  Persistence                  │
+└───────────────────────────────┘
+```
+Resolve does not implement these lower layers directly. They are shared across the monorepo so that the React application and other consumers can exercise the same domain behavior and data system.
+
+Details of each shared layer are documented with the package that owns them.
+
+-`@resolve/types`— domain models and shared TypeScript contracts
+
+-`@resolve/ui` — shared presentation components and styling tokens
+
+-`@resolve/domain` — business rules and domain services
+
+-`@resolve/mock-db` — mock data, state, and persistence
+
+-`@resolve/mock-api` — Fastify API and REST/GraphQL transport
+
+
+## Domain Model
+
+Resolve is built around a small set of related domain concepts:
+
+- **Identity** — a person or company participating in the system
+- **Interaction** — a workflow item such as a contract, review, or approval
+- **InteractionActivity** — an event recorded during an interaction's lifecycle
+
+These records are related through identities, parties, reviewers, actors, and workflow assignments.
+
+The shared definitions for these models live in `@resolve/types`, while the domain package is responsible for resolving relationships and applying behavior to them.
+
+# Application Architecture
 
 This application is a client-side React SPA designed to be **backend-agnostic**.
 
@@ -34,7 +113,7 @@ The key idea is simple:
 
 > The UI does not care where data comes from or how it is cached.
 
-All data access flows through shared hooks and a unified service layer, keeping components clean and predictable.
+All data access flows through shared hooks and a unified service layer (see `@resolve/domain`), keeping components clean and predictable.
 
 Core principles:
 
@@ -44,26 +123,7 @@ Core principles:
 - Avoid global state unless there is a clear need  
 - Keep behavior consistent regardless of protocol  
 
----
-
-# Core Domain Model
-
-The application models a small set of domain concepts:
-
-- **Interaction** — Represents a workflow item (e.g., contract, review, approval flow)  
-- **Identity** — Represents a person or company  
-- **InteractionActivity** — Represents lifecycle events tied to an interaction  
-- **SearchResult** — A union type that allows search across multiple entity types  
-
-Interactions reference identities through structured parties and reviewer relationships, modeling how individuals and organizations participate in a workflow.
-
-Activities also reference identities as actors and decision-makers, creating a connected lifecycle history across entities.
-
-The goal is not to simulate every possible business rule, but to model realistic relationships between entities and maintain consistency across views.
-
----
-
-# Data Layer & Protocol Strategy
+## Data Layer & Protocol Strategy
 
 The application uses a **protocol-agnostic data layer**.
 
@@ -75,7 +135,7 @@ It supports two interchangeable strategies:
 - **TanStack Query + Axios (REST)**  
   Uses a document-based cache with explicit query keys and manual invalidation.
 
-## The Goal
+### The Goal
 
 Both strategies return the same *domain-shaped data* to the UI.
 
@@ -85,7 +145,7 @@ The difference is purely in:
 
 ---
 
-## The “Traffic Controller” Hook
+### The “Traffic Controller” Hook
 
 Shared hooks (e.g. `useInteractionActivities`) act as the entry point for all data access.
 
@@ -100,7 +160,7 @@ It just asks for data and renders it.
 
 ---
 
-## Why This Exists
+### Why This Exists
 
 This isn’t a typical production requirement, but it exists to demonstrate:
 
@@ -110,133 +170,59 @@ This isn’t a typical production requirement, but it exists to demonstrate:
 
 ---
 
-# Project Structure & Source of Truth
+## Data Flow 
 
-The UI never talks directly to a database or hardcoded data source.
+Resolve's application data flows through a consistent set of boundaries regardless of whether the application is using GraphQL or REST.
 
-All data flows through a shared middle layer that is agnostic to the underlying protocol.
+```mermaid
+%%{init: {'theme': 'neutral', 'themeVariables': {'primaryColor': '#f96'}}}%%
+graph TD
 
----
+    subgraph UI_Layer [View Layer]
+        COMP[UI Components]
+        STRAT[Zustand: dataStrategy]
+        UI[Shared @resolve/ui]
+    end
 
-## API Layer (`src/api`)
+    subgraph Hooks [Unified Hook Layer]
+        UH[useInteractionActivities]
+    end
 
-This is the core of the data system, split into three responsibilities:
+    subgraph Providers [Data Fetching Strategies]
+        APO[Apollo Client / GraphQL]
+        TAN[TanStack Query / REST]
+    end
 
-- **Endpoints**  
-  REST calls using TanStack Query + Axios (the “how” for REST)
+    subgraph API [API Layer]
+        API_APP[Fastify Gateway - mock-api]
+    end
 
-- **Mocks (MSW handlers)**  
-  Intercept both REST and GraphQL requests at the network level  
-  Both call the same underlying services
+    subgraph Domain [Domain Layer]
+        SVC[Shared Services - domain]
+    end
 
-- **Services**  
-  The “brain” of the app  
-  Handles filtering, sorting, pagination, and business rules
+    subgraph Data [Data Layer]
+        DB[Mock Database - mock-db]
+    end
 
-**Key idea:**  
-Both REST and GraphQL resolve through the same service layer, so behavior stays consistent.
+    COMP --> UH
+    COMP -.-> UI
 
----
+    UH --> STRAT
+    UH --> APO
+    UH --> TAN
 
-## GraphQL Layer (`src/graphql`)
+    APO --> API_APP
+    TAN --> API_APP
 
-Contains queries, mutations, and fragments used by Apollo.
+    API_APP --> SVC
+    SVC --> DB
+```
 
-This exists alongside REST endpoints rather than replacing them, allowing the app to switch between protocols without affecting the UI.
+The application supports two client-side data-fetching strategies: Apollo Client for GraphQL and TanStack Query for REST. Both follow the same underlying application flow shown above, while maintaining their own caching behavior.
 
----
 
-## Data Models (`src/types`)
-
-Data is intentionally split into two layers:
-
-- **API records (`api.ts`)**  
-  Flat, storage-oriented data (IDs, primitives)
-
-- **Domain entities (`schema.ts`)**  
-  Hydrated, UI-ready objects with resolved relationships
-
-The service layer is responsible for transforming records into domain entities.
-
----
-
-## Why This Works
-
-- **Consistent behavior**  
-  Both protocols use the same service layer
-
-- **Test parity**  
-  Tests hit the same logic as the browser (via MSW)
-
-- **Backend flexibility**  
-  The mock layer can be replaced with a real backend without changing UI code
-
----
-
-# Unified Mock Architecture (MSW)
-
-The application uses **MSW (Mock Service Worker)** as a unified network layer.
-
-Instead of mocking at the client level (e.g. Apollo Links), all requests are intercepted at the browser level.
-
-This applies to both:
-- GraphQL requests (Apollo)
-- REST requests (Axios)
-
----
-
-## Why MSW
-
-- Requests appear in the Network tab (more realistic)
-- Works the same in browser and tests
-- Decouples mocking from any specific client (Apollo, Axios, etc.)
-
----
-
-## Service-First Execution
-
-All business logic lives in shared service files (e.g. `interactionService.ts`).
-
-MSW handlers simply:
-
-1. Receive the request  
-2. Call the appropriate service  
-3. Return the result  
-
-Both REST and GraphQL handlers call the same service functions.
-
-This guarantees identical behavior regardless of protocol.
-
----
-
-## Data Flow
-`UI → Hook → Apollo / React Query → MSW → Service Layer → Mock DB`
-
----
-
-## Local Persistence
-
-The mock database is synced to `localStorage`.
-
-This allows:
-
-- state to persist across reloads  
-- consistent data between protocols  
-- deterministic test setup  
-
----
-
-# Testing & Environment Reality
-
-One of the biggest strengths of this setup is that the Browser and the Test Suite are identical.
-
-- **MSW Everywhere:** We don't "fake" internal functions. In the browser, MSW intercepts network traffic for the demo. In our Vitest tests, we use msw/node to catch those same Axios/Apollo calls.
-- **Automatic Validation:** Because the tests hit the same handlers and logic as the browser, they act as a "smoke test." If you change a business rule in the code, the tests and the demo both update immediately.
-- **Defensive Design:** Since tests run incredibly fast, the service layer is built to handle rapid-fire actions. If a "Submit" button is clicked twice in a millisecond, the service recognizes the task is already "In Review" and just returns a success instead of crashing. This mimics how a high-quality production API handles real-world traffic.
-
----
-
-# Client Caching Strategy
+## Client Caching Strategy
 
 This application intentionally supports **two different caching models**:
 
@@ -248,57 +234,9 @@ This application intentionally supports **two different caching models**:
 
 Rather than forcing a single approach, the app supports both.
 
-```mermaid
-%%{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#f96'}}}%%
-graph TD
-    subgraph UI_Layer [View Layer]
-        COMP[UI Components]
-        STRAT[Zustand: dataStrategy]
-    end
 
-    subgraph Hooks [Unified Hook Layer]
-        UH[useInteractionActivities]
-    end
 
-    subgraph Providers [Protocol Strategy]
-        APO[Apollo Client / GQL]
-        TAN[TanStack Query / REST]
-    end
-
-    subgraph Interceptor [MSW Network Proxy]
-        MSW[MSW Handlers]
-        SVC[Unified Services]
-        DB[(Mock DB)]
-    end
-
-    COMP --> UH
-    UH -- Read Strategy --> STRAT
-    UH -- Route to --> APO
-    UH -- Route to --> TAN
-    
-    APO --> MSW
-    TAN --> MSW
-    MSW --> SVC
-    SVC --> DB
-```
-
----
-
-## Shared Persistence (Key Detail)
-
-Both caching strategies are backed by `localStorage`.
-
-This ensures:
-
-- Data parity between Apollo and React Query  
-- Seamless switching between protocols  
-- No visible UI reset when toggling strategies  
-
-From the user’s perspective, the app behaves as if there is a single consistent backend.
-
----
-
-## Important Distinction
+### Important Distinction
 
 - Apollo acts like a **graph of entities**
 - React Query acts like a **set of cached responses**
@@ -309,10 +247,10 @@ Instead, it ensures both produce the same **final data shape for the UI**.
 
 ---
 
-## Apollo-specific enhancements (GraphQL mode only)
+### Apollo-specific enhancements (GraphQL mode only)
 
 > **Architectural Note: Reactive RBAC**
-> While `permittedActions` are initially calculated in the resolver, they are also defined in an Apollo `typePolicy` read function. This allows the UI to reactively re-calculate permissions when the `activeRoleVar` changes (e.g., via the Developer HUD) without requiring a refetch or a manual cache update.
+> While `permittedActions` are initially calculated in the resolver found in `@resolve/domain`, they are also defined in an Apollo `typePolicy` read function. This allows the UI to reactively re-calculate permissions when the `activeRoleVar` changes (e.g., via the Developer HUD) without requiring a refetch or a manual cache update.
 
 Custom `typePolicies` are used to:
 
@@ -327,63 +265,7 @@ These decisions ensure consistent object shapes and predictable list behavior ac
 
 ---
 
-## Record vs. Resolved Types
-
-The mock database stores plain record types (e.g., `IdentityRecord`, `InteractionRecord`).
-
-These records are transformed into the richer domain objects used by the UI.
-
-This transformation layer is responsible for:
-
-- Hydrating relationships (resolving IDs into full objects)  
-- Shaping data into UI-friendly structures  
-- Ensuring consistency across different parts of the app  
-
-Keeping storage models separate from UI-facing models avoids leaking persistence concerns into the component layer and keeps data transformations predictable.
-
-## Contextual Projections
-
-Not all parts of the app need the same shape of data.
-
-For example, activity feeds use a reduced identity shape that omits fields like `avatarUrl`, while profile views return the full object.
-
-Rather than exposing a single global object shape, the service layer returns **context-appropriate representations** based on how the data is being used.
-
-This mirrors how real APIs are often designed:
-
-- Some endpoints return lightweight summaries  
-- Others return fully detailed objects  
-- Different screens request only what they need  
-
-This approach is applied consistently across both REST and GraphQL modes, so the UI receives the right level of detail without over-fetching or unnecessary data shaping in components.
-
-## Mutation Side Effects
-
-Mutations do more than update a single entity.
-
-For example, transitioning an interaction:
-
-- Updates interaction state  
-- Generates corresponding activity records  
-- Inserts those activities into the timeline  
-- Returns contextual toast notifications derived from the transition  
-
-The mutation layer is responsible for coordinating these effects so that
-state changes, activity history, and user feedback remain consistent.
-
-## Determinism & Testability
-
-Because the execution layer is managed on the client:
-
-- State can be reset between tests (or manually via the Developer Overlay)
-- URL-driven behavior remains deterministic  
-- Pagination and filtering logic can be tested without stubbing network calls  
-
-This approach keeps the demo realistic while preserving isolation and predictability.
-
----
-
-# State Management Strategy
+## State Management Strategy
 
 State is intentionally layered:
 
@@ -401,7 +283,7 @@ State is intentionally layered:
 
 --- 
 
-# Routing & URL-Driven State
+## Routing & URL-Driven State
 
 React Router v6 is used with nested routes under a shared layout.
 
@@ -417,7 +299,7 @@ This makes navigation predictable, shareable, and reload-safe. Refreshing the pa
 
 Component state is reserved for UI behavior (e.g., open/closed popovers, drawers, or temporary input values), not for core application state.
 
-## Workspace Scoping
+### Workspace Scoping
 
 All primary routes are scoped under a workspace prefix:
 
@@ -429,7 +311,7 @@ The workspace ID is treated as part of the application state and is included in 
 
 Switching workspaces updates the URL and re-scopes the entire application without requiring global state resets.
 
-## Interaction Detail Routing
+### Interaction Detail Routing
 
 Interaction detail pages use URL-driven tabs:
 
@@ -444,27 +326,9 @@ This allows deep linking while preserving browser navigation behavior.
 
 ---
 
-# Component Design
+# Data Presentation & Interaction
 
-Components are designed with clear separation of responsibility.
-
-- Presentational (“dumb”) components receive data via props  
-- Data-fetching and URL logic live in hooks or page-level components  
-- Shared UI elements are reusable and layout-agnostic  
-
-Examples:
-
-- `StatusBadge` provides consistent status styling across list and detail views  
-- `ActivityCard` provides a shared structural wrapper for activity types  
-- The custom `Pagination` component triggers page changes without owning URL logic  
-
-Components avoid embedding routing or data-fetching logic unless it is clearly part of their responsibility. Navigation intent is passed down via callbacks when possible.
-
-The goal is to keep components predictable and easy to reuse across contexts.
-
----
-
-# Filtering System
+## Filtering System
 
 ```mermaid
 %%{init: {'theme': 'neutral', 'themeVariables': { 'primaryColor': '#f96'}}}%%
@@ -543,11 +407,11 @@ The filtering system is intentionally decoupled from the data-fetching layer. Th
 
 ---
 
-# Pagination
+## Pagination
 
 Two pagination strategies are used intentionally.
 
-## Table-Style Pagination (Interactions List)
+### Table-Style Pagination (Interactions List)
 
 Pagination state is URL-driven:
 
@@ -561,7 +425,7 @@ Pagination state is URL-driven:
 
 A custom pagination component is used instead of a UI library version to keep behavior explicit and framework-agnostic.
 
-## Infinite Scroll (Dashboard & Global Search)
+### Infinite Scroll (Dashboard & Global Search)
 
 Infinite scroll is used where pagination state does not need to persist in the URL.
 
@@ -603,7 +467,7 @@ graph LR
 ```
 > *This indexed-merge strategy ensures that the UI is always a pure, reactive 'window' into the cache, separating the scroll-event logic from the data-rendering logic.*
 
-### Core Implementation
+#### Core Implementation
 
 - **Offset + Limit Pagination**  
   Both strategies use standard offset/limit (or equivalent cursor-based patterns) to request additional pages.
@@ -624,7 +488,7 @@ This pattern allows the list to grow "in place," preserving scroll position and 
 
 ---
 
-# Activity System
+## Activity System
 
 The activity system models lifecycle events tied to interactions.
 
@@ -640,7 +504,9 @@ Each activity type uses a shared `ActivityCard` wrapper with type-specific conte
 
 ---
 
-# Application Layout
+# Application Shell
+
+## Application Layout
 
 The application uses a shared layout with:
 
@@ -651,7 +517,7 @@ The application uses a shared layout with:
 The header contains global controls (workspace switcher, search, user menu).  
 The sidebar contains primary navigation.
 
-## Responsive Behavior
+### Responsive Behavior
 
 Responsive design is treated as a core requirement.
 
@@ -667,9 +533,9 @@ This keeps layout changes intentional and predictable rather than scattered acro
 
 ---
 
-# Styling Approach
+## Styling Approach
 
-Styling is handled using SCSS Modules and a small set of design tokens.
+Styling is handled using SCSS Modules and a set of global design tokens, imported from `@resolve/ui`.
 
 The token system centralizes:
 
@@ -689,7 +555,7 @@ The goal is consistency and clarity rather than heavy theming.
 
 ---
 
-# Accessibility
+## Accessibility
 
 Accessibility is treated as a first-class concern.
 
@@ -701,11 +567,11 @@ Accessibility is treated as a first-class concern.
 
 Accessibility is addressed intentionally rather than retrofitted later.
 
----
+
 
 # Testing Strategy
 
-We focus on testing what the user actually sees and does. Instead of faking internal functions, we simulate the full stack to validate workflows across routing, workspace scoping, URL state, dual-protocol behavior, and status transitions.
+We focus on testing what the user actually sees and does. Instead of faking internal functions, we utilize the full stack to validate workflows across routing, workspace scoping, URL state, dual-protocol behavior, and status transitions.
 
 The project uses Vitest and React Testing Library. To keep things realistic, our renderWithRouter helper mirrors the real app setup—including Apollo, TanStack Query, routing, and our modal providers.
 
@@ -717,14 +583,16 @@ Coverage prioritizes:
 - Dashboard updates after mutations
 - Keyboard accessibility for buttons and modals
 
-## How we handle the "Full-Stack" feel:
+## Leveraging "Full-Stack" in Testing:
 
--  **Real Network Simulation:** We use MSW (Mock Service Worker) for both REST and GraphQL. This means the tests fire off the same REST and GraphQL requests used by the app, hitting our service logic just like it would in the browser.
--  **Defensive Design:** Since tests run at high speed, the service layer is built to handle rapid-fire actions (like accidental double-clicks). This mirrors how we'd protect a real production API from getting hit with the same request twice.
+-  **Incorporating the Real Backend:** For both our REST and GraphQL tests, we use the same Fastify backend (`@resolve/mock-api`) the main app uses. This means the tests fire off the same REST and GraphQL requests used by the app, hitting our service logic (`@resolve/domain`) just like it would in the browser.
+- **Automatic Validation:** Because the tests hit the same handlers and logic as the browser, they act as a "smoke test." If you change a business rule in the code, the tests and the demo both update immediately.
+-  **Defensive Design:** Since tests run at high speed, the service layer is built to handle rapid-fire actions (like accidental double-clicks). This allows us to protect the backend (`@resolve/mock-api`) from getting hit with the same request twice.
 -  **Cache Synchronization:** We make sure the Apollo and TanStack caches are "seeded" during tests. This ensures that things like pagination and navigation stay predictable and don't show "stale" data or weird flashes during assertions.
--  **Clean Slate:** To keep tests from leaking into each other, the in-memory mock database and localStorage are reset before every single test run.
+-  **Clean Slate:** To keep tests from leaking into each other, the in-memory mock data is reset before every single test run.
 
 ---
+
 
 # Tradeoffs & Intentional Omissions
 
@@ -740,7 +608,7 @@ These tradeoffs ensure the codebase remains readable and focused on the data-flo
 
 # Summary
 
-This project prioritizes realism, clarity, and flexibility.
+The Resolve application prioritizes realism, clarity, and flexibility.
 
 It demonstrates:
 
@@ -750,40 +618,18 @@ It demonstrates:
 - **Decoupled UI Layer**  
   Components consume stable data contracts and are not tied to any backend implementation.
 
-- **Unified Mock Infrastructure**  
-  MSW provides a single network layer for both browser and tests, backed by shared service logic.
-
 - **Dual Caching Strategies**  
   Supports both normalized and document caching, with shared persistence via localStorage.
 
-- **URL-Driven State**  
-  Filters, pagination, and workspace context are all encoded in the URL.
+- **Layered State Management**
+  State is layered with Server State (caching strategies), URL-Driven State (filters, pagination, workspace), minimal global state (Zustand store), and local UI state (menus, modals, etc.).
 
-- **Realistic Domain Modeling**  
-  Entities, relationships, and workflows mirror production-style systems without unnecessary complexity.
+- **Responsive and Accessible Behavior**  
+  The UI is intentional in its implementation of responsivity and accessibility, treating them as first-class concerns.
+
+- **Testable Application Behavior**
+  Because the tests hit the same handlers and logic as the browser, they act as a "smoke test." If you change a business rule in the code, the tests and the app both update immediately.
 
 ---
 
-# How to Demo This
 
-A quick way to walk through the architecture:
-
-1. Start in GraphQL mode (Apollo)
-2. Perform a few actions:
-   - Apply filters
-   - Scroll through results
-   - Trigger a mutation
-3. Open the Network tab to show GraphQL requests
-
-4. Switch to REST mode using the Developer HUD
-5. Repeat the same actions
-
-What to point out:
-
-- The UI does not change  
-- The data remains consistent (shared via localStorage)  
-- The network requests are different (REST vs GraphQL)  
-
-This demonstrates that the UI is fully decoupled from the data-fetching strategy.
-
-> Note: When switching data strategies, a brief loading state may appear. This reflects the fact that Apollo and React Query maintain independent caches, and the newly selected strategy performs its initial fetch. The UI remains consistent, and data parity is preserved via shared persistence.

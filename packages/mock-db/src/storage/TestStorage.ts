@@ -1,4 +1,5 @@
 import type { StorageAdapter } from "./StorageAdapter";
+import { WorkspaceDataProps } from "@resolve/types";
 
 // Use a map to correctly isolate data per session and per workspace shard
 const memoryDb = new Map<string, any>();
@@ -10,14 +11,14 @@ const testWorkspaces = [
 
 export const TestStorage: StorageAdapter = {
   // Save specific workspace's dataset
-  async saveWorkspace(sessionId: string, workspaceId: string, data: any): Promise<void> {
+  async saveWorkspace(sessionId: string, workspaceId: string, data: WorkspaceDataProps): Promise<void> {
     const key = `${sessionId}:${workspaceId}`;
     // Deep clone ensures that mutations inside a test don't pollute the storage pool
     memoryDb.set(key, structuredClone(data));
   },
 
   // Load specific workspace's dataset
-  async loadWorkspace(sessionId: string, workspaceId: string): Promise<any | null> {
+  async loadWorkspace(sessionId: string, workspaceId: string): Promise<WorkspaceDataProps | null> {
     const key = `${sessionId}:${workspaceId}`;
     const data = memoryDb.get(key);
 

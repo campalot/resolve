@@ -1,4 +1,5 @@
 import { Redis } from "@upstash/redis";
+import { WorkspaceDataProps } from "@resolve/types";
 
 // Initialize using environment variables if they exist (Vercel), otherwise fall back to your local keys
 // const redis = new Redis({
@@ -13,13 +14,13 @@ export const getWorkspaceKey = (sessionId: string, workspaceId: string) =>
 
 export const UpstashRedisStorage = {
   // Save only a specific workspace's dataset
-  async saveWorkspace(sessionId: string, workspaceId: string, data: any): Promise<void> {
+  async saveWorkspace(sessionId: string, workspaceId: string, data: WorkspaceDataProps): Promise<void> {
     const key = getWorkspaceKey(sessionId, workspaceId);
     await redis.set(key, data, { ex: 86400 }); // 24-hour expiration
   },
 
   // Load only a specific workspace's dataset
-  async loadWorkspace(sessionId: string, workspaceId: string): Promise<any | null> {
+  async loadWorkspace(sessionId: string, workspaceId: string): Promise<WorkspaceDataProps | null> {
     const key = getWorkspaceKey(sessionId, workspaceId);
     return await redis.get(key);
   },

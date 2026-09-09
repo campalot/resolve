@@ -1,6 +1,7 @@
 import type { StorageAdapter } from "./StorageAdapter";
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { WorkspaceDataProps } from "@resolve/types";
 
 // Generates a tiny, isolated key per workspace per user session
 export const getFilePath = (sessionId: string, workspaceId: string) => 
@@ -10,7 +11,7 @@ export const getFilePath = (sessionId: string, workspaceId: string) =>
 const FILE_PATH = resolve('data.json');
 
 export const NodeStorage: StorageAdapter = {
-    async saveWorkspace(sessionId: string, workspaceId: string, data: any) {
+    async saveWorkspace(sessionId: string, workspaceId: string, data: WorkspaceDataProps) {
         const filePath = getFilePath(sessionId, workspaceId);
         await writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
         console.log(`💾 [DB] Successfully saved to session_${sessionId}_workspace_${workspaceId}.json`);
