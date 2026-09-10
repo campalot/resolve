@@ -1,4 +1,4 @@
-import * as PothosCore from '@pothos/core';
+import SchemaBuilder from '@pothos/core';
 import type { 
     Identity, 
     Interaction, 
@@ -20,9 +20,6 @@ import type {
     SearchConnection,
     GraphQLContext
 } from '@resolve/types';
-
-// This safely grabs the constructor whether it maps directly or through a default wrapper
-const SchemaBuilder = (PothosCore.default || PothosCore) as unknown as typeof PothosCore.default;
 
 // Declare the layout structure explicitly as a standalone type
 type PothosConfig = {

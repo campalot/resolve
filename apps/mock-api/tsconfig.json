@@ -5,6 +5,7 @@
     "src/**/*.ts"
   ],
   "compilerOptions": {
-    "types": ["node"]
+    "types": ["node"],
+    "skipLibCheck": true
   }
 }
