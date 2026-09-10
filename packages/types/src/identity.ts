@@ -23,12 +23,17 @@ export type IdentityFilters = {
   companyId?: string;
 };
 
-export enum IdentitySort {
-  Name = "name",
-  Interactions = "interactions",
-  Active = "active",
-  Recent = "recent",
-}
+// Create a plain JavaScript object marked 'as const'
+export const IdentitySort = {
+  Name: "name",
+  Interactions: "interactions",
+  Active: "active",
+  Recent: "recent",
+} as const;
+
+// Extract the type union from the object's values
+export type IdentitySort = typeof IdentitySort[keyof typeof IdentitySort];
+
 
 export type IdentityType = "Company" | "Individual";
 

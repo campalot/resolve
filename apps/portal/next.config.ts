@@ -26,6 +26,7 @@ const config: NextConfig = {
     // },
   },
 
+  transpilePackages: ['@resolve/ui'], // Replace with your exact UI package name
   // 2. WEBPACK CONFIGURATION (Used during 'next build' for production packaging)
   /* eslint-disable @typescript-eslint/no-explicit-any */
   webpack: (config) => {
@@ -36,19 +37,32 @@ const config: NextConfig = {
 
     if (fileLoaderRule) {
       config.module.rules.push(
+        // 2. ONLY use Next.js's native asset loader if explicitly requested with ?url
         {
           ...fileLoaderRule,
           test: /\.svg$/i,
           resourceQuery: /url/,
         },
+        // 3. For BOTH normal local imports AND your package's ?react imports, 
+        //    convert them into real React Components via SVGR
         {
           test: /\.svg$/i,
           issuer: fileLoaderRule.issuer,
-          resourceQuery: { not: [/url/] },
-          use: ["@svgr/webpack"],
+          // Matches when there is NO query, OR when it contains ?react
+          resourceQuery: { not: [/url/] }, 
+          use: [
+            {
+              loader: '@svgr/webpack',
+              options: {
+                typescript: true,
+                ext: 'tsx',
+              },
+            },
+          ],
         }
       );
 
+      // 4. Stop the original file loader from clashing with our SVGR rule
       fileLoaderRule.exclude = /\.svg$/i;
     }
 

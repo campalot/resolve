@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { StatusBadgeAdapter } from "@/components/StatusBadgeAdapter";
 import { DashboardInteraction } from "@resolve/types";
-import listStyles from "./interactions.module.scss";
+import listStyles from "./Interactions.module.scss";
 
 interface InteractionRowProps {
   interaction: DashboardInteraction;

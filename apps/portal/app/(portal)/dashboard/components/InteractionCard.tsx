@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import Link from "next/link";
 import { StatusBadgeAdapter } from "@/components/StatusBadgeAdapter";
 import { DashboardInteraction } from "@resolve/types";
-import listStyles from "./interactions.module.scss";
+import listStyles from "./Interactions.module.scss";
 import { IdentifierBadge } from "@resolve/ui";
 import { statusColorMap } from "../../interactions/[interactionId]/Sidebar/StageCard";
 import type { StatusChangeObj } from "@resolve/types";

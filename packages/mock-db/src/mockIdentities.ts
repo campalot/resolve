@@ -92,7 +92,7 @@ function shuffle<T>(array: T[]): T[] {
 
 
 function generateCompanies(workspaceId: string, shuffledNames: string[]) {
-  return Array.from({ length: 40 }).map((_, index) => {
+  return Array.from({ length: 40 }).map(() => {
     const companyId = `company-${crypto.randomUUID()}`;
     // Fallback name if the 50 names run out
     const name = shuffledNames.pop() || `Company ${crypto.randomUUID().slice(0, 5)}`;

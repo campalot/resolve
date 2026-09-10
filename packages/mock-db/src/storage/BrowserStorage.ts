@@ -1,9 +1,10 @@
 import type { StorageAdapter } from "./StorageAdapter";
 
+
 const STORAGE_KEY = 'RESOLVE_DEMO_DB';
 
 export const BrowserStorage: StorageAdapter = {
-    async saveWorkspace(sessionId: string, workspaceId: string, data: any) {
+    async saveWorkspace(_sessionId: string, _workspaceId: string, data: any) {
         try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
         // Small delay so the user actually sees the "Sync" happen
@@ -15,12 +16,12 @@ export const BrowserStorage: StorageAdapter = {
         }
     },
 
-    async loadWorkspace(sessionId: string, workspaceId: string) {
+    async loadWorkspace(_sessionId: string, _workspaceId: string) {
         const savedData = localStorage.getItem(STORAGE_KEY);
-        return savedData;
+        return savedData ? JSON.parse(savedData) : null;
     },
 
-    async clearWorkspace(sessionId: string, workspaceId: string) {
+    async clearWorkspace(_sessionId: string, _workspaceId: string) {
         try {
             localStorage.removeItem(STORAGE_KEY);
             window.location.reload(); // Hard reload to re-seed

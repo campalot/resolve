@@ -1,5 +1,5 @@
 import type { StorageAdapter } from "./StorageAdapter";
-import { WorkspaceDataProps } from "@resolve/types";
+import { WorkspaceDataProps, Workspace } from "@resolve/types";
 
 // Use a map to correctly isolate data per session and per workspace shard
 const memoryDb = new Map<string, any>();
@@ -18,7 +18,7 @@ export const TestStorage: StorageAdapter = {
   },
 
   // Load specific workspace's dataset
-  async loadWorkspace(sessionId: string, workspaceId: string): Promise<WorkspaceDataProps | null> {
+  async loadWorkspace(sessionId: string, workspaceId: string): Promise<WorkspaceDataProps | Workspace[] | null> {
     const key = `${sessionId}:${workspaceId}`;
     const data = memoryDb.get(key);
 

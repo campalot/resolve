@@ -4,7 +4,6 @@ import { generateIdentities } from "./mockIdentities";
 import { generateWorkspaces } from "./mockWorkspaces";
 import { getStorage } from "./storage";
 import type { WorkspaceDataProps } from "@resolve/types";
-import { MockDbProps } from "@resolve/types";
 
 /**
  * THE IN-MEMORY DATABASE FOR TESTING

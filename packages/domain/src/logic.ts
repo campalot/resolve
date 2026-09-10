@@ -1,4 +1,5 @@
 import type { 
+  IdentityRecord,
   InteractionAction, 
   InteractionActivityRecord,
   InteractionRecord,
@@ -24,9 +25,9 @@ function getNextReviewer(
   // Demo logic:
   // To widen the variety of options, picking next review 
   // from amongst ineraction parties or company employees
-  const actorCompanyId = mockDb.identities.find((i) => i.id === actorId)?.companyId;
-  const companyEmployees = mockDb.identities.filter((i) => i.type === "Individual" && i.companyId === actorCompanyId);
-  const reviewers = interaction.parties.map((p) => p.identityId).concat(companyEmployees.map((e) => e.id));
+  const actorCompanyId = mockDb.identities.find((i: IdentityRecord) => i.id === actorId)?.companyId;
+  const companyEmployees = mockDb.identities.filter((i: IdentityRecord) => i.type === "Individual" && i.companyId === actorCompanyId);
+  const reviewers = interaction.parties.map((p) => p.identityId).concat(companyEmployees.map((e: IdentityRecord) => e.id));
   return pickOne(reviewers);
 }
 
@@ -76,7 +77,7 @@ export function transitionInteraction(
 
   const newActivities: InteractionActivityRecord[] = [];
 
-  const actor = mockDb.identities.find((ident) => ident.id === actorId);
+  const actor = mockDb.identities.find((ident: IdentityRecord) => ident.id === actorId);
 
   // If there's no actor, we can't attribute the event, so we stop here.
   if (!actor) {

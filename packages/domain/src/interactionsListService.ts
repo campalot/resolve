@@ -1,4 +1,4 @@
-import type { Interaction, InteractionFilters, InteractionRecord } from "@resolve/types";
+import type { InteractionFilters, InteractionRecord } from "@resolve/types";
 import { interactionMatchesQuery, resolveInteraction, resolveDashboardInteraction } from "./common/resolvers";
 import { parseDate } from "@resolve/utils";
 
@@ -113,32 +113,32 @@ export const interactionsListService = {
         });
     }
 
+    let dashboardResolved = resolved.map(i => resolveDashboardInteraction(i, filters.identityId || ""));
+
     if (filters.searchQuery) {
       const q = filters.searchQuery.toLowerCase();
-      resolved = resolved.filter(i => interactionMatchesQuery(i, q));
+      dashboardResolved = dashboardResolved.filter(i => interactionMatchesQuery(i, q));
     }
 
     const startDateFilter = filters.startDate;
     if (startDateFilter) {
-      resolved = resolved.filter(i => parseDate(i.updatedAt) > startDateFilter);
+      dashboardResolved = dashboardResolved.filter(i => parseDate(i.updatedAt) > startDateFilter);
     }
     const endDateFilter = filters.endDate;
     if (endDateFilter) {
-      resolved = resolved.filter(i => parseDate(i.updatedAt) < endDateFilter);
+      dashboardResolved = dashboardResolved.filter(i => parseDate(i.updatedAt) < endDateFilter);
     }
 
     // 3. Sorting
     if (sortBy) {
         if (sortBy === "recent") {
-            resolved = resolved.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+            dashboardResolved = dashboardResolved.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
         } else if (sortBy === "oldest") {
-            resolved = resolved.sort((a, b) => new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime());
+            dashboardResolved = dashboardResolved.sort((a, b) => new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime());
         } else if (sortBy === "created") {
-            resolved = resolved.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+            dashboardResolved = dashboardResolved.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
         }
     }
-
-    const dashboardResolved = resolved.map(i => resolveDashboardInteraction(i, filters.identityId || ""));
 
     const batch = dashboardResolved.slice(offset, offset + limit);
 

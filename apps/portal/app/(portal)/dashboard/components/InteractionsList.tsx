@@ -4,7 +4,7 @@ import { InteractionCard } from "./InteractionCard";
 import { Interaction, InteractionState, DashboardInteraction } from "@resolve/types";
 import { Button } from "@resolve/ui";
 import { ButtonType } from "@resolve/ui";
-import listStyles from "./interactions.module.scss";
+import listStyles from "./Interactions.module.scss";
 import styles from "../page.module.scss";
 
 interface InteractionsListProps {

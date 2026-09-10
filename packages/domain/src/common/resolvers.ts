@@ -293,6 +293,7 @@ export function resolveDashboardInteraction(
     id: interaction.id,
     title: interaction.title,
     status: interaction.status,
+    createdAt: interaction.createdAt,
     updatedAt: interaction.updatedAt,
     relationship: getRequestRole(interaction, userId),
     latestActivity: lastEvent,
@@ -397,7 +398,7 @@ export function resolveInteractionActivity(interactionActivity: InteractionActiv
 
 // Match the text of multiple interaction properties to a search query
 export function interactionMatchesQuery(
-  interaction: Interaction,
+  interaction: Interaction | DashboardInteraction,
   query: string
 ) {
   if (interaction.title.toLowerCase().includes(query)) return true;

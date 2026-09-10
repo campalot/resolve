@@ -1,13 +1,10 @@
-// import { getMockDb, persistDb } from '../../mocks/mockDB';
 import { 
   createInteractionCreatedActivity,
   getMockDb, 
   generateInteractionTitle, 
-  randomCounterparties,
   randomId
  } from "@resolve/mock-db";
 import { transitionInteraction as domainLogic, persistDbWithSync } from './logic'; // Your existing function
-import { TransitionVariables } from "@resolve/types";
 import { backendLogger } from '@resolve/logger';
 // import { useAppStore } from '../../store/useAppStore';
 import { ROLE_PERMISSIONS } from "@resolve/types";
@@ -15,14 +12,14 @@ import { resolveIdentity, resolveInteraction, resolveInteractionActivity, resolv
 import type { IdentityRecord, InteractionActivity, InteractionActivityRecord, InteractionRecord, InteractionType, ToastNotification } from '@resolve/types';
 import { buildInteractionToastMessage } from "./buildInteractionMetadata";
 import type { 
-  InteractionAction, 
   InteractionDataRecord,
   CreateFormProps,
   ContractData,
   ProposalData,
   PolicyUpdateData,
   VendorOnboardingData,
-  Role
+  Role,
+  TransitionVariables
 } from "@resolve/types";
 import { pickOne } from "@resolve/utils";
 
@@ -113,7 +110,6 @@ export const interactionService = {
     // 5. Mutation / Persistence
     db.interactions[interactionIndex] = updatedInteraction;
     db.interactionActivities.unshift(...newActivities);
-    //persistDb(db);
     persistDbWithSync(db, {
       delay: 500,
     });

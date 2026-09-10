@@ -5,7 +5,6 @@ import type { Role } from "../../api/cache";
 import styles from "./DevOverlay.module.scss";
 import type { DataStrategy } from "../../store/useAppStore";
 import IconClose from "../../assets/icon-close.svg?react";
-import { BrowserStorage } from "@resolve/mock-db/browser";
 import { api } from "../../api/axiosInstance";
 import { client } from "../../api/mockApolloClient";
 
@@ -32,7 +31,6 @@ export const DevOverlay: React.FC = () => {
 
   const handleReset = async () => {
     if (window.confirm("Wipe local data and reset to factory defaults?")) {
-      BrowserStorage.clear();
       await api.post("/dev/reset");
       queryClient.clear();
       client.clearStore();

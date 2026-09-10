@@ -5,11 +5,6 @@ import type { Role } from "./workflow";
 
 
 export type ToastType = "info" | "success" | "error" | "neutral";
-type Toast = {
-  id: string;
-  message: string;
-  type: ToastType;
-};
 
 export type InteractionPartyRecord = {
   identityId: string;
@@ -83,11 +78,15 @@ export type InteractionRecord = {
   description?: string;
 };
 
-export enum InteractionsSort {
-  Recent = "recent",
-  Oldest = "oldest",
-  Created = "created",
-}
+// Create a plain JavaScript object marked 'as const'
+export const InteractionsSort = {
+  Recent: "recent",
+  Oldest: "oldest",
+  Created: "created",
+} as const;
+
+// Extract the type union from the object's values
+export type InteractionsSort = typeof InteractionsSort[keyof typeof InteractionsSort];
 
 export type InteractionFilters = {
   status?: string[];
@@ -156,6 +155,7 @@ export type DashboardInteraction = {
   status: InteractionState;
   relationship: InteractionRelationship | null;
   latestActivity: string | StatusChangeObj;
+  createdAt: string;
   updatedAt: string;
   parties: InteractionParty[];
 }

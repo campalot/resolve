@@ -1,4 +1,4 @@
-import type { InteractionActivity, InteractionActivityRecord, InteractionFilters } from "@resolve/types";
+import type { InteractionActivityRecord, InteractionFilters } from "@resolve/types";
 import { resolveInteractionActivity, resolveProfileAssociations } from "./common/resolvers";
 
 export type ActivitiesVars = {
@@ -53,6 +53,6 @@ export const activitiesService = {
 
   getProfileActivities: async (workspaceId: string, actorId: string) => {
     const activities = resolveProfileAssociations(workspaceId, actorId).activities;
-    return activities.map((act) => resolveInteractionActivity(act));
+    return activities.map((act: InteractionActivityRecord) => resolveInteractionActivity(act));
   },
 };
