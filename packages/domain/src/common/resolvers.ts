@@ -391,7 +391,7 @@ export function resolveInteractionActivity(interactionActivity: InteractionActiv
 
     default:
       throw new Error(
-        `Unsupported interaction activity metadata type: ${interactionActivity.metadata.__typename}`
+        `Unsupported interaction activity metadata type`
       );
   }
 }
