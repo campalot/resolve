@@ -21,17 +21,19 @@ import type {
     GraphQLContext
 } from '@resolve/types';
 
-// 1. Point directly to the core instance shape contract
-type PothosInstance<T extends Partial<PothosSchemaTypes.UserSchemaTypes>> = InstanceType<typeof SchemaBuilder<T>>;
+// 1. Extend the user config type to satisfy the heavy internal properties like outputShapes/inputShapes
+type ExtendedSchemaTypes<T extends Partial<PothosSchemaTypes.UserSchemaTypes>> = PothosSchemaTypes.ExtendDefaultTypes<T>;
 
-// 2. Build the generic interface constructor matching Pothos's global namespace boundary
+// 2. Fetch the true instance footprint out of the global namespace safely using the extended type map
+type ActualSchemaBuilderInstance<T extends Partial<PothosSchemaTypes.UserSchemaTypes>> = PothosSchemaTypes.SchemaBuilder<ExtendedSchemaTypes<T>>;
+
+// 3. Define the blueprint of the class constructor
 type ConstructableSchemaBuilder = new <Types extends Partial<PothosSchemaTypes.UserSchemaTypes> = {}>(
   ...args: any[]
-) => PothosInstance<Types>;
+) => ActualSchemaBuilderInstance<Types>;
 
-// 3. Complete the unknown type tunnel
+// 4. Safe type tunnel interceptor
 const SafeSchemaBuilder = (SchemaBuilder as unknown) as ConstructableSchemaBuilder;
-
 
 // Declare the layout structure explicitly as a standalone type
 type PothosConfig = {
