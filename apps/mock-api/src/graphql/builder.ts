@@ -21,6 +21,11 @@ import type {
     GraphQLContext
 } from '@resolve/types';
 
+// Vercel's TypeScript build resolves @pothos/core's declaration chain
+// differently from the local workspace build and loses the constructor
+// signature. Preserve Pothos's generic instance typing explicitly at this
+// boundary rather than weakening the builder to `any`.
+
 // 1. Extend the user config type to satisfy the heavy internal properties like outputShapes/inputShapes
 type ExtendedSchemaTypes<T extends Partial<PothosSchemaTypes.UserSchemaTypes>> = PothosSchemaTypes.ExtendDefaultTypes<T>;
 
