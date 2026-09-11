@@ -21,7 +21,6 @@ import type {
     GraphQLContext
 } from '@resolve/types';
 
-const testSchemaBuilder: typeof SchemaBuilder = SchemaBuilder;
 
 // Declare the layout structure explicitly as a standalone type
 type PothosConfig = {
