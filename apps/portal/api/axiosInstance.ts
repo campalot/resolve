@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const API_BASE_URL = process.env.API_BASE_URL;
+
 export const api = axios.create({
-  baseURL: 'http://localhost:3001/api',
+  baseURL: `${API_BASE_URL}/api`,
   // CRUCIAL: This forces the browser to send cookies with every request
   withCredentials: true, 
   paramsSerializer: {

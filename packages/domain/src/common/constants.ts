@@ -9,9 +9,6 @@ import type {
   StatusChangeObj
 } from "@resolve/types";
 
-export const ASSET_BASE_URL = "http://localhost:3001";
-
-
 // Workflow related types
 type WorkflowConfig = {
   [K in InteractionState]: {

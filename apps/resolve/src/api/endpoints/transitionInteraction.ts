@@ -14,10 +14,10 @@ export type TransitionBody = {
   comment?: string;
 }
 
-const baseURL = 'http://localhost:3001/api';
+const baseURL = import.meta.env.VITE_API_BASE_URL;
 
 export const transitionInteraction = async (data: TransitionParams) => {
-  const response = await api.post(`${baseURL}/w/${data.workspaceId}/interactions/${data.id}/transition`, {
+  const response = await api.post(`${baseURL}/api/w/${data.workspaceId}/interactions/${data.id}/transition`, {
     action: data.action,
     actorId: data.actorId,
     comment: data.comment,

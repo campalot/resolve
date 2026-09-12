@@ -9,7 +9,8 @@ import {
     interactionService, 
     interactionsListService, 
     activitiesService, 
-    searchService 
+    searchService,
+    configureAssetBaseUrl 
 } from '@resolve/domain';
 import { 
     runAgnosticDatabaseHydration, 
@@ -107,6 +108,10 @@ async function start() {
 
     // Configure the storage engine accordingly
     configureStorage(useRealUpstash ? UpstashRedisStorage : NodeStorage);
+
+    configureAssetBaseUrl(
+        process.env.ASSET_BASE_URL ?? "http://localhost:3001"
+    );
 
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);

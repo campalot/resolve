@@ -20,7 +20,8 @@ import {
   ROLE_PERMISSIONS,
 } from "@resolve/types";
 import { getMockDb } from "@resolve/mock-db";
-import { ASSET_BASE_URL, activityTemplates } from "./constants";
+import { activityTemplates } from "./constants";
+import { getAssetBaseUrl } from "./assetBaseUrl";
 // import { useAppStore } from '../../../store/useAppStore';
 
 export function getPermittedActions(
@@ -193,10 +194,12 @@ export function resolveIdentity(
     stats: resolveIdentityStats(identity.workspaceId, identity.id, { db: mockDb }),
   };
 
+  const assetBaseUrl = getAssetBaseUrl();
+
   return {
     ...resolvedIdentity,
     avatarUrl: avatarKey
-      ? `${ASSET_BASE_URL}/images/avatars/${avatarKey}.jpeg`
+      ? `${assetBaseUrl}/images/avatars/${avatarKey}.jpeg`
       : undefined,
   };
 }
