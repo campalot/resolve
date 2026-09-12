@@ -123,7 +123,6 @@ async function start() {
         ? path.resolve(__dirname, 'images/avatars')
         : path.resolve(__dirname, 'public/images/avatars');
 
-
     fastify.register(fastifyStatic, {
         root: sharedAssetsPath,
         prefix: '/images/avatars/', // Matches the URL other apps use
