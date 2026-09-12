@@ -119,10 +119,10 @@ async function start() {
 
     fastify.register(fastifyCookie);
 
-    const sharedAssetsPath = path.resolve(
-    __dirname, 
-    'public/images/avatars/'
-    );
+    const sharedAssetsPath = process.env.VERCEL
+        ? path.resolve(__dirname, 'images/avatars')
+        : path.resolve(__dirname, 'public/images/avatars');
+
 
     fastify.register(fastifyStatic, {
         root: sharedAssetsPath,
