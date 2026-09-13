@@ -31,6 +31,12 @@ const config: NextConfig = {
     '@resolve/types', 
     '@resolve/domain', 
   ],
+  experimental: {
+    // Allows me to use clean imports like `import { Button } from '@resolve/ui'` 
+    // without loading the entire UI library into every single page.
+    // This goes for MUI's massive icon/component sets as well.
+    optimizePackageImports: ['@resolve/ui', '@mui/material', '@mui/icons-material'],
+  },
   // 2. WEBPACK CONFIGURATION (Used during 'next build' for production packaging)
   /* eslint-disable @typescript-eslint/no-explicit-any */
   webpack: (config) => {
