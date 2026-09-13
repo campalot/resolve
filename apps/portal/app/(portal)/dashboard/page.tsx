@@ -20,7 +20,7 @@ const menuItems = [
   { id: "VENDOR_ONBOARDING", label: "Onboard a Vendor" },
 ];
 
-export const getMenuIcon = (
+const getMenuIcon = (
   type: InteractionType,
 ): React.FC<HTMLAttributes<SVGElement>> => {
   switch (type) {
