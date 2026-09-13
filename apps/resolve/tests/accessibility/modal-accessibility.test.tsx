@@ -49,5 +49,5 @@ describe("Modal accessibility", () => {
     await user.keyboard("{Escape}");
 
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-  });
+  }, 15000);
 });

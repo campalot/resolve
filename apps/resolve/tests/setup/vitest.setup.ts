@@ -4,11 +4,13 @@ import * as matchers from '@testing-library/jest-dom/matchers';
 import '@testing-library/jest-dom/vitest'; // Provides the types for Vitest
 import { api } from "../../src/api/axiosInstance";
 import { client } from "../../src/api/mockApolloClient";
+import { configureAssetBaseUrl } from '@resolve/domain';
 
 // This bridges the matchers to Vitest's expect
 expect.extend(matchers);
 
 configure({ asyncUtilTimeout: 8000 });
+configureAssetBaseUrl("http://localhost:3001");
 
 global.IntersectionObserver = class IntersectionObserver {
   // Required properties for the interface
