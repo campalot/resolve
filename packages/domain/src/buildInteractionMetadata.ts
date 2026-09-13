@@ -66,8 +66,8 @@ export function buildInteractionMetadata(
       description = "Not yet submitted for review";
       break;
     case "IN_REVIEW":
-      description = currentReviewer
-        ? `Awaiting decision from ${currentReviewer.name}`
+      description = currentReviewer?.name 
+        ? `Awaiting decision from ${currentReviewer.name}` 
         : undefined;
       break;
     case "APPROVED":
@@ -86,11 +86,11 @@ export function buildInteractionMetadata(
   const responsibility =
     status === "APPROVED" || status === "REJECTED"
       ? {
-          creator: creator.name,
-          decisionBy: creator.name, // replace when real logic exists
+          creator: creator?.name ?? "Unknown",
+          decisionBy: creator?.name ?? "Unknown",
         }
       : {
-          creator: creator.name,
+          creator: creator?.name ?? "Unknown",
           currentReviewer: currentReviewer?.name,
         };
 
@@ -99,7 +99,7 @@ export function buildInteractionMetadata(
 
   const participants = Object.entries(grouped).map(([role, items]) => ({
     role,
-    names: items.map((p) => p.identity.name),
+    names: items.map((p) => p.identity?.name ?? "Unknown"),
   }));
 
   return {
@@ -137,7 +137,7 @@ export function buildInteractionToastMessage(
 
    switch (status) {
     case "IN_REVIEW":
-      message = reviewerAdded && currentReviewer
+      message = reviewerAdded && currentReviewer?.name
         ? `${currentReviewer.name} assigned as reviewer`
         : `Interaction moved to ${statusLabel}`;
       break;
