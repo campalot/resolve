@@ -11,30 +11,13 @@ export function useInteraction(interactionId: string, { enabled }: { enabled: bo
 
   const { data, isLoading, error } = useQuery({
       queryKey: interactionKeys.detail(workspace.id, interactionId || '', activeRole),
-      queryFn: async () => {
-      const response = await getInteraction(workspace.id, interactionId!);
+      queryFn: () => getInteraction(workspace.id, interactionId!), // Keep this completely clean
+      enabled: !!interactionId && !!workspace.id && enabled,
       
-      // STORAGE AGNOSTIC CHECK: 
-      // If the endpoint returns a 200 success but the interaction data structure 
-      // is completely missing or blank, the persistence layer hasn't finalized the write yet.
-      // Throw a custom error to force a React Query retry
-      if (!response?.interaction) {
-        throw new Error("DATA_NOT_READY");
-      }
-      
-      return response;
-    },
-    enabled: !!interactionId && !!workspace.id && enabled,
-    
-    // Smart Retry Configuration:
-    retry: (failureCount, error) => {
-      // Only retry up to 3 times if it's our specific replication lag error
-      if (error.message === "DATA_NOT_READY" && failureCount < 3) {
-        return true;
-      }
-      return false; // Fail immediately for legitimate auth/network errors
-    },
-    retryDelay: (attempt) => attempt * 300, // Wait 300ms, then 600ms, then 900ms
+      // Retries are perfectly fine to keep for transient network gaps, 
+      // but let it handle native network codes (like a 404 or 500) on its own.
+      retry: 2, 
+      retryDelay: 300,
     });
 
   return {
