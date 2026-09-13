@@ -26,7 +26,11 @@ const config: NextConfig = {
     // },
   },
 
-  transpilePackages: ['@resolve/ui'], // Replace with your exact UI package name
+  transpilePackages: [
+    '@resolve/ui', 
+    '@resolve/types', 
+    '@resolve/domain', 
+  ],
   // 2. WEBPACK CONFIGURATION (Used during 'next build' for production packaging)
   /* eslint-disable @typescript-eslint/no-explicit-any */
   webpack: (config) => {

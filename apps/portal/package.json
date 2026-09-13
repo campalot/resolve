@@ -15,7 +15,6 @@
     "@mui/material": "^7.3.7",
     "@mui/x-date-pickers": "^8.27.0",
     "@resolve/domain": "workspace:*",
-    "@resolve/mock-db": "workspace:*",
     "@resolve/types": "workspace:*",
     "@resolve/ui": "workspace:*",
     "@tanstack/react-query": "^5.95.2",
