@@ -268,9 +268,8 @@ export default function InteractionDetail({ params, searchParams }: PageProps) {
               {interaction.title}
             </Typography>
             <Typography className={detailStyles.interactionDetailSubtitle}>
-              <IdentifierBadge text={interaction.id} />
-              {" "}
-              · {primaryparty?.identity.name}
+              <IdentifierBadge text={interaction.id} /> ·{" "}
+              {primaryparty?.identity?.name ?? "No Partner Found"}
             </Typography>
           </Box>
         </Box>
