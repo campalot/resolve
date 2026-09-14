@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useAppStore } from '../store/useAppStore';
 
 // Safe environment sniff for Vitest or Vite test mode
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const isTest = import.meta.env.MODE === 'test' || (typeof globalThis !== 'undefined' && (globalThis as any).process?.env?.VITEST);
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;

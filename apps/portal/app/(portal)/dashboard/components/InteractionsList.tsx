@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { InteractionRow } from "./InteractionRow";
 import { InteractionCard } from "./InteractionCard";
-import { Interaction, InteractionState, DashboardInteraction } from "@resolve/types";
+import { InteractionState, DashboardInteraction } from "@resolve/types";
 import { Button } from "@resolve/ui";
 import { ButtonType } from "@resolve/ui";
 import listStyles from "./Interactions.module.scss";

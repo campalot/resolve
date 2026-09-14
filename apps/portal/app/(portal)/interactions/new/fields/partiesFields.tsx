@@ -37,7 +37,7 @@ export function PartiesSection({ parties }: PartiesSectionProps) {
     control,
     formState: { errors },
   } = useFormContext();
-  const { fields, append, remove } = useFieldArray({
+  const { fields } = useFieldArray({
     control,
     name: "parties",
   });
