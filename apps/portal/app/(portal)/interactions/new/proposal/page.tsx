@@ -78,16 +78,14 @@ export default function PolicyUpdateForm() {
   });
   
   const {
-    register,
     handleSubmit,
-    setValue,
     control,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
   } = methods;
 
   const workspace = useWorkspace();
-  const { mutateAsync: createInteraction, isPending } = useCreateInteraction();
-  const { parties, types } = useReferenceData();
+  const { mutateAsync: createInteraction } = useCreateInteraction();
+  const { parties } = useReferenceData();
   const { currentUser } = useCurrentUser();
   const [submittedInteraction, setSubmittedInteraction] =
       useState<InteractionRecord | null>(null);

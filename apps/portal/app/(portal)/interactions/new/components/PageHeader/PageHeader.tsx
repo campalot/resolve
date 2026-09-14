@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { Button } from "@resolve/ui";
 import { ButtonType } from "@resolve/ui";
-import { Box, Typography, Chip } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 type PageHeaderProps = {
   isSubmitting?: boolean;
@@ -52,17 +52,6 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
           >
             {title}
           </Typography>
-          {/*<Chip
-            label="PRE-DRAFT"
-            size="small"
-            sx={{
-              backgroundColor: "#fef3c7",
-              color: "#d97706",
-              fontWeight: 700,
-              fontSize: "0.75rem",
-              borderRadius: "4px",
-            }}
-          />*/}
         </Box>
         <Typography variant="body1" color="text.secondary">
           {description}

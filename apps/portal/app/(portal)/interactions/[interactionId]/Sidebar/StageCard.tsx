@@ -1,11 +1,7 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { StatusBadge } from "@resolve/ui";
-// import Button from "../../../components/Buttons/Button";
-// import { ButtonType } from "../../../components/Buttons/Button";
-// import type { ButtonVariant } from "../../../components/Buttons/Button";
-import type { InteractionAction, InteractionState } from "@resolve/types";
-// import type { Role } from "../../../api/cache";
+import type { InteractionState } from "@resolve/types";
 import styles from "./SidebarCard.module.scss";
 
 export const statusColorMap: Record<InteractionState, string> = {
@@ -15,28 +11,18 @@ export const statusColorMap: Record<InteractionState, string> = {
   REJECTED: "#dc2626",
 };
 
-// const actionButtonMap: Record<InteractionAction, ButtonVariant> = {
-//   SUBMIT: ButtonType.Primary,
-//   RESUBMIT: ButtonType.Primary,
-//   APPROVE: ButtonType.Primary,
-//   REJECT: ButtonType.Destructive,
-// };
-
 type StageCardProps = {
   status: string;
   label: string;
   description?: string;
   handleAction: (action: string) => void;
   allowedActions: string[];
-  // role: Role;
 };
 
 export const StageCard: React.FC<StageCardProps> = ({
   status,
   label,
   description,
-  handleAction,
-  allowedActions,
 }) => {
   return (
     <Box
@@ -56,25 +42,6 @@ export const StageCard: React.FC<StageCardProps> = ({
           {description}
         </Typography>
       )}
-
-      {/*allowedActions.length > 0 && (
-        <Box className={styles.actions}>
-          <Typography variant="caption" className={styles.actionLabel}>
-            Actions
-          </Typography>
-          <Stack spacing={3} direction="row" className={styles.actionRow}>
-            {allowedActions.map((action) => (
-              <Button
-                key={action}
-                buttonType={actionButtonMap[action]}
-                onClick={() => handleAction(action)}
-              >
-                {action}
-              </Button>
-            ))}
-          </Stack>
-        </Box>
-      )*/}
     </Box>
   );
 };

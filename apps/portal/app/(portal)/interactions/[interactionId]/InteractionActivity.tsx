@@ -4,7 +4,6 @@ import { useInteractionActivities } from "@/hooks/useInteractionActivities";
 import { Box } from "@mui/material";
 import { TimelineHeader } from "./TimelineHeader";
 import styles from "./InteractionActivity.module.scss";
-// import { getActivityIcon } from "../../components/Badges/helpers";
 import type {
   InteractionActivity as InteractionActivityType,
   InteractionActivityMetadata_Decision,

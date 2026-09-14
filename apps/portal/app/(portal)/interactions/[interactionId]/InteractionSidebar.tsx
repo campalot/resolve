@@ -9,20 +9,17 @@ import { LifecycleCard } from "./Sidebar/LifecycleCard";
 import { ActivityCard } from "./Sidebar/ActivityCard";
 import { buildInteractionMetadata } from "@resolve/domain";
 import { useInteractionActivities } from "@/hooks/useInteractionActivities";
-// import type { Role } from "../../api/cache";
 
 type InteractionSidebarProps = {
   interaction: Interaction;
   handleAction: (action: string) => void;
   allowedActions: string[];
-  // role: Role;
 };
 
 export const InteractionSidebar: React.FC<InteractionSidebarProps> = ({
   interaction,
   handleAction,
   allowedActions,
-  // role,
 }) => {
   const { total, comments } = useInteractionActivities({
     filters: {
@@ -42,7 +39,6 @@ export const InteractionSidebar: React.FC<InteractionSidebarProps> = ({
         description={metadata.stage.description}
         handleAction={handleAction}
         allowedActions={allowedActions}
-        // role={role}
       />
 
       {/* Responsibility */}

@@ -74,16 +74,14 @@ export default function ContractForm() {
   });
   
     const {
-      register,
       handleSubmit,
-      setValue,
       control,
-      formState: { errors, isSubmitting },
+      formState: { isSubmitting },
     } = methods;
 
   const workspace = useWorkspace();
-  const { mutateAsync: createInteraction, isPending } = useCreateInteraction();
-  const { parties, types } = useReferenceData();
+  const { mutateAsync: createInteraction } = useCreateInteraction();
+  const { parties } = useReferenceData();
   const { currentUser } = useCurrentUser();
   const [submittedInteraction, setSubmittedInteraction] =
       useState<InteractionRecord | null>(null);
@@ -132,7 +130,6 @@ export default function ContractForm() {
               // Stack elements vertically on small screens (xs),
               // Arrange horizontally on tablet/desktop (sm and up)
               flexDirection: { xs: "column", sm: "row" },
-              //justifyContent: "space-between",
               alignItems: { xs: "stretch", sm: "flex-start" },
               gap: { xs: 3, sm: 2 },
               mb: 2,

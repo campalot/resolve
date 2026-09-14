@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import type { Interaction } from "@resolve/types";
-// import { MetadataRow } from "./common/MetadataRow";
 import { MetadataRow } from "@resolve/ui";
 import type { VendorOnboardingData } from "@resolve/types";
 import type { PolicyUpdateData } from "@resolve/types";
