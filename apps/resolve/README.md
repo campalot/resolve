@@ -24,7 +24,7 @@ Fastify API are maintained in separate packages and applications.
 
 ## Live Demo
 
-🔗 https://resolve-demo.vercel.app/
+🔗 https://resolve-console.vercel.app/
 
 No authentication required.
 

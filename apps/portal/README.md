@@ -1,6 +1,6 @@
 # Resolve Portal 
 
-The Resolve Portal is a Next.js + TypeScript application built as a companion application to the main Resolve application (`@resolve/resolve-demo`), intended to simulate the customer facing piece of the ecosystem, where users can create new requests and see the current states of their own related requests.
+The Resolve Portal is a Next.js + TypeScript application built as a companion application to the main Resolve application (`resolve-demo`), intended to simulate the customer facing piece of the ecosystem, where users can create new requests and see the current states of their own related requests.
 
 The application models a customer dashboard experience, with pre-filtered lists of the current user's interactions, create forms for generating new interactions, as well as interaction detail page.
 
